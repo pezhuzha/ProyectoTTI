@@ -131,6 +131,8 @@ int m_eye_01() {
 
 	
 	Matrix B = eye(f);
+	
+    _assert(m_equals(A, B, 1e-10));
     
     
     return 0;

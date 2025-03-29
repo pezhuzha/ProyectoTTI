@@ -206,7 +206,5 @@ Matrix& inv(Matrix &m) {
 				}
 			}
 		}
-cout<<*m_aux<<endl;
-cout<<*m_aux1<<endl;
 	return *m_aux1;
 }
