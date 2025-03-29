@@ -89,7 +89,7 @@ Matrix& Matrix::operator / (Matrix &m){
 	}
 	
 	Matrix *m_aux= new Matrix(this->n_row,m.n_column);
-	*m_aux=inv(*this)*m;
+	*m_aux=(*this)*inv(m);
 	return *m_aux;
 }
 Matrix& Matrix::operator = (Matrix &m){
