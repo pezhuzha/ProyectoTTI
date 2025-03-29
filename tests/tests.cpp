@@ -133,6 +133,122 @@ int m_div_01() {
     return 0;
 }
 
+int m_sum_d_01() {
+    int f = 4;
+    int c = 4;
+	double num=2;
+	
+	Matrix A(f, c);
+	A(1,1) = 1; A(1,2) = 2; A(1,3) = 5; A(1,4) = 5;
+	A(2,1) = 2; A(2,2) = 1; A(2,3) = 3; A(2,4) = 6;
+	A(3,1) = 5; A(3,2) = 3; A(3,3) = 2; A(3,4) = 3;
+	A(4,1) = 1; A(4,2) = 2; A(4,3) = 4; A(4,4) = 1;
+    
+
+	Matrix B(f, c);
+	B(1,1) = 1+num; B(1,2) = 2+num; B(1,3) = 5+num; B(1,4) = 5+num;
+	B(2,1) = 2+num; B(2,2) = 1+num; B(2,3) = 3+num; B(2,4) = 6+num;
+	B(3,1) = 5+num; B(3,2) = 3+num; B(3,3) = 2+num; B(3,4) = 3+num;
+	B(4,1) = 1+num; B(4,2) = 2+num; B(4,3) = 4+num; B(4,4) = 1+num;
+
+
+	Matrix R=A+num;
+
+    _assert(m_equals(B, R, 1e-10));
+    
+    return 0;
+}
+
+int m_sub_d_01() {
+    int f = 4;
+    int c = 4;
+	double num=2;
+	
+	Matrix A(f, c);
+	A(1,1) = 1; A(1,2) = 2; A(1,3) = 5; A(1,4) = 5;
+	A(2,1) = 2; A(2,2) = 1; A(2,3) = 3; A(2,4) = 6;
+	A(3,1) = 5; A(3,2) = 3; A(3,3) = 2; A(3,4) = 3;
+	A(4,1) = 1; A(4,2) = 2; A(4,3) = 4; A(4,4) = 1;
+
+
+	Matrix B(f, c);
+	B(1,1) = 1-num; B(1,2) = 2-num; B(1,3) = 5-num; B(1,4) = 5-num;
+	B(2,1) = 2-num; B(2,2) = 1-num; B(2,3) = 3-num; B(2,4) = 6-num;
+	B(3,1) = 5-num; B(3,2) = 3-num; B(3,3) = 2-num; B(3,4) = 3-num;
+	B(4,1) = 1-num; B(4,2) = 2-num; B(4,3) = 4-num; B(4,4) = 1-num;
+
+
+	Matrix R=A-num;
+
+    _assert(m_equals(B, R, 1e-10));
+    
+    return 0;
+}
+
+int m_mul_d_01() {
+    int f = 4;
+    int c = 4;
+	double num=2;
+
+	Matrix A(f, c);
+	A(1,1) = 1; A(1,2) = 2; A(1,3) = 5; A(1,4) = 5;
+	A(2,1) = 2; A(2,2) = 1; A(2,3) = 3; A(2,4) = 6;
+	A(3,1) = 5; A(3,2) = 3; A(3,3) = 2; A(3,4) = 3;
+	A(4,1) = 1; A(4,2) = 2; A(4,3) = 4; A(4,4) = 1;
+
+
+	Matrix B(f, c);
+	B(1,1) = 1.*num; B(1,2) = 2.*num; B(1,3) = 5.*num; B(1,4) = 5.*num;
+	B(2,1) = 2.*num; B(2,2) = 1.*num; B(2,3) = 3.*num; B(2,4) = 6.*num;
+	B(3,1) = 5.*num; B(3,2) = 3.*num; B(3,3) = 2.*num; B(3,4) = 3.*num;
+	B(4,1) = 1.*num; B(4,2) = 2.*num; B(4,3) = 4.*num; B(4,4) = 1.*num;
+
+	Matrix R=A*num;
+
+    _assert(m_equals(R, B, 1e-10));
+    
+    return 0;
+}
+int m_div_d_01() {
+    int f = 4;
+    int c = 4;
+	double num=2;
+
+	Matrix A(f, c);
+	A(1,1) = 1; A(1,2) = 2; A(1,3) = 5; A(1,4) = 5;
+	A(2,1) = 2; A(2,2) = 1; A(2,3) = 3; A(2,4) = 6;
+	A(3,1) = 5; A(3,2) = 3; A(3,3) = 2; A(3,4) = 3;
+	A(4,1) = 1; A(4,2) = 2; A(4,3) = 4; A(4,4) = 1;
+
+
+	Matrix B(f, c);
+	B(1,1) = 1./num; B(1,2) = 2./num; B(1,3) = 5./num; B(1,4) = 5./num;
+	B(2,1) = 2./num; B(2,2) = 1./num; B(2,3) = 3./num; B(2,4) = 6./num;
+	B(3,1) = 5./num; B(3,2) = 3./num; B(3,3) = 2./num; B(3,4) = 3./num;
+	B(4,1) = 1./num; B(4,2) = 2./num; B(4,3) = 4./num; B(4,4) = 1./num;
+
+	Matrix R=A/num;
+
+    _assert(m_equals(R, B, 1e-10));
+    
+    return 0;
+}
+int m_asig_01() {
+    int f = 4;
+    int c = 4;
+	
+	Matrix A(f, c);
+	A(1,1) = 1; A(1,2) = 2; A(1,3) = 5; A(1,4) = 5;
+	A(2,1) = 2; A(2,2) = 1; A(2,3) = 3; A(2,4) = 6;
+	A(3,1) = 5; A(3,2) = 3; A(3,3) = 2; A(3,4) = 3;
+	A(4,1) = 1; A(4,2) = 2; A(4,3) = 4; A(4,4) = 1;
+    
+	Matrix B=A;
+
+    _assert(m_equals(A, B, 1e-10));
+    
+    return 0;
+}
 int m_zeros_01() {
     int f = 3;
     int c = 4;
@@ -234,6 +350,11 @@ int all_tests()
     _verify(m_sub_01);
     _verify(m_mul_01);
     _verify(m_div_01);
+    _verify(m_sum_d_01);
+    _verify(m_sub_d_01);
+    _verify(m_mul_d_01);
+    _verify(m_div_d_01);
+    _verify(m_asig_01);
     _verify(m_zeros_01);
     _verify(m_eye_01);
     _verify(m_transpose_01);

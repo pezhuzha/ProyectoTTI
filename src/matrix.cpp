@@ -101,6 +101,39 @@ Matrix& Matrix::operator = (Matrix &m){
     }
     return *this;
 }
+Matrix& Matrix::operator + (double d){
+    for(int i = 1; i <= this->n_row; i++) {
+        for(int j = 1; j <= this->n_column; j++) {
+			(*this)(i,j) += d;
+		}
+	}
+	return *this;
+}
+Matrix& Matrix::operator - (double d){
+    for(int i = 1; i <= this->n_row; i++) {
+        for(int j = 1; j <= this->n_column; j++) {
+			(*this)(i,j) -= d;
+		}
+	}
+	return *this;
+}
+Matrix& Matrix::operator * (double d){
+    for(int i = 1; i <= this->n_row; i++) {
+        for(int j = 1; j <= this->n_column; j++) {
+			(*this)(i,j) *= d;
+		}
+	}
+	return *this;
+}
+Matrix& Matrix::operator / (double d){
+    for(int i = 1; i <= this->n_row; i++) {
+        for(int j = 1; j <= this->n_column; j++) {
+			(*this)(i,j) /= d;
+		}
+	}
+	return *this;
+}
+
 ostream& operator << (ostream &o, Matrix &m) {
 	for (int i = 1; i <= m.n_row; i++) {
         for (int j = 1; j <= m.n_column; j++)
