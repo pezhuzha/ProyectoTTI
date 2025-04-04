@@ -344,6 +344,53 @@ int m_inv_02() {
     _assert(m_equals(R, B, 1e-10));
     return 0;
 }
+int m_norm_01() {
+    int f = 4;
+	
+	
+	Matrix A(f);
+	A(1,1) = 1; A(1,2) = 2; A(1,3) = 5; A(1,4) = 5;
+	
+	double B=7.4161984870956629487113974408007;
+
+   	double R=norm(A);
+    _assert(fabs(R-B)<1e-10);
+    return 0;
+}
+
+int m_dot_01() {
+	int f = 3;
+	Matrix A(f);
+	A(1,1) = 2; A(1,2) = 1; A(1,3) = 0;
+	
+	Matrix B(f);
+	B(1,1)= 3; B(1,2) = 5; B(1,3) = 6 ;
+	
+	
+	double R=11;
+	
+	double C=dot(A,B);
+	
+    _assert(fabs(R-C)<1e-10);
+    
+    return 0;
+}
+int m_cross_01() {
+	int f = 3;
+	Matrix A(f);
+	Matrix B(f);
+	A(1,1) = 2; A(1,2) = 1; A(1,3) = 0;
+	B(1,1)= 3; B(1,2) = 5; B(1,3) = 6 ;
+    
+	Matrix R(f);
+	R(1,1)= 6; R(1,2) = -12; R(1,3) = 7 ;
+	
+	Matrix C=cross(A,B);
+	
+    _assert(m_equals(R, C, 1e-10));
+    
+    return 0;
+}
 int all_tests()
 {
     _verify(m_sum_01);
@@ -360,6 +407,9 @@ int all_tests()
     _verify(m_transpose_01);
     _verify(m_inv_01);
     _verify(m_inv_02);
+    _verify(m_norm_01);
+    _verify(m_dot_01);
+    _verify(m_cross_01);
 
     return 0;
 }

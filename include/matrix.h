@@ -14,9 +14,11 @@ public:
 	double **data;
 
     // Parameterized constructor
+    Matrix(const int n);
     Matrix(const int n_row, const int n_column);
 	
 	// Member operators
+	double& operator () (const int n);
 	double& operator () (const int row, const int column);
 	Matrix& operator + (Matrix &m);
 	Matrix& operator - (Matrix &m);
@@ -41,5 +43,9 @@ Matrix& zeros(const int n_row, const int n_column);
 Matrix& eye(const int size);
 Matrix& transpose(Matrix &m);
 Matrix& inv(Matrix &m) ;
+Matrix& zeros(const int n) ;
+double norm(Matrix &m) ;
+double dot(Matrix &v,Matrix &w);
+Matrix& cross(Matrix &v,Matrix &w);
 
 #endif
