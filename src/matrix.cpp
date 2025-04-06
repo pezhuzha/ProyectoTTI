@@ -155,6 +155,7 @@ Matrix& Matrix::operator * (double d){
 	}
 	return *this;
 }
+//---------------------------------
 Matrix& Matrix::operator / (double d){
     for(int i = 1; i <= this->n_row; i++) {
         for(int j = 1; j <= this->n_column; j++) {
