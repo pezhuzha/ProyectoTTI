@@ -128,7 +128,7 @@ Matrix& Matrix::operator / (Matrix &m){
 }
 //----------------------------------
 Matrix& Matrix::operator = (Matrix &m){
-	if(this==m){
+	if(this==&m){
 		return;
 	}
 
