@@ -2,6 +2,7 @@
 #include <cstdio>
 #include <cmath>
 
+using namespace std;
 int tests_run = 0;
 
 #define FAIL() printf("\nfailure in %s() line %d\n", __func__, __LINE__)

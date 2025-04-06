@@ -7,7 +7,7 @@ Matrix::Matrix(const int n_size) {
 	}
 	
 	this->n_row = 1;
-	this->n_column = n_column;
+	this->n_column = n_size;
 	this->data = (double **) malloc(n_row*sizeof(double *));
 	
     if (this->data == NULL) {
@@ -297,8 +297,9 @@ double norm(Matrix &m) {
 }
 //----------------------------------
 double dot(Matrix &v,Matrix &w){
-	if(v.n_column!=w.n_column)
-		exit(EXIT_FAILURE);
+	if(v.n_column!=w.n_column){
+		cout << "Vector dot: error in v.n_column, w.n_column\n";
+		exit(EXIT_FAILURE);}
 	double result=0;
 	for(int i=1;i<v.n_column;i++)
 		result += v(1,i)*w(1,i);
@@ -307,8 +308,9 @@ double dot(Matrix &v,Matrix &w){
 
 //----------------------------------
 Matrix& cross(Matrix &v,Matrix &w){
-	if(v.n_column!=w.n_column)
-		exit(EXIT_FAILURE);
+	if(v.n_column!=w.n_column){
+		cout << "Vector cross: error in v.n_column, w.n_column\n";
+		exit(EXIT_FAILURE);}
 	Matrix *m_aux = new Matrix(v.n_column);
 	(*m_aux)(1) = v(2)*w(3)-w(2)*v(3);
 	(*m_aux)(2) = v(3)*w(1)-w(3)*v(1);
