@@ -1,4 +1,11 @@
 #include "../include/matrix.h"
+
+    /**
+     * @file matrix.cpp
+     * @brief El archivo contiene las implementaciones de matrix.h
+     * @author Pedro Zhuzhan
+     * @bug No known bugs
+     */
 //----------------------------------
 Matrix::Matrix(const int n_size) {
     if (n_size <= 0) {
@@ -121,6 +128,9 @@ Matrix& Matrix::operator / (Matrix &m){
 }
 //----------------------------------
 Matrix& Matrix::operator = (Matrix &m){
+	if(this==m){
+		return;
+	}
 
 	for (int i = 1; i <= this->n_row; i++) {
         for (int j = 1; j <= this->n_column; j++){

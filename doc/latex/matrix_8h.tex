@@ -1,0 +1,193 @@
+\doxysection{/home/fghfgh/\+Escritorio/\+Proyecto\+TTI/include/matrix.h File Reference}
+\hypertarget{matrix_8h}{}\label{matrix_8h}\index{/home/fghfgh/Escritorio/ProyectoTTI/include/matrix.h@{/home/fghfgh/Escritorio/ProyectoTTI/include/matrix.h}}
+
+
+El archivo contiene las funciones para operaciones con matrices y vectores junto con su definicion.  
+
+
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for matrix.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{matrix_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{matrix_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMatrix}{Matrix}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{matrix_8h_a6ce0bc529fe2ee6fb2d0eb8acbdc1e92}\label{matrix_8h_a6ce0bc529fe2ee6fb2d0eb8acbdc1e92} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&o, \mbox{\hyperlink{classMatrix}{Matrix}} \&m)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}} (const int n\+\_\+row, const int n\+\_\+column)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{matrix_8h_a8749816ebeb8c1fe55345f9dd24f314b}{eye}} (const int size)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}} (\mbox{\hyperlink{classMatrix}{Matrix}} \&m)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{matrix_8h_ad8d8519e7f94df41a4c5b535b4899222}{inv}} (\mbox{\hyperlink{classMatrix}{Matrix}} \&m)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{matrix_8h_ab2f05195ce5c6c4b6e00df63a50c329d}{zeros}} (const int n)
+\item 
+double \mbox{\hyperlink{matrix_8h_a907c9c6f53fc52d17e86b507b156536f}{norm}} (\mbox{\hyperlink{classMatrix}{Matrix}} \&m)
+\item 
+double \mbox{\hyperlink{matrix_8h_ace64c1017d252d104fe1c99329ae9ecc}{dot}} (\mbox{\hyperlink{classMatrix}{Matrix}} \&v, \mbox{\hyperlink{classMatrix}{Matrix}} \&w)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{matrix_8h_a8f26ea7eab92d1fd60ac732719a486e8}{cross}} (\mbox{\hyperlink{classMatrix}{Matrix}} \&v, \mbox{\hyperlink{classMatrix}{Matrix}} \&w)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+El archivo contiene las funciones para operaciones con matrices y vectores junto con su definicion. 
+
+\begin{DoxyAuthor}{Author}
+Pedro Zhuzhan 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{matrix_8h_a8f26ea7eab92d1fd60ac732719a486e8}\index{matrix.h@{matrix.h}!cross@{cross}}
+\index{cross@{cross}!matrix.h@{matrix.h}}
+\doxysubsubsection{\texorpdfstring{cross()}{cross()}}
+{\footnotesize\ttfamily \label{matrix_8h_a8f26ea7eab92d1fd60ac732719a486e8} 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& cross (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}} \&}]{v}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}} \&}]{w}{}\end{DoxyParamCaption})}
+
+Devulve el producto vectorial 
+\begin{DoxyParams}{Parameters}
+{\em v} & \doxylink{classMatrix}{Matrix} con tamaño 1 x 3 \\
+\hline
+{\em w} & \doxylink{classMatrix}{Matrix} con tamaño 1 x 3 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+producto escalar de v x w
+\end{DoxyReturn}
+Extrae 
+\begin{DoxyParams}{Parameters}
+{\em v} & \doxylink{classMatrix}{Matrix} con tamaño 1 x 3 \\
+\hline
+{\em w} & \doxylink{classMatrix}{Matrix} con tamaño 1 x 3 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+producto escalar de v x w 
+\end{DoxyReturn}
+\Hypertarget{matrix_8h_ace64c1017d252d104fe1c99329ae9ecc}\index{matrix.h@{matrix.h}!dot@{dot}}
+\index{dot@{dot}!matrix.h@{matrix.h}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily \label{matrix_8h_ace64c1017d252d104fe1c99329ae9ecc} 
+double dot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}} \&}]{v}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}} \&}]{w}{}\end{DoxyParamCaption})}
+
+Devulve el producto escalar 
+\begin{DoxyParams}{Parameters}
+{\em v} & \doxylink{classMatrix}{Matrix} con tamaño 1 x 3 \\
+\hline
+{\em w} & \doxylink{classMatrix}{Matrix} con tamaño 1 x 3 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+producto escalar de v·w 
+\end{DoxyReturn}
+\Hypertarget{matrix_8h_a8749816ebeb8c1fe55345f9dd24f314b}\index{matrix.h@{matrix.h}!eye@{eye}}
+\index{eye@{eye}!matrix.h@{matrix.h}}
+\doxysubsubsection{\texorpdfstring{eye()}{eye()}}
+{\footnotesize\ttfamily \label{matrix_8h_a8749816ebeb8c1fe55345f9dd24f314b} 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& eye (\begin{DoxyParamCaption}\item[{const int}]{size}{}\end{DoxyParamCaption})}
+
+Crea una \doxylink{classMatrix}{Matrix} identidad con tamaño size x size 
+\begin{DoxyParams}{Parameters}
+{\em size} & dimension de la matriz \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+una \doxylink{classMatrix}{Matrix} tamaño size x size 
+\end{DoxyReturn}
+\Hypertarget{matrix_8h_ad8d8519e7f94df41a4c5b535b4899222}\index{matrix.h@{matrix.h}!inv@{inv}}
+\index{inv@{inv}!matrix.h@{matrix.h}}
+\doxysubsubsection{\texorpdfstring{inv()}{inv()}}
+{\footnotesize\ttfamily \label{matrix_8h_ad8d8519e7f94df41a4c5b535b4899222} 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& inv (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}} \&}]{m}{}\end{DoxyParamCaption})}
+
+Crea una \doxylink{classMatrix}{Matrix} inversa de m, sin modificar m 
+\begin{DoxyParams}{Parameters}
+{\em m} & \doxylink{classMatrix}{Matrix} que tiene que ser cuadrada, es decir, con el mismo numero de columnas que filas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+una \doxylink{classMatrix}{Matrix} inversa de m 
+\end{DoxyReturn}
+\Hypertarget{matrix_8h_a907c9c6f53fc52d17e86b507b156536f}\index{matrix.h@{matrix.h}!norm@{norm}}
+\index{norm@{norm}!matrix.h@{matrix.h}}
+\doxysubsubsection{\texorpdfstring{norm()}{norm()}}
+{\footnotesize\ttfamily \label{matrix_8h_a907c9c6f53fc52d17e86b507b156536f} 
+double norm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}} \&}]{m}{}\end{DoxyParamCaption})}
+
+Devulve la norma 2 de una \doxylink{classMatrix}{Matrix} que simula un vector 
+\begin{DoxyParams}{Parameters}
+{\em m} & \doxylink{classMatrix}{Matrix} 1 x n\+\_\+column \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la norma 2 de m 
+\end{DoxyReturn}
+\Hypertarget{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}\index{matrix.h@{matrix.h}!transpose@{transpose}}
+\index{transpose@{transpose}!matrix.h@{matrix.h}}
+\doxysubsubsection{\texorpdfstring{transpose()}{transpose()}}
+{\footnotesize\ttfamily \label{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9} 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& transpose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}} \&}]{m}{}\end{DoxyParamCaption})}
+
+Crea una \doxylink{classMatrix}{Matrix} traspuesta de m,sin modificar m 
+\begin{DoxyParams}{Parameters}
+{\em m} & \doxylink{classMatrix}{Matrix} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+una \doxylink{classMatrix}{Matrix} traspuesta de m 
+\end{DoxyReturn}
+\Hypertarget{matrix_8h_ab2f05195ce5c6c4b6e00df63a50c329d}\index{matrix.h@{matrix.h}!zeros@{zeros}}
+\index{zeros@{zeros}!matrix.h@{matrix.h}}
+\doxysubsubsection{\texorpdfstring{zeros()}{zeros()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{matrix_8h_ab2f05195ce5c6c4b6e00df63a50c329d} 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& zeros (\begin{DoxyParamCaption}\item[{const int}]{n}{}\end{DoxyParamCaption})}
+
+Crea una \doxylink{classMatrix}{Matrix} con todas sus componentes a 0 
+\begin{DoxyParams}{Parameters}
+{\em n} & numero de columnas que tiene la matriz \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+una \doxylink{classMatrix}{Matrix} tamaño 1 x n 
+\end{DoxyReturn}
+\Hypertarget{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}\index{matrix.h@{matrix.h}!zeros@{zeros}}
+\index{zeros@{zeros}!matrix.h@{matrix.h}}
+\doxysubsubsection{\texorpdfstring{zeros()}{zeros()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{matrix_8h_a56d60ea1f08402246a7cfd477d69a618} 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& zeros (\begin{DoxyParamCaption}\item[{const int}]{n\+\_\+row}{, }\item[{const int}]{n\+\_\+column}{}\end{DoxyParamCaption})}
+
+Crea una \doxylink{classMatrix}{Matrix} con todas sus componentes a 0 
+\begin{DoxyParams}{Parameters}
+{\em n\+\_\+row} & numero de filas que tiene la matriz \\
+\hline
+{\em n\+\_\+column} & numero de columnas que tiene la matriz \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+una \doxylink{classMatrix}{Matrix} tamaño n\+\_\+row x n\+\_\+column 
+\end{DoxyReturn}

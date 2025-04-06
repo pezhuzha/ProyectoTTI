@@ -8,6 +8,13 @@
 
 using namespace std;
 
+    /**
+     * @file matrix.h
+     * @brief El archivo contiene las funciones
+     *  para operaciones con matrices y vectores junto con su definicion
+     * @author Pedro Zhuzhan
+     * @bug No known bugs
+     */
 class Matrix {
 public:
     int n_row, n_column;
@@ -153,5 +160,60 @@ ostream& operator << (ostream &o, Matrix &m);
      * @return producto escalar de v x w
      */
 	Matrix& cross(Matrix &v,Matrix &w);
+
+    /********************************************************************************************
+     * Extrae 
+     * @param v Matrix con tamaño 1 x 3
+     * @param w Matrix con tamaño 1 x 3
+     * @return producto escalar de v x w
+     */
+    Matrix& extract_vector(Matrix &v,Matrix &w);
+
+    /**
+     * Devuelve la matriz resultado de realizar la union entre v y w
+     * @param v Matrix con tamaño 1 x 3
+     * @param w Matrix con tamaño 1 x 3
+     * @return producto escalar de v x w
+     */
+    Matrix& union_vector(Matrix &v,Matrix &w);
+
+
+    /**
+     * Extrae la fila i-1 de v y lo devuelve
+     * @param v Matrix
+     * @param i es la fila tiene que ser >=1 && <=v.n_row
+     * @return Matrix con la fila i-1 de v
+     */
+    Matrix& extract_row(Matrix &v,int i);
+
+
+    /**
+     * Extrae la columna i-1 de v y lo devuelve
+     * @param v Matrix
+     * @param i es la columna tiene que ser >=1 && <=v.n_column
+     * @return Matrix con la columna i-1 de v
+     */
+    Matrix& extract_column(Matrix &v,int i);
+
+
+    /**
+     * Asigna la fila i-1 con w y lo devuelve
+     * @param v Matrix con tamaño x x y ,x∈N y∈N
+     * @param w Matrix con tamaño 1 x y ,y∈N
+     * @param i es la fila tiene que ser >=1 && <=v.n_row
+     * @return Matrix v con la fila i-1 cambiada por los elementos de w
+     */
+    Matrix& assign_row(Matrix &v,Matrix &w,int i);
+
+
+    /**
+     * Asigna la columna i-1 con w y lo devuelve
+     * @param v Matrix con tamaño x x y ,x∈N y∈N
+     * @param w Matrix con tamaño 1 x y ,y∈N
+     * @param i es la columna tiene que ser >=1 && <=v.n_column
+     * @return Matrix v con la columna i-1 cambiada por los elementos de w
+     */
+    Matrix& assign_column(Matrix &v,Matrix &w,int i);
+
 
 #endif
