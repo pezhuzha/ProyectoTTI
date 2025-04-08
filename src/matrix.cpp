@@ -327,9 +327,41 @@ Matrix& cross(Matrix &v,Matrix &w){
 	(*m_aux)(3) = v(1)*w(2)-w(1)*v(2);
 	return (*m_aux);
 }
-    Matrix& extract_vector(Matrix &v,Matrix &w);
-    Matrix& union_vector(Matrix &v,Matrix &w);
+//----------------------------------
+    Matrix& extract_vector(Matrix &v,int row){
 
+	return extract_row(v,row);
+    }
+//----------------------------------
+    Matrix& union_vector(Matrix &v,Matrix &w){
+    	int x=1,length=v.n_column+w.n_column;
+    	Matrix *v_aux=new Matrix(length);
+    	for(int i=1; i<=v.n_column;i++){
+    		(*v_aux)(x)=v(i);
+    		x++;
+    	}
+    	for(int i=1; i<=w.n_column;i++){
+    		(*v_aux)(x)=w(i);
+    		x++;
+    	}
+    	for(int i=1; i<=length;i++){
+    		for(int j=i+1;j<=length;j++){
+    			if((*v_aux)(i)==(*v_aux)(j)){
+    				for(int k=j+1;k<=length;k++){
+    					(*v_aux)(k-1)=(*v_aux)(k);
+    				}
+    				length--;
+    			}
+    		}
+    	}
+    	Matrix *v_union=new Matrix(length);
+    	for(int i=1;i<=length;i++){
+    		(*v_union)(i)=(*v_aux)(i);
+    	}
+    	free(v_aux);
+    	return (*v_union);
+    }
+//----------------------------------
     Matrix& extract_row(Matrix &v,int j){
 		if(v.n_row<j || j<1){
 			cout << "Matrix extract_row: error in v.n_row<j\n";
@@ -340,7 +372,7 @@ Matrix& cross(Matrix &v,Matrix &w){
 			}
 			return (*m_aux);
     }
-
+//----------------------------------
     Matrix& extract_column(Matrix &v,int j){
 		if(v.n_column<j || j<1){
 			cout << "Matrix extract_column: error in v.n_column<j\n";
@@ -351,7 +383,7 @@ Matrix& cross(Matrix &v,Matrix &w){
 			}
 			return (*m_aux);
     }
-
+//----------------------------------
     Matrix& assign_row(Matrix &v,Matrix &w,int j){
 		if(v.n_row<j || j<1 || v.n_row!=w.n_column){
 			cout << "Matrix assign_row: error in v.n_row<j\n";
@@ -363,7 +395,7 @@ Matrix& cross(Matrix &v,Matrix &w){
 			}
 			return (*m_aux);
     }
-
+//----------------------------------
     Matrix& assign_column(Matrix &v,Matrix &w,int j){
 		if(v.n_column<j || j<1 || v.n_row!=w.n_column){
 			cout << "Matrix assign_column: error in v.n_column<j\n";
@@ -376,3 +408,4 @@ Matrix& cross(Matrix &v,Matrix &w){
 			return (*m_aux);
 
     }
+//----------------------------------

@@ -392,6 +392,41 @@ int m_cross_01() {
     
     return 0;
 }
+int m_extract_vector_01() {
+	int f = 3;
+	Matrix A(f,f);
+	
+	A(1,1) = 2; A(1,2) = 1; A(1,3) = 0;
+	A(2,1) = 2; A(2,2) = 1; A(2,3) = 3;
+	A(3,1) = 5; A(3,2) = 3; A(3,3) = 2;
+
+	Matrix B=extract_row(A,f);
+    
+	Matrix R(f);
+	R(1,1)= 5; R(1,2) = 3; R(1,3) = 2 ;
+
+	
+    _assert(m_equals(R, B, 1e-10));
+    
+    return 0;
+}
+
+int m_union_vector_01() {
+	int f = 3;
+	Matrix A(f);
+	Matrix B(f);
+	A(1,1) = 2; A(1,2) = 1; A(1,3) = 0;
+	B(1,1)= 3; B(1,2) = 1; B(1,3) = 6 ;
+    
+	Matrix R(5);
+	R(1,1) = 2; R(1,2) = 1; R(1,3) = 0;
+	R(1,4)= 3; R(1,5) = 6 ;
+	
+	Matrix C=union_vector(A,B);
+    _assert(m_equals(R, C, 1e-10));
+    
+    return 0;
+}
 
 int m_extract_row_01() {
 	int f = 3;
@@ -500,6 +535,8 @@ int all_tests()
     _verify(m_norm_01);
     _verify(m_dot_01);
     _verify(m_cross_01);
+    _verify(m_extract_vector_01);
+    _verify(m_union_vector_01);
     _verify(m_extract_row_01);
     _verify(m_extract_column_01);
     _verify(m_assign_row_01);

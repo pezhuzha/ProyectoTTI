@@ -171,8 +171,8 @@ ostream& operator << (ostream &o, Matrix &m);
 
     /**
      * Devuelve la matriz resultado de realizar la union entre v y w
-     * @param v Matrix con tamaño 1 x 3
-     * @param w Matrix con tamaño 1 x 3
+     * @param v Matrix con tamaño 1 x n ,n∈N
+     * @param w Matrix con tamaño 1 x n ,n∈N
      * @return producto escalar de v x w
      */
     Matrix& union_vector(Matrix &v,Matrix &w);
