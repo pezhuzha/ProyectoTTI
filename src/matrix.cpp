@@ -56,7 +56,7 @@ double& Matrix::operator () (const int n) {
 //----------------------------------
 double& Matrix::operator () (const int row, const int column) {
 	if (row <= 0 || row > this->n_row || column <= 0 || column > this->n_column) {
-		cout << "Matrix get: error in row/column\n";
+		cout << "Matrix get: error in " <<row<<" row/ "<<column<<" column\n";
         exit(EXIT_FAILURE);
 	}
 	
@@ -129,7 +129,7 @@ Matrix& Matrix::operator / (Matrix &m){
 //----------------------------------
 Matrix& Matrix::operator = (Matrix &m){
 	if(this==&m){
-		return;
+		return (*this); 
 	}
 
 	for (int i = 1; i <= this->n_row; i++) {
@@ -327,3 +327,52 @@ Matrix& cross(Matrix &v,Matrix &w){
 	(*m_aux)(3) = v(1)*w(2)-w(1)*v(2);
 	return (*m_aux);
 }
+    Matrix& extract_vector(Matrix &v,Matrix &w);
+    Matrix& union_vector(Matrix &v,Matrix &w);
+
+    Matrix& extract_row(Matrix &v,int j){
+		if(v.n_row<j || j<1){
+			cout << "Matrix extract_row: error in v.n_row<j\n";
+			exit(EXIT_FAILURE);}
+			Matrix *m_aux = new Matrix(v.n_column);
+			for (int i=1;i<=v.n_column;i++){
+				(*m_aux)(i)=v(j,i);
+			}
+			return (*m_aux);
+    }
+
+    Matrix& extract_column(Matrix &v,int j){
+		if(v.n_column<j || j<1){
+			cout << "Matrix extract_column: error in v.n_column<j\n";
+			exit(EXIT_FAILURE);}
+			Matrix *m_aux = new Matrix(v.n_row);
+			for (int i=1;i<=v.n_row;i++){
+				(*m_aux)(i)=v(i,j);
+			}
+			return (*m_aux);
+    }
+
+    Matrix& assign_row(Matrix &v,Matrix &w,int j){
+		if(v.n_row<j || j<1 || v.n_row!=w.n_column){
+			cout << "Matrix assign_row: error in v.n_row<j\n";
+			exit(EXIT_FAILURE);}
+			Matrix *m_aux=new Matrix(v.n_row,v.n_column);
+			(*m_aux) = v;
+			for (int i=1;i<=m_aux->n_column;i++){
+				(*m_aux)(j,i)=w(i);
+			}
+			return (*m_aux);
+    }
+
+    Matrix& assign_column(Matrix &v,Matrix &w,int j){
+		if(v.n_column<j || j<1 || v.n_row!=w.n_column){
+			cout << "Matrix assign_column: error in v.n_column<j\n";
+			exit(EXIT_FAILURE);}
+			Matrix *m_aux=new Matrix(v.n_row,v.n_column);
+			(*m_aux) = v;
+			for (int i=1;i<=m_aux->n_row;i++){
+				(*m_aux)(i,j)=w(i);
+			}
+			return (*m_aux);
+
+    }

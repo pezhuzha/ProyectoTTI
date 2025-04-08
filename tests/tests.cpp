@@ -392,6 +392,95 @@ int m_cross_01() {
     
     return 0;
 }
+
+int m_extract_row_01() {
+	int f = 3;
+	Matrix A(f,f);
+	
+	A(1,1) = 2; A(1,2) = 1; A(1,3) = 0;
+	A(2,1) = 2; A(2,2) = 1; A(2,3) = 3;
+	A(3,1) = 5; A(3,2) = 3; A(3,3) = 2;
+
+	Matrix B=extract_row(A,f);
+    
+	Matrix R(f);
+	R(1,1)= 5; R(1,2) = 3; R(1,3) = 2 ;
+
+	
+    _assert(m_equals(R, B, 1e-10));
+    
+    return 0;
+
+}
+
+int m_extract_column_01() {
+	int f = 3;
+	Matrix A(f,f);
+	
+	A(1,1) = 2; A(1,2) = 1; A(1,3) = 0;
+	A(2,1) = 2; A(2,2) = 1; A(2,3) = 3;
+	A(3,1) = 5; A(3,2) = 3; A(3,3) = 2;
+
+	Matrix B=extract_column(A,f);
+    
+	Matrix R(f);
+	R(1,1)= 0; R(1,2) = 3; R(1,3) = 2 ;
+
+	
+    _assert(m_equals(R, B, 1e-10));
+    
+    return 0;
+}
+
+int m_assign_row_01() {
+	int f = 3;
+	Matrix A(f,f);
+	
+	A(1,1) = 2; A(1,2) = 1; A(1,3) = 0;
+	A(2,1) = 2; A(2,2) = 1; A(2,3) = 3;
+	A(3,1) = 5; A(3,2) = 3; A(3,3) = 2;
+
+	Matrix B(f);
+
+	B(1,1)= 3; B(1,2) = 5; B(1,3) = 6 ;
+
+
+	Matrix C=assign_row(A,B,f);
+    
+	Matrix R(f,f);
+	R(1,1) = 2; R(1,2) = 1; R(1,3) = 0;
+	R(2,1) = 2; R(2,2) = 1; R(2,3) = 3;
+	R(3,1) = 3; R(3,2) = 5; R(3,3) = 6;
+
+    _assert(m_equals(R, C, 1e-10));
+    
+    return 0;
+}
+
+int m_assign_column_01() {
+	int f = 3;
+	Matrix A(f,f);
+	
+	A(1,1) = 2; A(1,2) = 1; A(1,3) = 0;
+	A(2,1) = 2; A(2,2) = 1; A(2,3) = 3;
+	A(3,1) = 5; A(3,2) = 3; A(3,3) = 2;
+
+	Matrix B(f);
+
+	B(1,1)= 3; B(1,2) = 5; B(1,3) = 6 ;
+
+	Matrix C=assign_column(A,B,f);
+
+	Matrix R(f,f);
+	R(1,1) = 2; R(1,2) = 1; R(1,3) = 3;
+	R(2,1) = 2; R(2,2) = 1; R(2,3) = 5;
+	R(3,1) = 5; R(3,2) = 3; R(3,3) = 6;
+
+	
+    _assert(m_equals(R, C, 1e-10));
+    
+    return 0;
+}
 int all_tests()
 {
     _verify(m_sum_01);
@@ -411,6 +500,10 @@ int all_tests()
     _verify(m_norm_01);
     _verify(m_dot_01);
     _verify(m_cross_01);
+    _verify(m_extract_row_01);
+    _verify(m_extract_column_01);
+    _verify(m_assign_row_01);
+    _verify(m_assign_column_01);
 
     return 0;
 }
