@@ -328,9 +328,15 @@ Matrix& cross(Matrix &v,Matrix &w){
 	return (*m_aux);
 }
 //----------------------------------
-    Matrix& extract_vector(Matrix &v,int row){
-
-	return extract_row(v,row);
+    Matrix& extract_vector(Matrix &v,int start,int end){
+		
+	Matrix *m_aux = new Matrix(end-start+1);
+	int x=1;
+	for (int i=start; i<=end;i++){
+		(*m_aux)(x)=v(i);
+		x++;
+		}
+	return *m_aux;
     }
 //----------------------------------
     Matrix& union_vector(Matrix &v,Matrix &w){

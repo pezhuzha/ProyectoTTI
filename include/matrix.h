@@ -160,14 +160,14 @@ ostream& operator << (ostream &o, Matrix &m);
      * @return producto escalar de v x w
      */
 	Matrix& cross(Matrix &v,Matrix &w);
-
-    /********************************************************************************************
-     * Extrae 
-     * @param v Matrix con tamaño 1 x 3
-     * @param w Matrix con tamaño 1 x 3
-     * @return producto escalar de v x w
+	/**
+     * Extrae del vector v desde la posicion start hasta end, incluidos
+     * @param v Matrix 1 x n
+     * @param start inicio del vector resultado
+     * @param end fin del vector resultado
+     * @return Matrix 1 x (end - start + 1)
      */
-    Matrix& extract_vector(Matrix &v,Matrix &w);
+    Matrix& extract_vector(Matrix &v,int start,int end);
 
     /**
      * Devuelve la matriz resultado de realizar la union entre v y w
