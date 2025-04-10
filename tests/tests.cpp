@@ -2,6 +2,8 @@
 #include "../include/R_x.h"
 #include "../include/R_y.h"
 #include "../include/R_z.h"
+#include "../include/AccelPointMass.h"
+#include "../include/Cheb3D.h"
 #include <cstdio>
 #include <cmath>
 
@@ -517,13 +519,11 @@ int m_assign_column_01() {
     return 0;
 }
 
-int m_R_x_01() {
-	double f = 3;
-	
+int m_R_x_01() {	
 	Matrix A=R_x(10);
 
 
-	Matrix R(f,f);                 
+	Matrix R(3,3);                 
 	R(1,1) = 1; R(1,2) = 0; R(1,3) = 0;
 	R(2,1) = 0; R(2,2) = -0.839071529076452; R(2,3) = -0.54402111088937;
 	R(3,1) = 0; R(3,2) = 0.54402111088937; R(3,3) = -0.839071529076452;
@@ -534,12 +534,10 @@ int m_R_x_01() {
 }
 
 int m_R_y_01() {
-	double f = 3;
 	
 	Matrix A=R_y(10);
 
-
-	Matrix R(f,f);                 
+	Matrix R(3,3);                
 	R(1,1) = -0.839071529076452 ; R(1,2) = 0; R(1,3) = 0.54402111088937;
 	R(2,1) = 0					; R(2,2) = 1; R(2,3) = 0;
 	R(3,1) = -0.54402111088937  ; R(3,2) = 0; R(3,3) = -0.839071529076452;
@@ -551,12 +549,11 @@ int m_R_y_01() {
 }
 
 int m_R_z_01() {
-	double f = 3;
 	
 	Matrix A=R_z(10);
 
 
-	Matrix R(f,f);                 
+	Matrix R(3,3);                   
 	R(1,1) = -0.839071529076452; R(1,2) = -0.54402111088937; R(1,3) = 0;
 	R(2,1) = 0.54402111088937; R(2,2) = -0.839071529076452; R(2,3) = 0;
 	R(3,1) = 0; R(3,2) = 0; R(3,3) = 1;
@@ -568,19 +565,18 @@ int m_R_z_01() {
 }
 
 int m_AccelPointMass_01() {
-	double f = 3;
 	
-	Matrix A(f);
+	Matrix A(3);    
 	
 	A(1,1) = 1; A(1,2) = 1; A(1,3) = 1;
 
-	Matrix B(f);
+	Matrix B(3);
 
 	B(1,1)= 2; B(1,2) = 3; B(1,3) = 4 ;
 
 	Matrix C=AccelPointMass(A,B,10);
 	
-	Matrix R(f);  
+	Matrix R(3);  
 	R(1,1) = 0.0628351366133708; R(1,2) = 0.189703148460208; R(1,3) = 0.316571160307045;
 	
     _assert(m_equals(R, A, 1e-10));

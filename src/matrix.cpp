@@ -193,8 +193,7 @@ Matrix& zeros(const int n_row, const int n_column) {
 			(*m_aux)(i,j) = 0;
 		}
 	}
-	
-	return (*m_aux);
+		return (*m_aux);
 }
 //----------------------------------
 Matrix& eye(const int size){

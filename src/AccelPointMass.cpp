@@ -1,5 +1,6 @@
 #include "../include/AccelPointMass.h"
 #include "../include/matrix.h"
+#include <cmath>
 
     /**
      * @file AccelPointMass.cpp
@@ -7,10 +8,10 @@
      * @author Pedro Zhuzhan
      * @bug No known bugs
      */
-	double	AccelPointMass(Matrix& r,Matrix& s,double GM){
-		
-		double d = r - s;
-		double a = -GM * ( d/(norm(d)**3) + s/(norm(s)**3) );
+	Matrix&	AccelPointMass(Matrix& r,Matrix& s,double GM){
+		Matrix d = r - s;
+		Matrix *a=new Matrix(3);
+		*a=( d/pow(norm(d),3) + s/(pow(norm(s),3)) * -GM);
 
-		return a;
+		return *a;
 	}

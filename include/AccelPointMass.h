@@ -16,7 +16,7 @@ using namespace std;
      * @param GM          Gravitational coefficient of point mass
      * @return Acceleration (a=d^2r/dt^2)
      */
-	double	AccelPointMass(Matrix& r,Matrix& s,double GM);
+	Matrix&	AccelPointMass(Matrix& r,Matrix& s,double GM);
 #endif
 
 
