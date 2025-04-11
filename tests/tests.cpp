@@ -4,6 +4,8 @@
 #include "../include/R_z.h"
 #include "../include/AccelPointMass.h"
 #include "../include/Cheb3D.h"
+#include "../include/EccAnom.h"
+#include "../include/Frac.h"
 #include <cstdio>
 #include <cmath>
 
@@ -607,6 +609,34 @@ int m_Cheb3D_01() {
     
     return 0;
 }
+int m_EccAnom_01() {
+	
+	double R = 2.38006127313934;
+	double D=EccAnom(1,2);
+	
+    _assert(fabs(R-D)< 1e-10);
+    
+    return 0;
+}
+int m_Frac_01() {
+	
+	double R = 0.3801;
+	double D=Frac(2.3801);
+	
+    _assert(fabs(R-D)< 1e-10);
+    
+    return 0;
+}
+
+int m_MeanObliquity_01() {
+	
+	double R = 0.409412815476201;
+	double D=MeanObliquity(41);
+	
+    _assert(fabs(R-D)< 1e-10);
+    
+    return 0;
+}
 int all_tests()
 {
     _verify(m_sum_01);
@@ -635,6 +665,10 @@ int all_tests()
     _verify(m_R_x_01);
     _verify(m_R_y_01);
     _verify(m_R_z_01);
+    _verify(m_Cheb3D_01);
+    _verify(m_EccAnom_01);
+    _verify(m_Frac_01);
+    _verify(m_MeanObliquity_01);
 
     return 0;
 }

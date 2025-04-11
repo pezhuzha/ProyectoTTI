@@ -20,7 +20,7 @@
 		Matrix f2 = zeros(1,3);
 		Matrix old_f1= zeros(1,3);
 		Matrix aux= zeros(1,3);
-		for (int i=N;i>2;i--){
+		for (int i=N;i>=2;i--){
 			old_f1 = f1;
 			aux(1)=Cx(i);
 			aux(2)=Cy(i);
