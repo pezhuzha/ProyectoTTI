@@ -6,6 +6,11 @@
 #include "../include/Cheb3D.h"
 #include "../include/EccAnom.h"
 #include "../include/Frac.h"
+#include "../include/MeanObliquity.h"
+#include "../include/Mjday.h"
+#include "../include/Mjday_TDB.h"
+#include "../include/Position.h"
+#include "../include/sign_.h"
 #include <cstdio>
 #include <cmath>
 
@@ -637,6 +642,47 @@ int m_MeanObliquity_01() {
     
     return 0;
 }
+//********************************************************************************************************************************************************************************************************
+
+int m_Mjday_01() {
+	
+	double R = 0.409412815476201;
+	double D= Mjday(2025,5,5);
+	
+    _assert(fabs(R-D)< 1e-10);
+    
+    return 0;
+}
+int m_Mjday_TDB_01() {
+	
+	double R = 0.409412815476201;
+	double D= Mjday_TDB(2025);
+	
+    _assert(fabs(R-D)< 1e-10);
+    
+    return 0;
+}
+int m_Position_01() {
+	
+	Matrix R(3);
+	R(1) = 6; R(2) = 6; R(3) = 10;
+
+	Matrix D= Position(2,3,4);
+	
+    _assert(m_equals(R, D, 1e-10));
+    
+    return 0;
+}
+int m_sign__01() {
+	
+	double R = -4;
+	double D= sign_(4,-3);
+	
+    _assert(fabs(R-D)< 1e-10);
+    
+    return 0;
+}
+//********************************************************************************************************************************************************************************************************
 int all_tests()
 {
     _verify(m_sum_01);
@@ -669,6 +715,11 @@ int all_tests()
     _verify(m_EccAnom_01);
     _verify(m_Frac_01);
     _verify(m_MeanObliquity_01);
+    _verify(m_Mjday_01);
+    _verify(m_Mjday_TDB_01);
+    _verify(m_Position_01);
+    _verify(m_sign__01);
+
 
     return 0;
 }

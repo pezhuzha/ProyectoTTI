@@ -1,6 +1,5 @@
 #ifndef _Mjday_
 #define _Mjday_
-#include "matrix.h"
 
 using namespace std;
 
@@ -11,10 +10,15 @@ using namespace std;
      * @bug No known bugs
      */
     /**
-     * @param angle angulo de rotacion
-     * @return Matrix resultado
+     * @param year        - year       
+     * @param mon         - month      
+     * @param day         - day    
+     * @param hr          - universal time hour   
+     * @param min         - universal time min   
+     * @param sec         - universal time sec    
+     * @return Modified julian date
      */
-	Matrix& Mjday(double angle);
+	double Mjday(int yr, int mon,int day,int hr=0,int min=0,int sec=0);
 #endif
 
 

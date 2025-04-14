@@ -1,6 +1,5 @@
 #ifndef _MeanObliquity_
 #define _MeanObliquity_
-#include "matrix.h"
 
 using namespace std;
 
@@ -15,7 +14,7 @@ using namespace std;
      * @param Mjd_TT    Modified Julian Date (Terrestrial Time)
      * @return obliquity of the ecliptic [rad]
      */
-	 double MeanObliquity (Mjd_TT);
+	 double MeanObliquity (double Mjd_TT);
 #endif
 
 

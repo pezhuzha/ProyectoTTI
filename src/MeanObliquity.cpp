@@ -1,6 +1,6 @@
 #include "../include/MeanObliquity.h"
 #include "../include/matrix.h"
-#include "../include/const.h"
+#include "../include/SAT_Const.h"
 
     /**
      * @file MeanObliquity.cpp
@@ -8,7 +8,7 @@
      * @author Pedro Zhuzhan
      * @bug No known bugs
      */
-	 double MeanObliquity (Mjd_TT){
+	 double MeanObliquity (double Mjd_TT){
 
 
 		double T = (Mjd_TT-MJD_J2000)/36525;

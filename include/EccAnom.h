@@ -1,6 +1,5 @@
 #ifndef _EccAnom_
 #define _EccAnom_
-#include "matrix.h"
 
 using namespace std;
 

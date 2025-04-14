@@ -1,6 +1,6 @@
 #include "../include/EccAnom.h"
 #include "../include/matrix.h"
-#include "../include/const.h"
+#include "../include/SAT_Const.h"
 
     /**
      * @file EccAnom.cpp

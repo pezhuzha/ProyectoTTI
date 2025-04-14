@@ -1,6 +1,5 @@
 #ifndef _Frac_
 #define _Frac_
-#include "matrix.h"
 
 using namespace std;
 

@@ -1,10 +1,10 @@
-#ifndef _const_
-#define _const_
+#ifndef _SAT_Const_
+#define _SAT_Const_
 
 
     /**
-     * @file const double h
-     * @brief El archivo contiene constantes
+     * @file SAT_Const.h
+     * @brief El archivo contiene SAT_Const
      * @author Pedro Zhuzhan
      * @bug No known bugs
      */
