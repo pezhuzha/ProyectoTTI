@@ -11,8 +11,13 @@
 #include "../include/Mjday_TDB.h"
 #include "../include/Position.h"
 #include "../include/sign_.h"
+#include "../include/timediff.h"
+#include "../include/AzElPa.h"
+#include "../include/IERS.h"
+#include "../include/Legendre.h"
 #include <cstdio>
 #include <cmath>
+#include <tuple>
 
 using namespace std;
 int tests_run = 0;
@@ -682,6 +687,131 @@ int m_sign__01() {
     
     return 0;
 }
+
+int m_timediff_01() {
+	
+	double R0 = -4;
+	double R1 = -4;
+	double R2 = -4;
+	double R3 = -4;
+	double R4 = -4;
+	auto D= timediff(4,10);
+	_assert(fabs(get<0>(D)-R0)< 1e-10);
+	_assert(fabs(get<1>(D)-R1)< 1e-10);
+	_assert(fabs(get<2>(D)-R2)< 1e-10);
+	_assert(fabs(get<3>(D)-R3)< 1e-10);
+	_assert(fabs(get<4>(D)-R4)< 1e-10);
+    
+    return 0;
+}
+int m_AzElPa_01() {
+	Matrix A(3);
+	
+	A(1) = 1; A(2) = 2; A(3) = 3;
+	
+	double R0=0;
+
+	double R1=1;
+
+	Matrix R2(3);
+	
+	R2(1) = 1; R2(2) = 2; R2(3) = 3;
+	Matrix R3(3);
+	
+	R3(1) = 1; R3(2) = 2; R3(3) = 3;
+
+	auto D= AzElPa(A);
+	_assert(fabs(get<0>(D)-R0)< 1e-10);
+	_assert(fabs(get<1>(D)-R1)< 1e-10);
+	_assert(m_equals(get<2>(D),R2,1e-10));
+	_assert(m_equals(get<3>(D),R3,1e-10));
+	
+    
+    return 0;
+}
+int m_IERS_01() {
+
+	
+	Matrix A(4, 13);
+	A(1,1) = 1; A(1,2) = 2; A(1,3) = 5; A(1,4) = 5;
+	A(2,1) = 2; A(2,2) = 1; A(2,3) = 3; A(2,4) = 6;
+	A(3,1) = 5; A(3,2) = 3; A(3,3) = 2; A(3,4) = 3;
+	A(4,1) = 1; A(4,2) = 2; A(4,3) = 4; A(4,4) = 1;
+	A(1,5) = 1; A(1,7) = 2; 
+	A(2,5) = 2; A(2,7) = 1; 
+	A(3,5) = 5; A(3,7) = 3; 
+	A(4,5) = 1; A(4,7) = 2; 
+	A(1,6) = 1; A(1,8) = 2; 
+	A(2,6) = 2; A(2,8) = 1; 
+	A(3,6) = 5; A(3,8) = 3;
+	A(4,6) = 1; A(4,8) = 2; 
+	A(1,9) = 5; 
+	A(2,9) = 3; 
+	A(3,9) = 2;
+	A(4,9) = 4; 
+	A(1,10)= 5; 
+	A(2,10)= 3; 
+ 	A(3,10)= 2; 
+	A(4,10)= 4;
+	A(1,11) = 5;
+	A(2,11) = 6; 
+	A(3,11) = 3;
+	A(4,11) = 1;
+	A(1,12) = 5;
+	A(2,12) = 6;
+ 	A(3,12) = 3;
+	A(4,12) = 1;
+	A(1,13)= 5; 
+	A(2,13)= 3; 
+ 	A(3,13)= 2;
+	A(4,13)= 4;
+
+	double R0 = -4;
+	double R1 = -4;
+	double R2 = -4;
+	double R3 = -4;
+	double R4 = -4;
+	double R5 = -4;
+	double R6 = -4;
+	double R7 = -4;
+	double R8 = -4;
+
+
+	auto D= IERS(A,1,'l');
+	_assert(fabs(get<0>(D)-R0)< 1e-10);
+	_assert(fabs(get<1>(D)-R1)< 1e-10);
+	_assert(fabs(get<2>(D)-R2)< 1e-10);
+	_assert(fabs(get<3>(D)-R3)< 1e-10);
+	_assert(fabs(get<4>(D)-R4)< 1e-10);
+	_assert(fabs(get<5>(D)-R5)< 1e-10);
+	_assert(fabs(get<6>(D)-R6)< 1e-10);
+	_assert(fabs(get<7>(D)-R7)< 1e-10);
+	_assert(fabs(get<8>(D)-R8)< 1e-10);
+	
+    
+    return 0;
+}
+
+int m_Legendre_01() {
+
+
+	Matrix R0 (3,3);                
+	R0(1,1) = -0.839071529076452 ; R0(1,2) = 0; R0(1,3) = 0.54402111088937;
+	R0(2,1) = 0					; R0(2,2) = 1; R0(2,3) = 0;
+	R0(3,1) = -0.54402111088937  ; R0(3,2) = 0; R0(3,3) = -0.839071529076452;
+	Matrix R1 (3,3);                
+	R1(1,1) = -0.839071529076452 ; R1(1,2) = 0; R1(1,3) = 0.54402111088937;
+	R1(2,1) = 0					; R1(2,2) = 1; R1(2,3) = 0;
+	R1(3,1) = -0.54402111088937  ; R1(3,2) = 0; R1(3,3) = -0.839071529076452;
+
+	auto D= Legendre(3,3,1);
+	_assert(m_equals(get<0>(D),R0, 1e-10));
+	_assert(m_equals(get<1>(D),R1,1e-10));
+	
+    
+    return 0;
+}
+
 //********************************************************************************************************************************************************************************************************
 int all_tests()
 {
@@ -719,6 +849,10 @@ int all_tests()
     _verify(m_Mjday_TDB_01);
     _verify(m_Position_01);
     _verify(m_sign__01);
+    _verify(m_timediff_01);
+    _verify(m_AzElPa_01);
+    _verify(m_IERS_01);
+    _verify(m_Legendre_01);
 
 
     return 0;
