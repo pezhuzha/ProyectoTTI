@@ -15,6 +15,8 @@
 #include "../include/AzElPa.h"
 #include "../include/IERS.h"
 #include "../include/Legendre.h"
+#include "../include/NutAngles.h"
+#include "../include/TimeUpdate.h"
 #include <cstdio>
 #include <cmath>
 #include <tuple>
@@ -811,7 +813,53 @@ int m_Legendre_01() {
     
     return 0;
 }
+int m_NutAngles_01() {
 
+
+	double R0 = -4;
+	double R1 = -4;
+
+	auto D= NutAngles(3);
+
+	_assert(fabs(get<0>(D)-R0)< 1e-10);
+	_assert(fabs(get<1>(D)-R1)< 1e-10);
+	
+    
+    return 0;
+}
+int m_TimeUpdate_01() {
+
+	Matrix A(3, 3);
+	A(1,1) = 1; A(1,2) = 4; A(1,3) = 9;
+	A(2,1) = 2; A(2,2) = 3; A(2,3) = 8;
+	A(3,1) = 5; A(3,2) = 6; A(3,3) = 7;
+
+	
+	Matrix B(3,3);
+
+	B(1,1) = 1; B(1,2) = 2; B(1,3) = 5;
+	B(2,1) = 4; B(2,2) = 3; B(2,3) = 6;
+	B(3,1) = 9; B(3,2) = 8; B(3,3) = 7;
+
+	Matrix C(3, 3);
+
+	C(1,1) = 52	; C(1,2) = 102	; C(1,3) = 77	;
+	C(2,1) = 22	; C(2,2) = 34	; C(2,3) = 34	;
+	C(3,1) = 23	; C(3,2) = 36	; C(3,3) = 32	;
+
+
+	Matrix D(3, 3);
+
+	D(1,1) = 52	; D(1,2) = 102	; D(1,3) = 77	;
+	D(2,1) = 22	; D(2,2) = 34	; D(2,3) = 34	;
+	D(3,1) = 23	; D(3,2) = 36	; D(3,3) = 32	;
+
+	Matrix R = TimeUpdate(A,B,C);
+	
+	_assert(m_equals(R,D,1e-10));
+    
+    return 0;
+}
 //********************************************************************************************************************************************************************************************************
 int all_tests()
 {
@@ -853,6 +901,7 @@ int all_tests()
     _verify(m_AzElPa_01);
     _verify(m_IERS_01);
     _verify(m_Legendre_01);
+    _verify(m_NutAngles_01);
 
 
     return 0;
