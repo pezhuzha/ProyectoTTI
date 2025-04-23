@@ -22,6 +22,10 @@ public:
 
     // Parameterized constructor
     /**
+     * Crea un objeto Matrix vacio
+     */
+    Matrix();
+    /**
      * Crea una matriz [0][n] que simula un vector
      * @param n número de columas del vector
      */

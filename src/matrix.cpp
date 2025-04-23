@@ -7,6 +7,13 @@
      * @bug No known bugs
      */
 //----------------------------------
+Matrix::Matrix() {
+	this->n_row = 0;
+	this->n_column = 0;
+	this->data = NULL;
+	
+}
+//----------------------------------
 Matrix::Matrix(const int n_size) {
     if (n_size <= 0) {
 		cout << "Vector create: error in n_row/n_column\n";
@@ -193,7 +200,7 @@ Matrix& zeros(const int n_row, const int n_column) {
 			(*m_aux)(i,j) = 0;
 		}
 	}
-		return (*m_aux);
+	return (*m_aux);
 }
 //----------------------------------
 Matrix& eye(const int size){
@@ -310,7 +317,7 @@ double dot(Matrix &v,Matrix &w){
 		cout << "Vector dot: error in v.n_column, w.n_column\n";
 		exit(EXIT_FAILURE);}
 	double result=0;
-	for(int i=1;i<v.n_column;i++)
+	for(int i=1;i<=v.n_column;i++)
 		result += v(1,i)*w(1,i);
 	return result;
 }
