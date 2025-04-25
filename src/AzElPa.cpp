@@ -29,7 +29,8 @@
 		dEds(1)=-s(1)*s(3)/rho;
 		dEds(2)=-s(2)*s(3)/rho;
 		dEds(3)=rho;
-		dEds=  dEds/ dot(s,s);
+		Matrix aux= dEds/ dot(s,s);
+		dEds= aux;
 
 		return {Az, El, dAds, dEds};
 

@@ -720,11 +720,11 @@ int m_AzElPa_01() {
 	
 	R3(1) = -0.095831484749991; R3(2) = -0.191662969499982; R3(3) = 0.159719141249985;
 
-	auto D= AzElPa(A);
-	_assert(fabs(get<0>(D)-R0)< 1e-10);
-	_assert(fabs(get<1>(D)-R1)< 1e-10);
-	_assert(m_equals(get<2>(D),R2,1e-10));
-	_assert(m_equals(get<3>(D),R3,1e-10));
+	auto [Az, El, dAds, dEds]= AzElPa(A);
+	_assert(fabs(Az-R0)< 1e-10);
+	_assert(fabs(El-R1)< 1e-10);
+	_assert(m_equals(dAds,R2,1e-10));
+	_assert(m_equals(dEds,R3,1e-10));
 	
     
     return 0;
@@ -735,27 +735,27 @@ int m_IERS_01() {
 	
 	eop19620101(13);
 
-	double R0 = -4;
-	double R1 = -4;
-	double R2 = -4;
-	double R3 = -4;
-	double R4 = -4;
-	double R5 = -4;
-	double R6 = -4;
-	double R7 = -4;
-	double R8 = -4;
+	double R0 = -5.59518621231704e-07;
+	double R1 = 2.33458634442529e-06;
+	double R2 =  0.3260677;
+	double R3 = 0.0027213;
+	double R4 = -1.16864337831454e-07;
+	double R5 = -2.48709418409192e-08;
+	double R6 = -8.19335121075116e-10;
+	double R7 =  -1.53201123230613e-09;
+	double R8 = 29;
 
 
-	auto D= IERS(eopdata,1,'l');
-	_assert(fabs(get<0>(D)-R0)< 1e-10);
-	_assert(fabs(get<1>(D)-R1)< 1e-10);
-	_assert(fabs(get<2>(D)-R2)< 1e-10);
-	_assert(fabs(get<3>(D)-R3)< 1e-10);
-	_assert(fabs(get<4>(D)-R4)< 1e-10);
-	_assert(fabs(get<5>(D)-R5)< 1e-10);
-	_assert(fabs(get<6>(D)-R6)< 1e-10);
-	_assert(fabs(get<7>(D)-R7)< 1e-10);
-	_assert(fabs(get<8>(D)-R8)< 1e-10);
+	auto [x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC]= IERS(eopdata,49746,'l');
+	_assert(fabs(x_pole-R0)< 1e-10);
+	_assert(fabs(y_pole-R1)< 1e-10);
+	_assert(fabs(UT1_UTC-R2)< 1e-10);
+	_assert(fabs(LOD-R3)< 1e-10);
+	_assert(fabs(dpsi-R4)< 1e-10);
+	_assert(fabs(deps-R5)< 1e-10);
+	_assert(fabs(dx_pole-R6)< 1e-10);
+	_assert(fabs(dy_pole-R7)< 1e-10);
+	_assert(fabs(TAI_UTC-R8)< 1e-10);
 	
     
     return 0;

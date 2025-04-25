@@ -22,7 +22,8 @@ void eop19620101(int c){
 			&(eopdata (4,j)),&(eopdata (5,j)),&(eopdata (6,j)),
 			&(eopdata (7,j)),&(eopdata (8,j)),&(eopdata (9,j)),
 			&(eopdata (10,j)),&(eopdata (11,j)),&(eopdata (12,j)),
-			&(eopdata (13,j)));
+			&(eopdata (13,j))
+			);
 		}
 		fclose(fid);
 }

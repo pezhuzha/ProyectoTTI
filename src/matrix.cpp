@@ -135,10 +135,19 @@ Matrix& Matrix::operator / (Matrix &m){
 }
 //----------------------------------
 Matrix& Matrix::operator = (Matrix &m){
-	if(this==&m){
-		return (*this); 
+	
+	this->n_row = m.n_row;
+	this->n_column = m.n_column;
+	this->data = (double **) malloc(m.n_row*sizeof(double *));
+	
+    if (this->data == NULL) {
+		cout << "Matrix create: error in data\n";
+        exit(EXIT_FAILURE);
 	}
-
+	
+	for(int i = 0; i < m.n_row; i++) {
+		this->data[i] = (double *) malloc(m.n_column*sizeof(double));
+	}
 	for (int i = 1; i <= this->n_row; i++) {
         for (int j = 1; j <= this->n_column; j++){
 					(*this)(i,j)=m(i,j);
@@ -375,7 +384,7 @@ Matrix& cross(Matrix &v,Matrix &w){
     }
 //----------------------------------
     Matrix& extract_row(Matrix &v,int j){
-		if(v.n_row<j || j<1){
+		if(v.n_row>j || j<1){
 			cout << "Matrix extract_row: error in v.n_row<j\n";
 			exit(EXIT_FAILURE);}
 			Matrix *m_aux = new Matrix(v.n_column);

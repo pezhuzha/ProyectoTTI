@@ -1,6 +1,5 @@
 #ifndef _sign__
 #define _sign__
-#include "matrix.h"
 
 using namespace std;
 
