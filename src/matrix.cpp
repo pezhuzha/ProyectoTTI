@@ -384,9 +384,11 @@ Matrix& cross(Matrix &v,Matrix &w){
     }
 //----------------------------------
     Matrix& extract_row(Matrix &v,int j){
-		if(v.n_row>j || j<1){
-			cout << "Matrix extract_row: error in v.n_row<j\n";
+		if(v.n_row<j || 1>j){
+			cout << "Matrix extract_row: error in"<< v.n_row <<" "<<j<<"\n";
+			cout<<v<<endl;
 			exit(EXIT_FAILURE);}
+			
 			Matrix *m_aux = new Matrix(v.n_column);
 			for (int i=1;i<=v.n_column;i++){
 				(*m_aux)(i)=v(j,i);

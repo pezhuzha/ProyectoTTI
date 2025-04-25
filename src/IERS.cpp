@@ -16,7 +16,7 @@
 	if (interp =='l'){
 	    // linear interpolation
 	    mjd = (floor(Mjd_UTC));
-	    i = 0;
+	    i = 1;
 	    aux=extract_column(eop,4);
 	    for (int j = 1; j <= aux.n_column; ++j) {
 		    if ((aux(j)) == (mjd)) {

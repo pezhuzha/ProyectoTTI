@@ -747,6 +747,13 @@ int m_IERS_01() {
 
 
 	auto [x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC]= IERS(eopdata,49746,'l');
+	cout<< x_pole  <<endl;
+	cout<<  y_pole <<endl;
+	cout<< UT1_UTC  <<endl;
+	cout<< LOD  <<endl;
+	cout<<  dpsi <<endl;
+	cout<<  deps <<endl;
+	cout<<  dx_pole <<endl;
 	_assert(fabs(x_pole-R0)< 1e-10);
 	_assert(fabs(y_pole-R1)< 1e-10);
 	_assert(fabs(UT1_UTC-R2)< 1e-10);
