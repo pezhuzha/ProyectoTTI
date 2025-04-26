@@ -21,7 +21,6 @@
 #include <cstdio>
 #include <cmath>
 #include <tuple>
-#include <iomanip>
 
 using namespace std;
 int tests_run = 0;
@@ -717,7 +716,7 @@ int m_AzElPa_01() {
 int m_IERS_01() {
 
 	
-	eop19620101(15);
+	eop19620101(21413);
 
 	double R0 = -5.59518621231704e-07;
 	double R1 = 2.33458634442529e-06;
@@ -773,17 +772,13 @@ int m_NutAngles_01() {
 	double R1 =  3.87947551912632e-05;
 
 	auto [dpsi, deps]= NutAngles(3);
-	cout<<setprecision(20)<<dpsi<<endl;
-	cout<<setprecision(20)<<R0<<endl;
-	cout<<setprecision(20)<<deps<<endl;
-	cout<<setprecision(20)<<R1<<endl;
 	_assert(fabs(dpsi-R0)< 1e-10);
 	_assert(fabs(deps-R1)< 1e-10);
 	
     
     return 0;
 }
-//***********************************************
+
 int m_TimeUpdate_01() {
 
 	Matrix A(3, 3);
@@ -817,7 +812,7 @@ int m_TimeUpdate_01() {
     
     return 0;
 }
-//********************************************************************************************************************************************************************************************************
+
 int all_tests()
 {
     _verify(m_sum_01);
@@ -855,7 +850,7 @@ int all_tests()
     _verify(m_sign__01);
     _verify(m_timediff_01);
     _verify(m_AzElPa_01);
-    //_verify(m_IERS_01);
+    _verify(m_IERS_01);
     _verify(m_Legendre_01);
     _verify(m_NutAngles_01);
     _verify(m_TimeUpdate_01);

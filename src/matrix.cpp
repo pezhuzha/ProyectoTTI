@@ -405,7 +405,7 @@ Matrix& cross(Matrix &v,Matrix &w){
 //----------------------------------
     Matrix& extract_column(Matrix &v,int j){
 		if(v.n_column<j || j<1){
-			cout << "Matrix extract_column: error in v.n_column<j\n";
+			cout << "Matrix extract_column: error in "<< j <<" "<<v.n_column<<"\n";
 			exit(EXIT_FAILURE);}
 			Matrix *m_aux = new Matrix(v.n_row);
 			for (int i=1;i<=v.n_row;i++){

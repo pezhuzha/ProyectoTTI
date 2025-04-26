@@ -9,14 +9,16 @@
      */
 	tuple<double,double,double,double,double,double,double,double,double> IERS(Matrix eop,double Mjd_UTC,char interp){
 
-	double x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC,mjd,i,mfme,fixf;
+	double x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC,i,fixf;
+	int mjd;
 	Matrix preeop,nexteop,aux;
 	bool contin=true;
 
 	    mjd = (floor(Mjd_UTC));
 	    i = 1;
-	    aux=extract_column(eop,4);
-	    for (int j = 1; j <= aux.n_column && contin; j++) {
+	    aux=extract_row(eop,4);
+
+	    for (int j = 1;  contin && j <= aux.n_column ; j++) {
 		    if (aux(j)==mjd){
 		        i = j;
 		        contin=false;
@@ -24,10 +26,9 @@
 		}
 	if (interp =='l'){
 	    // linear interpolation
-	    preeop = extract_row(eop,i);
-	    nexteop = extract_row(eop,i+1);
-	    mfme = 1440*(Mjd_UTC-floor(Mjd_UTC));
-	    fixf = mfme/1440;
+	    preeop = extract_column(eop,i);
+	    nexteop = extract_column(eop,i+1);
+	    fixf = (Mjd_UTC-floor(Mjd_UTC));
 	    // Setting of IERS Earth rotation parameters
 	    // (UT1-UTC [s], TAI-UTC [s], x ["], y ["])
 	    x_pole  = preeop(5)+(nexteop(5)-preeop(5))*fixf;
