@@ -1,6 +1,5 @@
 #include "../include/AzElPa.h"
 #include "../include/SAT_Const.h"
-#include "../include/matrix.h"
     /**
      * @file AzElPa.cpp
      * @brief El archivo contiene las implementaciones de AzElPa.h

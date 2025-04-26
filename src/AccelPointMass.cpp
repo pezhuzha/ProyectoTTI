@@ -1,5 +1,4 @@
 #include "../include/AccelPointMass.h"
-#include "../include/matrix.h"
 #include <cmath>
 
     /**

@@ -16,11 +16,12 @@ Include dependency graph for matrix.\+h\+:\nopagebreak
 \includegraphics[width=337pt]{matrix_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=240pt]{matrix_8h__dep__incl}
+\includegraphics[width=350pt]{matrix_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Classes}
@@ -49,6 +50,18 @@ double \mbox{\hyperlink{matrix_8h_a907c9c6f53fc52d17e86b507b156536f}{norm}} (\mb
 double \mbox{\hyperlink{matrix_8h_ace64c1017d252d104fe1c99329ae9ecc}{dot}} (\mbox{\hyperlink{classMatrix}{Matrix}} \&v, \mbox{\hyperlink{classMatrix}{Matrix}} \&w)
 \item 
 \mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{matrix_8h_a8f26ea7eab92d1fd60ac732719a486e8}{cross}} (\mbox{\hyperlink{classMatrix}{Matrix}} \&v, \mbox{\hyperlink{classMatrix}{Matrix}} \&w)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\+\_\+vector}} (\mbox{\hyperlink{classMatrix}{Matrix}} \&v, int start, int end)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\+\_\+vector}} (\mbox{\hyperlink{classMatrix}{Matrix}} \&v, \mbox{\hyperlink{classMatrix}{Matrix}} \&w)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{matrix_8h_afa94ffe6b27ac353488f90897fe2f3a9}{extract\+\_\+row}} (\mbox{\hyperlink{classMatrix}{Matrix}} \&v, int i)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{matrix_8h_aca6da092294b7d44ef5bf19d74f88e7e}{extract\+\_\+column}} (\mbox{\hyperlink{classMatrix}{Matrix}} \&v, int i)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{matrix_8h_ab8aeb190b046a07e123a93315cdf5b36}{assign\+\_\+row}} (\mbox{\hyperlink{classMatrix}{Matrix}} \&v, \mbox{\hyperlink{classMatrix}{Matrix}} \&w, int i)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{matrix_8h_a78e903d58755232911e3b5232f38747c}{assign\+\_\+column}} (\mbox{\hyperlink{classMatrix}{Matrix}} \&v, \mbox{\hyperlink{classMatrix}{Matrix}} \&w, int i)
 \end{DoxyCompactItemize}
 
 
@@ -59,10 +72,46 @@ El archivo contiene las funciones para operaciones con matrices y vectores junto
 Pedro Zhuzhan 
 \end{DoxyAuthor}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]No known bugs \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000008}{Bug}}]No known bugs \end{DoxyRefDesc}
 
 
 \doxysubsection{Function Documentation}
+\Hypertarget{matrix_8h_a78e903d58755232911e3b5232f38747c}\index{matrix.h@{matrix.h}!assign\_column@{assign\_column}}
+\index{assign\_column@{assign\_column}!matrix.h@{matrix.h}}
+\doxysubsubsection{\texorpdfstring{assign\_column()}{assign\_column()}}
+{\footnotesize\ttfamily \label{matrix_8h_a78e903d58755232911e3b5232f38747c} 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& assign\+\_\+column (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}} \&}]{v}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}} \&}]{w}{, }\item[{int}]{i}{}\end{DoxyParamCaption})}
+
+Asigna la columna i-\/1 con w y lo devuelve 
+\begin{DoxyParams}{Parameters}
+{\em v} & \doxylink{classMatrix}{Matrix} con tamaño x x y ,x∈N y∈N \\
+\hline
+{\em w} & \doxylink{classMatrix}{Matrix} con tamaño 1 x y ,y∈N \\
+\hline
+{\em i} & es la columna tiene que ser \texorpdfstring{$>$}{>}=1 \&\& \texorpdfstring{$<$}{<}=v.\+n\+\_\+column \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classMatrix}{Matrix} v con la columna i-\/1 cambiada por los elementos de w 
+\end{DoxyReturn}
+\Hypertarget{matrix_8h_ab8aeb190b046a07e123a93315cdf5b36}\index{matrix.h@{matrix.h}!assign\_row@{assign\_row}}
+\index{assign\_row@{assign\_row}!matrix.h@{matrix.h}}
+\doxysubsubsection{\texorpdfstring{assign\_row()}{assign\_row()}}
+{\footnotesize\ttfamily \label{matrix_8h_ab8aeb190b046a07e123a93315cdf5b36} 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& assign\+\_\+row (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}} \&}]{v}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}} \&}]{w}{, }\item[{int}]{i}{}\end{DoxyParamCaption})}
+
+Asigna la fila i-\/1 con w y lo devuelve 
+\begin{DoxyParams}{Parameters}
+{\em v} & \doxylink{classMatrix}{Matrix} con tamaño x x y ,x∈N y∈N \\
+\hline
+{\em w} & \doxylink{classMatrix}{Matrix} con tamaño 1 x y ,y∈N \\
+\hline
+{\em i} & es la fila tiene que ser \texorpdfstring{$>$}{>}=1 \&\& \texorpdfstring{$<$}{<}=v.\+n\+\_\+row \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classMatrix}{Matrix} v con la fila i-\/1 cambiada por los elementos de w 
+\end{DoxyReturn}
 \Hypertarget{matrix_8h_a8f26ea7eab92d1fd60ac732719a486e8}\index{matrix.h@{matrix.h}!cross@{cross}}
 \index{cross@{cross}!matrix.h@{matrix.h}}
 \doxysubsubsection{\texorpdfstring{cross()}{cross()}}
@@ -70,16 +119,6 @@ Pedro Zhuzhan
 \mbox{\hyperlink{classMatrix}{Matrix}} \& cross (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}} \&}]{v}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}} \&}]{w}{}\end{DoxyParamCaption})}
 
 Devulve el producto vectorial 
-\begin{DoxyParams}{Parameters}
-{\em v} & \doxylink{classMatrix}{Matrix} con tamaño 1 x 3 \\
-\hline
-{\em w} & \doxylink{classMatrix}{Matrix} con tamaño 1 x 3 \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-producto escalar de v x w
-\end{DoxyReturn}
-Extrae 
 \begin{DoxyParams}{Parameters}
 {\em v} & \doxylink{classMatrix}{Matrix} con tamaño 1 x 3 \\
 \hline
@@ -104,6 +143,56 @@ Devulve el producto escalar
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 producto escalar de v·w 
+\end{DoxyReturn}
+\Hypertarget{matrix_8h_aca6da092294b7d44ef5bf19d74f88e7e}\index{matrix.h@{matrix.h}!extract\_column@{extract\_column}}
+\index{extract\_column@{extract\_column}!matrix.h@{matrix.h}}
+\doxysubsubsection{\texorpdfstring{extract\_column()}{extract\_column()}}
+{\footnotesize\ttfamily \label{matrix_8h_aca6da092294b7d44ef5bf19d74f88e7e} 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& extract\+\_\+column (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}} \&}]{v}{, }\item[{int}]{i}{}\end{DoxyParamCaption})}
+
+Extrae la columna i-\/1 de v y lo devuelve 
+\begin{DoxyParams}{Parameters}
+{\em v} & \doxylink{classMatrix}{Matrix} \\
+\hline
+{\em i} & es la columna tiene que ser \texorpdfstring{$>$}{>}=1 \&\& \texorpdfstring{$<$}{<}=v.\+n\+\_\+column \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classMatrix}{Matrix} con la columna i-\/1 de v 
+\end{DoxyReturn}
+\Hypertarget{matrix_8h_afa94ffe6b27ac353488f90897fe2f3a9}\index{matrix.h@{matrix.h}!extract\_row@{extract\_row}}
+\index{extract\_row@{extract\_row}!matrix.h@{matrix.h}}
+\doxysubsubsection{\texorpdfstring{extract\_row()}{extract\_row()}}
+{\footnotesize\ttfamily \label{matrix_8h_afa94ffe6b27ac353488f90897fe2f3a9} 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& extract\+\_\+row (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}} \&}]{v}{, }\item[{int}]{i}{}\end{DoxyParamCaption})}
+
+Extrae la fila i-\/1 de v y lo devuelve 
+\begin{DoxyParams}{Parameters}
+{\em v} & \doxylink{classMatrix}{Matrix} \\
+\hline
+{\em i} & es la fila tiene que ser \texorpdfstring{$>$}{>}=1 \&\& \texorpdfstring{$<$}{<}=v.\+n\+\_\+row \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classMatrix}{Matrix} con la fila i-\/1 de v 
+\end{DoxyReturn}
+\Hypertarget{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}\index{matrix.h@{matrix.h}!extract\_vector@{extract\_vector}}
+\index{extract\_vector@{extract\_vector}!matrix.h@{matrix.h}}
+\doxysubsubsection{\texorpdfstring{extract\_vector()}{extract\_vector()}}
+{\footnotesize\ttfamily \label{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce} 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& extract\+\_\+vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}} \&}]{v}{, }\item[{int}]{start}{, }\item[{int}]{end}{}\end{DoxyParamCaption})}
+
+Extrae del vector v desde la posicion start hasta end, incluidos 
+\begin{DoxyParams}{Parameters}
+{\em v} & \doxylink{classMatrix}{Matrix} 1 x n \\
+\hline
+{\em start} & inicio del vector resultado \\
+\hline
+{\em end} & fin del vector resultado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classMatrix}{Matrix} 1 x (end -\/ start + 1) 
 \end{DoxyReturn}
 \Hypertarget{matrix_8h_a8749816ebeb8c1fe55345f9dd24f314b}\index{matrix.h@{matrix.h}!eye@{eye}}
 \index{eye@{eye}!matrix.h@{matrix.h}}
@@ -160,6 +249,22 @@ Crea una \doxylink{classMatrix}{Matrix} traspuesta de m,sin modificar m
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 una \doxylink{classMatrix}{Matrix} traspuesta de m 
+\end{DoxyReturn}
+\Hypertarget{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}\index{matrix.h@{matrix.h}!union\_vector@{union\_vector}}
+\index{union\_vector@{union\_vector}!matrix.h@{matrix.h}}
+\doxysubsubsection{\texorpdfstring{union\_vector()}{union\_vector()}}
+{\footnotesize\ttfamily \label{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a} 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& union\+\_\+vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}} \&}]{v}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}} \&}]{w}{}\end{DoxyParamCaption})}
+
+Devuelve la matriz resultado de realizar la union entre v y w 
+\begin{DoxyParams}{Parameters}
+{\em v} & \doxylink{classMatrix}{Matrix} con tamaño 1 x n ,n∈N \\
+\hline
+{\em w} & \doxylink{classMatrix}{Matrix} con tamaño 1 x n ,n∈N \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+producto escalar de v x w 
 \end{DoxyReturn}
 \Hypertarget{matrix_8h_ab2f05195ce5c6c4b6e00df63a50c329d}\index{matrix.h@{matrix.h}!zeros@{zeros}}
 \index{zeros@{zeros}!matrix.h@{matrix.h}}

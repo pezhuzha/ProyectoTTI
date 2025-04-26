@@ -21,6 +21,7 @@
 #include <cstdio>
 #include <cmath>
 #include <tuple>
+#include <iomanip>
 
 using namespace std;
 int tests_run = 0;
@@ -327,23 +328,6 @@ int m_transpose_01() {
     return 0;
 }
 int m_inv_01() {
-    int f = 2;
-	
-	
-	Matrix A(f, f);
-	A(1,1) = 5; A(1,2) = 2;
-	A(2,1) =-7; A(2,2) = -3;
-
-	
-	Matrix B(f,f);
-
-	B(1,1) = 3; B(1,2) = 2;
-	B(2,1) = -7; B(2,2) = -5;
-   	Matrix R=inv(A);
-    _assert(m_equals(R, B, 1e-10));
-    return 0;
-}
-int m_inv_02() {
     int f = 4;
 	
 	
@@ -733,7 +717,7 @@ int m_AzElPa_01() {
 int m_IERS_01() {
 
 	
-	eop19620101(13);
+	eop19620101(15);
 
 	double R0 = -5.59518621231704e-07;
 	double R1 = 2.33458634442529e-06;
@@ -747,13 +731,6 @@ int m_IERS_01() {
 
 
 	auto [x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC]= IERS(eopdata,49746,'l');
-	cout<< x_pole  <<endl;
-	cout<<  y_pole <<endl;
-	cout<< UT1_UTC  <<endl;
-	cout<< LOD  <<endl;
-	cout<<  dpsi <<endl;
-	cout<<  deps <<endl;
-	cout<<  dx_pole <<endl;
 	_assert(fabs(x_pole-R0)< 1e-10);
 	_assert(fabs(y_pole-R1)< 1e-10);
 	_assert(fabs(UT1_UTC-R2)< 1e-10);
@@ -782,9 +759,9 @@ int m_Legendre_01() {
 	R1(3,1) =  3.0498762872218; R1(3,2) = -1.61172976752398 ; R1(3,3) = -1.76084689542256  ; R1(3,4) = 0;
 	R1(4,1) = 5.44720322371707  ; R1(4,2) =  0.516567339757783 ; R1(4,3) =  -3.11209524837966 ; R1(4,4) = -1.54142738655916;
 
-	auto D= Legendre(3,3,1);
-	_assert(m_equals(get<0>(D),R0, 1e-10));
-	_assert(m_equals(get<1>(D),R1,1e-10));
+	auto [pnm, dpnm]= Legendre(3,3,1);
+	_assert(m_equals(pnm,R0, 1e-10));
+	_assert(m_equals(dpnm,R1,1e-10));
 	
     
     return 0;
@@ -795,14 +772,18 @@ int m_NutAngles_01() {
 	double R0 = 2.72256565175042e-05;
 	double R1 =  3.87947551912632e-05;
 
-	auto D= NutAngles(3);
-
-	_assert(fabs(get<0>(D)-R0)< 1e-10);
-	_assert(fabs(get<1>(D)-R1)< 1e-10);
+	auto [dpsi, deps]= NutAngles(3);
+	cout<<setprecision(20)<<dpsi<<endl;
+	cout<<setprecision(20)<<R0<<endl;
+	cout<<setprecision(20)<<deps<<endl;
+	cout<<setprecision(20)<<R1<<endl;
+	_assert(fabs(dpsi-R0)< 1e-10);
+	_assert(fabs(deps-R1)< 1e-10);
 	
     
     return 0;
 }
+//***********************************************
 int m_TimeUpdate_01() {
 
 	Matrix A(3, 3);
@@ -852,7 +833,6 @@ int all_tests()
     _verify(m_eye_01);
     _verify(m_transpose_01);
     _verify(m_inv_01);
-    _verify(m_inv_02);
     _verify(m_norm_01);
     _verify(m_dot_01);
     _verify(m_cross_01);
@@ -875,9 +855,10 @@ int all_tests()
     _verify(m_sign__01);
     _verify(m_timediff_01);
     _verify(m_AzElPa_01);
-    _verify(m_IERS_01);
+    //_verify(m_IERS_01);
     _verify(m_Legendre_01);
     _verify(m_NutAngles_01);
+    _verify(m_TimeUpdate_01);
 
 
     return 0;

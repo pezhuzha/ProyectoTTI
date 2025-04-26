@@ -1,5 +1,4 @@
 #include "../include/Cheb3D.h"
-#include "../include/matrix.h"
 
     /**
      * @file Cheb3D.cpp

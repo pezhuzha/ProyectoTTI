@@ -14,7 +14,7 @@
 		double T3 = T2*T;
 		double rev = 360*3600; // arcsec/revolution
 
-		double N_coeff = 106;
+		int N_coeff = 106;
 		Matrix C(106,9);
 		double values[106][9]={
 		 // l  l' F  D Om    dpsi    *T     deps     *T
@@ -151,11 +151,11 @@
 		double dpsi = 0;
 		double deps = 0;
 		double arg;
-		for (int i=1;i<N_coeff;i++){
+		for (int i=1;i<=N_coeff;i++){
 		  arg  =  ( C(i,1)*l+C(i,2)*lp+C(i,3)*F+C(i,4)*D+C(i,5)*Om )/Arcs;
 		  dpsi = dpsi + ( C(i,6)+C(i,7)*T ) * sin(arg);
-		  deps = deps + ( C(i,8)+C(i,9)*T ) * cos(arg);}
-
+		  deps = deps + ( C(i,8)+C(i,9)*T ) * cos(arg);
+		}
 		dpsi = 1.0e-5 * dpsi/Arcs;
 		deps = 1.0e-5 * deps/Arcs;
 		return {dpsi,deps};

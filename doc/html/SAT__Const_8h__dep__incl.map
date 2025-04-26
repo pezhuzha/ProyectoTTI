@@ -1,0 +1,15 @@
+<map id="/home/fghfgh/Escritorio/ProyectoTTI/include/SAT_Const.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/SAT_Const.h">
+<area shape="rect" id="Node000001" title="El archivo contiene SAT_Const." alt="" coords="595,5,778,60"/>
+<area shape="rect" id="Node000002" href="$AzElPa_8cpp.html" title="El archivo contiene las implementaciones de AzElPa.h." alt="" coords="5,108,205,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="582,53,218,111,206,113,205,107,217,105,581,48"/>
+<area shape="rect" id="Node000003" href="$EccAnom_8cpp.html" title="El archivo contiene las implementaciones de EccAnom.h." alt="" coords="230,108,447,148"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="583,64,410,110,408,105,581,59"/>
+<area shape="rect" id="Node000004" href="$IERS_8cpp.html" title="El archivo contiene las implementaciones de IERS.h." alt="" coords="472,108,659,148"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="643,71,591,110,588,106,640,66"/>
+<area shape="rect" id="Node000005" href="$MeanObliquity_8cpp.html" title="El archivo contiene las implementaciones de MeanObliquity.h." alt="" coords="683,108,933,148"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="733,66,785,106,782,110,730,71"/>
+<area shape="rect" id="Node000006" href="$NutAngles_8cpp.html" title="El archivo contiene las implementaciones de NutAngles.h." alt="" coords="957,108,1181,148"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="792,57,993,105,991,111,791,62"/>
+<area shape="rect" id="Node000007" href="$Position_8cpp.html" title="El archivo contiene las implementaciones de Position.h." alt="" coords="1206,108,1415,148"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="792,46,1194,105,1206,107,1205,113,1193,111,791,52"/>
+</map>

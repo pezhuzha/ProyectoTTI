@@ -1,7 +1,8 @@
 #include "../include/EccAnom.h"
-#include "../include/matrix.h"
+#include <cmath>
 #include "../include/SAT_Const.h"
-
+#include <iostream>
+using namespace std;
     /**
      * @file EccAnom.cpp
      * @brief El archivo contiene las implementaciones de EccAnom.h

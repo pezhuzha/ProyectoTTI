@@ -1,5 +1,5 @@
 #include "../include/Frac.h"
-#include "../include/matrix.h"
+#include <cmath>
 
     /**
      * @file Frac.cpp

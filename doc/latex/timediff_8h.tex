@@ -1,0 +1,58 @@
+\doxysection{/home/fghfgh/\+Escritorio/\+Proyecto\+TTI/include/timediff.h File Reference}
+\hypertarget{timediff_8h}{}\label{timediff_8h}\index{/home/fghfgh/Escritorio/ProyectoTTI/include/timediff.h@{/home/fghfgh/Escritorio/ProyectoTTI/include/timediff.h}}
+
+
+El archivo contiene la funcion timediff.  
+
+
+{\ttfamily \#include $<$tuple$>$}\newline
+Include dependency graph for timediff.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{timediff_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{timediff_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+tuple$<$ double, double, double, double, double $>$ \mbox{\hyperlink{timediff_8h_a0772112289293a570d2edb0667dbb3a9}{timediff}} (double UT1\+\_\+\+UTC, double TAI\+\_\+\+UTC)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+El archivo contiene la funcion timediff. 
+
+\begin{DoxyAuthor}{Author}
+Pedro Zhuzhan 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000019}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{timediff_8h_a0772112289293a570d2edb0667dbb3a9}\index{timediff.h@{timediff.h}!timediff@{timediff}}
+\index{timediff@{timediff}!timediff.h@{timediff.h}}
+\doxysubsubsection{\texorpdfstring{timediff()}{timediff()}}
+{\footnotesize\ttfamily \label{timediff_8h_a0772112289293a570d2edb0667dbb3a9} 
+tuple$<$ double, double, double, double, double $>$ timediff (\begin{DoxyParamCaption}\item[{double}]{UT1\+\_\+\+UTC}{, }\item[{double}]{TAI\+\_\+\+UTC}{}\end{DoxyParamCaption})}
+
+Time differences \mbox{[}s\mbox{]} 
+\begin{DoxyParams}{Parameters}
+{\em UT1\+\_\+\+UTC} & double \\
+\hline
+{\em TAI\+\_\+\+UTC} & double \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+tupla \texorpdfstring{$<$}{<}UT1\+\_\+\+TAI, UTC\+\_\+\+GPS, UT1\+\_\+\+GPS, TT\+\_\+\+UTC, GPS\+\_\+\+UTC\texorpdfstring{$>$}{>} 
+\end{DoxyReturn}

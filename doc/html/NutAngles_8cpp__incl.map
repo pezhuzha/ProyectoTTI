@@ -1,0 +1,20 @@
+<map id="/home/fghfgh/Escritorio/ProyectoTTI/src/NutAngles.cpp" name="/home/fghfgh/Escritorio/ProyectoTTI/src/NutAngles.cpp">
+<area shape="rect" id="Node000001" title="El archivo contiene las implementaciones de NutAngles.h." alt="" coords="253,5,477,45"/>
+<area shape="rect" id="Node000002" href="$NutAngles_8h.html" title="El archivo contiene la funcion NutAngles." alt="" coords="5,93,169,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="299,48,142,92,140,87,298,43"/>
+<area shape="rect" id="Node000004" href="$SAT__Const_8h.html" title="El archivo contiene SAT_Const." alt="" coords="193,93,360,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="345,48,302,86,298,82,342,44"/>
+<area shape="rect" id="Node000005" href="$matrix_8h.html" title="El archivo contiene las funciones para operaciones con matrices y vectores junto con su definicion." alt="" coords="384,93,524,119"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="388,44,432,82,429,86,385,48"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="531,167,593,192"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="458,43,501,62,539,92,556,121,563,152,558,153,551,123,535,95,498,67,456,48"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="60,167,115,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="90,119,90,153,85,153,85,119"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="250,167,311,192"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="427,121,323,164,321,159,425,116"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="336,167,401,192"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="442,121,395,160,391,156,439,117"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="473,116,534,157,531,161,470,121"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="426,167,506,192"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="459,119,464,153,459,154,453,119"/>
+</map>

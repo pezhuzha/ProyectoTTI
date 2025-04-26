@@ -1,7 +1,7 @@
 #ifndef _Legendre_
 #define _Legendre_
 #include <tuple>
-#include "../include/matrix.h"
+#include "matrix.h"
 using namespace std;
 
     /**

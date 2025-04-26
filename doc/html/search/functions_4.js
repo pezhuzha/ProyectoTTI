@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['matrix_0',['Matrix',['../classMatrix.html#a1664c2d8e4f339facb149d4f7896bd9a',1,'Matrix::Matrix(const int n)'],['../classMatrix.html#a025f8b6a2384b2b54d6049e49351770c',1,'Matrix::Matrix(const int n_row, const int n_column)']]]
+  ['frac_0',['Frac',['../Frac_8h.html#a92f2f0f91c99cd6bec1a0e9a3b6443fc',1,'Frac(double x):&#160;Frac.cpp'],['../Frac_8cpp.html#a92f2f0f91c99cd6bec1a0e9a3b6443fc',1,'Frac(double x):&#160;Frac.cpp']]]
 ];

@@ -1,5 +1,4 @@
 #include "../include/IERS.h"
-#include "../include/matrix.h"
 #include "../include/SAT_Const.h"
 
     /**
@@ -11,19 +10,20 @@
 	tuple<double,double,double,double,double,double,double,double,double> IERS(Matrix eop,double Mjd_UTC,char interp){
 
 	double x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC,mjd,i,mfme,fixf;
-	Matrix preeop(13),nexteop(13),aux(13);
+	Matrix preeop,nexteop,aux;
+	bool contin=true;
 
-	if (interp =='l'){
-	    // linear interpolation
 	    mjd = (floor(Mjd_UTC));
 	    i = 1;
 	    aux=extract_column(eop,4);
-	    for (int j = 1; j <= aux.n_column; ++j) {
-		    if ((aux(j)) == (mjd)) {
+	    for (int j = 1; j <= aux.n_column && contin; j++) {
+		    if (aux(j)==mjd){
 		        i = j;
-		        break;
+		        contin=false;
 		    }
 		}
+	if (interp =='l'){
+	    // linear interpolation
 	    preeop = extract_row(eop,i);
 	    nexteop = extract_row(eop,i+1);
 	    mfme = 1440*(Mjd_UTC-floor(Mjd_UTC));
@@ -48,16 +48,8 @@
 	    dy_pole = dy_pole/Arcs; // Pole coordinate [rad]
 	}
 	else if (interp =='n')    {
-	    mjd = (floor(Mjd_UTC));
-	    i = 0;
-	    aux=extract_column(eop,4);
-	    for (int j = 1; j <= aux.n_column; ++j) {
-		    if ((aux(j)) == (mjd)) {
-		        i = j;
-		        break;
-		    }
-		}
-	    eop = extract_row(eop,i);
+	    aux = extract_row(eop,i);
+	    eop=aux;
 	    // Setting of IERS Earth rotation parameters
 	    // (UT1-UTC [s], TAI-UTC [s], x ["], y ["])
 	    x_pole  = eop(5)/Arcs;  // Pole coordinate [rad]

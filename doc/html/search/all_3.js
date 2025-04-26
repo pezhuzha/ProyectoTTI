@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['eye_0',['eye',['../matrix_8h.html#a8749816ebeb8c1fe55345f9dd24f314b',1,'eye(const int size):&#160;matrix.cpp'],['../matrix_8cpp.html#a8749816ebeb8c1fe55345f9dd24f314b',1,'eye(const int size):&#160;matrix.cpp']]]
+  ['dot_0',['dot',['../matrix_8h.html#ace64c1017d252d104fe1c99329ae9ecc',1,'dot(Matrix &amp;v, Matrix &amp;w):&#160;matrix.cpp'],['../matrix_8cpp.html#ace64c1017d252d104fe1c99329ae9ecc',1,'dot(Matrix &amp;v, Matrix &amp;w):&#160;matrix.cpp']]]
 ];

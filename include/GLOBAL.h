@@ -1,7 +1,7 @@
 #ifndef _GLOBAL_
 #define _GLOBAL_
 using namespace std;
-#include "../include/matrix.h"
+#include "matrix.h"
 #include <cmath>
 
 extern Matrix eopdata;

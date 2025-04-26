@@ -1,0 +1,61 @@
+\doxysection{/home/fghfgh/\+Escritorio/\+Proyecto\+TTI/include/\+IERS.h File Reference}
+\hypertarget{IERS_8h}{}\label{IERS_8h}\index{/home/fghfgh/Escritorio/ProyectoTTI/include/IERS.h@{/home/fghfgh/Escritorio/ProyectoTTI/include/IERS.h}}
+
+
+El archivo contiene la funcion IERS.  
+
+
+{\ttfamily \#include $<$tuple$>$}\newline
+{\ttfamily \#include "{}matrix.\+h"{}}\newline
+Include dependency graph for IERS.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{IERS_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{IERS_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+tuple$<$ double, double, double, double, double, double, double, double, double $>$ \mbox{\hyperlink{IERS_8h_afdc37e22b677cc00a94f8dfcadd2df15}{IERS}} (\mbox{\hyperlink{classMatrix}{Matrix}} eop, double Mjd\+\_\+\+UTC, char interp=\textquotesingle{}n\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+El archivo contiene la funcion IERS. 
+
+\begin{DoxyAuthor}{Author}
+Pedro Zhuzhan 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000006}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{IERS_8h_afdc37e22b677cc00a94f8dfcadd2df15}\index{IERS.h@{IERS.h}!IERS@{IERS}}
+\index{IERS@{IERS}!IERS.h@{IERS.h}}
+\doxysubsubsection{\texorpdfstring{IERS()}{IERS()}}
+{\footnotesize\ttfamily \label{IERS_8h_afdc37e22b677cc00a94f8dfcadd2df15} 
+tuple$<$ double, double, double, double, double, double, double, double, double $>$ IERS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}}}]{eop}{, }\item[{double}]{Mjd\+\_\+\+UTC}{, }\item[{char}]{interp}{ = {\ttfamily \textquotesingle{}n\textquotesingle{}}}\end{DoxyParamCaption})}
+
+IERS\+: Management of IERS time and polar motion data 
+\begin{DoxyParams}{Parameters}
+{\em eop} & matrix 4x13 \\
+\hline
+{\em Mjd\+\_\+\+UTC} & double \\
+\hline
+{\em interp} & char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+tupla \texorpdfstring{$<$}{<}x\+\_\+pole,y\+\_\+pole,UT1\+\_\+\+UTC,LOD,dpsi,deps,dx\+\_\+pole,dy\+\_\+pole,TAI\+\_\+\+UTC\texorpdfstring{$>$}{>} 
+\end{DoxyReturn}

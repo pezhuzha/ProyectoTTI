@@ -1,5 +1,4 @@
 #include "../include/MeanObliquity.h"
-#include "../include/matrix.h"
 #include "../include/SAT_Const.h"
 
     /**

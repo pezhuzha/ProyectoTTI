@@ -1,0 +1,58 @@
+\doxysection{/home/fghfgh/\+Escritorio/\+Proyecto\+TTI/include/\+Az\+El\+Pa.h File Reference}
+\hypertarget{AzElPa_8h}{}\label{AzElPa_8h}\index{/home/fghfgh/Escritorio/ProyectoTTI/include/AzElPa.h@{/home/fghfgh/Escritorio/ProyectoTTI/include/AzElPa.h}}
+
+
+El archivo contiene la funcion Az\+El\+Pa.  
+
+
+{\ttfamily \#include $<$tuple$>$}\newline
+{\ttfamily \#include "{}matrix.\+h"{}}\newline
+Include dependency graph for Az\+El\+Pa.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{AzElPa_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{AzElPa_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+tuple$<$ double, double, \mbox{\hyperlink{classMatrix}{Matrix}}, \mbox{\hyperlink{classMatrix}{Matrix}} $>$ \mbox{\hyperlink{AzElPa_8h_a1ab13f284b54005bad4d943b43f8ca39}{Az\+El\+Pa}} (\mbox{\hyperlink{classMatrix}{Matrix}} s)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+El archivo contiene la funcion Az\+El\+Pa. 
+
+\begin{DoxyAuthor}{Author}
+Pedro Zhuzhan 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000002}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{AzElPa_8h_a1ab13f284b54005bad4d943b43f8ca39}\index{AzElPa.h@{AzElPa.h}!AzElPa@{AzElPa}}
+\index{AzElPa@{AzElPa}!AzElPa.h@{AzElPa.h}}
+\doxysubsubsection{\texorpdfstring{AzElPa()}{AzElPa()}}
+{\footnotesize\ttfamily \label{AzElPa_8h_a1ab13f284b54005bad4d943b43f8ca39} 
+tuple$<$ double, double, \mbox{\hyperlink{classMatrix}{Matrix}}, \mbox{\hyperlink{classMatrix}{Matrix}} $>$ Az\+El\+Pa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}}}]{s}{}\end{DoxyParamCaption})}
+
+Computes azimuth, elevation and partials from local tangent coordinates s ~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em s} & \doxylink{classMatrix}{Matrix} 1x3 Topocentric local tangent coordinates (East-\/\+North-\/\+Zenith frame) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+tuple$<$\+A,\+E,d\+Ads,d\+Eds$>$ Azimuth \mbox{[}rad\mbox{]},Elevation \mbox{[}rad\mbox{]},Partials of azimuth w.\+r.\+t. s,Partials of elevation w.\+r.\+t. s 
+\end{DoxyReturn}

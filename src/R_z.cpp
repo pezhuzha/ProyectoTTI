@@ -1,5 +1,4 @@
 #include "../include/R_z.h"
-#include "../include/matrix.h"
 
     /**
      * @file R_z.cpp

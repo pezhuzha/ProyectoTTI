@@ -1,0 +1,53 @@
+\doxysection{/home/fghfgh/\+Escritorio/\+Proyecto\+TTI/src/\+IERS.cpp File Reference}
+\hypertarget{IERS_8cpp}{}\label{IERS_8cpp}\index{/home/fghfgh/Escritorio/ProyectoTTI/src/IERS.cpp@{/home/fghfgh/Escritorio/ProyectoTTI/src/IERS.cpp}}
+
+
+El archivo contiene las implementaciones de \doxylink{IERS_8h}{IERS.\+h}.  
+
+
+{\ttfamily \#include "{}../include/\+IERS.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+SAT\+\_\+\+Const.\+h"{}}\newline
+Include dependency graph for IERS.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{IERS_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+tuple$<$ double, double, double, double, double, double, double, double, double $>$ \mbox{\hyperlink{IERS_8cpp_ae4095fd45e2fa0d01781aa07e7e7bc3b}{IERS}} (\mbox{\hyperlink{classMatrix}{Matrix}} eop, double Mjd\+\_\+\+UTC, char interp)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+El archivo contiene las implementaciones de \doxylink{IERS_8h}{IERS.\+h}. 
+
+\begin{DoxyAuthor}{Author}
+Pedro Zhuzhan 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000027}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{IERS_8cpp_ae4095fd45e2fa0d01781aa07e7e7bc3b}\index{IERS.cpp@{IERS.cpp}!IERS@{IERS}}
+\index{IERS@{IERS}!IERS.cpp@{IERS.cpp}}
+\doxysubsubsection{\texorpdfstring{IERS()}{IERS()}}
+{\footnotesize\ttfamily \label{IERS_8cpp_ae4095fd45e2fa0d01781aa07e7e7bc3b} 
+tuple$<$ double, double, double, double, double, double, double, double, double $>$ IERS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}}}]{eop}{, }\item[{double}]{Mjd\+\_\+\+UTC}{, }\item[{char}]{interp}{ = {\ttfamily \textquotesingle{}n\textquotesingle{}}}\end{DoxyParamCaption})}
+
+IERS\+: Management of IERS time and polar motion data 
+\begin{DoxyParams}{Parameters}
+{\em eop} & matrix 4x13 \\
+\hline
+{\em Mjd\+\_\+\+UTC} & double \\
+\hline
+{\em interp} & char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+tupla \texorpdfstring{$<$}{<}x\+\_\+pole,y\+\_\+pole,UT1\+\_\+\+UTC,LOD,dpsi,deps,dx\+\_\+pole,dy\+\_\+pole,TAI\+\_\+\+UTC\texorpdfstring{$>$}{>} 
+\end{DoxyReturn}

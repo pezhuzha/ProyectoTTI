@@ -14,6 +14,7 @@ void eop19620101(int c){
 		FILE *fid = fopen("../data/eop19620101.txt","r");
 		if(fid==NULL){
 			cout << "Fail open eop19620101.txt file \n";
+			perror("Error");
 			exit(EXIT_FAILURE);
 		}
 		for (int j=1;j<=c;j++){

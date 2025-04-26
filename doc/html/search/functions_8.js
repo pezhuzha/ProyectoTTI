@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['zeros_0',['zeros',['../matrix_8h.html#a56d60ea1f08402246a7cfd477d69a618',1,'zeros(const int n_row, const int n_column):&#160;matrix.cpp'],['../matrix_8h.html#ab2f05195ce5c6c4b6e00df63a50c329d',1,'zeros(const int n):&#160;matrix.cpp'],['../matrix_8cpp.html#a56d60ea1f08402246a7cfd477d69a618',1,'zeros(const int n_row, const int n_column):&#160;matrix.cpp'],['../matrix_8cpp.html#ab2f05195ce5c6c4b6e00df63a50c329d',1,'zeros(const int n):&#160;matrix.cpp']]]
+  ['norm_0',['norm',['../matrix_8h.html#a907c9c6f53fc52d17e86b507b156536f',1,'norm(Matrix &amp;m):&#160;matrix.cpp'],['../matrix_8cpp.html#a907c9c6f53fc52d17e86b507b156536f',1,'norm(Matrix &amp;m):&#160;matrix.cpp']]],
+  ['nutangles_1',['NutAngles',['../NutAngles_8h.html#a8028f5f2ac1a0a2126d8edf6a5ed80c6',1,'NutAngles(double Mjd_TT):&#160;NutAngles.cpp'],['../NutAngles_8cpp.html#a8028f5f2ac1a0a2126d8edf6a5ed80c6',1,'NutAngles(double Mjd_TT):&#160;NutAngles.cpp']]]
 ];
