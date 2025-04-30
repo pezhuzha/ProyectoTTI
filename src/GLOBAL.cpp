@@ -28,3 +28,28 @@ void eop19620101(int c){
 		}
 		fclose(fid);
 }
+
+Matrix Cnm;
+Matrix Snm;
+
+void GGM03S(){
+	Cnm=zeros(181,181);
+	Snm=zeros(181,181);
+		FILE *fid = fopen("../data/GGM03S.txt","r");
+		if(fid==NULL){
+			cout << "Fail open GGM03S.txt file \n";
+			perror("Error");
+			exit(EXIT_FAILURE);
+		}
+		double aux;
+		for(int i=1;i<=181;i++){
+			for (int j=1;j<=181;j++){
+				 fscanf(fid,"%lf %lf %lf %lf %lf %lf",
+				 &aux,&aux,
+				 &Cnm(i,j),&Snm(i,j),
+				 &aux,&aux
+				);
+			}
+		}
+		fclose(fid);
+}

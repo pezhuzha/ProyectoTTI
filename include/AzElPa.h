@@ -15,7 +15,7 @@ using namespace std;
      * @param s Matrix 1x3 Topocentric local tangent coordinates (East-North-Zenith frame)
      * @return tuple<A,E,dAds,dEds>      Azimuth [rad],Elevation [rad],Partials of azimuth w.r.t. s,Partials of elevation w.r.t. s
      */
-	tuple<double,double,Matrix,Matrix> AzElPa(Matrix s);
+	tuple<double,double,Matrix&,Matrix&> AzElPa(Matrix s);
 #endif
 
 

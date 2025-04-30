@@ -5,9 +5,9 @@
      * @author Pedro Zhuzhan
      * @bug No known bugs
      */
-	tuple<Matrix,Matrix>  Legendre(int n,int m,double fi){
-	Matrix pnm = zeros(n+1,m+1);
-	Matrix dpnm = zeros(n+1,m+1);
+	tuple<Matrix&,Matrix&>  Legendre(int n,int m,double fi){
+	Matrix &pnm = zeros(n+1,m+1);
+	Matrix &dpnm = zeros(n+1,m+1);
 	int i=0;
 
 	pnm(1,1)=1;
@@ -28,7 +28,7 @@
 	// horizontal second step coefficients
 	int j=0;
 	int k=2;
-	while(1){
+	while(true){
 	    for (i=k;i<=n;i++){
 	        pnm(i+1,j+1)=sqrt((2.0*i+1)/((i-j)*(i+j)))*((sqrt(2.0*i-1)*sin(fi)*pnm(i,j+1)) -(sqrt(((i+j-1)*(i-j-1))/(2.0*i-3))*pnm(i-1,j+1)));}
 	    j = j+1;
@@ -40,7 +40,7 @@
 	    
 	j = 0;
 	k = 2;
-	while(1){
+	while(true){
 	    for (i=k;i<=n;i++){   
 	        dpnm(i+1,j+1)=sqrt((2.0*i+1)/((i-j)*(i+j)))*((sqrt(2.0*i-1)*sin(fi)*dpnm(i,j+1))+(sqrt(2.0*i-1)*cos(fi)*pnm(i,j+1))
 	        	-(sqrt(((i+j-1)*(i-j-1))/(2.0*i-3))*dpnm(i-1,j+1)));}
@@ -51,5 +51,5 @@
 	    }
 
 		}
-		return {pnm, dpnm};
+		return tie(pnm, dpnm);
 }

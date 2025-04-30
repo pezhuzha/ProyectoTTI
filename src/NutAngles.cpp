@@ -158,5 +158,5 @@
 		}
 		dpsi = 1.0e-5 * dpsi/Arcs;
 		deps = 1.0e-5 * deps/Arcs;
-		return {dpsi,deps};
+		return tie(dpsi,deps);
 	}

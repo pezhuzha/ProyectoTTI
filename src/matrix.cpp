@@ -106,7 +106,7 @@ Matrix& Matrix::operator - (Matrix &m) {
 //----------------------------------
 Matrix& Matrix::operator * (Matrix &m){
 	if (this->n_column != m.n_row) {
-		cout << "Matrix sub: error in n->n_column, m.n_row\n";
+		cout << "Matrix muliplication: error in n->n_column, m.n_row\n";
         exit(EXIT_FAILURE);
 	}
 	

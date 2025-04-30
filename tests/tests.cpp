@@ -18,6 +18,7 @@
 #include "../include/NutAngles.h"
 #include "../include/TimeUpdate.h"
 #include "../include/GLOBAL.h"
+#include "../include/AccelHarmonic.h"
 #include <cstdio>
 #include <cmath>
 #include <tuple>
@@ -812,7 +813,22 @@ int m_TimeUpdate_01() {
     
     return 0;
 }
+int m_AccelHarmonic_01() {
 
+	double R0=-4.24799110134732e+35;
+	Matrix A(3);
+	A(1)=1;
+	A(2)=2;
+	A(3)=3;
+
+	Matrix B=transpose(A);
+	double R = AccelHarmonic(A,B,5,5);
+	cout<<R;
+	
+	_assert(fabs(R-R0)< 1e-10);
+    
+    return 0;
+}
 int all_tests()
 {
     _verify(m_sum_01);
@@ -854,6 +870,7 @@ int all_tests()
     _verify(m_Legendre_01);
     _verify(m_NutAngles_01);
     _verify(m_TimeUpdate_01);
+    _verify(m_AccelHarmonic_01);
 
 
     return 0;
