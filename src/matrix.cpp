@@ -373,22 +373,7 @@ Matrix& cross(Matrix &v,Matrix &w){
     		(*v_aux)(x)=w(i);
     		x++;
     	}
-    	for(int i=1; i<=length;i++){
-    		for(int j=i+1;j<=length;j++){
-    			if((*v_aux)(i)==(*v_aux)(j)){
-    				for(int k=j+1;k<=length;k++){
-    					(*v_aux)(k-1)=(*v_aux)(k);
-    				}
-    				length--;
-    			}
-    		}
-    	}
-    	Matrix *v_union=new Matrix(length);
-    	for(int i=1;i<=length;i++){
-    		(*v_union)(i)=(*v_aux)(i);
-    	}
-    	free(v_aux);
-    	return (*v_union);
+    	return (*v_aux);
     }
 //----------------------------------
     Matrix& extract_row(Matrix &v,int j){

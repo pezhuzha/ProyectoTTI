@@ -19,6 +19,9 @@
 #include "../include/TimeUpdate.h"
 #include "../include/GLOBAL.h"
 #include "../include/AccelHarmonic.h"
+#include "../include/EqnEquinox.h"
+#include "../include/JPL_Eph_DE430.h"
+#include "../include/LTC.h"
 #include <cstdio>
 #include <cmath>
 #include <tuple>
@@ -421,7 +424,7 @@ int m_union_vector_01() {
     
 	Matrix R(5);
 	R(1,1) = 2; R(1,2) = 1; R(1,3) = 0;
-	R(1,4)= 3; R(1,5) = 6 ;
+	R(1,4)= 3; R(1,5) = 1;R(1,6) = 6 ;
 	
 	Matrix C=union_vector(A,B);
     _assert(m_equals(R, C, 1e-10));
@@ -815,17 +818,110 @@ int m_TimeUpdate_01() {
 }
 int m_AccelHarmonic_01() {
 
-	double R0=-4.24799110134732e+35;
+	Matrix R0(1);
+	R0(1)=-4.24799110134732e+35;
 	Matrix A(3);
 	A(1)=1;
 	A(2)=2;
 	A(3)=3;
-
 	Matrix B=transpose(A);
-	double R = AccelHarmonic(A,B,5,5);
-	cout<<R;
+	Matrix R = AccelHarmonic(A,B,5,5);
+	cout<<R<<endl;
+	cout<<R0<<endl;
+	
+	_assert(m_equals(R,R0,1e-10));
+    
+    return 0;
+}
+
+int m_EqnEquinox_01() {
+
+	double R0=-4.24799110134732e+35;
+	double R = EqnEquinox(5);
+	cout<<R<<endl;
+	cout<<R0<<endl;
 	
 	_assert(fabs(R-R0)< 1e-10);
+    
+    return 0;
+}
+
+int m_JPL_Eph_DE430_01() {
+
+	Matrix R0(3);
+	R0(1)=1;
+	R0(2)=2;
+	R0(3)=3;
+	Matrix R1(3);
+	R1(1)=1;
+	R1(2)=2;
+	R1(3)=3;
+	Matrix R2(3);
+	R2(1)=1;
+	R2(2)=2;
+	R2(3)=3;
+	Matrix R3(3);
+	R3(1)=1;
+	R3(2)=2;
+	R3(3)=3;
+	Matrix R4(3);
+	R4(1)=1;
+	R4(2)=2;
+	R4(3)=3;
+	Matrix R5(3);
+	R5(1)=1;
+	R5(2)=2;
+	R5(3)=3;
+	Matrix R6(3);
+	R6(1)=1;
+	R6(2)=2;
+	R6(3)=3;
+	Matrix R7(3);
+	R7(1)=1;
+	R7(2)=2;
+	R7(3)=3;
+	Matrix R8(3);
+	R8(1)=1;
+	R8(2)=2;
+	R8(3)=3;
+	Matrix R9(3);
+	R9(1)=1;
+	R9(2)=2;
+	R9(3)=3;
+	Matrix R10(3);
+	R10(1)=1;
+	R10(2)=2;
+	R10(3)=3;
+	auto [r_Mercury,r_Venus,r_Earth,r_Mars,r_Jupiter,r_Saturn,r_Uranus,r_Neptune,r_Pluto,r_Moon,r_Sun] = JPL_Eph_DE430(5);
+	
+	_assert(m_equals(r_Mercury,R0, 1e-10));
+	_assert(m_equals(r_Venus,R1,1e-10));
+	_assert(m_equals(r_Earth,R2, 1e-10));
+	_assert(m_equals(r_Mars,R3,1e-10));
+	_assert(m_equals(r_Jupiter,R4, 1e-10));
+	_assert(m_equals(r_Saturn,R5,1e-10));
+	_assert(m_equals(r_Uranus,R6, 1e-10));
+	_assert(m_equals(r_Neptune,R7,1e-10));
+	_assert(m_equals(r_Pluto,R8, 1e-10));
+	_assert(m_equals(r_Moon,R9,1e-10));
+	_assert(m_equals(r_Sun,R10, 1e-10));
+    
+    return 0;
+}
+
+
+int m_LTC_01() {
+
+	Matrix A=LTC(10,10);
+
+
+	Matrix R(3,3);                   
+	R(1,1) = -0.839071529076452; R(1,2) = -0.54402111088937; R(1,3) = 0;
+	R(2,1) = 0.54402111088937; R(2,2) = -0.839071529076452; R(2,3) = 0;
+	R(3,1) = 0; R(3,2) = 0; R(3,3) = 1;
+
+
+    _assert(m_equals(R, A, 1e-10));
     
     return 0;
 }
@@ -871,6 +967,9 @@ int all_tests()
     _verify(m_NutAngles_01);
     _verify(m_TimeUpdate_01);
     _verify(m_AccelHarmonic_01);
+    _verify(m_EqnEquinox_01);
+    _verify(m_JPL_Eph_DE430_01);
+    _verify(m_LTC_01);
 
 
     return 0;
