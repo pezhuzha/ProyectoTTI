@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['timediff_0',['timediff',['../timediff_8h.html#a0772112289293a570d2edb0667dbb3a9',1,'timediff(double UT1_UTC, double TAI_UTC):&#160;timediff.cpp'],['../timediff_8cpp.html#a0772112289293a570d2edb0667dbb3a9',1,'timediff(double UT1_UTC, double TAI_UTC):&#160;timediff.cpp']]],
-  ['timeupdate_1',['TimeUpdate',['../TimeUpdate_8h.html#a6dfb438701ae45d6c3e57ac97b3874b6',1,'TimeUpdate(Matrix P, Matrix Phi, Matrix Qdt):&#160;TimeUpdate.cpp'],['../TimeUpdate_8h.html#a4cd610700f8c44f128b619a43381dac3',1,'TimeUpdate(Matrix P, Matrix Phi):&#160;TimeUpdate.cpp'],['../TimeUpdate_8cpp.html#a6dfb438701ae45d6c3e57ac97b3874b6',1,'TimeUpdate(Matrix P, Matrix Phi, Matrix Qdt):&#160;TimeUpdate.cpp'],['../TimeUpdate_8cpp.html#a4cd610700f8c44f128b619a43381dac3',1,'TimeUpdate(Matrix P, Matrix Phi):&#160;TimeUpdate.cpp']]],
-  ['transpose_2',['transpose',['../matrix_8h.html#acbd9778b697f9ad3da64ef53b850e2c9',1,'transpose(Matrix &amp;m):&#160;matrix.cpp'],['../matrix_8cpp.html#acbd9778b697f9ad3da64ef53b850e2c9',1,'transpose(Matrix &amp;m):&#160;matrix.cpp']]]
+  ['r_5fx_0',['R_x',['../R__x_8h.html#ab96741dfe3b3590793f2b318ceed5f53',1,'R_x(double angle):&#160;R_x.cpp'],['../R__x_8cpp.html#ab96741dfe3b3590793f2b318ceed5f53',1,'R_x(double angle):&#160;R_x.cpp']]],
+  ['r_5fy_1',['R_y',['../R__y_8h.html#a25114557991f92fd6b027118c591a98f',1,'R_y(double angle):&#160;R_y.cpp'],['../R__y_8cpp.html#a25114557991f92fd6b027118c591a98f',1,'R_y(double angle):&#160;R_y.cpp']]],
+  ['r_5fz_2',['R_z',['../R__z_8h.html#a4f688959a9ab144bf27d272e54bf7258',1,'R_z(double angle):&#160;R_z.cpp'],['../R__z_8cpp.html#a4f688959a9ab144bf27d272e54bf7258',1,'R_z(double angle):&#160;R_z.cpp']]]
 ];

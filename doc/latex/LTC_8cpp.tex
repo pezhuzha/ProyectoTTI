@@ -1,0 +1,52 @@
+\doxysection{/home/fghfgh/\+Escritorio/\+Proyecto\+TTI/src/\+LTC.cpp File Reference}
+\hypertarget{LTC_8cpp}{}\label{LTC_8cpp}\index{/home/fghfgh/Escritorio/ProyectoTTI/src/LTC.cpp@{/home/fghfgh/Escritorio/ProyectoTTI/src/LTC.cpp}}
+
+
+El archivo contiene las implementaciones de \doxylink{LTC_8h}{LTC.\+h}.  
+
+
+{\ttfamily \#include "{}../include/\+LTC.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+R\+\_\+y.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+R\+\_\+z.\+h"{}}\newline
+Include dependency graph for LTC.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LTC_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{LTC_8cpp_a27b89059a0c4bc52a9192df16ead3359}{LTC}} (double lon, double lat)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+El archivo contiene las implementaciones de \doxylink{LTC_8h}{LTC.\+h}. 
+
+\begin{DoxyAuthor}{Author}
+Pedro Zhuzhan 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000042}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{LTC_8cpp_a27b89059a0c4bc52a9192df16ead3359}\index{LTC.cpp@{LTC.cpp}!LTC@{LTC}}
+\index{LTC@{LTC}!LTC.cpp@{LTC.cpp}}
+\doxysubsubsection{\texorpdfstring{LTC()}{LTC()}}
+{\footnotesize\ttfamily \label{LTC_8cpp_a27b89059a0c4bc52a9192df16ead3359} 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& LTC (\begin{DoxyParamCaption}\item[{double}]{lon}{, }\item[{double}]{lat}{}\end{DoxyParamCaption})}
+
+Transformation from Greenwich meridian system to local tangent coordinates 
+\begin{DoxyParams}{Parameters}
+{\em lon} & -\/Geodetic East longitude \mbox{[}rad\mbox{]} \\
+\hline
+{\em lat} & -\/Geodetic latitude \mbox{[}rad\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+M -\/Rotation matrix from the Earth equator and Greenwich meridian to the local tangent (East-\/\+North-\/\+Zenith) coordinate system 
+\end{DoxyReturn}

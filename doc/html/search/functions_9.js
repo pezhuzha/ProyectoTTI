@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['operator_28_29_0',['operator()',['../classMatrix.html#a074a3b36a65989b51afbfcb5b0e6f573',1,'Matrix::operator()(const int n)'],['../classMatrix.html#a920e6bd524f318abe55a379190e2a25b',1,'Matrix::operator()(const int row, const int column)']]],
-  ['operator_2a_1',['operator*',['../classMatrix.html#ae1bc7e1fda06dab52353ac01b3196efd',1,'Matrix::operator*(Matrix &amp;m)'],['../classMatrix.html#ac8ff0062737ec513839ee575608f789b',1,'Matrix::operator*(double d)']]],
-  ['operator_2b_2',['operator+',['../classMatrix.html#a7cc7127ce96c997c9d14f1f8874ed742',1,'Matrix::operator+(Matrix &amp;m)'],['../classMatrix.html#adce95924da629314f86bc84b911e3000',1,'Matrix::operator+(double d)']]],
-  ['operator_2d_3',['operator-',['../classMatrix.html#ac13e11282bf8fb3e88eb4e743c6dc019',1,'Matrix::operator-(Matrix &amp;m)'],['../classMatrix.html#a588c13e626bfff07e50f991b8c3a097c',1,'Matrix::operator-(double d)']]],
-  ['operator_2f_4',['operator/',['../classMatrix.html#afa8805316703c98abf5fefd7788b92ef',1,'Matrix::operator/(Matrix &amp;m)'],['../classMatrix.html#abc7f7f6a41b5b9f1ee9f3e65e2c33d19',1,'Matrix::operator/(double d)']]],
-  ['operator_3d_5',['operator=',['../classMatrix.html#ade03836bffb81664225dc544b5d5e6db',1,'Matrix']]]
+  ['matrix_0',['Matrix',['../classMatrix.html#a2dba13c45127354c9f75ef576f49269b',1,'Matrix::Matrix()'],['../classMatrix.html#a1664c2d8e4f339facb149d4f7896bd9a',1,'Matrix::Matrix(const int n)'],['../classMatrix.html#a025f8b6a2384b2b54d6049e49351770c',1,'Matrix::Matrix(const int n_row, const int n_column)']]],
+  ['meanobliquity_1',['MeanObliquity',['../MeanObliquity_8h.html#a11f057ac4e8a0c5a7958f77379e30d40',1,'MeanObliquity(double Mjd_TT):&#160;MeanObliquity.cpp'],['../MeanObliquity_8cpp.html#a11f057ac4e8a0c5a7958f77379e30d40',1,'MeanObliquity(double Mjd_TT):&#160;MeanObliquity.cpp']]],
+  ['mjday_2',['Mjday',['../Mjday_8h.html#a3d8c32be4ba9222405b66aabe80409e2',1,'Mjday(int yr, int mon, int day, int hr=0, int min=0, int sec=0):&#160;Mjday.cpp'],['../Mjday_8cpp.html#a7229dc26cbec47322b5b2fd5c3cfe98d',1,'Mjday(int yr, int mon, int day, int hr, int min, int sec):&#160;Mjday.cpp']]],
+  ['mjday_5ftdb_3',['Mjday_TDB',['../Mjday__TDB_8h.html#a2512825285329f54df7d9f0be4966336',1,'Mjday_TDB(double Mjd_TT):&#160;Mjday_TDB.cpp'],['../Mjday__TDB_8cpp.html#a2512825285329f54df7d9f0be4966336',1,'Mjday_TDB(double Mjd_TT):&#160;Mjday_TDB.cpp']]]
 ];

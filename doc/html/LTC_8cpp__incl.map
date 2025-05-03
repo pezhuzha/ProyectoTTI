@@ -1,0 +1,21 @@
+<map id="/home/fghfgh/Escritorio/ProyectoTTI/src/LTC.cpp" name="/home/fghfgh/Escritorio/ProyectoTTI/src/LTC.cpp">
+<area shape="rect" id="Node000001" title="El archivo contiene las implementaciones de LTC.h." alt="" coords="118,5,297,45"/>
+<area shape="rect" id="Node000002" href="$LTC_8h.html" title="El archivo contiene la funcion LTC." alt="" coords="5,93,124,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,48,99,89,96,84,172,43"/>
+<area shape="rect" id="Node000008" href="$R__y_8h.html" title="El archivo contiene la funcion R_y." alt="" coords="148,93,267,119"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="210,46,210,79,205,79,205,46"/>
+<area shape="rect" id="Node000009" href="$R__z_8h.html" title="El archivo contiene la funcion R_z." alt="" coords="291,93,411,119"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="243,43,319,84,317,89,241,48"/>
+<area shape="rect" id="Node000003" href="$matrix_8h.html" title="El archivo contiene las funciones para operaciones con matrices y vectores junto con su definicion." alt="" coords="169,167,246,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="89,116,173,158,171,163,86,121"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="45,240,106,265"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="187,194,110,236,108,231,185,190"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="131,240,196,265"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="202,194,180,230,175,227,198,191"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="220,240,283,265"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="217,191,239,227,235,230,212,194"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="307,240,387,265"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="231,190,314,231,311,236,229,194"/>
+<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="210,119,210,153,205,153,205,119"/>
+<area shape="poly" id="edge10_Node000009_Node000003" title=" " alt="" coords="329,121,244,163,242,158,327,116"/>
+</map>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['iers_0',['IERS',['../IERS_8h.html#afdc37e22b677cc00a94f8dfcadd2df15',1,'IERS(Matrix eop, double Mjd_UTC, char interp=&apos;n&apos;):&#160;IERS.cpp'],['../IERS_8cpp.html#ae4095fd45e2fa0d01781aa07e7e7bc3b',1,'IERS(Matrix eop, double Mjd_UTC, char interp):&#160;IERS.cpp']]],
-  ['inv_1',['inv',['../matrix_8h.html#ad8d8519e7f94df41a4c5b535b4899222',1,'inv(Matrix &amp;m):&#160;matrix.cpp'],['../matrix_8cpp.html#ad8d8519e7f94df41a4c5b535b4899222',1,'inv(Matrix &amp;m):&#160;matrix.cpp']]]
+  ['ggm03s_0',['GGM03S',['../GLOBAL_8h.html#a6b92ea032a8e792ede2023c6d46bd53c',1,'GGM03S():&#160;GLOBAL.cpp'],['../GLOBAL_8cpp.html#a6b92ea032a8e792ede2023c6d46bd53c',1,'GGM03S():&#160;GLOBAL.cpp']]],
+  ['gmst_1',['gmst',['../gmst_8h.html#a22a9ee5ea799a7511f4b5b1939c9de76',1,'gmst(double Mjd_UT1):&#160;gmst.cpp'],['../gmst_8cpp.html#a22a9ee5ea799a7511f4b5b1939c9de76',1,'gmst(double Mjd_UT1):&#160;gmst.cpp']]]
 ];

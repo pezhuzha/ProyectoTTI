@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['legendre_0',['Legendre',['../Legendre_8h.html#a5c6325bf9db4573b6126bb08455a1c6a',1,'Legendre(int n, int m, double fi):&#160;Legendre.cpp'],['../Legendre_8cpp.html#a5c6325bf9db4573b6126bb08455a1c6a',1,'Legendre(int n, int m, double fi):&#160;Legendre.cpp']]],
-  ['legendre_2ecpp_1',['Legendre.cpp',['../Legendre_8cpp.html',1,'']]],
-  ['legendre_2eh_2',['Legendre.h',['../Legendre_8h.html',1,'']]],
-  ['list_3',['Bug List',['../bug.html',1,'']]]
+  ['jpl_5feph_5fde430_0',['JPL_Eph_DE430',['../JPL__Eph__DE430_8h.html#a5e6fedfbbbe0ca32aa62a9016e7d3293',1,'JPL_Eph_DE430(double Mjd_TDB):&#160;JPL_Eph_DE430.cpp'],['../JPL__Eph__DE430_8cpp.html#a5e6fedfbbbe0ca32aa62a9016e7d3293',1,'JPL_Eph_DE430(double Mjd_TDB):&#160;JPL_Eph_DE430.cpp']]],
+  ['jpl_5feph_5fde430_2ecpp_1',['JPL_Eph_DE430.cpp',['../JPL__Eph__DE430_8cpp.html',1,'']]],
+  ['jpl_5feph_5fde430_2eh_2',['JPL_Eph_DE430.h',['../JPL__Eph__DE430_8h.html',1,'']]]
 ];

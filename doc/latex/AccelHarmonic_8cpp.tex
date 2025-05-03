@@ -1,0 +1,61 @@
+\doxysection{/home/fghfgh/\+Escritorio/\+Proyecto\+TTI/src/\+Accel\+Harmonic.cpp File Reference}
+\hypertarget{AccelHarmonic_8cpp}{}\label{AccelHarmonic_8cpp}\index{/home/fghfgh/Escritorio/ProyectoTTI/src/AccelHarmonic.cpp@{/home/fghfgh/Escritorio/ProyectoTTI/src/AccelHarmonic.cpp}}
+
+
+El archivo contiene las implementaciones de \doxylink{AccelHarmonic_8h}{Accel\+Harmonic.\+h}.  
+
+
+{\ttfamily \#include "{}../include/\+Accel\+Harmonic.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+Legendre.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+GLOBAL.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+SAT\+\_\+\+Const.\+h"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+Include dependency graph for Accel\+Harmonic.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{AccelHarmonic_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \mbox{\hyperlink{AccelHarmonic_8cpp_afa335f1f32934bdc23939e3287f51efe}{Accel\+Harmonic}} (\mbox{\hyperlink{classMatrix}{Matrix}} r, \mbox{\hyperlink{classMatrix}{Matrix}} E, int n\+\_\+max, int m\+\_\+max)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+El archivo contiene las implementaciones de \doxylink{AccelHarmonic_8h}{Accel\+Harmonic.\+h}. 
+
+\begin{DoxyAuthor}{Author}
+Pedro Zhuzhan 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000030}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{AccelHarmonic_8cpp_afa335f1f32934bdc23939e3287f51efe}\index{AccelHarmonic.cpp@{AccelHarmonic.cpp}!AccelHarmonic@{AccelHarmonic}}
+\index{AccelHarmonic@{AccelHarmonic}!AccelHarmonic.cpp@{AccelHarmonic.cpp}}
+\doxysubsubsection{\texorpdfstring{AccelHarmonic()}{AccelHarmonic()}}
+{\footnotesize\ttfamily \label{AccelHarmonic_8cpp_afa335f1f32934bdc23939e3287f51efe} 
+\mbox{\hyperlink{classMatrix}{Matrix}} Accel\+Harmonic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}}}]{r}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}}}]{E}{, }\item[{int}]{n\+\_\+max}{, }\item[{int}]{m\+\_\+max}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Satellite position vector in the inertial system ~\newline
+ \\
+\hline
+{\em E} & Transformation matrix to body-\/fixed system ~\newline
+ \\
+\hline
+{\em n\+\_\+max} & Maximum degree ~\newline
+ \\
+\hline
+{\em m\+\_\+max} & Maximum order (m\+\_\+max\texorpdfstring{$<$}{<}=n\+\_\+max; m\+\_\+max=0 for zonals, only) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Acceleration (a=d\texorpdfstring{$^\wedge$}{\string^}2r/dt\texorpdfstring{$^\wedge$}{\string^}2) 
+\end{DoxyReturn}

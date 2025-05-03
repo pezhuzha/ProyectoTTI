@@ -1,5 +1,9 @@
 <map id="/home/fghfgh/Escritorio/ProyectoTTI/include/MeanObliquity.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/MeanObliquity.h">
-<area shape="rect" id="Node000001" title="El archivo contiene la funcion MeanObliquity." alt="" coords="5,5,268,45"/>
-<area shape="rect" id="Node000002" href="$MeanObliquity_8cpp.html" title="El archivo contiene las implementaciones de MeanObliquity.h." alt="" coords="11,93,262,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,59,139,93,134,93,134,59"/>
+<area shape="rect" id="Node000001" title="El archivo contiene la funcion MeanObliquity." alt="" coords="257,5,520,45"/>
+<area shape="rect" id="Node000002" href="$EqnEquinox_8cpp.html" title="El archivo contiene las implementaciones de EqnEquinox.h." alt="" coords="5,93,239,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="318,52,181,96,180,91,316,47"/>
+<area shape="rect" id="Node000003" href="$MeanObliquity_8cpp.html" title="El archivo contiene las implementaciones de MeanObliquity.h." alt="" coords="263,93,514,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="391,59,391,93,386,93,386,59"/>
+<area shape="rect" id="Node000004" href="$NutMatrix_8cpp.html" title="El archivo contiene las implementaciones de NutMatrix.h." alt="" coords="539,93,761,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="460,47,594,91,592,96,458,52"/>
 </map>

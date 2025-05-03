@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['operator_28_29_0',['operator()',['../classMatrix.html#a074a3b36a65989b51afbfcb5b0e6f573',1,'Matrix::operator()(const int n)'],['../classMatrix.html#a920e6bd524f318abe55a379190e2a25b',1,'Matrix::operator()(const int row, const int column)']]],
-  ['operator_2a_1',['operator*',['../classMatrix.html#ae1bc7e1fda06dab52353ac01b3196efd',1,'Matrix::operator*(Matrix &amp;m)'],['../classMatrix.html#ac8ff0062737ec513839ee575608f789b',1,'Matrix::operator*(double d)']]],
-  ['operator_2b_2',['operator+',['../classMatrix.html#a7cc7127ce96c997c9d14f1f8874ed742',1,'Matrix::operator+(Matrix &amp;m)'],['../classMatrix.html#adce95924da629314f86bc84b911e3000',1,'Matrix::operator+(double d)']]],
-  ['operator_2d_3',['operator-',['../classMatrix.html#ac13e11282bf8fb3e88eb4e743c6dc019',1,'Matrix::operator-(Matrix &amp;m)'],['../classMatrix.html#a588c13e626bfff07e50f991b8c3a097c',1,'Matrix::operator-(double d)']]],
-  ['operator_2f_4',['operator/',['../classMatrix.html#afa8805316703c98abf5fefd7788b92ef',1,'Matrix::operator/(Matrix &amp;m)'],['../classMatrix.html#abc7f7f6a41b5b9f1ee9f3e65e2c33d19',1,'Matrix::operator/(double d)']]],
-  ['operator_3d_5',['operator=',['../classMatrix.html#ade03836bffb81664225dc544b5d5e6db',1,'Matrix']]]
+  ['norm_0',['norm',['../matrix_8h.html#a907c9c6f53fc52d17e86b507b156536f',1,'norm(Matrix &amp;m):&#160;matrix.cpp'],['../matrix_8cpp.html#a907c9c6f53fc52d17e86b507b156536f',1,'norm(Matrix &amp;m):&#160;matrix.cpp']]],
+  ['nutangles_1',['NutAngles',['../NutAngles_8h.html#a8028f5f2ac1a0a2126d8edf6a5ed80c6',1,'NutAngles(double Mjd_TT):&#160;NutAngles.cpp'],['../NutAngles_8cpp.html#a8028f5f2ac1a0a2126d8edf6a5ed80c6',1,'NutAngles(double Mjd_TT):&#160;NutAngles.cpp']]],
+  ['nutangles_2ecpp_2',['NutAngles.cpp',['../NutAngles_8cpp.html',1,'']]],
+  ['nutangles_2eh_3',['NutAngles.h',['../NutAngles_8h.html',1,'']]],
+  ['nutmatrix_4',['NutMatrix',['../NutMatrix_8h.html#ac7fb7e48f2d2d4fd63ac42e17e44ff23',1,'NutMatrix(double Mjd_TT):&#160;NutMatrix.cpp'],['../NutMatrix_8cpp.html#ac7fb7e48f2d2d4fd63ac42e17e44ff23',1,'NutMatrix(double Mjd_TT):&#160;NutMatrix.cpp']]],
+  ['nutmatrix_2ecpp_5',['NutMatrix.cpp',['../NutMatrix_8cpp.html',1,'']]],
+  ['nutmatrix_2eh_6',['NutMatrix.h',['../NutMatrix_8h.html',1,'']]]
 ];

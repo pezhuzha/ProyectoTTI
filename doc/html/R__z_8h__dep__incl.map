@@ -1,5 +1,11 @@
 <map id="/home/fghfgh/Escritorio/ProyectoTTI/include/R_z.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/R_z.h">
-<area shape="rect" id="Node000001" title="El archivo contiene la funcion R_z." alt="" coords="5,5,199,45"/>
-<area shape="rect" id="Node000002" href="$R__z_8cpp.html" title="El archivo contiene las implementaciones de R_z.h." alt="" coords="12,93,192,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,59,105,93,99,93,99,59"/>
+<area shape="rect" id="Node000001" title="El archivo contiene la funcion R_z." alt="" coords="347,5,541,45"/>
+<area shape="rect" id="Node000002" href="$LTC_8cpp.html" title="El archivo contiene las implementaciones de LTC.h." alt="" coords="5,93,184,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="355,51,172,96,171,91,353,46"/>
+<area shape="rect" id="Node000003" href="$NutMatrix_8cpp.html" title="El archivo contiene las implementaciones de NutMatrix.h." alt="" coords="209,93,431,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="407,55,349,95,346,91,404,51"/>
+<area shape="rect" id="Node000004" href="$PrecMatrix_8cpp.html" title="El archivo contiene las implementaciones de PrecMatrix.h." alt="" coords="456,93,683,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="485,51,543,91,540,95,482,56"/>
+<area shape="rect" id="Node000005" href="$R__z_8cpp.html" title="El archivo contiene las implementaciones de R_z.h." alt="" coords="707,93,887,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="535,46,721,91,719,96,534,51"/>
 </map>
