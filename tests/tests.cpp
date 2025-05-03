@@ -22,6 +22,10 @@
 #include "../include/EqnEquinox.h"
 #include "../include/JPL_Eph_DE430.h"
 #include "../include/LTC.h"
+#include "../include/NutMatrix.h"
+#include "../include/PoleMatrix.h"
+#include "../include/PrecMatrix.h"
+#include "../include/gmst.h"
 #include <cstdio>
 #include <cmath>
 #include <tuple>
@@ -925,6 +929,66 @@ int m_LTC_01() {
     
     return 0;
 }
+
+
+int m_NutMatrix_01() {
+
+	Matrix A=NutMatrix(10);
+
+
+	Matrix R(3,3);                   
+	R(1,1) = -0.839071529076452; R(1,2) = -0.54402111088937; R(1,3) = 0;
+	R(2,1) = 0.54402111088937; R(2,2) = -0.839071529076452; R(2,3) = 0;
+	R(3,1) = 0; R(3,2) = 0; R(3,3) = 1;
+
+
+    _assert(m_equals(R, A, 1e-10));
+    
+    return 0;
+}
+int m_PoleMatrix_01() {
+
+	Matrix A=PoleMatrix(10,10);
+
+
+	Matrix R(3,3);                   
+	R(1,1) = -0.839071529076452; R(1,2) = -0.54402111088937; R(1,3) = 0;
+	R(2,1) = 0.54402111088937; R(2,2) = -0.839071529076452; R(2,3) = 0;
+	R(3,1) = 0; R(3,2) = 0; R(3,3) = 1;
+
+
+    _assert(m_equals(R, A, 1e-10));
+    
+    return 0;
+   }
+
+int m_PrecMatrix_01() {
+
+	Matrix A=PrecMatrix(10,10);
+
+
+	Matrix R(3,3);                   
+	R(1,1) = -0.839071529076452; R(1,2) = -0.54402111088937; R(1,3) = 0;
+	R(2,1) = 0.54402111088937; R(2,2) = -0.839071529076452; R(2,3) = 0;
+	R(3,1) = 0; R(3,2) = 0; R(3,3) = 1;
+
+
+    _assert(m_equals(R, A, 1e-10));
+    
+    return 0;
+   }
+   int m_gmst_01() {
+
+	double A=gmst(10);
+
+
+	double R=5;
+
+
+    _assert(fabs(R-A)< 1e-10);
+    
+    return 0;
+   }
 int all_tests()
 {
     _verify(m_sum_01);
@@ -970,6 +1034,9 @@ int all_tests()
     _verify(m_EqnEquinox_01);
     _verify(m_JPL_Eph_DE430_01);
     _verify(m_LTC_01);
+    _verify(m_NutMatrix_01);
+    _verify(m_PoleMatrix_01);
+    _verify(m_PrecMatrix_01);
 
 
     return 0;
