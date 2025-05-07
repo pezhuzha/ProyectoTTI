@@ -324,7 +324,7 @@ double norm(Matrix &m) {
 	double r=0;
 	
 	for(int i = 1; i <= m.n_column; i++) {
-			r+=m(1,i)*m(1,i);
+			r+=m(i)*m(i);
 	}
 	return sqrt(r);
 }

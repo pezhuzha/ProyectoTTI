@@ -7,6 +7,9 @@
      * @bug No known bugs
      */
 Matrix eopdata;
+Matrix Cnm;
+Matrix Snm;
+Matrix PC;
 
 void eop19620101(int c){
 	eopdata=zeros(13,c);
@@ -29,9 +32,6 @@ void eop19620101(int c){
 		fclose(fid);
 }
 
-Matrix Cnm;
-Matrix Snm;
-
 void GGM03S(){
 	Cnm=zeros(181,181);
 	Snm=zeros(181,181);
@@ -48,6 +48,24 @@ void GGM03S(){
 				 &aux,&aux,
 				 &Cnm(i,j),&Snm(i,j),
 				 &aux,&aux
+				);
+			}
+		}
+		fclose(fid);
+}
+void DE430Coeff(){
+	PC=zeros(2285,1020);
+		FILE *fid = fopen("../data/DE430Coeff.txt","r");
+		if(fid==NULL){
+			cout << "Fail open DE430Coeff.txt file \n";
+			perror("Error");
+			exit(EXIT_FAILURE);
+		}
+		double aux;
+		for(int i=1;i<=2285;i++){
+			for (int j=1;j<=1020;j++){
+				 fscanf(fid,"%lf",
+				 &PC(i,j)
 				);
 			}
 		}

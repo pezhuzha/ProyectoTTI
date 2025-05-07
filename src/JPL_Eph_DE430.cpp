@@ -10,7 +10,7 @@
 *@bug Noknownbugs
 */
 tuple<Matrix&,Matrix&,Matrix&,Matrix&,Matrix&,Matrix&,Matrix&,Matrix&,Matrix&,Matrix&,Matrix&>	JPL_Eph_DE430(double Mjd_TDB){
-
+DE430Coeff();
 
 double JD,t1,dt,j,Mjd0;
 Matrix Cx_Earth(12),Cy_Earth(12),Cz_Earth(12),Cx(12),Cy(12),Cz(12),
@@ -20,12 +20,12 @@ Cx_Mars(12),Cy_Mars(12),Cz_Mars(12),Cx_Jupiter(12),Cy_Jupiter(12),Cz_Jupiter(12)
 r_Mercury,r_Venus,r_Earth,r_Mars,r_Jupiter,r_Saturn,r_Uranus,r_Neptune,r_Pluto,r_Moon,r_Sun;
 JD=Mjd_TDB+2400000.5;
 int i;
-for(i=1;i<=JD.n_column;i++){
+for(i=1;i<=PC.n_column;i++){
 	if(PC(i,1)<=JD&&JD<=PC(i,2)){
 		break;
 	}
 }
-Matrix PCtemp=PC.extract_row(i);
+Matrix PCtemp=extract_row(PC,i);
 
 t1=PCtemp(1)-2400000.5;
 
