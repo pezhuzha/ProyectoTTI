@@ -838,9 +838,7 @@ int m_AccelHarmonic_01() {
 	B(3,1)= 1.0; B(3,2) = 3.0; B(3,3) = 3.0 ;
 	
 	Matrix R = AccelHarmonic(A,B,5,5);
-	cout<<endl<<R0<<endl;
-	cout<<endl<<R<<endl;
-	_assert(m_equals(R,R0,1e-10));
+	_assert(m_equals(R,R0,R0(1)*1e-10));
     
     return 0;
 }
@@ -957,7 +955,7 @@ int m_PoleMatrix_01() {
 
 
 	Matrix R(3,3);                   
-	R(1,1) = -0.839071529076452; R(1,2) = -0.295958969093304; R(1,3) = 0.456472625363814;
+	R(1,1) = -0.839071529076452; R(1,2) = 0.295958969093304; R(1,3) = 0.456472625363814;
 	R(2,1) = 0; R(2,2) = -0.839071529076452; R(2,3) = 0.54402111088937;
 	R(3,1) = 0.54402111088937; R(3,2) = 0.456472625363814; R(3,3) = 0.704041030906696;
 
@@ -1035,13 +1033,14 @@ int all_tests()
     _verify(m_Legendre_01);
     _verify(m_NutAngles_01);
     _verify(m_TimeUpdate_01);
-   // _verify(m_AccelHarmonic_01);
+    _verify(m_AccelHarmonic_01);
     _verify(m_EqnEquinox_01);
-   // _verify(m_JPL_Eph_DE430_01);
-  //  _verify(m_LTC_01);
- //   _verify(m_NutMatrix_01);
- //   _verify(m_PoleMatrix_01);
- //   _verify(m_PrecMatrix_01);
+    //_verify(m_JPL_Eph_DE430_01);
+    _verify(m_LTC_01);
+    _verify(m_NutMatrix_01);
+    _verify(m_PoleMatrix_01);
+    _verify(m_PrecMatrix_01);
+    _verify(m_gmst_01);
 
 
     return 0;

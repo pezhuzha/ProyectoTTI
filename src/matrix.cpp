@@ -54,7 +54,7 @@ Matrix::Matrix(const int n_row, const int n_column) {
 //----------------------------------
 double& Matrix::operator () (const int n) {
 	if (n <= 0 || n > this->n_column* this->n_row) {
-		cout << "Vector get: error in row/column\n";
+		cout << "Vector get: error in "<<n<<"  " <<this->n_column*this->n_row<<" row/column\n";
         exit(EXIT_FAILURE);
 	}
 	
@@ -363,13 +363,13 @@ Matrix& cross(Matrix &v,Matrix &w){
     }
 //----------------------------------
     Matrix& union_vector(Matrix &v,Matrix &w){
-    	int x=1,length=v.n_column+w.n_column;
+    	int x=1,length=v.n_column*v.n_row+w.n_column*w.n_row;
     	Matrix *v_aux=new Matrix(length);
-    	for(int i=1; i<=v.n_column;i++){
+    	for(int i=1; i<=v.n_column*v.n_row;i++){
     		(*v_aux)(x)=v(i);
     		x++;
     	}
-    	for(int i=1; i<=w.n_column;i++){
+    	for(int i=1; i<=w.n_column*w.n_row;i++){
     		(*v_aux)(x)=w(i);
     		x++;
     	}

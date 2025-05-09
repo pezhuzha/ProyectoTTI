@@ -33,6 +33,7 @@ for (int n=0;n<=n_max;n++){
     b1 = (-gm/pow(d,2))*pow((r_ref/d),n)*(n+1);
     b2 =  (gm/d)*pow((r_ref/d),n);
     b3 =  (gm/d)*pow((r_ref/d),n);
+
     for (int m=0;m<=m_max;m++){
         q1 = q1 + pnm(n+1,m+1)*(Cnm(n+1,m+1)*cos(m*lon)+Snm(n+1,m+1)*sin(m*lon));
         q2 = q2 + dpnm(n+1,m+1)*(Cnm(n+1,m+1)*cos(m*lon)+Snm(n+1,m+1)*sin(m*lon));

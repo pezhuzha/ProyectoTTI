@@ -33,8 +33,8 @@ void eop19620101(int c){
 }
 
 void GGM03S(){
-	Cnm=zeros(181,181);
-	Snm=zeros(181,181);
+		Cnm=zeros(181,181);
+		Snm=zeros(181,181);
 		FILE *fid = fopen("../data/GGM03S.txt","r");
 		if(fid==NULL){
 			cout << "Fail open GGM03S.txt file \n";
@@ -43,7 +43,7 @@ void GGM03S(){
 		}
 		double aux;
 		for(int i=1;i<=181;i++){
-			for (int j=1;j<=181;j++){
+			for (int j=1;j<=i;j++){
 				 fscanf(fid,"%lf %lf %lf %lf %lf %lf",
 				 &aux,&aux,
 				 &Cnm(i,j),&Snm(i,j),
