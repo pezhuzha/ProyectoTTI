@@ -41,17 +41,16 @@ for (int n=0;n<=n_max;n++){
     dUdr     = dUdr     + q1*b1;
     dUdlatgc = dUdlatgc + q2*b2;
     dUdlon   = dUdlon   + q3*b3;
-    q3 = 0; q2 = q3; q1 = q2;
+    q3 = 0.0; q2 = q3; q1 = q2;
 }
-
 // Body-fixed acceleration
 r2xy = pow(r_bf(1),2)+pow(r_bf(2),2);
 
-ax = (1/d*dUdr-r_bf(3)/(pow(d,2)*sqrt(r2xy))*dUdlatgc)*r_bf(1)-(1/r2xy*dUdlon)*r_bf(2);
-ay = (1/d*dUdr-r_bf(3)/(pow(d,2)*sqrt(r2xy))*dUdlatgc)*r_bf(2)+(1/r2xy*dUdlon)*r_bf(1);
-az =  1/d*dUdr*r_bf(3)+sqrt(r2xy)/pow(d,2)*dUdlatgc;
+ax = (1.0/d*dUdr-r_bf(3)/(pow(d,2)*sqrt(r2xy))*dUdlatgc)*r_bf(1)-(1.0/r2xy*dUdlon)*r_bf(2);
+ay = (1.0/d*dUdr-r_bf(3)/(pow(d,2)*sqrt(r2xy))*dUdlatgc)*r_bf(2)+(1.0/r2xy*dUdlon)*r_bf(1);
+az =  1.0/d*dUdr*r_bf(3)+sqrt(r2xy)/pow(d,2)*dUdlatgc;
 
-a_bf (1)= ax;
+a_bf (1)=ax;
 a_bf (2)=ay ;
 a_bf (3)=az;
 a_bf=transpose(a_bf);
