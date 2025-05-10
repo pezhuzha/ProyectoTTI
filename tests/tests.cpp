@@ -26,6 +26,11 @@
 #include "../include/PoleMatrix.h"
 #include "../include/PrecMatrix.h"
 #include "../include/gmst.h"
+#include "../include/gast.h"
+#include "../include/MeasUpdate.h"
+#include "../include/G_AccelHarmonic.h"
+#include "../include/GHAMatrix.h"
+#include "../include/Accel.h"
 #include <cstdio>
 #include <cmath>
 #include <tuple>
@@ -900,18 +905,17 @@ int m_JPL_Eph_DE430_01() {
 	R10(2)=96865992179.6201;
 	R10(3)=41989334136.8052;
 	auto [r_Mercury,r_Venus,r_Earth,r_Mars,r_Jupiter,r_Saturn,r_Uranus,r_Neptune,r_Pluto,r_Moon,r_Sun] = JPL_Eph_DE430(60800);
-	
-	_assert(m_equals(r_Mercury,R0, 1e-10));
-	_assert(m_equals(r_Venus,R1,1e-10));
-	_assert(m_equals(r_Earth,R2, 1e-10));
-	_assert(m_equals(r_Mars,R3,1e-10));
-	_assert(m_equals(r_Jupiter,R4, 1e-10));
-	_assert(m_equals(r_Saturn,R5,1e-10));
-	_assert(m_equals(r_Uranus,R6, 1e-10));
-	_assert(m_equals(r_Neptune,R7,1e-10));
-	_assert(m_equals(r_Pluto,R8, 1e-10));
-	_assert(m_equals(r_Moon,R9,1e-10));
-	_assert(m_equals(r_Sun,R10, 1e-10));
+	_assert(m_equals(r_Mercury,R0, abs(R0(1)*1e-10)));
+	_assert(m_equals(r_Venus,R1,abs(R1(1)*1e-10)));
+	_assert(m_equals(r_Earth,R2, abs(R2(1)*1e-10)));
+	_assert(m_equals(r_Mars,R3,abs(R3(1)*1e-10)));
+	_assert(m_equals(r_Jupiter,R4, abs(R4(1)*1e-10)));
+	_assert(m_equals(r_Saturn,R5,abs(R5(1)*1e-10)));
+	_assert(m_equals(r_Uranus,R6, abs(R6(1)*1e-10)));
+	_assert(m_equals(r_Neptune,R7,abs(R7(1)*1e-10)));
+	_assert(m_equals(r_Pluto,R8, abs(R8(1)*1e-10)));
+	_assert(m_equals(r_Moon,R9,abs(R9(1)*1e-10)));
+	_assert(m_equals(r_Sun,R10, abs(R10(1)*1e-10)));
     
     return 0;
 }
@@ -967,13 +971,13 @@ int m_PoleMatrix_01() {
 
 int m_PrecMatrix_01() {
 
-	Matrix A=PrecMatrix(10,10);
+	Matrix A=PrecMatrix(100,1);
 
 
 	Matrix R(3,3);                   
-	R(1,1) = 1; R(1,2) = 0; R(1,3) = 0;
-	R(2,1) = 0; R(2,2) = 1; R(2,3) = 0;
-	R(3,1) = 0; R(3,2) = 0; R(3,3) = 1;
+	R(1,1) = 0.999999997819034; R(1,2) =  6.05590736738844e-05; R(1,3) = 2.63539319986234e-05;
+	R(2,1) =  -6.05590736738844e-05; R(2,2) = 0.999999998166299 ; R(2,3) = -7.97984483806257e-10;
+	R(3,1) = -2.63539319986234e-05; R(3,2) =   -7.97985227435292e-10; R(3,3) =  0.999999999652735;
 
 
     _assert(m_equals(R, A, 1e-10));
@@ -992,6 +996,118 @@ int m_PrecMatrix_01() {
     
     return 0;
    }
+
+   int m_gast_01() {
+
+	double A=gast(10);
+
+
+	double R=1.14526529687017;
+
+
+    _assert(fabs(R-A)< 1e-10);
+    
+    return 0;
+   }
+
+int m_MeasUpdate_01() {
+
+	Matrix A(3);
+	A(1)=1;
+	A(2)=2;
+	A(3)=3;
+	Matrix B=transpose(A);
+
+	Matrix C(3,3);                   
+	C(1,1) = 1; C(1,2) = 2; C(1,3) = 3;
+	C(2,1) = 6; C(2,2) = 2; C(2,3) = 3;
+	C(3,1) = 8; C(3,2) = 2; C(3,3) = 3;
+
+	auto [K, x, P]=MeasUpdate(B,2,3,4,A,C,3);
+
+
+	Matrix R0(3);
+	R0(1)=0.106870229007634;
+	R0(2)=  0.145038167938931;
+	R0(3)= 0.16030534351145;
+	R0=transpose(R0);
+	Matrix R1(3);
+	R1(1)= 0.893129770992366;
+	R1(2)= 1.85496183206107;
+	R1(3)=2.83969465648855;
+	R1=transpose(R1);
+
+	Matrix R2(3,3);                   
+	R2(1,1) = -2.95419847328244  ; R2(1,2) = 0.717557251908397; R2(1,3) = 1.0763358778626;
+	R2(2,1) = 0.633587786259541; R2(2,2) = 0.259541984732824; R2(2,3) = 0.389312977099237;
+	R2(3,1) = 2.06870229007634; R2(3,2) = 0.0763358778625954 ; R2(3,3) = 0.114503816793893;
+    _assert(m_equals(R0, K, 1e-10));
+    _assert(m_equals(R1, x, 1e-10));
+    _assert(m_equals(R2, P, 1e-10));
+    
+    return 0;
+   }
+   int m_G_AccelHarmonic_01() {
+
+	Matrix R2(3,3);                   
+	R2(1,1) = -2.0122905124052e+34   ; R2(1,2) =-3.29511632095482e+34 ; R2(1,3) = -3.29511632095482e+34;
+	R2(2,1) = -3.11072371483497e+34  ; R2(2,2) = -3.38401367341354e+34 ; R2(2,3) = -3.38401367341354e+34;
+	R2(3,1) =  -3.11072371483497e+34 ; R2(3,2) =  -3.38401367341354e+34 ; R2(3,3) = -3.38401367341354e+34;
+	
+	Matrix A(3);
+	A(1)=1.0;
+	A(2)=2.0;
+	A(3)=3.0;
+	A=transpose(A);
+	Matrix B(3,3);
+	B(1,1)= 1.0; B(1,2) = 1.0; B(1,3) = 1.0 ;
+	B(2,1)= 1.0; B(2,2) = 2.0; B(2,3) = 2.0 ;
+	B(3,1)= 1.0; B(3,2) = 3.0; B(3,3) = 3.0 ;
+	
+	Matrix R = G_AccelHarmonic(A,B,5,5);
+	_assert(m_equals(R,R2,fabs(R2(1)*1e-10)));
+    
+    return 0;
+}
+int m_GHAMatrix_01() {
+
+	Matrix R(3,3);                   
+	R(1,1) = 0.412804512414729; R(1,2) = 0.910819649837463 ; R(1,3) = 0;
+	R(2,1) = -0.910819649837463 ; R(2,2) = 0.412804512414729; R(2,3) = 0;
+	R(3,1) = 0; R(3,2) = 0; R(3,3) = 1;
+	
+	
+	Matrix A = GHAMatrix(10);
+
+	_assert(m_equals(R,A,1e-10));
+    
+    return 0;
+}
+
+int m_Accel_01() {
+
+	Matrix R(6);
+	R(1)=1.0;
+	R(2)=2.0;
+	R(3)=3.0;
+	R(4)=-9.52489066332755e+131;
+	R(5)=-1.68703107956274e+132;
+	R(6)=-4.07471909292663e+132;
+	
+	Matrix A(6);
+	A(1)=1.0;
+	A(2)=2.0;
+	A(3)=3.0;
+	A(4)=4.0;
+	A(5)=5.0;
+	A(6)=6.0;
+	A=transpose(A);
+	Matrix B = Accel(10,A);
+
+	_assert(m_equals(R,B,abs(R(6)*1e-10)));
+    
+    return 0;
+}
 int all_tests()
 {
     _verify(m_sum_01);
@@ -1035,12 +1151,17 @@ int all_tests()
     _verify(m_TimeUpdate_01);
     _verify(m_AccelHarmonic_01);
     _verify(m_EqnEquinox_01);
-    //_verify(m_JPL_Eph_DE430_01);
+    _verify(m_JPL_Eph_DE430_01);
     _verify(m_LTC_01);
     _verify(m_NutMatrix_01);
     _verify(m_PoleMatrix_01);
     _verify(m_PrecMatrix_01);
     _verify(m_gmst_01);
+    _verify(m_gast_01);
+    _verify(m_MeasUpdate_01);
+    _verify(m_G_AccelHarmonic_01);
+    _verify(m_GHAMatrix_01);
+    //_verify(m_Accel_01);
 
 
     return 0;

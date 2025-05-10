@@ -6,11 +6,20 @@
      * @author Pedro Zhuzhan
      * @bug No known bugs
      */
+Param AuxParam;
 Matrix eopdata;
 Matrix Cnm;
 Matrix Snm;
 Matrix PC;
-
+void AuxParamLoad(){
+	AuxParam.Mjd_UTC=49746.1112847221;
+	AuxParam.Mjd_TT=49746.1108586111;
+	AuxParam.n=20;
+	AuxParam.m=20;
+	AuxParam.sun=1;
+	AuxParam.moon=1;
+	AuxParam.planets=1;
+}
 void eop19620101(int c){
 	eopdata=zeros(13,c);
 	
@@ -32,9 +41,9 @@ void eop19620101(int c){
 		fclose(fid);
 }
 
-void GGM03S(){
-		Cnm=zeros(181,181);
-		Snm=zeros(181,181);
+void GGM03S(int n){
+		Cnm=zeros(n,n);
+		Snm=zeros(n,n);
 		FILE *fid = fopen("../data/GGM03S.txt","r");
 		if(fid==NULL){
 			cout << "Fail open GGM03S.txt file \n";
@@ -42,7 +51,7 @@ void GGM03S(){
 			exit(EXIT_FAILURE);
 		}
 		double aux;
-		for(int i=1;i<=181;i++){
+		for(int i=1;i<=n;i++){
 			for (int j=1;j<=i;j++){
 				 fscanf(fid,"%lf %lf %lf %lf %lf %lf",
 				 &aux,&aux,
@@ -53,8 +62,8 @@ void GGM03S(){
 		}
 		fclose(fid);
 }
-void DE430Coeff(){
-	PC=zeros(2285,1020);
+void DE430Coeff(int row,int column){
+	PC=zeros(row,column);
 		FILE *fid = fopen("../data/DE430Coeff.txt","r");
 		if(fid==NULL){
 			cout << "Fail open DE430Coeff.txt file \n";
@@ -62,8 +71,8 @@ void DE430Coeff(){
 			exit(EXIT_FAILURE);
 		}
 		double aux;
-		for(int i=1;i<=2285;i++){
-			for (int j=1;j<=1020;j++){
+		for(int i=1;i<=row;i++){
+			for (int j=1;j<=column;j++){
 				 fscanf(fid,"%lf",
 				 &PC(i,j)
 				);

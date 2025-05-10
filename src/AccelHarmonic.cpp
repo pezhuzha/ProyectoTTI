@@ -9,7 +9,7 @@
      * @author Pedro Zhuzhan
      * @bug No known bugs
      */
-	Matrix AccelHarmonic(Matrix r,Matrix E,int n_max,int m_max){
+	Matrix& AccelHarmonic(Matrix r,Matrix E,int n_max,int m_max){
 GGM03S();
 double r_ref,gm,d,latgc,lon,b1,b2,b3,dUdr,dUdlatgc,dUdlon,q3,q2,q1,r2xy,ax,ay,az;
 Matrix a_bf(3);
