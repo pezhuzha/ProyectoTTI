@@ -12,8 +12,8 @@ Matrix Cnm;
 Matrix Snm;
 Matrix PC;
 void AuxParamLoad(){
-	AuxParam.Mjd_UTC=49746.1112847221;
-	AuxParam.Mjd_TT=49746.1108586111;
+	AuxParam.Mjd_UTC=4.974611635416653e+04;
+	AuxParam.Mjd_TT=4.974611706231468e+04;
 	AuxParam.n=20;
 	AuxParam.m=20;
 	AuxParam.sun=1;

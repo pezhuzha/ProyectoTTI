@@ -8,6 +8,10 @@
      * @bug No known bugs
      */
 	Matrix& G_AccelHarmonic( Matrix r,Matrix U, int n_max, int m_max ){
+
+			if(r.n_row<r.n_column){
+				r=transpose(r);
+			}
 		Matrix da;
 	double d = 1.0;   
 

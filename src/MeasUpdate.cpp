@@ -8,6 +8,9 @@
      */
 	tuple<Matrix&,Matrix&,Matrix&> MeasUpdate(Matrix x, double z,double g,double s,Matrix G,Matrix P, int n){
 
+			if(x.n_row<x.n_column){
+				x=transpose(x);
+			}
 		Matrix Inv_W(1);Inv_W(1) = s*s;
 
 		Matrix &K = P*transpose(G)*inv(Inv_W+G*P*transpose(G));
