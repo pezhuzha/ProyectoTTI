@@ -1,0 +1,65 @@
+\doxysection{/home/fghfgh/\+Escritorio/\+Proyecto\+TTI/include/\+Accel.h File Reference}
+\hypertarget{Accel_8h}{}\label{Accel_8h}\index{/home/fghfgh/Escritorio/ProyectoTTI/include/Accel.h@{/home/fghfgh/Escritorio/ProyectoTTI/include/Accel.h}}
+
+
+El archivo contiene la funcion Accel.  
+
+
+{\ttfamily \#include "{}matrix.\+h"{}}\newline
+Include dependency graph for Accel.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{Accel_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{Accel_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{Accel_8h_a90a9d07270cea0a2accb38d118fff177}{Accel}} (double x, \mbox{\hyperlink{classMatrix}{Matrix}} Y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+El archivo contiene la funcion Accel. 
+
+\begin{DoxyAuthor}{Author}
+Pedro Zhuzhan 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Accel_8h_a90a9d07270cea0a2accb38d118fff177}\index{Accel.h@{Accel.h}!Accel@{Accel}}
+\index{Accel@{Accel}!Accel.h@{Accel.h}}
+\doxysubsubsection{\texorpdfstring{Accel()}{Accel()}}
+{\footnotesize\ttfamily \label{Accel_8h_a90a9d07270cea0a2accb38d118fff177} 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& Accel (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}}}]{Y}{}\end{DoxyParamCaption})}
+
+Computes the acceleration of an Earth orbiting satellite due to
+\begin{DoxyItemize}
+\item the Earth\textquotesingle{}s harmonic gravity field,
+\item the gravitational perturbations of the Sun and Moon
+\item the solar radiation pressure and
+\item the atmospheric drag 
+\begin{DoxyParams}{Parameters}
+{\em Mjd\+\_\+\+TT} & Terrestrial Time (Modified Julian Date) \\
+\hline
+{\em Y} & Satellite state vector in the ICRF/\+EME2000 system \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+dY Acceleration (a=d\texorpdfstring{$^\wedge$}{\string^}2r/dt\texorpdfstring{$^\wedge$}{\string^}2) in the ICRF/\+EME2000 system 
+\end{DoxyReturn}
+
+\end{DoxyItemize}

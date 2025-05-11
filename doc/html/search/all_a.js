@@ -6,10 +6,13 @@ var searchData=
   ['meanobliquity_3',['MeanObliquity',['../MeanObliquity_8h.html#a11f057ac4e8a0c5a7958f77379e30d40',1,'MeanObliquity(double Mjd_TT):&#160;MeanObliquity.cpp'],['../MeanObliquity_8cpp.html#a11f057ac4e8a0c5a7958f77379e30d40',1,'MeanObliquity(double Mjd_TT):&#160;MeanObliquity.cpp']]],
   ['meanobliquity_2ecpp_4',['MeanObliquity.cpp',['../MeanObliquity_8cpp.html',1,'']]],
   ['meanobliquity_2eh_5',['MeanObliquity.h',['../MeanObliquity_8h.html',1,'']]],
-  ['mjday_6',['Mjday',['../Mjday_8h.html#a3d8c32be4ba9222405b66aabe80409e2',1,'Mjday(int yr, int mon, int day, int hr=0, int min=0, int sec=0):&#160;Mjday.cpp'],['../Mjday_8cpp.html#a7229dc26cbec47322b5b2fd5c3cfe98d',1,'Mjday(int yr, int mon, int day, int hr, int min, int sec):&#160;Mjday.cpp']]],
-  ['mjday_2ecpp_7',['Mjday.cpp',['../Mjday_8cpp.html',1,'']]],
-  ['mjday_2eh_8',['Mjday.h',['../Mjday_8h.html',1,'']]],
-  ['mjday_5ftdb_9',['Mjday_TDB',['../Mjday__TDB_8h.html#a2512825285329f54df7d9f0be4966336',1,'Mjday_TDB(double Mjd_TT):&#160;Mjday_TDB.cpp'],['../Mjday__TDB_8cpp.html#a2512825285329f54df7d9f0be4966336',1,'Mjday_TDB(double Mjd_TT):&#160;Mjday_TDB.cpp']]],
-  ['mjday_5ftdb_2ecpp_10',['Mjday_TDB.cpp',['../Mjday__TDB_8cpp.html',1,'']]],
-  ['mjday_5ftdb_2eh_11',['Mjday_TDB.h',['../Mjday__TDB_8h.html',1,'']]]
+  ['measupdate_6',['MeasUpdate',['../MeasUpdate_8h.html#a7d681f8dbcf8357623182f9f56ff815b',1,'MeasUpdate(Matrix x, double z, double g, double s, Matrix G, Matrix P, int n):&#160;MeasUpdate.cpp'],['../MeasUpdate_8cpp.html#a7d681f8dbcf8357623182f9f56ff815b',1,'MeasUpdate(Matrix x, double z, double g, double s, Matrix G, Matrix P, int n):&#160;MeasUpdate.cpp']]],
+  ['measupdate_2ecpp_7',['MeasUpdate.cpp',['../MeasUpdate_8cpp.html',1,'']]],
+  ['measupdate_2eh_8',['MeasUpdate.h',['../MeasUpdate_8h.html',1,'']]],
+  ['mjday_9',['Mjday',['../Mjday_8h.html#a3d8c32be4ba9222405b66aabe80409e2',1,'Mjday(int yr, int mon, int day, int hr=0, int min=0, int sec=0):&#160;Mjday.cpp'],['../Mjday_8cpp.html#a7229dc26cbec47322b5b2fd5c3cfe98d',1,'Mjday(int yr, int mon, int day, int hr, int min, int sec):&#160;Mjday.cpp']]],
+  ['mjday_2ecpp_10',['Mjday.cpp',['../Mjday_8cpp.html',1,'']]],
+  ['mjday_2eh_11',['Mjday.h',['../Mjday_8h.html',1,'']]],
+  ['mjday_5ftdb_12',['Mjday_TDB',['../Mjday__TDB_8h.html#a2512825285329f54df7d9f0be4966336',1,'Mjday_TDB(double Mjd_TT):&#160;Mjday_TDB.cpp'],['../Mjday__TDB_8cpp.html#a2512825285329f54df7d9f0be4966336',1,'Mjday_TDB(double Mjd_TT):&#160;Mjday_TDB.cpp']]],
+  ['mjday_5ftdb_2ecpp_13',['Mjday_TDB.cpp',['../Mjday__TDB_8cpp.html',1,'']]],
+  ['mjday_5ftdb_2eh_14',['Mjday_TDB.h',['../Mjday__TDB_8h.html',1,'']]]
 ];

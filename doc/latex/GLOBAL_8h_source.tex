@@ -9,17 +9,27 @@
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{matrix_8h}{matrix.h}}"{}}}
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <cmath>}}
 \DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{classMatrix}{Matrix}}\ eopdata;}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00019\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{GLOBAL_8h_af1504e3e975e6f502042c7fa8b7abe60}{eop19620101}}(\textcolor{keywordtype}{int}\ c);}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{classMatrix}{Matrix}}\ Cnm;}
-\DoxyCodeLine{00022\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{classMatrix}{Matrix}}\ Snm;}
+\DoxyCodeLine{00013\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{double}\ Mjd\_UTC,Mjd\_TT;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ n,m,sun,moon,planets;}
+\DoxyCodeLine{00016\ \}\ \mbox{\hyperlink{structParam}{Param}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{structParam}{Param}}\ AuxParam;}
+\DoxyCodeLine{00019\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{classMatrix}{Matrix}}\ eopdata;}
+\DoxyCodeLine{00020\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{classMatrix}{Matrix}}\ Cnm;}
+\DoxyCodeLine{00021\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{classMatrix}{Matrix}}\ Snm;}
+\DoxyCodeLine{00022\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{classMatrix}{Matrix}}\ PC;}
 \DoxyCodeLine{00023\ }
-\DoxyCodeLine{00027\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{GLOBAL_8h_a6b92ea032a8e792ede2023c6d46bd53c}{GGM03S}}();}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{GLOBAL_8h_ad733f697fb9098526f74dbedf42c2e66}{eop19620101}}(\textcolor{keywordtype}{int}\ c=21413);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{GLOBAL_8h_a74acebd49f327dc00f58429eb876b0c7}{GGM03S}}(\textcolor{keywordtype}{int}\ n=181);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{GLOBAL_8h_ade2d947387a8d0619724515e334a0387}{DE430Coeff}}(\textcolor{keywordtype}{int}\ row=2285,\textcolor{keywordtype}{int}\ column=1020);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{GLOBAL_8h_a75b612999c468928cbed5a99f875de1f}{AuxParamLoad}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
 
 \end{DoxyCode}

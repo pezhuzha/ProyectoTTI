@@ -1,5 +1,7 @@
 <map id="/home/fghfgh/Escritorio/ProyectoTTI/include/EqnEquinox.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/EqnEquinox.h">
-<area shape="rect" id="Node000001" title="El archivo contiene la funcion EqnEquinox." alt="" coords="5,5,252,45"/>
-<area shape="rect" id="Node000002" href="$EqnEquinox_8cpp.html" title="El archivo contiene las implementaciones de EqnEquinox.h." alt="" coords="12,93,245,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,59,131,93,126,93,126,59"/>
+<area shape="rect" id="Node000001" title="El archivo contiene la funcion EqnEquinox." alt="" coords="115,5,361,45"/>
+<area shape="rect" id="Node000002" href="$EqnEquinox_8cpp.html" title="El archivo contiene las implementaciones de EqnEquinox.h." alt="" coords="5,93,239,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,56,149,95,146,91,200,52"/>
+<area shape="rect" id="Node000003" href="$gast_8cpp.html" title="El archivo contiene las implementaciones de gast.h." alt="" coords="263,93,448,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="277,52,331,91,328,95,274,56"/>
 </map>

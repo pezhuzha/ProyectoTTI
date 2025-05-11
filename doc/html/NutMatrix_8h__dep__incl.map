@@ -1,5 +1,9 @@
 <map id="/home/fghfgh/Escritorio/ProyectoTTI/include/NutMatrix.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/NutMatrix.h">
-<area shape="rect" id="Node000001" title="El archivo contiene la funcion NutMatrix." alt="" coords="5,5,240,45"/>
-<area shape="rect" id="Node000002" href="$NutMatrix_8cpp.html" title="El archivo contiene las implementaciones de NutMatrix.h." alt="" coords="11,93,234,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,59,125,93,120,93,120,59"/>
+<area shape="rect" id="Node000001" title="El archivo contiene la funcion NutMatrix." alt="" coords="216,5,451,45"/>
+<area shape="rect" id="Node000002" href="$Accel_8cpp.html" title="El archivo contiene las implementaciones de Accel.h." alt="" coords="5,93,197,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="271,53,153,96,151,91,269,48"/>
+<area shape="rect" id="Node000003" href="$NutMatrix_8cpp.html" title="El archivo contiene las implementaciones de NutMatrix.h." alt="" coords="222,93,445,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="336,59,336,93,331,93,331,59"/>
+<area shape="rect" id="Node000004" href="$VarEqn_8cpp.html" title="El archivo contiene las implementaciones de VarEqn.h." alt="" coords="469,93,672,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="399,48,520,91,518,96,397,53"/>
 </map>

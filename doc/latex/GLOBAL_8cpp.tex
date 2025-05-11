@@ -6,8 +6,7 @@ El archivo contiene las implementaciones de \doxylink{GLOBAL_8h}{GLOBAL.\+h}.
 
 
 {\ttfamily \#include "{}../include/\+GLOBAL.\+h"{}}\newline
-Include dependency graph for GLOBAL.\+cpp\+:
-\nopagebreak
+Include dependency graph for GLOBAL.\+cpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,12 +16,19 @@ Include dependency graph for GLOBAL.\+cpp\+:
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{GLOBAL_8cpp_a75b612999c468928cbed5a99f875de1f}{Aux\+Param\+Load}} ()
+\item 
 void \mbox{\hyperlink{GLOBAL_8cpp_af1504e3e975e6f502042c7fa8b7abe60}{eop19620101}} (int c)
 \item 
-void \mbox{\hyperlink{GLOBAL_8cpp_a6b92ea032a8e792ede2023c6d46bd53c}{GGM03S}} ()
+void \mbox{\hyperlink{GLOBAL_8cpp_a1e2e54b5a8bda6f8402f3e8bbe5f3175}{GGM03S}} (int n)
+\item 
+void \mbox{\hyperlink{GLOBAL_8cpp_a55037cf2b485a56ae2aae3c2a97d4992}{DE430\+Coeff}} (int row, int column)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
+\item 
+\Hypertarget{GLOBAL_8cpp_a5706b12963234f7382e60cb7324441f9}\label{GLOBAL_8cpp_a5706b12963234f7382e60cb7324441f9} 
+\mbox{\hyperlink{structParam}{Param}} {\bfseries Aux\+Param}
 \item 
 \Hypertarget{GLOBAL_8cpp_a16817456f74489dad2c22ee5b145a1c4}\label{GLOBAL_8cpp_a16817456f74489dad2c22ee5b145a1c4} 
 \mbox{\hyperlink{classMatrix}{Matrix}} {\bfseries eopdata}
@@ -32,6 +38,9 @@ void \mbox{\hyperlink{GLOBAL_8cpp_a6b92ea032a8e792ede2023c6d46bd53c}{GGM03S}} ()
 \item 
 \Hypertarget{GLOBAL_8cpp_a19b1b61df2d43fbf34bc708611f8d589}\label{GLOBAL_8cpp_a19b1b61df2d43fbf34bc708611f8d589} 
 \mbox{\hyperlink{classMatrix}{Matrix}} {\bfseries Snm}
+\item 
+\Hypertarget{GLOBAL_8cpp_abdf16b7def3047932352a98d4f907e0a}\label{GLOBAL_8cpp_abdf16b7def3047932352a98d4f907e0a} 
+\mbox{\hyperlink{classMatrix}{Matrix}} {\bfseries PC}
 \end{DoxyCompactItemize}
 
 
@@ -42,25 +51,48 @@ El archivo contiene las implementaciones de \doxylink{GLOBAL_8h}{GLOBAL.\+h}.
 Pedro Zhuzhan 
 \end{DoxyAuthor}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000037}{Bug}}]No known bugs \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000047}{Bug}}]No known bugs \end{DoxyRefDesc}
 
 
 \doxysubsection{Function Documentation}
+\Hypertarget{GLOBAL_8cpp_a75b612999c468928cbed5a99f875de1f}\index{GLOBAL.cpp@{GLOBAL.cpp}!AuxParamLoad@{AuxParamLoad}}
+\index{AuxParamLoad@{AuxParamLoad}!GLOBAL.cpp@{GLOBAL.cpp}}
+\doxysubsubsection{\texorpdfstring{AuxParamLoad()}{AuxParamLoad()}}
+{\footnotesize\ttfamily \label{GLOBAL_8cpp_a75b612999c468928cbed5a99f875de1f} 
+void Aux\+Param\+Load (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Carga Aux\+Param \Hypertarget{GLOBAL_8cpp_a55037cf2b485a56ae2aae3c2a97d4992}\index{GLOBAL.cpp@{GLOBAL.cpp}!DE430Coeff@{DE430Coeff}}
+\index{DE430Coeff@{DE430Coeff}!GLOBAL.cpp@{GLOBAL.cpp}}
+\doxysubsubsection{\texorpdfstring{DE430Coeff()}{DE430Coeff()}}
+{\footnotesize\ttfamily \label{GLOBAL_8cpp_a55037cf2b485a56ae2aae3c2a97d4992} 
+void DE430\+Coeff (\begin{DoxyParamCaption}\item[{int}]{row}{ = {\ttfamily 2285}, }\item[{int}]{column}{ = {\ttfamily 1020}}\end{DoxyParamCaption})}
+
+Lee el archivo DE430\+Coeff.\+txt y recoge cada fila y lo asigna a PC 
+\begin{DoxyParams}{Parameters}
+{\em row} & número de filas a recoger \\
+\hline
+{\em column} & número de columnas a recoger \\
+\hline
+\end{DoxyParams}
 \Hypertarget{GLOBAL_8cpp_af1504e3e975e6f502042c7fa8b7abe60}\index{GLOBAL.cpp@{GLOBAL.cpp}!eop19620101@{eop19620101}}
 \index{eop19620101@{eop19620101}!GLOBAL.cpp@{GLOBAL.cpp}}
 \doxysubsubsection{\texorpdfstring{eop19620101()}{eop19620101()}}
 {\footnotesize\ttfamily \label{GLOBAL_8cpp_af1504e3e975e6f502042c7fa8b7abe60} 
-void eop19620101 (\begin{DoxyParamCaption}\item[{int}]{c}{}\end{DoxyParamCaption})}
+void eop19620101 (\begin{DoxyParamCaption}\item[{int}]{c}{ = {\ttfamily 21413}}\end{DoxyParamCaption})}
 
 Lee el archivo eop19620101.\+txt y recoge cada fila y lo asigna a eopdata 
 \begin{DoxyParams}{Parameters}
 {\em c} & número de filas a recoger \\
 \hline
 \end{DoxyParams}
-\Hypertarget{GLOBAL_8cpp_a6b92ea032a8e792ede2023c6d46bd53c}\index{GLOBAL.cpp@{GLOBAL.cpp}!GGM03S@{GGM03S}}
+\Hypertarget{GLOBAL_8cpp_a1e2e54b5a8bda6f8402f3e8bbe5f3175}\index{GLOBAL.cpp@{GLOBAL.cpp}!GGM03S@{GGM03S}}
 \index{GGM03S@{GGM03S}!GLOBAL.cpp@{GLOBAL.cpp}}
 \doxysubsubsection{\texorpdfstring{GGM03S()}{GGM03S()}}
-{\footnotesize\ttfamily \label{GLOBAL_8cpp_a6b92ea032a8e792ede2023c6d46bd53c} 
-void GGM03S (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{GLOBAL_8cpp_a1e2e54b5a8bda6f8402f3e8bbe5f3175} 
+void GGM03S (\begin{DoxyParamCaption}\item[{int}]{n}{ = {\ttfamily 181}}\end{DoxyParamCaption})}
 
 Lee el archivo GGM03\+S.\+txt y recoge cada fila y lo asigna a Cnm y Snm 
+\begin{DoxyParams}{Parameters}
+{\em c} & dimension de la matriz \\
+\hline
+\end{DoxyParams}

@@ -1,5 +1,7 @@
 <map id="/home/fghfgh/Escritorio/ProyectoTTI/include/JPL_Eph_DE430.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/JPL_Eph_DE430.h">
-<area shape="rect" id="Node000001" title="El archivo contiene la funcion JPL_Eph_DE430." alt="" coords="7,5,184,60"/>
-<area shape="rect" id="Node000002" href="$JPL__Eph__DE430_8cpp.html" title="El archivo contiene las implementaciones de JPL_Eph_DE430.h." alt="" coords="5,108,185,163"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,74,98,108,93,108,93,74"/>
+<area shape="rect" id="Node000001" title="El archivo contiene la funcion JPL_Eph_DE430." alt="" coords="118,5,295,60"/>
+<area shape="rect" id="Node000002" href="$Accel_8cpp.html" title="El archivo contiene las implementaciones de Accel.h." alt="" coords="5,115,197,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,71,123,117,120,113,167,68"/>
+<area shape="rect" id="Node000003" href="$JPL__Eph__DE430_8cpp.html" title="El archivo contiene las implementaciones de JPL_Eph_DE430.h." alt="" coords="222,108,402,163"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="246,68,286,106,283,110,242,72"/>
 </map>

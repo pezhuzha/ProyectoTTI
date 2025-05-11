@@ -1,14 +1,18 @@
 var searchData=
 [
-  ['accelharmonic_0',['AccelHarmonic',['../AccelHarmonic_8h.html#afa335f1f32934bdc23939e3287f51efe',1,'AccelHarmonic(Matrix r, Matrix E, int n_max, int m_max):&#160;AccelHarmonic.cpp'],['../AccelHarmonic_8cpp.html#afa335f1f32934bdc23939e3287f51efe',1,'AccelHarmonic(Matrix r, Matrix E, int n_max, int m_max):&#160;AccelHarmonic.cpp']]],
-  ['accelharmonic_2ecpp_1',['AccelHarmonic.cpp',['../AccelHarmonic_8cpp.html',1,'']]],
-  ['accelharmonic_2eh_2',['AccelHarmonic.h',['../AccelHarmonic_8h.html',1,'']]],
-  ['accelpointmass_3',['AccelPointMass',['../AccelPointMass_8h.html#a72b636f377c135454d41655c935c0eb3',1,'AccelPointMass(Matrix &amp;r, Matrix &amp;s, double GM):&#160;AccelPointMass.cpp'],['../AccelPointMass_8cpp.html#a72b636f377c135454d41655c935c0eb3',1,'AccelPointMass(Matrix &amp;r, Matrix &amp;s, double GM):&#160;AccelPointMass.cpp']]],
-  ['accelpointmass_2ecpp_4',['AccelPointMass.cpp',['../AccelPointMass_8cpp.html',1,'']]],
-  ['accelpointmass_2eh_5',['AccelPointMass.h',['../AccelPointMass_8h.html',1,'']]],
-  ['assign_5fcolumn_6',['assign_column',['../matrix_8h.html#a78e903d58755232911e3b5232f38747c',1,'assign_column(Matrix &amp;v, Matrix &amp;w, int i):&#160;matrix.cpp'],['../matrix_8cpp.html#a560d3aa5acbb1b35044aeb5e554b01a9',1,'assign_column(Matrix &amp;v, Matrix &amp;w, int j):&#160;matrix.cpp']]],
-  ['assign_5frow_7',['assign_row',['../matrix_8h.html#ab8aeb190b046a07e123a93315cdf5b36',1,'assign_row(Matrix &amp;v, Matrix &amp;w, int i):&#160;matrix.cpp'],['../matrix_8cpp.html#aec7cda4afd08c0cd32f3b33f0cabd43e',1,'assign_row(Matrix &amp;v, Matrix &amp;w, int j):&#160;matrix.cpp']]],
-  ['azelpa_8',['AzElPa',['../AzElPa_8h.html#a64759900540133eb0f6a8337ef0634db',1,'AzElPa(Matrix s):&#160;AzElPa.cpp'],['../AzElPa_8cpp.html#a64759900540133eb0f6a8337ef0634db',1,'AzElPa(Matrix s):&#160;AzElPa.cpp']]],
-  ['azelpa_2ecpp_9',['AzElPa.cpp',['../AzElPa_8cpp.html',1,'']]],
-  ['azelpa_2eh_10',['AzElPa.h',['../AzElPa_8h.html',1,'']]]
+  ['accel_0',['Accel',['../Accel_8h.html#a90a9d07270cea0a2accb38d118fff177',1,'Accel(double x, Matrix Y):&#160;Accel.cpp'],['../Accel_8cpp.html#a90a9d07270cea0a2accb38d118fff177',1,'Accel(double x, Matrix Y):&#160;Accel.cpp']]],
+  ['accel_2ecpp_1',['Accel.cpp',['../Accel_8cpp.html',1,'']]],
+  ['accel_2eh_2',['Accel.h',['../Accel_8h.html',1,'']]],
+  ['accelharmonic_3',['AccelHarmonic',['../AccelHarmonic_8h.html#a7f668d23f40f64900d52d3c77c9bacfa',1,'AccelHarmonic(Matrix r, Matrix E, int n_max, int m_max):&#160;AccelHarmonic.cpp'],['../AccelHarmonic_8cpp.html#a7f668d23f40f64900d52d3c77c9bacfa',1,'AccelHarmonic(Matrix r, Matrix E, int n_max, int m_max):&#160;AccelHarmonic.cpp']]],
+  ['accelharmonic_2ecpp_4',['AccelHarmonic.cpp',['../AccelHarmonic_8cpp.html',1,'']]],
+  ['accelharmonic_2eh_5',['AccelHarmonic.h',['../AccelHarmonic_8h.html',1,'']]],
+  ['accelpointmass_6',['AccelPointMass',['../AccelPointMass_8h.html#a72b636f377c135454d41655c935c0eb3',1,'AccelPointMass(Matrix &amp;r, Matrix &amp;s, double GM):&#160;AccelPointMass.cpp'],['../AccelPointMass_8cpp.html#a72b636f377c135454d41655c935c0eb3',1,'AccelPointMass(Matrix &amp;r, Matrix &amp;s, double GM):&#160;AccelPointMass.cpp']]],
+  ['accelpointmass_2ecpp_7',['AccelPointMass.cpp',['../AccelPointMass_8cpp.html',1,'']]],
+  ['accelpointmass_2eh_8',['AccelPointMass.h',['../AccelPointMass_8h.html',1,'']]],
+  ['assign_5fcolumn_9',['assign_column',['../matrix_8h.html#a78e903d58755232911e3b5232f38747c',1,'assign_column(Matrix &amp;v, Matrix &amp;w, int i):&#160;matrix.cpp'],['../matrix_8cpp.html#a560d3aa5acbb1b35044aeb5e554b01a9',1,'assign_column(Matrix &amp;v, Matrix &amp;w, int j):&#160;matrix.cpp']]],
+  ['assign_5frow_10',['assign_row',['../matrix_8h.html#ab8aeb190b046a07e123a93315cdf5b36',1,'assign_row(Matrix &amp;v, Matrix &amp;w, int i):&#160;matrix.cpp'],['../matrix_8cpp.html#aec7cda4afd08c0cd32f3b33f0cabd43e',1,'assign_row(Matrix &amp;v, Matrix &amp;w, int j):&#160;matrix.cpp']]],
+  ['auxparamload_11',['AuxParamLoad',['../GLOBAL_8h.html#a75b612999c468928cbed5a99f875de1f',1,'AuxParamLoad():&#160;GLOBAL.cpp'],['../GLOBAL_8cpp.html#a75b612999c468928cbed5a99f875de1f',1,'AuxParamLoad():&#160;GLOBAL.cpp']]],
+  ['azelpa_12',['AzElPa',['../AzElPa_8h.html#a64759900540133eb0f6a8337ef0634db',1,'AzElPa(Matrix s):&#160;AzElPa.cpp'],['../AzElPa_8cpp.html#a64759900540133eb0f6a8337ef0634db',1,'AzElPa(Matrix s):&#160;AzElPa.cpp']]],
+  ['azelpa_2ecpp_13',['AzElPa.cpp',['../AzElPa_8cpp.html',1,'']]],
+  ['azelpa_2eh_14',['AzElPa.h',['../AzElPa_8h.html',1,'']]]
 ];

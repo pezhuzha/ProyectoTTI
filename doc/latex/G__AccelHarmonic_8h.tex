@@ -1,0 +1,62 @@
+\doxysection{/home/fghfgh/\+Escritorio/\+Proyecto\+TTI/include/\+G\+\_\+\+Accel\+Harmonic.h File Reference}
+\hypertarget{G__AccelHarmonic_8h}{}\label{G__AccelHarmonic_8h}\index{/home/fghfgh/Escritorio/ProyectoTTI/include/G\_AccelHarmonic.h@{/home/fghfgh/Escritorio/ProyectoTTI/include/G\_AccelHarmonic.h}}
+
+
+El archivo contiene la funcion G\+\_\+\+Accel\+Harmonic.  
+
+
+{\ttfamily \#include "{}matrix.\+h"{}}\newline
+Include dependency graph for G\+\_\+\+Accel\+Harmonic.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{G__AccelHarmonic_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{G__AccelHarmonic_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{G__AccelHarmonic_8h_a99252400abd160067d7d1bb16a727832}{G\+\_\+\+Accel\+Harmonic}} (\mbox{\hyperlink{classMatrix}{Matrix}} r, \mbox{\hyperlink{classMatrix}{Matrix}} U, int n\+\_\+max, int m\+\_\+max)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+El archivo contiene la funcion G\+\_\+\+Accel\+Harmonic. 
+
+\begin{DoxyAuthor}{Author}
+Pedro Zhuzhan 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000009}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{G__AccelHarmonic_8h_a99252400abd160067d7d1bb16a727832}\index{G\_AccelHarmonic.h@{G\_AccelHarmonic.h}!G\_AccelHarmonic@{G\_AccelHarmonic}}
+\index{G\_AccelHarmonic@{G\_AccelHarmonic}!G\_AccelHarmonic.h@{G\_AccelHarmonic.h}}
+\doxysubsubsection{\texorpdfstring{G\_AccelHarmonic()}{G\_AccelHarmonic()}}
+{\footnotesize\ttfamily \label{G__AccelHarmonic_8h_a99252400abd160067d7d1bb16a727832} 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& G\+\_\+\+Accel\+Harmonic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}}}]{r}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}}}]{U}{, }\item[{int}]{n\+\_\+max}{, }\item[{int}]{m\+\_\+max}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Satellite position vector in the true-\/of-\/date system \\
+\hline
+{\em U} & Transformation matrix to body-\/fixed syste \\
+\hline
+{\em n} & Gravity model degree \\
+\hline
+{\em m} & Gravity model order \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+G Gradient (G=da/dr) in the true-\/of-\/date system 
+\end{DoxyReturn}

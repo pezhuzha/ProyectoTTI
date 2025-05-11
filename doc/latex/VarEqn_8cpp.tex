@@ -1,0 +1,60 @@
+\doxysection{/home/fghfgh/\+Escritorio/\+Proyecto\+TTI/src/\+Var\+Eqn.cpp File Reference}
+\hypertarget{VarEqn_8cpp}{}\label{VarEqn_8cpp}\index{/home/fghfgh/Escritorio/ProyectoTTI/src/VarEqn.cpp@{/home/fghfgh/Escritorio/ProyectoTTI/src/VarEqn.cpp}}
+
+
+El archivo contiene las implementaciones de \doxylink{VarEqn_8h}{Var\+Eqn.\+h}.  
+
+
+{\ttfamily \#include "{}../include/\+Var\+Eqn.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+IERS.\+h"{}}\newline
+{\ttfamily \#include "{}../include/timediff.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+GLOBAL.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+SAT\+\_\+\+Const.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+Prec\+Matrix.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+Nut\+Matrix.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+Pole\+Matrix.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+GHAMatrix.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+Accel\+Harmonic.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+G\+\_\+\+Accel\+Harmonic.\+h"{}}\newline
+Include dependency graph for Var\+Eqn.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VarEqn_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{VarEqn_8cpp_a502bdb5c8e9c335cd3fc942d1816f2e2}{Var\+Eqn}} (double x, \mbox{\hyperlink{classMatrix}{Matrix}} y\+Phi)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+El archivo contiene las implementaciones de \doxylink{VarEqn_8h}{Var\+Eqn.\+h}. 
+
+\begin{DoxyAuthor}{Author}
+Pedro Zhuzhan 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000069}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{VarEqn_8cpp_a502bdb5c8e9c335cd3fc942d1816f2e2}\index{VarEqn.cpp@{VarEqn.cpp}!VarEqn@{VarEqn}}
+\index{VarEqn@{VarEqn}!VarEqn.cpp@{VarEqn.cpp}}
+\doxysubsubsection{\texorpdfstring{VarEqn()}{VarEqn()}}
+{\footnotesize\ttfamily \label{VarEqn_8cpp_a502bdb5c8e9c335cd3fc942d1816f2e2} 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& Var\+Eqn (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}}}]{y\+Phi}{}\end{DoxyParamCaption})}
+
+Computes the variational equations, i.\+e. the derivative of the state vector and the state transition matrix 
+\begin{DoxyParams}{Parameters}
+{\em x} & Time since epoch in \mbox{[}s\mbox{]} \\
+\hline
+{\em y\+Phi} & (6+36)-\/dim vector comprising the state vector (y) and the state transition matrix (Phi) in column wise storage order \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+y\+Phip Derivative of y\+Phi 
+\end{DoxyReturn}

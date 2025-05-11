@@ -1,5 +1,9 @@
 <map id="/home/fghfgh/Escritorio/ProyectoTTI/include/timediff.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/timediff.h">
-<area shape="rect" id="Node000001" title="El archivo contiene la funcion timediff." alt="" coords="5,5,227,45"/>
-<area shape="rect" id="Node000002" href="$timediff_8cpp.html" title="El archivo contiene las implementaciones de timediff.h." alt="" coords="12,93,220,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,59,119,93,113,93,113,59"/>
+<area shape="rect" id="Node000001" title="El archivo contiene la funcion timediff." alt="" coords="212,5,433,45"/>
+<area shape="rect" id="Node000002" href="$Accel_8cpp.html" title="El archivo contiene las implementaciones de Accel.h." alt="" coords="5,93,197,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="262,53,151,96,149,91,261,48"/>
+<area shape="rect" id="Node000003" href="$VarEqn_8cpp.html" title="El archivo contiene las implementaciones de VarEqn.h." alt="" coords="221,93,424,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="325,59,325,93,320,93,320,59"/>
+<area shape="rect" id="Node000004" href="$timediff_8cpp.html" title="El archivo contiene las implementaciones de timediff.h." alt="" coords="448,93,656,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="386,48,503,91,501,96,385,53"/>
 </map>

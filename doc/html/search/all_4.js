@@ -3,7 +3,7 @@ var searchData=
   ['eccanom_0',['EccAnom',['../EccAnom_8h.html#a2ad531000471d74f459467a747a79aff',1,'EccAnom(double M, double e):&#160;EccAnom.cpp'],['../EccAnom_8cpp.html#a2ad531000471d74f459467a747a79aff',1,'EccAnom(double M, double e):&#160;EccAnom.cpp']]],
   ['eccanom_2ecpp_1',['EccAnom.cpp',['../EccAnom_8cpp.html',1,'']]],
   ['eccanom_2eh_2',['EccAnom.h',['../EccAnom_8h.html',1,'']]],
-  ['eop19620101_3',['eop19620101',['../GLOBAL_8h.html#af1504e3e975e6f502042c7fa8b7abe60',1,'eop19620101(int c):&#160;GLOBAL.cpp'],['../GLOBAL_8cpp.html#af1504e3e975e6f502042c7fa8b7abe60',1,'eop19620101(int c):&#160;GLOBAL.cpp']]],
+  ['eop19620101_3',['eop19620101',['../GLOBAL_8h.html#ad733f697fb9098526f74dbedf42c2e66',1,'eop19620101(int c=21413):&#160;GLOBAL.cpp'],['../GLOBAL_8cpp.html#af1504e3e975e6f502042c7fa8b7abe60',1,'eop19620101(int c):&#160;GLOBAL.cpp']]],
   ['eqnequinox_4',['EqnEquinox',['../EqnEquinox_8h.html#a1178917cf376ea4f15cea33c59028635',1,'EqnEquinox(double Mjd_TT):&#160;EqnEquinox.cpp'],['../EqnEquinox_8cpp.html#a1178917cf376ea4f15cea33c59028635',1,'EqnEquinox(double Mjd_TT):&#160;EqnEquinox.cpp']]],
   ['eqnequinox_2ecpp_5',['EqnEquinox.cpp',['../EqnEquinox_8cpp.html',1,'']]],
   ['eqnequinox_2eh_6',['EqnEquinox.h',['../EqnEquinox_8h.html',1,'']]],

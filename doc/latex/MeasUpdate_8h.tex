@@ -1,0 +1,68 @@
+\doxysection{/home/fghfgh/\+Escritorio/\+Proyecto\+TTI/include/\+Meas\+Update.h File Reference}
+\hypertarget{MeasUpdate_8h}{}\label{MeasUpdate_8h}\index{/home/fghfgh/Escritorio/ProyectoTTI/include/MeasUpdate.h@{/home/fghfgh/Escritorio/ProyectoTTI/include/MeasUpdate.h}}
+
+
+El archivo contiene la funcion Meas\+Update.  
+
+
+{\ttfamily \#include "{}matrix.\+h"{}}\newline
+Include dependency graph for Meas\+Update.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{MeasUpdate_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{MeasUpdate_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+tuple$<$ \mbox{\hyperlink{classMatrix}{Matrix}} \&, \mbox{\hyperlink{classMatrix}{Matrix}} \&, \mbox{\hyperlink{classMatrix}{Matrix}} \& $>$ \mbox{\hyperlink{MeasUpdate_8h_a7d681f8dbcf8357623182f9f56ff815b}{Meas\+Update}} (\mbox{\hyperlink{classMatrix}{Matrix}} x, double z, double g, double s, \mbox{\hyperlink{classMatrix}{Matrix}} G, \mbox{\hyperlink{classMatrix}{Matrix}} P, int n)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+El archivo contiene la funcion Meas\+Update. 
+
+\begin{DoxyAuthor}{Author}
+Pedro Zhuzhan 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000020}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{MeasUpdate_8h_a7d681f8dbcf8357623182f9f56ff815b}\index{MeasUpdate.h@{MeasUpdate.h}!MeasUpdate@{MeasUpdate}}
+\index{MeasUpdate@{MeasUpdate}!MeasUpdate.h@{MeasUpdate.h}}
+\doxysubsubsection{\texorpdfstring{MeasUpdate()}{MeasUpdate()}}
+{\footnotesize\ttfamily \label{MeasUpdate_8h_a7d681f8dbcf8357623182f9f56ff815b} 
+tuple$<$ \mbox{\hyperlink{classMatrix}{Matrix}} \&, \mbox{\hyperlink{classMatrix}{Matrix}} \&, \mbox{\hyperlink{classMatrix}{Matrix}} \& $>$ Meas\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}}}]{x}{, }\item[{double}]{z}{, }\item[{double}]{g}{, }\item[{double}]{s}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}}}]{G}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}}}]{P}{, }\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \doxylink{classMatrix}{Matrix} n\texorpdfstring{$\ast$}{*}1 \\
+\hline
+{\em z} & double \\
+\hline
+{\em g} & double \\
+\hline
+{\em s} & double \\
+\hline
+{\em G} & \doxylink{classMatrix}{Matrix} 1\texorpdfstring{$\ast$}{*}n \\
+\hline
+{\em P} & \doxylink{classMatrix}{Matrix} n\texorpdfstring{$\ast$}{*}n \\
+\hline
+{\em n} & int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+tupla de 3 \doxylink{classMatrix}{Matrix} 
+\end{DoxyReturn}

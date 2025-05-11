@@ -1,5 +1,7 @@
 <map id="/home/fghfgh/Escritorio/ProyectoTTI/include/gmst.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/gmst.h">
-<area shape="rect" id="Node000001" title="El archivo contiene la funcion gmst." alt="" coords="5,5,208,45"/>
-<area shape="rect" id="Node000002" href="$gmst_8cpp.html" title="El archivo contiene las implementaciones de gmst.h." alt="" coords="11,93,202,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,59,109,93,104,93,104,59"/>
+<area shape="rect" id="Node000001" title="El archivo contiene la funcion gmst." alt="" coords="102,5,305,45"/>
+<area shape="rect" id="Node000002" href="$gast_8cpp.html" title="El archivo contiene las implementaciones de gast.h." alt="" coords="5,93,191,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,56,123,95,120,91,168,52"/>
+<area shape="rect" id="Node000003" href="$gmst_8cpp.html" title="El archivo contiene las implementaciones de gmst.h." alt="" coords="215,93,405,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="239,52,288,91,285,95,236,56"/>
 </map>

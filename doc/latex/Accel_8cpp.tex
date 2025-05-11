@@ -1,0 +1,69 @@
+\doxysection{/home/fghfgh/\+Escritorio/\+Proyecto\+TTI/src/\+Accel.cpp File Reference}
+\hypertarget{Accel_8cpp}{}\label{Accel_8cpp}\index{/home/fghfgh/Escritorio/ProyectoTTI/src/Accel.cpp@{/home/fghfgh/Escritorio/ProyectoTTI/src/Accel.cpp}}
+
+
+El archivo contiene las implementaciones de \doxylink{Accel_8h}{Accel.\+h}.  
+
+
+{\ttfamily \#include "{}../include/\+Accel.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+Prec\+Matrix.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+Nut\+Matrix.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+IERS.\+h"{}}\newline
+{\ttfamily \#include "{}../include/timediff.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+Pole\+Matrix.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+Accel\+Harmonic.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+GHAMatrix.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+JPL\+\_\+\+Eph\+\_\+\+DE430.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+GLOBAL.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+Accel\+Point\+Mass.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+Mjday\+\_\+\+TDB.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+SAT\+\_\+\+Const.\+h"{}}\newline
+Include dependency graph for Accel.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Accel_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{Accel_8cpp_a90a9d07270cea0a2accb38d118fff177}{Accel}} (double x, \mbox{\hyperlink{classMatrix}{Matrix}} Y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+El archivo contiene las implementaciones de \doxylink{Accel_8h}{Accel.\+h}. 
+
+\begin{DoxyAuthor}{Author}
+Pedro Zhuzhan 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000036}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Accel_8cpp_a90a9d07270cea0a2accb38d118fff177}\index{Accel.cpp@{Accel.cpp}!Accel@{Accel}}
+\index{Accel@{Accel}!Accel.cpp@{Accel.cpp}}
+\doxysubsubsection{\texorpdfstring{Accel()}{Accel()}}
+{\footnotesize\ttfamily \label{Accel_8cpp_a90a9d07270cea0a2accb38d118fff177} 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& Accel (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}}}]{Y}{}\end{DoxyParamCaption})}
+
+Computes the acceleration of an Earth orbiting satellite due to
+\begin{DoxyItemize}
+\item the Earth\textquotesingle{}s harmonic gravity field,
+\item the gravitational perturbations of the Sun and Moon
+\item the solar radiation pressure and
+\item the atmospheric drag 
+\begin{DoxyParams}{Parameters}
+{\em Mjd\+\_\+\+TT} & Terrestrial Time (Modified Julian Date) \\
+\hline
+{\em Y} & Satellite state vector in the ICRF/\+EME2000 system \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+dY Acceleration (a=d\texorpdfstring{$^\wedge$}{\string^}2r/dt\texorpdfstring{$^\wedge$}{\string^}2) in the ICRF/\+EME2000 system 
+\end{DoxyReturn}
+
+\end{DoxyItemize}

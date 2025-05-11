@@ -1,9 +1,13 @@
 <map id="/home/fghfgh/Escritorio/ProyectoTTI/include/GLOBAL.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/GLOBAL.h">
-<area shape="rect" id="Node000001" title="El archivo contiene la funcion GLOBAL." alt="" coords="277,5,500,45"/>
-<area shape="rect" id="Node000002" href="$AccelHarmonic_8cpp.html" title="El archivo contiene las implementaciones de AccelHarmonic.h." alt="" coords="5,101,260,141"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="325,53,185,103,183,98,323,48"/>
-<area shape="rect" id="Node000003" href="$GLOBAL_8cpp.html" title="El archivo contiene las implementaciones de GLOBAL.h." alt="" coords="284,101,493,141"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="391,59,391,101,386,101,386,59"/>
-<area shape="rect" id="Node000004" href="$JPL__Eph__DE430_8cpp.html" title="El archivo contiene las implementaciones de JPL_Eph_DE430.h." alt="" coords="517,93,697,148"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="446,48,547,91,545,96,444,53"/>
+<area shape="rect" id="Node000001" title="El archivo contiene la funcion GLOBAL." alt="" coords="494,5,717,45"/>
+<area shape="rect" id="Node000002" href="$Accel_8cpp.html" title="El archivo contiene las implementaciones de Accel.h." alt="" coords="5,101,197,141"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="481,48,210,96,177,103,176,98,209,91,480,43"/>
+<area shape="rect" id="Node000003" href="$AccelHarmonic_8cpp.html" title="El archivo contiene las implementaciones de AccelHarmonic.h." alt="" coords="222,101,477,141"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="541,53,402,103,400,98,540,48"/>
+<area shape="rect" id="Node000004" href="$GLOBAL_8cpp.html" title="El archivo contiene las implementaciones de GLOBAL.h." alt="" coords="501,101,710,141"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="608,59,608,101,603,101,603,59"/>
+<area shape="rect" id="Node000005" href="$JPL__Eph__DE430_8cpp.html" title="El archivo contiene las implementaciones de JPL_Eph_DE430.h." alt="" coords="734,93,914,148"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="663,48,763,91,761,96,661,53"/>
+<area shape="rect" id="Node000006" href="$VarEqn_8cpp.html" title="El archivo contiene las implementaciones de VarEqn.h." alt="" coords="939,101,1141,141"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="712,45,927,91,960,98,959,103,926,96,710,51"/>
 </map>
