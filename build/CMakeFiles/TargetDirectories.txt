@@ -1,0 +1,3 @@
+/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles/test.out.dir
+/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles/edit_cache.dir
+/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles/rebuild_cache.dir
