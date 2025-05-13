@@ -1274,5 +1274,10 @@ int main()
 
     printf("Tests run: %d\n", tests_run);
 
+	Matrix A(3, 3);
+	A(1,1) = 1; A(1,2) = 0; A(1,3) = 0;
+	A(2,1) = 2; A(2,2) = 1; A(2,3) = 0;
+	A(3,1) = 3; A(3,2) = 14; A(3,3) = 1;
+
     return (result != 0);
 }

@@ -15,11 +15,10 @@
 
 		Matrix &K = P*transpose(G)*inv(Inv_W+G*P*transpose(G));
 		
-		Matrix aux=K;
+		Matrix aux(1,3);
+		aux=K;
 
 		Matrix &nx = x + aux*(z-g);
-
-		K = P*transpose(G)*inv(Inv_W+G*P*transpose(G));
 
 		aux=K;
 
