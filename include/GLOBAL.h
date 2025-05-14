@@ -20,6 +20,7 @@ extern Matrix eopdata;
 extern Matrix Cnm;
 extern Matrix Snm;
 extern Matrix PC;
+extern Matrix obs;
 
     /**
      * Lee el archivo eop19620101.txt y recoge cada fila y lo asigna a eopdata
@@ -44,6 +45,12 @@ void DE430Coeff(int row=2285,int column=1020);
      * Carga AuxParam
      */
 void AuxParamLoad();
+
+	/**
+     * Lee el archivo GEOS3.txt y recoge cada fila y lo asigna a obs
+     * @param nobs    número de filas a recoger
+     */
+void GEOS3(int nobs=46);
 
 #endif
 

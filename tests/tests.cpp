@@ -1204,6 +1204,32 @@ Matrix A(42);
     
     return 0;
 }
+int m_DEInteg_01() {
+
+	Matrix R(6);
+	R(1)=5542555.89427451;
+	R(2)=3213514.83814162;
+	R(3)=3990892.92789074;
+	R(4)=5394.06894044389;
+	R(5)=-2365.21290574021;
+	R(6)=-7061.8448137347;
+          
+	Matrix A(6);
+	A(1)=	6221397.62857869;
+	A(2)=	2867713.77965738;
+	A(3)=	3006155.98509949;
+	A(4)=	4645.04725161806;
+	A(5)=  -2752.21591588204;
+	A(6)=  -7507.99940987031;
+	
+	A=transpose(A);
+	Matrix B = DEInteg(Accel,0,-134.999991953373,1e-13,1e-6,6,A);
+
+
+	_assert(m_equals(R,B,abs(R(6)*1e-5)));
+    
+    return 0;
+}
 int all_tests()
 {
     _verify(m_sum_01);
@@ -1257,8 +1283,9 @@ int all_tests()
     _verify(m_MeasUpdate_01);
     _verify(m_G_AccelHarmonic_01);
     _verify(m_GHAMatrix_01);
-    _verify(m_Accel_01);
+    _verify(m_Accel_01); 
     _verify(m_VarEqn_01);
+    _verify(m_DEInteg_01);
 
 
     return 0;

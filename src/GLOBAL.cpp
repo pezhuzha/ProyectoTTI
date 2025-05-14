@@ -80,3 +80,41 @@ void DE430Coeff(int row,int column){
 		}
 		fclose(fid);
 }
+
+void GEOS3(int nobs){
+	obs=zeros(nobs,4);
+		FILE *fid = fopen("../data/GEOS3.txt","r");
+		if(fid==NULL){
+			cout << "Fail open GEOS3.txt file \n";
+			perror("Error");
+			exit(EXIT_FAILURE);
+		}
+		int Y,MO,D,M,MI,S;
+		double AZ,EL,DIST;
+		char &(tline[0]),4[55],y[5],mo[3],d[3],h[3],mi[3],s[7],az[9],el[9],dist[10];
+	for (int i=1;i<=nobs;i++)
+	{
+		fgets(&(tline[0]),4,sizeof(fline)+2,fid);
+		
+    strcpy(y,&(&(tline[0]),4[0]),4);
+	y[4]='\0';
+	Y=atoi(y);
+     strcpy(mo,&(tline[0]),4);
+	mo[2]='\0';
+	MO=atoi(mo);
+     strcpy(d,&(tline[0]),4);
+	d[2]='\0';
+	D=atoi(d);
+     strcpy(h,&(tline[0]),4);
+     strcpy(mi,&(tline[0]),4);
+     strcpy(&(tline[0]),4);
+     strcpy(&(tline[0]),4);
+     strcpy(&(tline[0]),4);
+     strcpy(&(tline[0]),4());
+    obs(i,1) = Mjday(Y,M,D,h,m,s);
+    obs(i,2) = const.Rad*az;
+    obs(i,3) = const.Rad*el;
+    obs(i,4) = 1e3*Dist;
+	}
+		fclose(fid);
+}
