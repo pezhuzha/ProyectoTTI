@@ -18,8 +18,6 @@
      * @bug No known bugs
      */
 		Matrix& Accel(double x,Matrix Y){
-			AuxParamLoad();
-			
 			if(Y.n_row<Y.n_column){
 				Y=transpose(Y);
 			}
@@ -56,6 +54,6 @@
 		    a = a + AccelPointMass(extract_vector(Y,1,3),r_Neptune,GM_Neptune);
 		    a = a + AccelPointMass(extract_vector(Y,1,3),r_Pluto,GM_Pluto);}
 
-	return union_vector(extract_vector(Y,1,3),a);
+	return union_vector(extract_vector(Y,4,6),a);
 
 	}

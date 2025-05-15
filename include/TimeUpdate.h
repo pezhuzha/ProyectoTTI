@@ -15,14 +15,14 @@ using namespace std;
      * @param Qdt Matrix
      * @return Matrix
      */
-	Matrix TimeUpdate(Matrix P,Matrix Phi,Matrix Qdt);
+	Matrix& TimeUpdate(Matrix P,Matrix Phi,Matrix Qdt);
 
     /**
      * @param P Matrix
      * @param Phi Matrix
      * @return Matrix
      */
-    Matrix TimeUpdate(Matrix P,Matrix Phi);
+    Matrix& TimeUpdate(Matrix P,Matrix Phi);
 #endif
 
 

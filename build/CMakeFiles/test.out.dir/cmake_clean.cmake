@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/test.out.dir/AzElPa.cpp.o.d"
   "CMakeFiles/test.out.dir/Cheb3D.cpp.o"
   "CMakeFiles/test.out.dir/Cheb3D.cpp.o.d"
+  "CMakeFiles/test.out.dir/DEInteg.cpp.o"
+  "CMakeFiles/test.out.dir/DEInteg.cpp.o.d"
   "CMakeFiles/test.out.dir/EccAnom.cpp.o"
   "CMakeFiles/test.out.dir/EccAnom.cpp.o.d"
   "CMakeFiles/test.out.dir/EqnEquinox.cpp.o"

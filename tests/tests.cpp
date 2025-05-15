@@ -32,6 +32,7 @@
 #include "../include/GHAMatrix.h"
 #include "../include/Accel.h"
 #include "../include/VarEqn.h"
+#include "../include/DEInteg.h"
 #include <cstdio>
 #include <cmath>
 #include <tuple>
@@ -1294,17 +1295,17 @@ int all_tests()
 
 int main()
 {
+	AuxParamLoad();
+	eop19620101();
+	GGM03S();
+	DE430Coeff();
+	GEOS3();
     int result = all_tests();
 
     if (result == 0)
         printf("PASSED\n");
 
     printf("Tests run: %d\n", tests_run);
-
-	Matrix A(3, 3);
-	A(1,1) = 1; A(1,2) = 0; A(1,3) = 0;
-	A(2,1) = 2; A(2,2) = 1; A(2,3) = 0;
-	A(3,1) = 3; A(3,2) = 14; A(3,3) = 1;
 
     return (result != 0);
 }

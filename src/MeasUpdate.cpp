@@ -14,15 +14,10 @@
 		Matrix Inv_W(1);Inv_W(1) = s*s;
 
 		Matrix &K = P*transpose(G)*inv(Inv_W+G*P*transpose(G));
-		
-		Matrix aux(1,3);
-		aux=K;
 
-		Matrix &nx = x + aux*(z-g);
+		Matrix &nx = x + K*(z-g);
 
-		aux=K;
-
-		Matrix &nP = (eye(n)-aux*G)*P;
+		Matrix &nP = (eye(n)-K*G)*P;
 
 		return tie(K, nx, nP);
 

@@ -214,4 +214,5 @@ CMakeFiles/test.out.dir/home/fghfgh/Escritorio/ProyectoTTI/tests/tests.cpp.o: \
  /home/fghfgh/Escritorio/ProyectoTTI/tests/../include/G_AccelHarmonic.h \
  /home/fghfgh/Escritorio/ProyectoTTI/tests/../include/GHAMatrix.h \
  /home/fghfgh/Escritorio/ProyectoTTI/tests/../include/Accel.h \
- /home/fghfgh/Escritorio/ProyectoTTI/tests/../include/VarEqn.h
+ /home/fghfgh/Escritorio/ProyectoTTI/tests/../include/VarEqn.h \
+ /home/fghfgh/Escritorio/ProyectoTTI/tests/../include/DEInteg.h

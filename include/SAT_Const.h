@@ -9,7 +9,7 @@
      * @bug No known bugs
      */
 	 const double pi=3.14159265358979323846264338327950288419716939937510582097494;
-     const double eps=2.2204e-16;
+     const double eps=2.22044604925031e-16;
 	// Mathematical constants
 	const double pi2       = 2*pi;                // 2pi
 	const double Rad       = pi/180;              // Radians per degree

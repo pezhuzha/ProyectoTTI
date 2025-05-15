@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Collect all source files
 file(GLOB SOURCES "*.cpp")
-list(APPEND SOURCES "../tests/tests.cpp")
+list(APPEND SOURCES "../tests/main.cpp")
 
 # Create the executable from all source files
-add_executable(test.out ${SOURCES})
+add_executable(main.out ${SOURCES})

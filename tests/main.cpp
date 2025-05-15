@@ -19,154 +19,179 @@
 #include "../include/AccelPointMass.h"
 #include "../include/Mjday_TDB.h"
 #include "../include/SAT_Const.h"
+#include "../include/Position.h"
+#include "../include/Mjday.h"
+#include "../include/DEInteg.h"
+#include "../include/TimeUpdate.h"
+#include "../include/AzElPa.h"
+#include "../include/R_x.h"
+#include "../include/R_y.h"
+#include "../include/R_z.h"
+#include "../include/gmst.h"
+#include "../include/VarEqn.h"
+#include "../include/LTC.h"
+#include "../include/MeasUpdate.h"
     /**
      * @file EKF_GEOS3.cpp
      * @brief El archivo contiene las implementaciones de EKF_GEOS3.h
      * @author Pedro Zhuzhan
      * @bug No known bugs
      */
-		int EKF_GEOS3(){
-			sigma_range = 92.5;          % [m]
-sigma_az = 0.0224*const.Rad; % [rad]
-sigma_el = 0.0139*const.Rad; % [rad]
+		void EKF_GEOS3(){
 
-% Kaena Point station
-lat = const.Rad*21.5748;     % [rad]
-lon = const.Rad*(-158.2706); % [rad]
-alt = 300.20;                % [m]
+    AuxParamLoad();
+    eop19620101();
+    GGM03S();
+    DE430Coeff();
+    GEOS3();
 
-Rs = Position(lon, lat, alt)';
+    int i=0,t,j,ii,nobs = 46;
+            double sigma_range,sigma_az,sigma_el,lat,lon,alt,Mjd1,Mjd2,Mjd3,Mjd0,Mjd_UTC,
+            n_eqn,theta,t_old,Mjd_TT,Dist,Mjd_UT1;
+            Matrix Rs,Y0_apr,Y,P,LT,yPhi,Phi,Y_true,Y0,U,Y_old,dDdY,dDds,r,s,dEdY,K;
+			sigma_range = 92.5;          
+sigma_az = 0.0224*Rad; 
+sigma_el = 0.0139*Rad; 
+
+
+lat = Rad*21.5748;     
+lon = Rad*(-158.2706); 
+alt = 300.20;                
+
+Rs = transpose(Position(lon, lat, alt));
 
 Mjd1 = obs(1,1);
 Mjd2 = obs(9,1);
 Mjd3 = obs(18,1);
+Matrix r2(3),v2(3);
+r2(1)=6221397.62857869;
+v2(1)=4645.04725161806;
+r2(2)=2867713.77965738;
+v2(2)=-2752.21591588204;
+r2(3)=3006155.98509949;
+v2(3)=-7507.99940987031;
+//auto [r2,v2] = anglesg(obs(1,2),obs(9,2),obs(18,2),obs(1,3),obs(9,3),obs(18,3),Mjd1,Mjd2,Mjd3,Rs,Rs,Rs);
 
-[r2,v2] = anglesg(obs(1,2),obs(9,2),obs(18,2),obs(1,3),obs(9,3),obs(18,3),...
-                  Mjd1,Mjd2,Mjd3,Rs,Rs,Rs);
-% [r2,v2] = anglesdr(obs(1,2),obs(9,2),obs(18,2),obs(1,3),obs(9,3),obs(18,3),...
-%                    Mjd1,Mjd2,Mjd3,Rs,Rs,Rs);
 
-Y0_apr = [r2;v2];
+
+Y0_apr = union_vector(r2,v2);
 
 Mjd0 = Mjday(1995,1,29,02,38,0);
 
 Mjd_UTC = obs(9,1);
 
-AuxParam.Mjd_UTC = Mjd_UTC;
-AuxParam.n      = 20;
-AuxParam.m      = 20;
-AuxParam.sun     = 1;
-AuxParam.moon    = 1;
-AuxParam.planets = 1;
 
 n_eqn  = 6;
 
-Y = DEInteg(@Accel,0,-(obs(9,1)-Mjd0)*86400.0,1e-13,1e-6,6,Y0_apr);
-P = zeros(6);
+Y = DEInteg(Accel,0,-(obs(9,1)-Mjd0)*86400.0,1e-13,1e-6,6,Y0_apr);
+P = zeros(6,6);
   
-for i=1:3
-    P(i,i)=1e8;
-end
-for i=4:6
-    P(i,i)=1e3;
-end
+for (i=1;i<=3;i++){
+    P(i,i)=1e8;}
+for (i=4;i<=6;i++){
+    P(i,i)=1e3;}
 
 LT = LTC(lon,lat);
 
 yPhi = zeros(42,1);
-Phi  = zeros(6);
+Phi  = zeros(6,6);
 
-% Measurement loop
+
 t = 0;
 
-for i=1:nobs    
-    % Previous step
+for (i=1;i<=nobs;i++){
+    
     t_old = t;
     Y_old = Y;
     
-    % Time increment and propagation
-    Mjd_UTC = obs(i,1);                       % Modified Julian Date
-    t       = (Mjd_UTC-Mjd0)*86400.0;         % Time since epoch [s]
     
-    [x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC] = IERS(eopdata,Mjd_UTC,'l');
-    [UT1_TAI,UTC_GPS,UT1_GPS,TT_UTC,GPS_UTC] = timediff(UT1_UTC,TAI_UTC);
+    Mjd_UTC = obs(i,1);                       
+    t       = (Mjd_UTC-Mjd0)*86400.0;         
+    
+    auto [x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC] = IERS(eopdata,Mjd_UTC,'l');
+    auto [UT1_TAI,UTC_GPS,UT1_GPS,TT_UTC,GPS_UTC] = timediff(UT1_UTC,TAI_UTC);
     Mjd_TT = Mjd_UTC + TT_UTC/86400;
     Mjd_UT1 = Mjd_TT + (UT1_UTC-TT_UTC)/86400.0;
     AuxParam.Mjd_UTC = Mjd_UTC;
     AuxParam.Mjd_TT = Mjd_TT;
         
-    for ii=1:6
+    for ( ii=1;ii<=6;ii++){
         yPhi(ii) = Y_old(ii);
-        for j=1:6  
-            if (ii==j) 
+        for (j=1;j<=6;j++)  {
+            if (ii==j) {
                 yPhi(6*j+ii) = 1; 
-            else
+            }
+            else{
                 yPhi(6*j+ii) = 0;
-            end
-        end
-    end
+            
+            }
+        }
+    }
+    yPhi = DEInteg (VarEqn,0,t-t_old,1e-13,1e-6,42,yPhi);
     
-    yPhi = DEInteg (@VarEqn,0,t-t_old,1e-13,1e-6,42,yPhi);
     
-    % Extract state transition matrices
-    for j=1:6
-        Phi(:,j) = yPhi(6*j+1:6*j+6);
-    end
+    for (j=1;j<=6;j++){
+        Phi = assign_row(Phi,extract_vector(yPhi,6*j+1,6*j+6),j);
     
-    Y = DEInteg (@Accel,0,t-t_old,1e-13,1e-6,6,Y_old);
+    }
     
-    % Topocentric coordinates
-    theta = gmst(Mjd_UT1);                    % Earth rotation
+    Y = DEInteg (Accel,0,t-t_old,1e-13,1e-6,6,Y_old);
+    
+    
+    theta = gmst(Mjd_UT1);                    
     U = R_z(theta);
-    r = Y(1:3);
-    s = LT*(U*r-Rs);                          % Topocentric position [m]
+    r = extract_vector(Y,1,3);
+    s = LT*(U*r-Rs);                          
     
-    % Time update
+    
     P = TimeUpdate(P, Phi);
         
-    % Azimuth and partials
-    [Azim, Elev, dAds, dEds] = AzElPa(s);     % Azimuth, Elevation
-    dAdY = [dAds*LT*U,zeros(1,3)];
     
-    % Measurement update
-    [K, Y, P] = MeasUpdate ( Y, obs(i,2), Azim, sigma_az, dAdY, P, 6 );
-    % Elevation and partials
-    r = Y(1:3);
-    s = LT*(U*r-Rs);                          % Topocentric position [m]
-    [Azim, Elev, dAds, dEds] = AzElPa(s);     % Azimuth, Elevation
-    dEdY = [dEds*LT*U,zeros(1,3)];
+     [Azim, Elev, dAds, dEds] = AzElPa(s);     
+    dAdY = union_vector(dAds*LT*U,zeros(1,3));
     
-    % Measurement update
-    [K, Y, P] = MeasUpdate ( Y, obs(i,3), Elev, sigma_el, dEdY, P, 6 );
     
-    % Range and partials
-    r = Y(1:3);
-    s = LT*(U*r-Rs);                          % Topocentric position [m]
-    Dist = norm(s); dDds = (s/Dist)';         % Range
-    dDdY = [dDds*LT*U,zeros(1,3)];
+     [K, Y, P] = MeasUpdate ( Y, obs(i,2), Azim, sigma_az, dAdY, P, 6 );
     
-    % Measurement update
-    [K, Y, P] = MeasUpdate ( Y, obs(i,4), Dist, sigma_range, dDdY, P, 6 );
-end
+    r = extract_vector(Y,1,3);
+    s = LT*(U*r-Rs);                          
+     [Azim, Elev, dAds, dEds] = AzElPa(s);     
+    dEdY = union_vector(dEds*LT*U,zeros(1,3));
+    
+    
+     [K, Y, P] = MeasUpdate ( Y, obs(i,3), Elev, sigma_el, dEdY, P, 6 );
+    
+    
+    r = extract_vector(Y,1,3);
+    s = LT*(U*r-Rs);                          
+    Dist = norm(s); dDds = transpose(s/Dist);         
+    dDdY = union_vector(dDds*LT*U,zeros(1,3));
+    
+    
+     [K, Y,P] = MeasUpdate ( Y, obs(i,4), Dist, sigma_range, dDdY, P, 6 );
+}
 
-[x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC] = IERS(eopdata,obs(46,1),'l');
-[UT1_TAI,UTC_GPS,UT1_GPS,TT_UTC,GPS_UTC] = timediff(UT1_UTC,TAI_UTC);
+auto [x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC] = IERS(eopdata,obs(46,1),'l');
+auto [UT1_TAI,UTC_GPS,UT1_GPS,TT_UTC,GPS_UTC] = timediff(UT1_UTC,TAI_UTC);
 Mjd_TT = Mjd_UTC + TT_UTC/86400;
 AuxParam.Mjd_UTC = Mjd_UTC;
 AuxParam.Mjd_TT = Mjd_TT;
 
-Y0 = DEInteg (@Accel,0,-(obs(46,1)-obs(1,1))*86400.0,1e-13,1e-6,6,Y);
+Y0 = DEInteg (Accel,0,-(obs(46,1)-obs(1,1))*86400.0,1e-13,1e-6,6,Y);
 
-Y_true = [5753.173e3, 2673.361e3, 3440.304e3, 4.324207e3, -1.924299e3, -5.728216e3]';
+ double aux[]= {5753.173e3, 2673.361e3, 3440.304e3, 4.324207e3, -1.924299e3, -5.728216e3};
+ Y_true(6);
+ for(i=0;i<6;i++){
+     Y_true(i+1)=aux[i];
+ }
 
-fprintf('\nError of Position Estimation\n');
-fprintf('dX%10.1f [m]\n',Y0(1)-Y_true(1));
-fprintf('dY%10.1f [m]\n',Y0(2)-Y_true(2));
-fprintf('dZ%10.1f [m]\n',Y0(3)-Y_true(3));
-fprintf('\nError of Velocity Estimation\n');
-fprintf('dVx%8.1f [m/s]\n',Y0(4)-Y_true(4));
-fprintf('dVy%8.1f [m/s]\n',Y0(5)-Y_true(5));
-fprintf('dVz%8.1f [m/s]\n',Y0(6)-Y_true(6));
-
+cout<<"\nError of Position Estimation\n";
+cout<<Y0(1)-Y_true(1)<<endl;
+cout<<Y0(2)-Y_true(2)<<endl;
+cout<<Y0(3)-Y_true(3)<<endl;
+cout<<"\nError of Velocity Estimation\n";
+cout<<Y0(4)-Y_true(4)<<endl;
+cout<<Y0(5)-Y_true(5)<<endl;
+cout<<Y0(6)-Y_true(6)<<endl;
 
 	}

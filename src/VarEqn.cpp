@@ -16,8 +16,6 @@
      * @bug No known bugs
      */
 Matrix& VarEqn(double x, Matrix yPhi){
-	AuxParamLoad();
-	eop19620101();
 	if(yPhi.n_row<yPhi.n_column){
 		yPhi=transpose(yPhi);
 	}

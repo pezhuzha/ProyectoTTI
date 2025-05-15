@@ -180,4 +180,7 @@ CMakeFiles/test.out.dir/GLOBAL.cpp.o: \
  /usr/include/c++/13/bits/locale_facets.tcc \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
- /usr/include/c++/13/bits/istream.tcc
+ /usr/include/c++/13/bits/istream.tcc \
+ /home/fghfgh/Escritorio/ProyectoTTI/src/../include/Mjday.h \
+ /home/fghfgh/Escritorio/ProyectoTTI/src/../include/SAT_Const.h \
+ /usr/include/c++/13/cstring /usr/include/string.h /usr/include/strings.h

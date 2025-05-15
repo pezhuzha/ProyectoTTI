@@ -10,7 +10,6 @@
      * @bug No known bugs
      */
 Matrix& AccelHarmonic(Matrix r,Matrix E,int n_max,int m_max){
-        GGM03S();
         if(r.n_row<r.n_column){
             r=transpose(r);
         }

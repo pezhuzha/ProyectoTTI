@@ -110,17 +110,17 @@ Matrix& Matrix::operator * (Matrix &m){
         exit(EXIT_FAILURE);
 	}
 	
-	Matrix *m_aux = new Matrix(this->n_row, m.n_column);
+	Matrix &m_aux=zeros(this->n_row, m.n_column);
 	
     for(int i = 1; i <= this->n_row; i++) {
         for(int j = 1; j <= m.n_column; j++) {
-					(*m_aux)(i,j)=0;
+					m_aux(i,j)=0;
         	for(int k = 1; k <= this->n_column; k++) {
-			(*m_aux)(i,j) += (*this)(i,k) * m(k,j);
+			m_aux(i,j) += (*this)(i,k) * m(k,j);
 			}
 		}
 	}
-	return *m_aux;
+	return m_aux;
 }
 //----------------------------------
 Matrix& Matrix::operator / (Matrix &m){
@@ -165,38 +165,47 @@ Matrix& Matrix::operator = (Matrix &m){
 }
 //----------------------------------
 Matrix& Matrix::operator + (double d){
+    
+	Matrix &m_aux=zeros(this->n_row, this->n_column);
+	
     for(int i = 1; i <= this->n_row; i++) {
         for(int j = 1; j <= this->n_column; j++) {
-			(*this)(i,j) += d;
+			m_aux(i,j) = (*this)(i,j) + d;
 		}
 	}
-	return *this;
+	
+	return m_aux;
 }
 Matrix& Matrix::operator - (double d){
+
+	Matrix &m_aux=zeros(this->n_row, this->n_column);
+
     for(int i = 1; i <= this->n_row; i++) {
         for(int j = 1; j <= this->n_column; j++) {
-			(*this)(i,j) -= d;
+			(m_aux)(i,j) =(*this)(i,j)- d;
 		}
 	}
-	return *this;
+	return m_aux;
 }
 //----------------------------------
 Matrix& Matrix::operator * (double d){
+	Matrix &m_aux=zeros(this->n_row, this->n_column);
     for(int i = 1; i <= this->n_row; i++) {
         for(int j = 1; j <= this->n_column; j++) {
-			(*this)(i,j) *= d;
+			(m_aux)(i,j) =(*this)(i,j)* d;
 		}
 	}
-	return *this;
+	return m_aux;
 }
 //---------------------------------
 Matrix& Matrix::operator / (double d){
+	Matrix &m_aux=zeros(this->n_row, this->n_column);
     for(int i = 1; i <= this->n_row; i++) {
         for(int j = 1; j <= this->n_column; j++) {
-			(*this)(i,j) /= d;
+			(m_aux)(i,j) =(*this)(i,j)/ d;
 		}
 	}
-	return *this;
+	return m_aux;
 }
 //----------------------------------
 ostream& operator << (ostream &o, Matrix &m) {
