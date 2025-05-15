@@ -1,11 +1,9 @@
 
 #include <iomanip>
 #include <cmath>
-#include"../include/matrix.h"
-#include"../include/Accel.h"
 #include<tuple>
 #include <iostream>
-
+#include"../include/matrix.h"
 #include "../include/Accel.h"
 #include "../include/PrecMatrix.h"
 #include "../include/NutMatrix.h"
