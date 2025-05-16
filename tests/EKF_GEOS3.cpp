@@ -35,7 +35,7 @@
      * @author Pedro Zhuzhan
      * @bug No known bugs
      */
-		void EKF_GEOS3(){
+		int main(){
 
     AuxParamLoad();
     eop19620101();
@@ -45,8 +45,10 @@
 
     int i=0,t,j,ii,nobs = 46;
             double sigma_range,sigma_az,sigma_el,lat,lon,alt,Mjd1,Mjd2,Mjd3,Mjd0,Mjd_UTC,
-            n_eqn,theta,t_old,Mjd_TT,Dist,Mjd_UT1;
-            Matrix Rs,Y0_apr,Y,P,LT,yPhi,Phi,Y_true,Y0,U,Y_old,dDdY,dDds,r,s,dEdY,K;
+            n_eqn,theta,t_old,Mjd_TT,Dist,Mjd_UT1,UT1_TAI,UTC_GPS,UT1_GPS,TT_UTC,GPS_UTC,
+			x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC,Azim, Elev;
+            Matrix Rs,Y0_apr,P,LT,yPhi,Phi,Y_true,Y0,U,Y_old,dDdY,dDds,r,s,dEdY,
+			K, Y, dAds, dEds,dAdY;
 			sigma_range = 92.5;          
 sigma_az = 0.0224*Rad; 
 sigma_el = 0.0139*Rad; 
@@ -83,7 +85,6 @@ n_eqn  = 6;
 
 Y = DEInteg(Accel,0,-(obs(9,1)-Mjd0)*86400.0,1e-13,1e-6,6,Y0_apr);
 P = zeros(6,6);
-  
 for (i=1;i<=3;i++){
     P(i,i)=1e8;}
 for (i=4;i<=6;i++){
@@ -98,7 +99,7 @@ Phi  = zeros(6,6);
 t = 0;
 
 for (i=1;i<=nobs;i++){
-    
+    cout<<i<<endl;
     t_old = t;
     Y_old = Y;
     
@@ -106,8 +107,8 @@ for (i=1;i<=nobs;i++){
     Mjd_UTC = obs(i,1);                       
     t       = (Mjd_UTC-Mjd0)*86400.0;         
     
-    auto [x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC] = IERS(eopdata,Mjd_UTC,'l');
-    auto [UT1_TAI,UTC_GPS,UT1_GPS,TT_UTC,GPS_UTC] = timediff(UT1_UTC,TAI_UTC);
+    tie (x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC) = IERS(eopdata,Mjd_UTC,'l');
+    tie (UT1_TAI,UTC_GPS,UT1_GPS,TT_UTC,GPS_UTC) = timediff(UT1_UTC,TAI_UTC);
     Mjd_TT = Mjd_UTC + TT_UTC/86400;
     Mjd_UT1 = Mjd_TT + (UT1_UTC-TT_UTC)/86400.0;
     AuxParam.Mjd_UTC = Mjd_UTC;
@@ -125,6 +126,7 @@ for (i=1;i<=nobs;i++){
             }
         }
     }
+    cout<<129<<endl;
     yPhi = DEInteg (VarEqn,0,t-t_old,1e-13,1e-6,42,yPhi);
     
     
@@ -132,45 +134,50 @@ for (i=1;i<=nobs;i++){
         Phi = assign_row(Phi,extract_vector(yPhi,6*j+1,6*j+6),j);
     
     }
-    
+    cout<<137<<endl;
+    cout<<t-t_old<<endl;
+    cout<<Y_old<<endl;
     Y = DEInteg (Accel,0,t-t_old,1e-13,1e-6,6,Y_old);
     
     
     theta = gmst(Mjd_UT1);                    
     U = R_z(theta);
     r = extract_vector(Y,1,3);
+	r=transpose(r);
     s = LT*(U*r-Rs);                          
     
     
     P = TimeUpdate(P, Phi);
         
     
-     [Azim, Elev, dAds, dEds] = AzElPa(s);     
+    tie( Azim, Elev, dAds, dEds)= AzElPa(s);     
     dAdY = union_vector(dAds*LT*U,zeros(1,3));
     
     
-     [K, Y, P] = MeasUpdate ( Y, obs(i,2), Azim, sigma_az, dAdY, P, 6 );
+     tie( K, Y, P) = MeasUpdate ( Y, obs(i,2), Azim, sigma_az, dAdY, P, 6 );
     
     r = extract_vector(Y,1,3);
+	r=transpose(r);
     s = LT*(U*r-Rs);                          
-     [Azim, Elev, dAds, dEds] = AzElPa(s);     
+    tie( Azim, Elev, dAds, dEds)= AzElPa(s);     
     dEdY = union_vector(dEds*LT*U,zeros(1,3));
     
     
-     [K, Y, P] = MeasUpdate ( Y, obs(i,3), Elev, sigma_el, dEdY, P, 6 );
+     tie( K, Y, P) = MeasUpdate ( Y, obs(i,3), Elev, sigma_el, dEdY, P, 6 );
     
     
     r = extract_vector(Y,1,3);
+	r=transpose(r);
     s = LT*(U*r-Rs);                          
     Dist = norm(s); dDds = transpose(s/Dist);         
     dDdY = union_vector(dDds*LT*U,zeros(1,3));
     
     
-     [K, Y,P] = MeasUpdate ( Y, obs(i,4), Dist, sigma_range, dDdY, P, 6 );
+     tie(K, Y,P) = MeasUpdate ( Y, obs(i,4), Dist, sigma_range, dDdY, P, 6 );
 }
 
-auto [x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC] = IERS(eopdata,obs(46,1),'l');
-auto [UT1_TAI,UTC_GPS,UT1_GPS,TT_UTC,GPS_UTC] = timediff(UT1_UTC,TAI_UTC);
+tie(x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC) = IERS(eopdata,obs(46,1),'l');
+tie(UT1_TAI,UTC_GPS,UT1_GPS,TT_UTC,GPS_UTC) = timediff(UT1_UTC,TAI_UTC);
 Mjd_TT = Mjd_UTC + TT_UTC/86400;
 AuxParam.Mjd_UTC = Mjd_UTC;
 AuxParam.Mjd_TT = Mjd_TT;
@@ -191,5 +198,5 @@ cout<<"\nError of Velocity Estimation\n";
 cout<<Y0(4)-Y_true(4)<<endl;
 cout<<Y0(5)-Y_true(5)<<endl;
 cout<<Y0(6)-Y_true(6)<<endl;
-
+return 0;
 	}

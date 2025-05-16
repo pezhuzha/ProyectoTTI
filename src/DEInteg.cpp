@@ -10,11 +10,10 @@
      * @author Pedro Zhuzhan
      * @bug No known bugs
      */
-Matrix& DEInteg(Matrix& f(double t,Matrix z),double t, double tout,double relerr,double abserr,int n_eqn,Matrix &y){
+Matrix& DEInteg(Matrix& f(double t,Matrix y),double t, double tout,double relerr,double abserr,int n_eqn,Matrix &y){
   if(y.n_row<y.n_column){
     y=transpose(y);
   }
-  cout <<setprecision(20);
 // fmaxnum = 500;
   Matrix yout,ypout,two(14),gstr(14);
   bool start,phase1,nornd,crash,success,PermitTOUT,OldPermit,stiff;
@@ -79,6 +78,7 @@ if (t==tout) {   // No integration
     ( State_  >  DE_STATE.DE_INVPARAM ) ||  ( (State_ != DE_STATE.DE_INIT) &&  (t != told)           ) )
   {
      State_ = DE_STATE.DE_INVPARAM;              // Set error code
+	 cout<<"Error"<<endl;;
     exit(-1);                                   // Exit
   }
 
@@ -197,6 +197,7 @@ while (true)  { // Start step loop
     if (fabs(h) < fouru*fabs(x)){
       h = sign_(fouru*fabs(x),h);
       crash = true;
+	 cout<<"Error"<<endl;
     exit(-1);// Exit 
   }
 
@@ -219,6 +220,7 @@ while (true)  { // Start step loop
   if (p5eps<round){
     epsilon = 2.0*round*(1.0+fouru);
     crash = true;
+	 cout<<"Error"<<endl;
     exit(-1);
   }
 
