@@ -38,13 +38,13 @@
 	Matrix a = AccelHarmonic(transpose(extract_vector(Y,1,3)), E, AuxParam.n, AuxParam.m);
 
 	// Luni-solar perturbations
-	if (AuxParam.sun){
+	if (AuxParam.sun==1){
 		    a = a + AccelPointMass(extract_vector(Y,1,3),r_Sun,GM_Sun);}
 
-	if (AuxParam.moon){
+	if (AuxParam.moon==1){
 		    a = a + AccelPointMass(extract_vector(Y,1,3),r_Moon,GM_Moon);}
 	// Planetary perturbations
-	if (AuxParam.planets){
+	if (AuxParam.planets==1){
 		    a = a + AccelPointMass(extract_vector(Y,1,3),r_Mercury,GM_Mercury);
 		    a = a + AccelPointMass(extract_vector(Y,1,3),r_Venus,GM_Venus);
 		    a = a + AccelPointMass(extract_vector(Y,1,3),r_Mars,GM_Mars);
