@@ -54,7 +54,7 @@ Matrix::Matrix(const int n_row, const int n_column) {
 //----------------------------------
 double& Matrix::operator () (const int n) {
 	if (n <= 0 || n > this->n_column* this->n_row) {
-		cout << "Vector get: error in "<<n<<"  " <<this->n_column*this->n_row<<" row/column\n";
+		cout << "Vector get: error in get:"<<n<<" size: " <<this->n_column*this->n_row<<" row/column\n";
         exit(EXIT_FAILURE);
 	}
 	
@@ -64,6 +64,7 @@ double& Matrix::operator () (const int n) {
 double& Matrix::operator () (const int row, const int column) {
 	if (row <= 0 || row > this->n_row || column <= 0 || column > this->n_column) {
 		cout << "Matrix get: error in " <<row<<" row/ "<<column<<" column\n";
+		cout << "Matrix " <<this->n_row<<" n_row/ "<<this->n_column<<" n_column\n";
         exit(EXIT_FAILURE);
 	}
 	
@@ -116,7 +117,7 @@ Matrix& Matrix::operator * (Matrix &m){
         for(int j = 1; j <= m.n_column; j++) {
 					m_aux(i,j)=0;
         	for(int k = 1; k <= this->n_column; k++) {
-			m_aux(i,j) += (*this)(i,k) * m(k,j);
+				m_aux(i,j) += (*this)(i,k) * m(k,j);
 			}
 		}
 	}
@@ -332,7 +333,7 @@ Matrix& zeros(const int n) {
 double norm(Matrix &m) {
 	double r=0;
 	
-	for(int i = 1; i <= m.n_column; i++) {
+	for(int i = 1; i <= m.n_column*m.n_row; i++) {
 			r+=m(i)*m(i);
 	}
 	return sqrt(r);
@@ -343,8 +344,8 @@ double dot(Matrix &v,Matrix &w){
 		cout << "Vector dot: error in v.n_column, w.n_column\n";
 		exit(EXIT_FAILURE);}
 	double result=0;
-	for(int i=1;i<=v.n_column;i++)
-		result += v(1,i)*w(1,i);
+	for(int i=1;i<=v.n_column*v.n_row;i++)
+		result += v(i)*w(i);
 	return result;
 }
 

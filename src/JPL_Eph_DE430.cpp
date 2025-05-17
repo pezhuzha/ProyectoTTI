@@ -11,7 +11,6 @@
 */
 tuple<Matrix&,Matrix&,Matrix&,Matrix&,Matrix&,Matrix&,Matrix&,Matrix&,Matrix&,Matrix&,Matrix&>	JPL_Eph_DE430(double Mjd_TDB){
 
-
 double JD,t1,dt,j,Mjd0;
 Matrix Cx_Earth(12),Cy_Earth(12),Cz_Earth(12),Cx(12),Cy(12),Cz(12),
 Cx_Moon(12),Cy_Moon(12),Cz_Moon(12),temp(4),Cx_Sun(12),Cy_Sun(12),Cz_Sun(12),Cx_Venus(12),Cy_Venus(12),Cz_Venus(12),Cx_Mercury(12),Cy_Mercury(12),Cz_Mercury(12),

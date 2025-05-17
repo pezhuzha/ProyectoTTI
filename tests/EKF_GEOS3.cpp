@@ -35,7 +35,7 @@
      * @author Pedro Zhuzhan
      * @bug No known bugs
      */
-		int main(){
+        int main(){
 
     AuxParamLoad();
     eop19620101();
@@ -43,21 +43,21 @@
     DE430Coeff();
     GEOS3();
 
-    int i=0,t,j,ii,nobs = 46;
-            double sigma_range,sigma_az,sigma_el,lat,lon,alt,Mjd1,Mjd2,Mjd3,Mjd0,Mjd_UTC,
+    int i=0,j,ii,nobs = 46;
+            double sigma_range,sigma_az,sigma_el,lat,lon,alt,Mjd1,Mjd2,Mjd3,Mjd0,Mjd_UTC=obs(9,1),
             n_eqn,theta,t_old,Mjd_TT,Dist,Mjd_UT1,UT1_TAI,UTC_GPS,UT1_GPS,TT_UTC,GPS_UTC,
-			x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC,Azim, Elev;
-            Matrix Rs,Y0_apr,P,LT,yPhi,Phi,Y_true,Y0,U,Y_old,dDdY,dDds,r,s,dEdY,
-			K, Y, dAds, dEds,dAdY;
-			sigma_range = 92.5;          
+            x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC,Azim, Elev,t;
+
+            Matrix Rs,Y0_apr,P,LT,yPhi,Phi,Y_true=zeros(6),Y0=zeros(6),U,Y_old,dDdY,dDds,r,s,dEdY,
+            K, Y, dAds, dEds,dAdY;
+            sigma_range = 92.5;          
 sigma_az = 0.0224*Rad; 
 sigma_el = 0.0139*Rad; 
 
 
 lat = Rad*21.5748;     
 lon = Rad*(-158.2706); 
-alt = 300.20;                
-
+alt = 300.20;        
 Rs = transpose(Position(lon, lat, alt));
 
 Mjd1 = obs(1,1);
@@ -65,22 +65,23 @@ Mjd2 = obs(9,1);
 Mjd3 = obs(18,1);
 Matrix r2(3),v2(3);
 r2(1)=6221397.62857869;
-v2(1)=4645.04725161806;
 r2(2)=2867713.77965738;
-v2(2)=-2752.21591588204;
 r2(3)=3006155.98509949;
+
+v2(1)= 4645.04725161806;
+v2(2)=-2752.21591588204;
 v2(3)=-7507.99940987031;
 //auto [r2,v2] = anglesg(obs(1,2),obs(9,2),obs(18,2),obs(1,3),obs(9,3),obs(18,3),Mjd1,Mjd2,Mjd3,Rs,Rs,Rs);
 
 
 
 Y0_apr = union_vector(r2,v2);
-
+        
 Mjd0 = Mjday(1995,1,29,02,38,0);
 
+AuxParam.Mjd_UTC = Mjd_UTC;
+        
 Mjd_UTC = obs(9,1);
-
-
 n_eqn  = 6;
 
 Y = DEInteg(Accel,0,-(obs(9,1)-Mjd0)*86400.0,1e-13,1e-6,6,Y0_apr);
@@ -99,10 +100,8 @@ Phi  = zeros(6,6);
 t = 0;
 
 for (i=1;i<=nobs;i++){
-    cout<<i<<endl;
     t_old = t;
     Y_old = Y;
-    
     
     Mjd_UTC = obs(i,1);                       
     t       = (Mjd_UTC-Mjd0)*86400.0;         
@@ -113,7 +112,6 @@ for (i=1;i<=nobs;i++){
     Mjd_UT1 = Mjd_TT + (UT1_UTC-TT_UTC)/86400.0;
     AuxParam.Mjd_UTC = Mjd_UTC;
     AuxParam.Mjd_TT = Mjd_TT;
-        
     for ( ii=1;ii<=6;ii++){
         yPhi(ii) = Y_old(ii);
         for (j=1;j<=6;j++)  {
@@ -126,27 +124,19 @@ for (i=1;i<=nobs;i++){
             }
         }
     }
-    cout<<129<<endl;
     yPhi = DEInteg (VarEqn,0,t-t_old,1e-13,1e-6,42,yPhi);
     
-    
     for (j=1;j<=6;j++){
-        Phi = assign_row(Phi,extract_vector(yPhi,6*j+1,6*j+6),j);
+        Phi = assign_column(Phi,extract_vector(yPhi,6*j+1,6*j+6),j);
     
     }
-    cout<<137<<endl;
-    cout<<t-t_old<<endl;
-    cout<<Y_old<<endl;
     Y = DEInteg (Accel,0,t-t_old,1e-13,1e-6,6,Y_old);
-    
-    
     theta = gmst(Mjd_UT1);                    
     U = R_z(theta);
     r = extract_vector(Y,1,3);
-	r=transpose(r);
-    s = LT*(U*r-Rs);                          
-    
-    
+    r=transpose(r);
+    s = LT*(U*r-Rs); 
+  
     P = TimeUpdate(P, Phi);
         
     
@@ -157,19 +147,22 @@ for (i=1;i<=nobs;i++){
      tie( K, Y, P) = MeasUpdate ( Y, obs(i,2), Azim, sigma_az, dAdY, P, 6 );
     
     r = extract_vector(Y,1,3);
-	r=transpose(r);
-    s = LT*(U*r-Rs);                          
-    tie( Azim, Elev, dAds, dEds)= AzElPa(s);     
+    r=transpose(r);
+    s = LT*(U*r-Rs);              
+    tie( Azim, Elev, dAds, dEds)= AzElPa(s);
+
+
     dEdY = union_vector(dEds*LT*U,zeros(1,3));
     
     
      tie( K, Y, P) = MeasUpdate ( Y, obs(i,3), Elev, sigma_el, dEdY, P, 6 );
     
-    
     r = extract_vector(Y,1,3);
-	r=transpose(r);
-    s = LT*(U*r-Rs);                          
-    Dist = norm(s); dDds = transpose(s/Dist);         
+    r=transpose(r);
+    s = LT*(U*r-Rs);
+                 
+    Dist = norm(s);
+    dDds = transpose(s/Dist);         
     dDdY = union_vector(dDds*LT*U,zeros(1,3));
     
     
@@ -191,12 +184,12 @@ Y0 = DEInteg (Accel,0,-(obs(46,1)-obs(1,1))*86400.0,1e-13,1e-6,6,Y);
  }
 
 cout<<"\nError of Position Estimation\n";
-cout<<Y0(1)-Y_true(1)<<endl;
-cout<<Y0(2)-Y_true(2)<<endl;
-cout<<Y0(3)-Y_true(3)<<endl;
+cout<<Y0(1)-Y_true(1)<<" [m]\n";
+cout<<Y0(2)-Y_true(2)<<" [m]\n";
+cout<<Y0(3)-Y_true(3)<<" [m]\n";
 cout<<"\nError of Velocity Estimation\n";
-cout<<Y0(4)-Y_true(4)<<endl;
-cout<<Y0(5)-Y_true(5)<<endl;
-cout<<Y0(6)-Y_true(6)<<endl;
+cout<<Y0(4)-Y_true(4)<<" [m/s]\n";
+cout<<Y0(5)-Y_true(5)<<" [m/s]\n";
+cout<<Y0(6)-Y_true(6)<<" [m/s]\n";
 return 0;
-	}
+    }

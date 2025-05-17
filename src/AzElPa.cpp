@@ -8,7 +8,7 @@
      */
 	tuple<double,double,Matrix&,Matrix&> AzElPa(Matrix s) {
 
-		double rho = sqrt(s(1)*s(1)+s(2)*s(2));
+		long double rho = sqrt(s(1)*s(1)+s(2)*s(2));
 
 		// Angles
 		double Az = atan2(s(1),s(2));
@@ -28,9 +28,7 @@
 		dEds(1)=-s(1)*s(3)/rho;
 		dEds(2)=-s(2)*s(3)/rho;
 		dEds(3)=rho;
-		Matrix aux= dEds/ dot(s,s);
-		dEds= aux;
-
+		 dEds= dEds/ dot(s,s);
 		return tie(Az, El, dAds, dEds);
 
 	}

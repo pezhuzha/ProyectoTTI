@@ -78,7 +78,7 @@ int m_sum_01() {
 	
 	Matrix R = A + B;
     
-    _assert(m_equals(C, R, 1e-10));
+    _assert(m_equals(C, R, 1e-11));
     
     return 0;
 }
@@ -104,7 +104,7 @@ int m_sub_01() {
 	
 	Matrix R = A - B;
     
-    _assert(m_equals(C, R, 1e-10));
+    _assert(m_equals(C, R, 1e-11));
     
     return 0;
 }
@@ -134,7 +134,7 @@ int m_mul_01() {
 	C(4,1) = 19	; C(4,2) = 30	; C(4,3) = 32	; C(4,4) = 39	;
 
 	Matrix R = A * B;
-    _assert(m_equals(R, C, 1e-10));
+    _assert(m_equals(R, C, 1e-11));
     
     return 0;
 }
@@ -163,7 +163,7 @@ int m_div_01() {
 	C(4,1) = 430./963 	; C(4,2) = 338./963		; C(4,3) = 98./963	; C(4,4) = -181./321	;
 
 	Matrix R = A / B;
-    _assert(m_equals(R, C, 1e-10));
+    _assert(m_equals(R, C, 1e-11));
     
     return 0;
 }
@@ -189,7 +189,7 @@ int m_sum_d_01() {
 
 	Matrix R=A+num;
 
-    _assert(m_equals(B, R, 1e-10));
+    _assert(m_equals(B, R, 1e-11));
     
     return 0;
 }
@@ -215,7 +215,7 @@ int m_sub_d_01() {
 
 	Matrix R=A-num;
 
-    _assert(m_equals(B, R, 1e-10));
+    _assert(m_equals(B, R, 1e-11));
     
     return 0;
 }
@@ -240,7 +240,7 @@ int m_mul_d_01() {
 
 	Matrix R=A*num;
 
-    _assert(m_equals(R, B, 1e-10));
+    _assert(m_equals(R, B, 1e-11));
     
     return 0;
 }
@@ -264,7 +264,7 @@ int m_div_d_01() {
 
 	Matrix R=A/num;
 
-    _assert(m_equals(R, B, 1e-10));
+    _assert(m_equals(R, B, 1e-11));
     
     return 0;
 }
@@ -280,7 +280,7 @@ int m_asig_01() {
     
 	Matrix B=A;
 
-    _assert(m_equals(A, B, 1e-10));
+    _assert(m_equals(A, B, 1e-11));
     
     return 0;
 }
@@ -295,7 +295,7 @@ int m_zeros_01() {
 	
 	Matrix B = zeros(3, 4);
     
-    _assert(m_equals(A, B, 1e-10));
+    _assert(m_equals(A, B, 1e-11));
     
     return 0;
 }
@@ -312,7 +312,7 @@ int m_eye_01() {
 	
 	Matrix B = eye(f);
 
-    _assert(m_equals(A, B, 1e-10));
+    _assert(m_equals(A, B, 1e-11));
     
     
     return 0;
@@ -337,7 +337,7 @@ int m_transpose_01() {
 
    	Matrix R=transpose(A);
 
-    _assert(m_equals(R, B, 1e-10));
+    _assert(m_equals(R, B, 1e-11));
     
     return 0;
 }
@@ -359,7 +359,7 @@ int m_inv_01() {
 	B(4,1) = 19./42 ; B(4,2) = -1./6; B(4,3) = 1./14 ; B(4,4) = -10./21;
 
    	Matrix R=inv(A);
-    _assert(m_equals(R, B, 1e-10));
+    _assert(m_equals(R, B, 1e-11));
     return 0;
 }
 int m_norm_01() {
@@ -372,7 +372,7 @@ int m_norm_01() {
 	double B=7.4161984870956629487113974408007;
 
    	double R=norm(A);
-    _assert(fabs(R-B)<1e-10);
+    _assert(fabs(R-B)<1e-11);
     return 0;
 }
 
@@ -389,7 +389,7 @@ int m_dot_01() {
 	
 	double C=dot(A,B);
 	
-    _assert(fabs(R-C)<1e-10);
+    _assert(fabs(R-C)<1e-11);
     
     return 0;
 }
@@ -405,7 +405,7 @@ int m_cross_01() {
 	
 	Matrix C=cross(A,B);
 	
-    _assert(m_equals(R, C, 1e-10));
+    _assert(m_equals(R, C, 1e-11));
     
     return 0;
 }
@@ -421,7 +421,7 @@ int m_extract_vector_01() {
 	R(1,1)= 2; R(1,2) = 1; R(1,3) = 0 ;
 
 	
-    _assert(m_equals(R, B, 1e-10));
+    _assert(m_equals(R, B, 1e-11));
     
     return 0;
 }
@@ -438,7 +438,7 @@ int m_union_vector_01() {
 	R(1,4)= 3; R(1,5) = 1;R(1,6) = 6 ;
 	Matrix C=union_vector(A,B);
 	
-    _assert(m_equals(R, C, 1e-10));
+    _assert(m_equals(R, C, 1e-11));
     
     return 0;
 }
@@ -456,7 +456,7 @@ int m_extract_row_01() {
 	Matrix R(f);
 	R(1,1)= 5; R(1,2) = 3; R(1,3) = 2 ;
 
-    _assert(m_equals(R, B, 1e-10));
+    _assert(m_equals(R, B, 1e-11));
     
     return 0;
 
@@ -476,7 +476,7 @@ int m_extract_column_01() {
 	R(1,1)= 0; R(1,2) = 3; R(1,3) = 2 ;
 
 	
-    _assert(m_equals(R, B, 1e-10));
+    _assert(m_equals(R, B, 1e-11));
     
     return 0;
 }
@@ -501,7 +501,7 @@ int m_assign_row_01() {
 	R(2,1) = 2; R(2,2) = 1; R(2,3) = 3;
 	R(3,1) = 3; R(3,2) = 5; R(3,3) = 6;
 
-    _assert(m_equals(R, C, 1e-10));
+    _assert(m_equals(R, C, 1e-11));
     
     return 0;
 }
@@ -526,7 +526,7 @@ int m_assign_column_01() {
 	R(3,1) = 5; R(3,2) = 3; R(3,3) = 6;
 
 	
-    _assert(m_equals(R, C, 1e-10));
+    _assert(m_equals(R, C, 1e-11));
     
     return 0;
 }
@@ -540,7 +540,7 @@ int m_R_x_01() {
 	R(2,1) = 0; R(2,2) = -0.839071529076452; R(2,3) = -0.54402111088937;
 	R(3,1) = 0; R(3,2) = 0.54402111088937; R(3,3) = -0.839071529076452;
 
-    _assert(m_equals(R, A, 1e-10));
+    _assert(m_equals(R, A, 1e-11));
     
     return 0;
 }
@@ -555,7 +555,7 @@ int m_R_y_01() {
 	R(3,1) = -0.54402111088937  ; R(3,2) = 0; R(3,3) = -0.839071529076452;
 
 	
-    _assert(m_equals(R, A, 1e-10));
+    _assert(m_equals(R, A, 1e-11));
     
     return 0;
 }
@@ -571,7 +571,7 @@ int m_R_z_01() {
 	R(3,1) = 0; R(3,2) = 0; R(3,3) = 1;
 
 
-    _assert(m_equals(R, A, 1e-10));
+    _assert(m_equals(R, A, 1e-11));
     
     return 0;
 }
@@ -591,7 +591,7 @@ int m_AccelPointMass_01() {
 	Matrix R(3);  
 	R(1,1) = 0.0628351366133708; R(1,2) = 0.189703148460208; R(1,3) = 0.316571160307045;
 	
-    _assert(m_equals(R, A, 1e-10));
+    _assert(m_equals(R, A, 1e-11));
     
     return 0;
 }
@@ -615,7 +615,7 @@ int m_Cheb3D_01() {
 	Matrix R(f);
 	R(1,1) = 6; R(1,2) = 6; R(1,3) = 10;
 	
-    _assert(m_equals(R, D, 1e-10));
+    _assert(m_equals(R, D, 1e-11));
     
     return 0;
 }
@@ -624,7 +624,7 @@ int m_EccAnom_01() {
 	double R = 2.38006127313934;
 	double D=EccAnom(1,2);
 	
-    _assert(fabs(R-D)< 1e-10);
+    _assert(fabs(R-D)< 1e-11);
     
     return 0;
 }
@@ -633,7 +633,7 @@ int m_Frac_01() {
 	double R = 0.3801;
 	double D=Frac(2.3801);
 	
-    _assert(fabs(R-D)< 1e-10);
+    _assert(fabs(R-D)< 1e-11);
     
     return 0;
 }
@@ -643,7 +643,7 @@ int m_MeanObliquity_01() {
 	double R = 0.409412815476201;
 	double D=MeanObliquity(41);
 	
-    _assert(fabs(R-D)< 1e-10);
+    _assert(fabs(R-D)< 1e-11);
     
     return 0;
 }
@@ -654,7 +654,7 @@ int m_Mjday_01() {
 	double R = 60800;
 	double D= Mjday(2025,5,5);
 	
-    _assert(fabs(R-D)< 1e-10);
+    _assert(fabs(R-D)< 1e-11);
     
     return 0;
 }
@@ -663,7 +663,7 @@ int m_Mjday_TDB_01() {
 	double R = 2025.0000000092;
 	double D= Mjday_TDB(2025);
 	
-    _assert(fabs(R-D)< 1e-10);
+    _assert(fabs(R-D)< 1e-11);
     
     return 0;
 }
@@ -682,7 +682,7 @@ int m_sign__01() {
 	double R = -4;
 	double D= sign_(4,-3);
 	
-    _assert(fabs(R-D)< 1e-10);
+    _assert(fabs(R-D)< 1e-11);
     
     return 0;
 }
@@ -694,11 +694,11 @@ int m_timediff_01() {
 	double R3 = 42.184;
 	double R4 = -9;
 	auto D= timediff(4,10);
-	_assert(fabs(get<0>(D)-R0)< 1e-10);
-	_assert(fabs(get<1>(D)-R1)< 1e-10);
-	_assert(fabs(get<2>(D)-R2)< 1e-10);
-	_assert(fabs(get<3>(D)-R3)< 1e-10);
-	_assert(fabs(get<4>(D)-R4)< 1e-10);
+	_assert(fabs(get<0>(D)-R0)< 1e-11);
+	_assert(fabs(get<1>(D)-R1)< 1e-11);
+	_assert(fabs(get<2>(D)-R2)< 1e-11);
+	_assert(fabs(get<3>(D)-R3)< 1e-11);
+	_assert(fabs(get<4>(D)-R4)< 1e-11);
     
     return 0;
 }
@@ -719,10 +719,10 @@ int m_AzElPa_01() {
 	R3(1) = -0.095831484749991; R3(2) = -0.191662969499982; R3(3) = 0.159719141249985;
 
 	auto [Az, El, dAds, dEds]= AzElPa(A);
-	_assert(fabs(Az-R0)< 1e-10);
-	_assert(fabs(El-R1)< 1e-10);
-	_assert(m_equals(dAds,R2,1e-10));
-	_assert(m_equals(dEds,R3,1e-10));
+	_assert(fabs(Az-R0)< 1e-11);
+	_assert(fabs(El-R1)< 1e-11);
+	_assert(m_equals(dAds,R2,1e-11));
+	_assert(m_equals(dEds,R3,1e-11));
 	
     
     return 0;
@@ -745,15 +745,15 @@ int m_IERS_01() {
 
 
 	auto [x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC]= IERS(eopdata,49746,'l');
-	_assert(fabs(x_pole-R0)< 1e-10);
-	_assert(fabs(y_pole-R1)< 1e-10);
-	_assert(fabs(UT1_UTC-R2)< 1e-10);
-	_assert(fabs(LOD-R3)< 1e-10);
-	_assert(fabs(dpsi-R4)< 1e-10);
-	_assert(fabs(deps-R5)< 1e-10);
-	_assert(fabs(dx_pole-R6)< 1e-10);
-	_assert(fabs(dy_pole-R7)< 1e-10);
-	_assert(fabs(TAI_UTC-R8)< 1e-10);
+	_assert(fabs(x_pole-R0)< 1e-11);
+	_assert(fabs(y_pole-R1)< 1e-11);
+	_assert(fabs(UT1_UTC-R2)< 1e-11);
+	_assert(fabs(LOD-R3)< 1e-11);
+	_assert(fabs(dpsi-R4)< 1e-11);
+	_assert(fabs(deps-R5)< 1e-11);
+	_assert(fabs(dx_pole-R6)< 1e-11);
+	_assert(fabs(dy_pole-R7)< 1e-11);
+	_assert(fabs(TAI_UTC-R8)< 1e-11);
 	
     
     return 0;
@@ -774,8 +774,8 @@ int m_Legendre_01() {
 	R1(4,1) = 5.44720322371707  ; R1(4,2) =  0.516567339757783 ; R1(4,3) =  -3.11209524837966 ; R1(4,4) = -1.54142738655916;
 
 	auto [pnm, dpnm]= Legendre(3,3,1);
-	_assert(m_equals(pnm,R0, 1e-10));
-	_assert(m_equals(dpnm,R1,1e-10));
+	_assert(m_equals(pnm,R0, 1e-11));
+	_assert(m_equals(dpnm,R1,1e-11));
 	
     
     return 0;
@@ -787,8 +787,8 @@ int m_NutAngles_01() {
 	double R1 =  3.87947551912632e-05;
 
 	auto [dpsi, deps]= NutAngles(3);
-	_assert(fabs(dpsi-R0)< 1e-10);
-	_assert(fabs(deps-R1)< 1e-10);
+	_assert(fabs(dpsi-R0)< 1e-11);
+	_assert(fabs(deps-R1)< 1e-11);
 	
     
     return 0;
@@ -823,7 +823,7 @@ int m_TimeUpdate_01() {
 
 	Matrix R = TimeUpdate(A,B,C);
 	
-	_assert(m_equals(R,D,1e-10));
+	_assert(m_equals(R,D,1e-11));
     
     return 0;
 }
@@ -845,7 +845,7 @@ int m_AccelHarmonic_01() {
 	B(3,1)= 1.0; B(3,2) = 3.0; B(3,3) = 3.0 ;
 	
 	Matrix R = AccelHarmonic(A,B,5,5);
-	_assert(m_equals(R,R0,R0(1)*1e-10));
+	_assert(m_equals(R,R0,R0(1)*1e-11));
     
     return 0;
 }
@@ -855,7 +855,7 @@ int m_EqnEquinox_01() {
 	double R0=2.6045897022442e-05;
 	double R = EqnEquinox(5);
 	
-	_assert(fabs(R-R0)< 1e-10);
+	_assert(fabs(R-R0)< 1e-11);
     
     return 0;
 }
@@ -907,17 +907,17 @@ int m_JPL_Eph_DE430_01() {
 	R10(2)=96865992179.6201;
 	R10(3)=41989334136.8052;
 	auto [r_Mercury,r_Venus,r_Earth,r_Mars,r_Jupiter,r_Saturn,r_Uranus,r_Neptune,r_Pluto,r_Moon,r_Sun] = JPL_Eph_DE430(60800);
-	_assert(m_equals(r_Mercury,R0, abs(R0(1)*1e-10)));
-	_assert(m_equals(r_Venus,R1,abs(R1(1)*1e-10)));
-	_assert(m_equals(r_Earth,R2, abs(R2(1)*1e-10)));
-	_assert(m_equals(r_Mars,R3,abs(R3(1)*1e-10)));
-	_assert(m_equals(r_Jupiter,R4, abs(R4(1)*1e-10)));
-	_assert(m_equals(r_Saturn,R5,abs(R5(1)*1e-10)));
-	_assert(m_equals(r_Uranus,R6, abs(R6(1)*1e-10)));
-	_assert(m_equals(r_Neptune,R7,abs(R7(1)*1e-10)));
-	_assert(m_equals(r_Pluto,R8, abs(R8(1)*1e-10)));
-	_assert(m_equals(r_Moon,R9,abs(R9(1)*1e-10)));
-	_assert(m_equals(r_Sun,R10, abs(R10(1)*1e-10)));
+	_assert(m_equals(r_Mercury,R0, abs(R0(1)*1e-11)));
+	_assert(m_equals(r_Venus,R1,abs(R1(1)*1e-11)));
+	_assert(m_equals(r_Earth,R2, abs(R2(1)*1e-11)));
+	_assert(m_equals(r_Mars,R3,abs(R3(1)*1e-11)));
+	_assert(m_equals(r_Jupiter,R4, abs(R4(1)*1e-11)));
+	_assert(m_equals(r_Saturn,R5,abs(R5(1)*1e-11)));
+	_assert(m_equals(r_Uranus,R6, abs(R6(1)*1e-11)));
+	_assert(m_equals(r_Neptune,R7,abs(R7(1)*1e-11)));
+	_assert(m_equals(r_Pluto,R8, abs(R8(1)*1e-11)));
+	_assert(m_equals(r_Moon,R9,abs(R9(1)*1e-11)));
+	_assert(m_equals(r_Sun,R10, abs(R10(1)*1e-11)));
     
     return 0;
 }
@@ -934,7 +934,7 @@ int m_LTC_01() {
 	R(3,1) = 0.704041030906696; R(3,2) = 0.456472625363814; R(3,3) = -0.54402111088937;
 
 
-    _assert(m_equals(R, A, 1e-10));
+    _assert(m_equals(R, A, 1e-11));
     
     return 0;
 }
@@ -951,7 +951,7 @@ int m_NutMatrix_01() {
 	R(3,1) = 1.26875475773192e-05; R(3,2) =  3.83022986110704e-05 ; R(3,3) =  0.99999999918598;
 
 
-    _assert(m_equals(R, A, 1e-10));
+    _assert(m_equals(R, A, 1e-11));
     
     return 0;
 }
@@ -966,7 +966,7 @@ int m_PoleMatrix_01() {
 	R(3,1) = 0.54402111088937; R(3,2) = 0.456472625363814; R(3,3) = 0.704041030906696;
 
 
-    _assert(m_equals(R, A, 1e-10));
+    _assert(m_equals(R, A, 1e-11));
     
     return 0;
    }
@@ -982,7 +982,7 @@ int m_PrecMatrix_01() {
 	R(3,1) = -2.63539319986234e-05; R(3,2) =   -7.97985227435292e-10; R(3,3) =  0.999999999652735;
 
 
-    _assert(m_equals(R, A, 1e-10));
+    _assert(m_equals(R, A, 1e-11));
     
     return 0;
    }
@@ -994,7 +994,7 @@ int m_PrecMatrix_01() {
 	double R=1.14523606099042;
 
 
-    _assert(fabs(R-A)< 1e-10);
+    _assert(fabs(R-A)< 1e-11);
     
     return 0;
    }
@@ -1007,7 +1007,7 @@ int m_PrecMatrix_01() {
 	double R=1.14526529687017;
 
 
-    _assert(fabs(R-A)< 1e-10);
+    _assert(fabs(R-A)< 1e-11);
     
     return 0;
    }
@@ -1043,9 +1043,9 @@ int m_MeasUpdate_01() {
 	R2(1,1) = -2.95419847328244  ; R2(1,2) = 0.717557251908397; R2(1,3) = 1.0763358778626;
 	R2(2,1) = 0.633587786259541; R2(2,2) = 0.259541984732824; R2(2,3) = 0.389312977099237;
 	R2(3,1) = 2.06870229007634; R2(3,2) = 0.0763358778625954 ; R2(3,3) = 0.114503816793893;
-    _assert(m_equals(R0, K, 1e-10));
-    _assert(m_equals(R1, x, 1e-10));
-    _assert(m_equals(R2, P, 1e-10));
+    _assert(m_equals(R0, K, 1e-11));
+    _assert(m_equals(R1, x, 1e-11));
+    _assert(m_equals(R2, P, 1e-11));
     
     return 0;
    }
@@ -1067,7 +1067,7 @@ int m_MeasUpdate_01() {
 	B(3,1)= 1.0; B(3,2) = 3.0; B(3,3) = 3.0 ;
 	
 	Matrix R = G_AccelHarmonic(A,B,5,5);
-	_assert(m_equals(R,R2,fabs(R2(1)*1e-10)));
+	_assert(m_equals(R,R2,fabs(R2(1)*1e-11)));
     
     return 0;
 }
@@ -1081,7 +1081,7 @@ int m_GHAMatrix_01() {
 	
 	Matrix A = GHAMatrix(10);
 
-	_assert(m_equals(R,A,1e-10));
+	_assert(m_equals(R,A,1e-11));
     
     return 0;
 }
@@ -1107,7 +1107,7 @@ int m_Accel_01() {
 	Matrix B = Accel(10,A);
 
 
-	_assert(m_equals(R,B,abs(R(6)*1e-10)));
+	_assert(m_equals(R,B,abs(R(6)*1e-11)));
     
     return 0;
 }
@@ -1201,18 +1201,18 @@ Matrix A(42);
 	R=transpose(R);
 	Matrix B = VarEqn( 5.38970808087706,A);
 
-	_assert(m_equals(R,B,abs(R(1)*1e-10)));
+	_assert(m_equals(R,B,abs(R(1)*1e-11)));
     
     return 0;
 }
 int m_DEInteg_01() {
 
 	Matrix R(6);
-	R(1)=5542555.89427451;
+	R(1)=5542555.89427452;
 	R(2)=3213514.83814162;
-	R(3)=3990892.92789074;
+	R(3)= 3990892.92789074;
 	R(4)=5394.06894044389;
-	R(5)=-2365.21290574021;
+	R(5)=-2365.2129057402;
 	R(6)=-7061.8448137347;
           
 	Matrix A(6);
@@ -1227,10 +1227,111 @@ int m_DEInteg_01() {
 	Matrix B = DEInteg(Accel,0,-134.999991953373,1e-13,1e-6,6,A);
 
 
-	_assert(m_equals(R,B,abs(R(6)*1e-5)));
+	_assert(m_equals(R,B,abs(R(5)*1e-11)));
     
     return 0;
 }
+
+int m_DEInteg_02() {
+
+	Matrix R(42);R(1) = 5738566.57839022669941186905;  
+R(2) = 3123975.34079016046598553658;  
+R(3) = 3727114.48185792192816734314;  
+R(4) = 5199.63333072015666402876;  
+R(5) = -2474.43881538621053550742;  
+R(6) = -7195.16750655246323731262;  
+R(7) = 1.00041922218499723662;  
+R(8) = 0.00059920593571841042;  
+R(9) = 0.00073733436348727617;  
+R(10) = 0.00002345115977034319;  
+R(11) = 0.00003252400057499214;  
+R(12) = 0.00003975469962304554;  
+R(13) = 0.00059921075758673638;  
+R(14) = 0.99970377069216187493;  
+R(15) = 0.00041868781453094399;  
+R(16) = 0.00003252465380803567;  
+R(17) = -0.00001618549664574916;  
+R(18) = 0.00002234059989978858;  
+R(19) = 0.00073734401277981423;  
+R(20) = 0.00041868992651891744;  
+R(21) = 0.99987741327984880346;  
+R(22) = 0.00003975600662542113;  
+R(23) = 0.00002234088586517918;  
+R(24) = -0.00000722167524967158;  
+R(25) = 37.00534807357379918358;  
+R(26) = 0.00742079763527610497;  
+R(27) = 0.00907126697570968289;  
+R(28) = 1.00044810751570323326;  
+R(29) = 0.00060406127171495471;  
+R(30) = 0.00073344771558587303;  
+R(31) = 0.00742082744392157274;  
+R(32) = 36.99630585939360116754;  
+R(33) = 0.00509711970027732202;  
+R(34) = 0.00060406611734724824;  
+R(35) = 0.99969715852931961830;  
+R(36) = 0.00040782991890694887;  
+R(37) = 0.00907132660453686089;  
+R(38) = 0.00509713274135756809;  
+R(39) = 36.99835051015989506595;  
+R(40) = 0.00073345741154581682;  
+R(41) = 0.00040783204045645666;  
+R(42) = 0.99985514183866730509;
+
+          
+	Matrix A(42);
+	A(1) = 5542555.93722861;
+A(2) = 3213514.8673492;
+A(3) = 3990892.97587685;
+A(4) = 5394.06842166351;
+A(5) = -2365.21337882342;
+A(6) = -7061.84554200295;
+A(7) = 1;
+A(8) = 0;
+A(9) = 0;
+A(10) = 0;
+A(11) = 0;
+A(12) = 0;
+A(13) = 0;
+A(14) = 1;
+A(15) = 0;
+A(16) = 0;
+A(17) = 0;
+A(18) = 0;
+A(19) = 0;
+A(20) = 0;
+A(21) = 1;
+A(22) = 0;
+A(23) = 0;
+A(24) = 0;
+A(25) = 0;
+A(26) = 0;
+A(27) = 0;
+A(28) = 1;
+A(29) = 0;
+A(30) = 0;
+A(31) = 0;
+A(32) = 0;
+A(33) = 0;
+A(34) = 0;
+A(35) = 1;
+A(36) = 0;
+A(37) = 0;
+A(38) = 0;
+A(39) = 0;
+A(40) = 0;
+A(41) = 0;
+A(42) = 1;
+
+	
+	A=transpose(A);
+	Matrix B = DEInteg(VarEqn,0,37.0000004768372,1e-13,1e-6,42,A);
+
+
+	_assert(m_equals(R,B,abs(R(5)*1e-11)));
+    
+    return 0;
+}
+
 int all_tests()
 {
     _verify(m_sum_01);
@@ -1287,6 +1388,7 @@ int all_tests()
     _verify(m_Accel_01); 
     _verify(m_VarEqn_01);
     _verify(m_DEInteg_01);
+    _verify(m_DEInteg_02);
 
 
     return 0;

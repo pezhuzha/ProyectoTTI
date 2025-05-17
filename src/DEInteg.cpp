@@ -10,39 +10,41 @@
      * @author Pedro Zhuzhan
      * @bug No known bugs
      */
-Matrix& DEInteg(Matrix& f(double t,Matrix y),double t, double tout,double relerr,double abserr,int n_eqn,Matrix &y){
+Matrix& DEInteg(Matrix& f(double t,Matrix z),double t, double tout,double relerr,double abserr,int n_eqn,Matrix &y){
   if(y.n_row<y.n_column){
     y=transpose(y);
   }
-// fmaxnum = 500;
-  Matrix yout,ypout,two(14),gstr(14);
-  bool start,phase1,nornd,crash,success,PermitTOUT,OldPermit,stiff;
-  double delsgn,x,hi,ki,kold,temp1,term,psijm1,eta,sum,fabsh,hold,hnew,
-  k,round,gamma,i,p5eps,ifail,kp1,kp2,km1,km2,ns,nsp1,realns,im1,temp2,
-  temp3,reali,temp4,nsm2,limit1,temp5,temp6,limit2,nsp2,ip1,tau,xold,erkm2,
-  erkm1,erk,err,knew,rhi,h,r,erkp1,rhodouble,told,epsilon,del,absdel,tend,nostep,kle4,
-  releps,fabseps,twou,fouru;
-  int l;
+  cout<<setprecision(15);
+
+  Matrix yout=zeros(n_eqn,1),ypout=zeros(n_eqn,1),two(14),gstr(14);
+  bool start=false,phase1=false,nornd=false,crash=false,success=false,PermitTOUT=false,OldPermit=false,stiff=false;
+  long double delsgn=0.0,x=0.0,hi=0.0,ki=0.0,kold=0.0,temp1=0.0,term=0.0,psijm1=0.0,eta=0.0,sum=0.0,absh=0.0,hold=0.0,hnew=0.0,
+  k=0.0,round=0.0,gamma=0.0,i=0.0,p5eps=0.0,ifail=0.0,kp1=0.0,kp2=0.0,km1=0.0,km2=0.0,ns=0.0,nsp1=0.0,realns=0.0,im1=0.0,temp2=0.0,
+  temp3=0.0,reali=0.0,temp4=0.0,nsm2=0.0,limit1=0.0,temp5=0.0,temp6=0.0,limit2=0.0,nsp2=0.0,ip1=0.0,tau=0.0,xold=0.0,erkm2=0.0,
+  erkm1=0.0,erk,err=0.0,knew=0.0,rhi=0.0,h=0.0,erkp1=0.0,rhodouble=0.0,told=0.0,epsilon=0.0,del=0.0,absdel=0.0,tend=0.0,nostep=0.0,kle4=0.0,
+  releps=0.0,abseps=0.0,twou=0.0,fouru=0.0;
+  double r=0.0;
+  int l=0;
   twou  = 2*eps;
   fouru = 4*eps;
 
 
   struct DE_STATE_t {
-    int DE_INIT = 1;      // Restart integration
-    int DE_DONE = 2;      // Successful step
-    int DE_BADACC = 3;    // Accuracy requirement could not be achieved
-    int DE_NUMSTEPS = 4;  // Permitted number of steps exceeded
-    int DE_STIFF = 5;     // Stiff problem suspected
-    int DE_INVPARAM = 6;  // Invalid input parameters
+    int DE_INIT = 1;      
+    int DE_DONE = 2;      
+    int DE_BADACC = 3;    
+    int DE_NUMSTEPS = 4;  
+    int DE_STIFF = 5;     
+    int DE_INVPARAM = 6;  
   };
 
   DE_STATE_t DE_STATE;
 
   int State_ = DE_STATE.DE_INIT;
-PermitTOUT = true,OldPermit;         // Allow integration past tout by default
+PermitTOUT = true,OldPermit;         
 told = 0;
 
-// Powers of two (two(n)=2^n)
+
 double arrtwo[]  = {1.0, 2.0, 4.0, 8.0, 16.0, 32.0, 64.0, 128.0,256.0, 512.0, 1024.0, 2048.0, 4096.0, 8192.0};
 double arrgstr[] = {1.0, 0.5, 0.0833, 0.0417, 0.0264, 0.0188, 0.0143, 0.0114, 0.00936, 0.00789, 0.00679,0.00592, 0.00524, 0.00468};
 for(int wxy=1;wxy<=14;wxy++){
@@ -50,7 +52,7 @@ for(int wxy=1;wxy<=14;wxy++){
   gstr(wxy)=arrgstr[wxy-1];
 }
 
-Matrix yy    = zeros(n_eqn,1);    // Allocate vectors with proper dimension
+Matrix yy    = zeros(n_eqn,1);    
 Matrix wt    = zeros(n_eqn,1);
 Matrix p     = zeros(n_eqn,1);
 Matrix yp    = zeros(n_eqn,1);
@@ -64,27 +66,16 @@ Matrix beta  = zeros(13,1);
 Matrix v     = zeros(13,1);
 Matrix psi_  = zeros(13,1);
 
-// while(true)
-
-// Return, if output time equals input time
-
-if (t==tout) {   // No integration
+if (t==tout) {   
   return y;}
-
-// Test for improper parameters
 
   epsilon = fmax(relerr,abserr);
   if ( ( relerr <  0.0  ) || ( abserr <  0.0 ) ||  ( epsilon    <= 0.0  ) ||
     ( State_  >  DE_STATE.DE_INVPARAM ) ||  ( (State_ != DE_STATE.DE_INIT) &&  (t != told)           ) )
   {
-     State_ = DE_STATE.DE_INVPARAM;              // Set error code
-	 cout<<"Error"<<endl;;
-    exit(-1);                                   // Exit
+     State_ = DE_STATE.DE_INVPARAM;  
+	   return y;                                  
   }
-
-// On each call set interval of integration and counter for
-// number of steps. Adjust input error tolerances to define
-// weight vector for subroutine STEP.
 
   del    = tout - t;
   absdel = fabs(del);
@@ -97,19 +88,17 @@ if (t==tout) {   // No integration
   kle4   = 0;
   stiff  = false;
   releps = relerr/epsilon;
-  fabseps = abserr/epsilon;
+  abseps = abserr/epsilon;
 
   if  ( (State_==DE_STATE.DE_INIT) || (!OldPermit) || (delsgn*del<=0.0) ){
-    // On start and restart also set the work variables x and yy(*),
-    // store the direction of integration and initialize the step size
+    
+    
     start  = true;
     x      = t;
     yy     = y;
     delsgn = sign_(1.0, del);
     h = sign_( fmax(fouru*fabs(x), fabs(tout-x)), tout-x );}
-
-while (true)  { // Start step loop
-  // If already past output point, interpolate solution and return
+while(true){
   if (fabs(x-t) >= absdel){
     yout  = zeros(n_eqn,1);
     ypout = zeros(n_eqn,1);
@@ -118,11 +107,10 @@ while (true)  { // Start step loop
     hi = tout - x;
     ki = kold + 1;
 
-      // Initialize w[*] for computing g[*]
     for (int i=1;i<=k;i++){
       temp1 = i;
       w(i+1) = 1.0/temp1;}
-      // Compute g[*]
+      
       term = 0.0;
       for (int j=2;j<=ki;j++){
         psijm1 = psi_(j);
@@ -133,11 +121,14 @@ while (true)  { // Start step loop
           g(j+1) = w(2);
           rho(j+1) = gamma*rho(j);
           term = psijm1;}
-      // Interpolate for the solution yout and for
-      // the derivative of the solution ypout    
-        yout=transpose(yout);
-        ypout=transpose(ypout);
+      
+        if(yout.n_row>yout.n_column){
+        yout=transpose(yout);}
+        if(ypout.n_row>ypout.n_column){
+        ypout=transpose(ypout);}
+        if(y.n_row>y.n_column){
         y=transpose(y);
+         }
           for (int j=1;j<=ki;j++){
             i = ki+1-j;
             yout  = yout  + extract_column(phi,i+1)*g(i+1);
@@ -145,60 +136,33 @@ while (true)  { // Start step loop
           }
             yout = y +yout*hi;
             y    = yout;
-      State_    = DE_STATE.DE_DONE; // Set return code
-      t         = tout;             // Set independent variable
-      told      = t;                // Store independent variable
+      State_    = DE_STATE.DE_DONE; 
+      t         = tout;             
+      told      = t;                
       OldPermit = PermitTOUT;
-      return y;                       // Normal exit
-    }             
+      return y;                       
+    }          
 
-  // If cannot go past output point and sufficiently close,
-  // extrapolate and return
     if ( !PermitTOUT && ( fabs(tout-x) < fouru*fabs(x) ) ){
       h = tout - x;
-      yp = f(x,yy);          // Compute derivative yp(x)
-      y = yy + yp*h;                // Extrapolate vector from x to tout
-      State_    = DE_STATE.DE_DONE; // Set return code
-      t         = tout;             // Set independent variable
-      told      = t;                // Store independent variable
+      yp = f(x,yy);          
+      y = yy + yp*h;                
+      State_    = DE_STATE.DE_DONE; 
+      t         = tout;             
+      told      = t;                
       OldPermit = PermitTOUT;
-      return y;                       // Normal exit
+      return y;                       
     }
 
-  // Test for too much work
-//   if (nostep >= fmaxnum)
-//       State_ = DE_STATE.DE_NUMSTEPS; // Too many steps
-//       if (stiff) 
-//           State_ = DE_STATE.DE_STIFF;// Stiffness suspected
-//       }
-//       y         = yy;                // Copy last step
-//       t         = x;
-//       told      = t;
-//       OldPermit = true;
-//       return y;                        // Weak failure exit
-//   }
-
-  // Limit step size, set weight vector and take a step
     h  = sign_(min(fabs(h), fabs(tend-x)), h);
     for (l=1;l<=n_eqn;l++){
-      wt(l) = releps*fabs(yy(l)) + fabseps;
+      wt(l) = releps*fabs(yy(l)) + abseps;
     }
-
-//   Step
-//                                                                   
-// Begin block 0                                                     
-//                                                                   
-// Check if step size or error tolerance is too small for machine    
-// precision.  If first step, initialize phi array and estimate a    
-// starting step size. If step size is too small, determine an       
-// acceptable one.                                                   
-//                                                                   
 
     if (fabs(h) < fouru*fabs(x)){
       h = sign_(fouru*fabs(x),h);
       crash = true;
-	 cout<<"Error"<<endl;
-    exit(-1);// Exit 
+      return y;
   }
 
   p5eps  = 0.5*epsilon;
@@ -209,9 +173,6 @@ while (true)  { // Start step loop
 
   ifail = 0;
 
-// If error tolerance is too small, increase it to an 
-// acceptable value.                                  
-
   round = 0.0;
   for (l=1;l<=n_eqn;l++){
     round = round + (y(l)*y(l))/(wt(l)*wt(l));
@@ -220,12 +181,10 @@ while (true)  { // Start step loop
   if (p5eps<round){
     epsilon = 2.0*round*(1.0+fouru);
     crash = true;
-	 cout<<"Error"<<endl;
-    exit(-1);
+    return y;
   }
-
   if (start){
-  // Initialize. Compute appropriate step size for first step. 
+  
     yp = transpose(f(x,y));
     sum = 0.0;
     for (l=1;l<=n_eqn;l++){
@@ -234,11 +193,11 @@ while (true)  { // Start step loop
       sum = sum + (yp(l)*yp(l))/(wt(l)*wt(l));
     }
     sum  = sqrt(sum);
-    fabsh = fabs(h);
+    absh = fabs(h);
     if (epsilon<16.0*sum*h*h){
-      fabsh=0.25*sqrt(epsilon/sum);
+      absh=0.25*sqrt(epsilon/sum);
     }
-    h    = sign_(fmax(fabsh, fouru*fabs(x)), h);
+    h    = sign_(fmax(absh, fouru*fabs(x)), h);
     hold = 0.0;
     hnew = 0.0;
     k    = 1;
@@ -254,29 +213,12 @@ while (true)  { // Start step loop
     }
   }
 
-//                                                                   
-// End block 0                                                       
-//                                                                   
-
-//                                                                   
-// Repeat blocks 1, 2 (and 3) until step is successful               
-//                                                                   
   while(true){
-
-  //                                                                 
-  // Begin block 1                                                   
-  //                                                                 
-  // Compute coefficients of formulas for this step. Avoid computing 
-  // those quantities not changed when step size is not changed.     
-  //                                                                 
 
     kp1 = k+1;
     kp2 = k+2;
     km1 = k-1;
     km2 = k-2;
-
-  // ns is the number of steps taken with size h, including the 
-  // current one. When k<ns, no coefficients change.           
 
     if (h !=hold){
       ns=0;
@@ -287,8 +229,6 @@ while (true)  { // Start step loop
     nsp1 = ns+1;
 
     if (k>=ns){
-      // Compute those components of alpha[*],beta[*],psi[*],sig[*] 
-      // which are changed                                          
       beta(ns+1) = 1.0;
       realns = ns;
       alpha(ns+1) = 1.0/realns;
@@ -308,9 +248,9 @@ while (true)  { // Start step loop
       }
       psi_(k+1) = temp1;
       
-      // Compute coefficients g[*]; initialize v[*] and set w[*].
+      
       if (ns>1){
-          // If order was raised, update diagonal part of v[*]
+          
         if (k>kold){
           temp4 = k*kp1;
           v(k+1) = 1.0/temp4;
@@ -321,7 +261,7 @@ while (true)  { // Start step loop
           }
         }
 
-          // Update V[*] and set W[*]
+          
         limit1 = kp1 - ns;
         temp5  = alpha(ns+1);
         for (int iq=1;iq<=limit1;iq++){
@@ -337,7 +277,7 @@ while (true)  { // Start step loop
           }
         }
 
-      // Compute the g[*] in the work vector w[*]
+      
         nsp2 = ns + 2;
         if (kp1>=nsp2){
           for (int i=nsp2;i<=kp1;i++){
@@ -349,21 +289,9 @@ while (true)  { // Start step loop
             g(i+1) = w(2);
           }
         }
-  } // if K>=NS
+  } 
   
-  //
-  // End block 1
-  //
   
-  //
-  // Begin block 2
-  //
-  // Predict a solution p[*], evaluate derivatives using predicted
-  // solution, estimate local error at order k and errors at orders
-  // k, k-1, k-2 as if constant step size were used.
-  //   
-  
-  // Change phi to phi star
   if (k>=nsp1){
     for (int i=nsp1;i<=k;i++){
       temp1 = beta(i+1);
@@ -372,7 +300,7 @@ while (true)  { // Start step loop
       }
     }
   }
-  // Predict solution and differences 
+  
   for (l=1;l<=n_eqn;l++){
     phi(l,kp2+1) = phi(l,kp1+1);
     phi(l,kp1+1) = 0.0;
@@ -398,10 +326,9 @@ while (true)  { // Start step loop
   }
   xold = x;
   x = x + h;
-  fabsh = fabs(h);
+  absh = fabs(h);
   yp = f(x,p);
   
-  // Estimate errors at orders k, k-1, k-2 
   erkm2 = 0.0;
   erkm1 = 0.0;
   erk = 0.0;
@@ -418,17 +345,17 @@ while (true)  { // Start step loop
   }
   
   if (km2> 0){
-    erkm2 = fabsh*sig(km1+1)*gstr(km2+1)*sqrt(erkm2);
+    erkm2 = absh*sig(km1+1)*gstr(km2+1)*sqrt(erkm2);
   }
   if (km2>=0){
-    erkm1 = fabsh*sig(k+1)*gstr(km1+1)*sqrt(erkm1);
+    erkm1 = absh*sig(k+1)*gstr(km1+1)*sqrt(erkm1);
   }
-  temp5 = fabsh*sqrt(erk);
+  temp5 = absh*sqrt(erk);
   err = temp5*(g(k+1)-g(kp1+1));
   erk = temp5*sig(kp1+1)*gstr(k+1);
   knew = k;
   
-  // Test if order should be lowered 
+  
   if (km2 >0){
     if (fmax(erkm1,erkm2)<=erk){
       knew=km1;
@@ -440,31 +367,9 @@ while (true)  { // Start step loop
     }
   }
   
-  //
-  // End block 2
-  //
-  
-  //
-  // If step is successful continue with block 4, otherwise repeat
-  // blocks 1 and 2 after executing block 3
-  //
-  
   success = (err<=epsilon);
   
   if (!success){
-
-    //
-    // Begin block 3
-    //
-
-    // The step is unsuccessful. Restore x, phi[*,*], psi[*]. If
-    // 3rd consecutive failure, set order to 1. If step fails more
-    // than 3 times, consider an optimal step size. Double error
-    // tolerance and return if estimated step size is too small
-    // for machine precision.
-    //
-
-    // Restore x, phi[*,*] and psi[*]
     phase1 = false; 
     x = xold;
     for (int i=1;i<=k;i++){
@@ -481,8 +386,8 @@ while (true)  { // Start step loop
       }
     }
     
-    // On third failure, set order to one. 
-    // Thereafter, use optimal step size   
+    
+    
     ifail = ifail+1;
     temp2 = 0.5;
     if (ifail>3) {
@@ -499,14 +404,9 @@ while (true)  { // Start step loop
       crash = true;
       h = sign_(fouru*fabs(x), h);
       epsilon = epsilon*2.0;
-        return y;                 // Exit 
+        return y;                 
       }
-
-    //
-    // End block 3, return to start of block 1
-    //
-
-  }  // } if(success)
+  }  
   
   if (success){
     break;
@@ -514,18 +414,9 @@ while (true)  { // Start step loop
   
 }
 
-//
-// Begin block 4
-//
-// The step is successful. Correct the predicted solution, evaluate
-// the derivatives using the corrected solution and update the
-// differences. Determine best order and step size for next step.
-//
-
 kold = k;
 hold = h;
 
-// Correct and evaluate
 temp1 = h*g(kp1+1);
 if (nornd){
   for (l=1;l<=n_eqn;l++){
@@ -541,7 +432,7 @@ else{
 }
 yp = f(x,y);
 
-// Update differences for next step 
+
 for (l=1;l<=n_eqn;l++){
   phi(l,kp1+1) = yp(l) - phi(l,2);
   phi(l,kp2+1) = phi(l,kp1+1) - phi(l,kp2+1);
@@ -552,10 +443,7 @@ for (int i=1;i<=k;i++){
   }
 }
 
-// Estimate error at order k+1 unless               
-// - in first phase when always raise order,        
-// - already decided to lower order,                
-// - step size not constant so estimate unreliable  
+
 erkp1 = 0.0;
 if ( (knew==km1) || (k==12) ){
   phase1 = false;
@@ -566,7 +454,7 @@ if (phase1){
   erk = erkp1;}
   else{
     if (knew==km1){
-        // lower order 
+        
       k = km1;
       erk = erkm1;}
       else{
@@ -574,41 +462,38 @@ if (phase1){
           for (l=1;l<=n_eqn;l++){
             erkp1 = erkp1 + (phi(l,kp2+1)/wt(l))*(phi(l,kp2+1)/wt(l));
           }
-          erkp1 = fabsh*gstr(kp1+1)*sqrt(erkp1);
-            // Using estimated error at order k+1, determine 
-            // appropriate order for next step               
+          erkp1 = absh*gstr(kp1+1)*sqrt(erkp1);
+            
+            
           if (k>1){
             if ( erkm1<=min(erk,erkp1)){
-                    // lower order
+                    
               k=km1; erk=erkm1;}
               else{
                 if ( (erkp1<erk) && (k!=12) ){
-                        // raise order 
+                        
                   k=kp1;
                   erk=erkp1;
                 }
               }
             }
             else if (erkp1<0.5*erk){
-                // raise order
-                // Here erkp1 < erk < fmax(erkm1,ermk2) else    
-                // order would have been lowered in block 2.   
-                // Thus order is to be raised                  
+                
               k = kp1;
               erk = erkp1;
             }
-        } // } if kp1<=ns
-    } // } if knew!=km1
-} // } if !phase1
+        } 
+    } 
+} 
 
-// With new order determine appropriate step size for next step
+
 if ( phase1 || (p5eps>=erk*two(k+2)) ){
   hnew = 2.0*h;}
   else{
     if (p5eps<erk){
       temp2 = k+1;
       r = pow(p5eps/erk,(1.0/temp2));
-      hnew = fabsh*fmax(0.5, min(0.9,r));
+      hnew = absh*fmax(0.5, min(0.9,r));
       hnew = sign_(fmax(hnew, fouru*fabs(x)), h);}
       else{
         hnew = h;
@@ -616,49 +501,95 @@ if ( phase1 || (p5eps>=erk*two(k+2)) ){
     }
     h = hnew;
 
-//
-// End block 4
-//
-
-  // Test for too small tolerances
     if (crash){
       State_    = DE_STATE.DE_BADACC;
-      relerr    = epsilon*releps;       // fmodify relative and fabsolute
-      abserr    = epsilon*fabseps;       // accuracy requirements
-      y         = yy;                   // Copy last step
+      relerr    = epsilon*releps;       
+      abserr    = epsilon*abseps;       
+      y         = yy;                   
       t         = x;
       told      = t;
       OldPermit = true;
-      return y;                       // Weak failure exit
+      return y;                       
     }
 
-  nostep = nostep+1;  // Count total number of steps
+  nostep = nostep+1;  
   
-  // Count number of consecutive steps taken with the order of
-  // the method being less or equal to four and test for stiffness
+  
+  
   kle4 = kle4+1;
   if (kold>  4){
     kle4 = 0;
   }
   if (kle4>=50){
     stiff = true;
-  }// Usa tu función para imprimir matrices
-} // End step loop
+  }
+}
+/*
+cout << "delsgn: " << delsgn << endl;
+cout << "x: " << x << endl;
+cout << "hi: " << hi << endl;
+cout << "ki: " << ki << endl;
+cout << "kold: " << kold << endl;
+cout << "temp1: " << temp1 << endl;
+cout << "term: " << term << endl;
+cout << "psijm1: " << psijm1 << endl;
+cout << "eta: " << eta << endl;
+cout << "sum: " << sum << endl;
+cout << "absh: " << absh << endl;
+cout << "hold: " << hold << endl;
+cout << "hnew: " << hnew << endl;
+cout << "k: " << k << endl;
+cout << "round: " << round << endl;
+cout << "gamma: " << gamma << endl;
+cout << "i: " << i << endl;
+cout << "p5eps: " << p5eps << endl;
+cout << "ifail: " << ifail << endl;
+cout << "kp1: " << kp1 << endl;
+cout << "kp2: " << kp2 << endl;
+cout << "km1: " << km1 << endl;
+cout << "km2: " << km2 << endl;
+cout << "ns: " << ns << endl;
+cout << "nsp1: " << nsp1 << endl;
+cout << "realns: " << realns << endl;
+cout << "im1: " << im1 << endl;
+cout << "temp2: " << temp2 << endl;
+cout << "temp3: " << temp3 << endl;
+cout << "reali: " << reali << endl;
+cout << "temp4: " << temp4 << endl;
+cout << "nsm2: " << nsm2 << endl;
+cout << "limit1: " << limit1 << endl;
+cout << "temp5: " << temp5 << endl;
+cout << "temp6: " << temp6 << endl;
+cout << "limit2: " << limit2 << endl;
+cout << "nsp2: " << nsp2 << endl;
+cout << "ip1: " << ip1 << endl;
+cout << "tau: " << tau << endl;
+cout << "xold: " << xold << endl;
+cout << "erkm2: " << erkm2 << endl;
+cout << "erkm1: " << erkm1 << endl;
+cout << "erk: " << erk << endl;
+cout << "err: " << err << endl;
+cout << "knew: " << knew << endl;
+cout << "rhi: " << rhi << endl;
+cout << "h: " << h << endl;
+cout << "r: " << r << endl;
+cout << "erkp1: " << erkp1 << endl;
+cout << "rhodouble: " << rhodouble << endl;
+cout << "told: " << told << endl;
+cout << "epsilon: " << epsilon << endl;
+cout << "del: " << del << endl;
+cout << "absdel: " << absdel << endl;
+cout << "tend: " << tend << endl;
+cout << "nostep: " << nostep << endl;
+cout << "kle4: " << kle4 << endl;
+cout << "releps: " << releps << endl;
+cout << "abseps: " << abseps << endl;
+cout << "twou: " << twou << endl;
+cout << "fouru: " << fouru << endl;
 
-//   if ( State_==DE_STATE.DE_INVPARAM )
-//       error ('invalid parameters in DEInteg');
-//       exit; 
-//   }
-//   if ( State_==DE_STATE.DE_BADACC )
-//       warning ('on','Accuracy requirement not achieved in DEInteg');
-//   }
-//   if ( State_==DE_STATE.DE_STIFF )
-//       warning ('on','Stiff problem suspected in DEInteg');
-//   }
-//   if ( State_ >= DE_STATE.DE_DONE )
-//       break;
-//   }
-//   
-// }
+cout << "l: " << l << endl;
+cout << "y: \n" << y << endl;*/
+
+  cout<<69<<endl;            
 return y;
 }

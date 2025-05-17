@@ -94,7 +94,7 @@ void GEOS3(int nobs){
 	}
 	int Y,MO,D,H,M,MI,S;
 	double AZ,EL,DIST;
-	char tline[57],y[5],mo[3],d[3],h[3],mi[3],s[6],az[9],el[9],dist[10],aux[2];
+	char tline[57],y[5],mo[3],d[3],h[3],mi[3],s[6],az[10],el[9],dist[10],aux[2];
 	for (int i=1;i<=nobs;i++)
 	{
 		fgets(tline,sizeof(tline),fid);
@@ -116,8 +116,8 @@ void GEOS3(int nobs){
 		strncpy(s,&(tline[18]),5);
 		s[5]='\0';
 		S=atof(s);
-		strncpy(az,&(tline[26]),8);
-		az[8]='\0';
+		strncpy(az,&(tline[25]),9);
+		az[9]='\0';
 		AZ=atof(az);
 		strncpy(el,&(tline[35]),8);
 		el[8]='\0';
