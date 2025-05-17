@@ -1,3 +1,3 @@
-g++ include/Accel.h include/PrecMatrix.h include/NutMatrix.h include/IERS.h include/timediff.h include/PoleMatrix.h include/AccelHarmonic.h include/GHAMatrix.h include/JPL_Eph_DE430.h include/GLOBAL.h include/AccelPointMass.h include/Mjday_TDB.h include/SAT_Const.h  src/Accel.cpp src/PrecMatrix.cpp src/NutMatrix.cpp src/IERS.cpp src/timediff.cpp src/PoleMatrix.cpp src/AccelHarmonic.cpp src/GHAMatrix.cpp src/JPL_Eph_DE430.cpp src/GLOBAL.cpp src/AccelPointMass.cpp src/Mjday_TDB.cpp include/matrix.h src/matrix.cpp include/R_y.h src/R_y.cpp include/R_z.h src/R_z.cpp include/PoleMatrix.h src/PoleMatrix.cpp include/Cheb3D.h src/Cheb3D.cpp include/gast.h src/gast.cpp -lm -std=c++23 -o bin/main.out
+g++ tests/EKF_GEOS3.cpp src/*.cpp include/*.h -lm -std=c++23 -o bin/main.out
 cd bin
 ./main.out

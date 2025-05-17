@@ -2,8 +2,6 @@
 #include "../include/SAT_Const.h"
 #include "../include/sign_.h"
 #include <cmath>
-#include <iostream>
-#include <iomanip>
     /**
      * @file DEInteg.cpp
      * @brief El archivo contiene las implementaciones de DEInteg.h
@@ -14,7 +12,6 @@ Matrix& DEInteg(Matrix& f(double t,Matrix z),double t, double tout,double relerr
   if(y.n_row<y.n_column){
     y=transpose(y);
   }
-  cout<<setprecision(15);
 
   Matrix yout=zeros(n_eqn,1),ypout=zeros(n_eqn,1),two(14),gstr(14);
   bool start=false,phase1=false,nornd=false,crash=false,success=false,PermitTOUT=false,OldPermit=false,stiff=false;

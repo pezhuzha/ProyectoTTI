@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(PAIN CXX)
+project(EKF_GEOS3 CXX)
 
 # Set the C++ standard
 set(CMAKE_CXX_STANDARD 23)

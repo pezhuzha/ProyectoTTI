@@ -1,5 +1,3 @@
-
-#include <iomanip>
 #include <cmath>
 #include<tuple>
 #include <iostream>

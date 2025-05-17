@@ -1,5 +1,4 @@
 #include "../include/MeasUpdate.h"
-#include <iostream>
     /**
      * @file MeasUpdate.cpp
      * @brief El archivo contiene las implementaciones de MeasUpdate.h

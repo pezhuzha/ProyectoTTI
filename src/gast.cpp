@@ -3,9 +3,7 @@
 #include "../include/EqnEquinox.h"
 #include "../include/SAT_Const.h"
 #include <cmath>
-#include <iostream>
 
-#include <iomanip>
 
     /**
      * @file gast.cpp
