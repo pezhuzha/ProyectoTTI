@@ -1,0 +1,69 @@
+\doxysection{IERS.\+cpp}
+\hypertarget{IERS_8cpp_source}{}\label{IERS_8cpp_source}\index{IERS.cpp@{IERS.cpp}}
+\mbox{\hyperlink{IERS_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{IERS_8h}{../include/IERS.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SAT__Const_8h}{../include/SAT\_Const.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00010}\mbox{\hyperlink{IERS_8h_afdc37e22b677cc00a94f8dfcadd2df15}{00010}}\ \ \ \ \ tuple<double,double,double,double,double,double,double,double,double>\ \mbox{\hyperlink{IERS_8cpp_ae4095fd45e2fa0d01781aa07e7e7bc3b}{IERS}}(\mbox{\hyperlink{classMatrix}{Matrix}}\ eop,\textcolor{keywordtype}{double}\ Mjd\_UTC,\textcolor{keywordtype}{char}\ interp)\{}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordtype}{double}\ x\_pole,y\_pole,UT1\_UTC,LOD,dpsi,deps,dx\_pole,dy\_pole,TAI\_UTC,i,fixf;}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordtype}{int}\ mjd;}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ preeop,nexteop,aux;}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordtype}{bool}\ contin=\textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ mjd\ =\ (floor(Mjd\_UTC));}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ i\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ aux=\mbox{\hyperlink{matrix_8h_afa94ffe6b27ac353488f90897fe2f3a9}{extract\_row}}(eop,4);}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 1;\ \ contin\ \&\&\ j\ <=\ aux.n\_column\ ;\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aux(j)==mjd)\{}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ j;}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ contin=\textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (interp\ ==\textcolor{charliteral}{'l'})\{}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ linear\ interpolation}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ preeop\ =\ \mbox{\hyperlink{matrix_8h_aca6da092294b7d44ef5bf19d74f88e7e}{extract\_column}}(eop,i);}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ nexteop\ =\ \mbox{\hyperlink{matrix_8h_aca6da092294b7d44ef5bf19d74f88e7e}{extract\_column}}(eop,i+1);}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ fixf\ =\ (Mjd\_UTC-\/floor(Mjd\_UTC));}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Setting\ of\ IERS\ Earth\ rotation\ parameters}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ (UT1-\/UTC\ [s],\ TAI-\/UTC\ [s],\ x\ ["{}],\ y\ ["{}])}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ x\_pole\ \ =\ preeop(5)+(nexteop(5)-\/preeop(5))*fixf;}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ y\_pole\ \ =\ preeop(6)+(nexteop(6)-\/preeop(6))*fixf;}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ UT1\_UTC\ =\ preeop(7)+(nexteop(7)-\/preeop(7))*fixf;}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ LOD\ \ \ \ \ =\ preeop(8)+(nexteop(8)-\/preeop(8))*fixf;}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ dpsi\ \ \ \ =\ preeop(9)+(nexteop(9)-\/preeop(9))*fixf;}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ deps\ \ \ \ =\ preeop(10)+(nexteop(10)-\/preeop(10))*fixf;}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ dx\_pole\ =\ preeop(11)+(nexteop(11)-\/preeop(11))*fixf;}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ dy\_pole\ =\ preeop(12)+(nexteop(12)-\/preeop(12))*fixf;}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ TAI\_UTC\ =\ preeop(13);}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ x\_pole\ \ =\ x\_pole/Arcs;\ \ \textcolor{comment}{//\ Pole\ coordinate\ [rad]}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ y\_pole\ \ =\ y\_pole/Arcs;\ \ \textcolor{comment}{//\ Pole\ coordinate\ [rad]}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ dpsi\ \ \ \ =\ dpsi/Arcs;}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ deps\ \ \ \ =\ deps/Arcs;}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ dx\_pole\ =\ dx\_pole/Arcs;\ \textcolor{comment}{//\ Pole\ coordinate\ [rad]}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ dy\_pole\ =\ dy\_pole/Arcs;\ \textcolor{comment}{//\ Pole\ coordinate\ [rad]}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (interp\ ==\textcolor{charliteral}{'n'})\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ aux\ =\ \mbox{\hyperlink{matrix_8h_afa94ffe6b27ac353488f90897fe2f3a9}{extract\_row}}(eop,i);}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ eop=aux;}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Setting\ of\ IERS\ Earth\ rotation\ parameters}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ (UT1-\/UTC\ [s],\ TAI-\/UTC\ [s],\ x\ ["{}],\ y\ ["{}])}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ x\_pole\ \ =\ eop(5)/Arcs;\ \ \textcolor{comment}{//\ Pole\ coordinate\ [rad]}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ y\_pole\ \ =\ eop(6)/Arcs;\ \ \textcolor{comment}{//\ Pole\ coordinate\ [rad]}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ UT1\_UTC\ =\ eop(7);\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ UT1-\/UTC\ time\ difference\ [s]}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ LOD\ \ \ \ \ =\ eop(8);\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Length\ of\ day\ [s]}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ dpsi\ \ \ \ =\ eop(9)/Arcs;}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ deps\ \ \ \ =\ eop(10)/Arcs;}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ dx\_pole\ =\ eop(11)/Arcs;\ \textcolor{comment}{//\ Pole\ coordinate\ [rad]}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ dy\_pole\ =\ eop(12)/Arcs;\ \textcolor{comment}{//\ Pole\ coordinate\ [rad]}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ TAI\_UTC\ =\ eop(13);\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TAI-\/UTC\ time\ difference\ [s]}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00067}00067\ \textcolor{keywordflow}{return}\ tie(x\_pole,y\_pole,UT1\_UTC,LOD,dpsi,deps,dx\_pole,dy\_pole,TAI\_UTC);}
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{IERS_8cpp_source_l00069}00069\ \ \ \ \ \}}
+
+\end{DoxyCode}

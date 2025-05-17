@@ -1,0 +1,59 @@
+\doxysection{Accel.\+cpp}
+\hypertarget{Accel_8cpp_source}{}\label{Accel_8cpp_source}\index{Accel.cpp@{Accel.cpp}}
+\mbox{\hyperlink{Accel_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Accel_8h}{../include/Accel.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PrecMatrix_8h}{../include/PrecMatrix.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{NutMatrix_8h}{../include/NutMatrix.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{IERS_8h}{../include/IERS.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{timediff_8h}{../include/timediff.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PoleMatrix_8h}{../include/PoleMatrix.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{AccelHarmonic_8h}{../include/AccelHarmonic.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GHAMatrix_8h}{../include/GHAMatrix.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{JPL__Eph__DE430_8h}{../include/JPL\_Eph\_DE430.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GLOBAL_8h}{../include/GLOBAL.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{AccelPointMass_8h}{../include/AccelPointMass.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Mjday__TDB_8h}{../include/Mjday\_TDB.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SAT__Const_8h}{../include/SAT\_Const.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00020}\mbox{\hyperlink{Accel_8h_a90a9d07270cea0a2accb38d118fff177}{00020}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\&\ \mbox{\hyperlink{Accel_8cpp_a90a9d07270cea0a2accb38d118fff177}{Accel}}(\textcolor{keywordtype}{double}\ x,\mbox{\hyperlink{classMatrix}{Matrix}}\ Y)\{}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Y.n\_row<Y.n\_column)\{}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Y=\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(Y);}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{auto}\ [x\_pole,y\_pole,UT1\_UTC,LOD,dpsi,deps,dx\_pole,dy\_pole,TAI\_UTC]\ =\ \mbox{\hyperlink{IERS_8h_afdc37e22b677cc00a94f8dfcadd2df15}{IERS}}(eopdata,AuxParam.Mjd\_UTC\ +\ x/86400,\textcolor{charliteral}{'l'});}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{auto}\ [UT1\_TAI,UTC\_GPS,UT1\_GPS,TT\_UTC,GPS\_UTC]\ =\ \mbox{\hyperlink{timediff_8h_a0772112289293a570d2edb0667dbb3a9}{timediff}}(UT1\_UTC,TAI\_UTC);}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ Mjd\_UT1\ =\ AuxParam.Mjd\_UTC\ +\ x/86400\ +\ UT1\_UTC/86400;}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ Mjd\_TT\ =\ AuxParam.Mjd\_UTC\ +\ x/86400\ +\ TT\_UTC/86400;}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ P\ =\ \mbox{\hyperlink{PrecMatrix_8h_a95bbb47a6bcd9ecaf7b5bc46f88dc7d1}{PrecMatrix}}(MJD\_J2000,Mjd\_TT);}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ N\ =\ \mbox{\hyperlink{NutMatrix_8h_ac7fb7e48f2d2d4fd63ac42e17e44ff23}{NutMatrix}}(Mjd\_TT);}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ T\ =\ N\ *\ P;}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ E\ =\ \mbox{\hyperlink{PoleMatrix_8h_aa20f72601d5ff91f277b999d15b7d6c9}{PoleMatrix}}(x\_pole,y\_pole)\ *\ \mbox{\hyperlink{GHAMatrix_8h_a49218ae38846c1175342d13a65d41f4d}{GHAMatrix}}(Mjd\_UT1)\ *\ T;}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ MJD\_TDB\ =\ \mbox{\hyperlink{Mjday__TDB_8h_a2512825285329f54df7d9f0be4966336}{Mjday\_TDB}}(Mjd\_TT);}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{auto}\ [r\_Mercury,r\_Venus,r\_Earth,r\_Mars,r\_Jupiter,r\_Saturn,r\_Uranus,r\_Neptune,r\_Pluto,r\_Moon,r\_Sun]\ =\ \mbox{\hyperlink{JPL__Eph__DE430_8h_a5e6fedfbbbe0ca32aa62a9016e7d3293}{JPL\_Eph\_DE430}}(MJD\_TDB);}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//\ Acceleration\ due\ to\ harmonic\ gravity\ field}}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ a\ =\ \mbox{\hyperlink{AccelHarmonic_8h_a7f668d23f40f64900d52d3c77c9bacfa}{AccelHarmonic}}(\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Y,1,3)),\ E,\ AuxParam.n,\ AuxParam.m);}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//\ Luni-\/solar\ perturbations}}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (AuxParam.sun)\{}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ a\ +\ \mbox{\hyperlink{AccelPointMass_8h_a72b636f377c135454d41655c935c0eb3}{AccelPointMass}}(\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Y,1,3),r\_Sun,GM\_Sun);\}}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{if}\ (AuxParam.moon)\{}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ a\ +\ \mbox{\hyperlink{AccelPointMass_8h_a72b636f377c135454d41655c935c0eb3}{AccelPointMass}}(\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Y,1,3),r\_Moon,GM\_Moon);\}}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{comment}{//\ Planetary\ perturbations}}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (AuxParam.planets)\{}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ a\ +\ \mbox{\hyperlink{AccelPointMass_8h_a72b636f377c135454d41655c935c0eb3}{AccelPointMass}}(\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Y,1,3),r\_Mercury,GM\_Mercury);}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ a\ +\ \mbox{\hyperlink{AccelPointMass_8h_a72b636f377c135454d41655c935c0eb3}{AccelPointMass}}(\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Y,1,3),r\_Venus,GM\_Venus);}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ a\ +\ \mbox{\hyperlink{AccelPointMass_8h_a72b636f377c135454d41655c935c0eb3}{AccelPointMass}}(\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Y,1,3),r\_Mars,GM\_Mars);}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ a\ +\ \mbox{\hyperlink{AccelPointMass_8h_a72b636f377c135454d41655c935c0eb3}{AccelPointMass}}(\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Y,1,3),r\_Jupiter,GM\_Jupiter);}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ a\ +\ \mbox{\hyperlink{AccelPointMass_8h_a72b636f377c135454d41655c935c0eb3}{AccelPointMass}}(\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Y,1,3),r\_Saturn,GM\_Saturn);}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ a\ +\ \mbox{\hyperlink{AccelPointMass_8h_a72b636f377c135454d41655c935c0eb3}{AccelPointMass}}(\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Y,1,3),r\_Uranus,GM\_Uranus);\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ a\ +\ \mbox{\hyperlink{AccelPointMass_8h_a72b636f377c135454d41655c935c0eb3}{AccelPointMass}}(\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Y,1,3),r\_Neptune,GM\_Neptune);}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ a\ +\ \mbox{\hyperlink{AccelPointMass_8h_a72b636f377c135454d41655c935c0eb3}{AccelPointMass}}(\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Y,1,3),r\_Pluto,GM\_Pluto);\}}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Y,4,6),a);}
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{Accel_8cpp_source_l00059}00059\ \ \ \ \ \}}
+
+\end{DoxyCode}

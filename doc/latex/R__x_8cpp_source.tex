@@ -1,0 +1,18 @@
+\doxysection{R\+\_\+x.\+cpp}
+\hypertarget{R__x_8cpp_source}{}\label{R__x_8cpp_source}\index{R\_x.cpp@{R\_x.cpp}}
+\mbox{\hyperlink{R__x_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{R__x_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{R__x_8h}{../include/R\_x.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{R__x_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{R__x_8cpp_source_l00009}\mbox{\hyperlink{R__x_8h_ab96741dfe3b3590793f2b318ceed5f53}{00009}}\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\&\ \mbox{\hyperlink{R__x_8cpp_ab96741dfe3b3590793f2b318ceed5f53}{R\_x}}(\textcolor{keywordtype}{double}\ angle)\{}
+\DoxyCodeLine{\Hypertarget{R__x_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ C\ =\ cos(angle);}
+\DoxyCodeLine{\Hypertarget{R__x_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ S\ =\ sin(angle);}
+\DoxyCodeLine{\Hypertarget{R__x_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ *rotmat=\&\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(3,3);}
+\DoxyCodeLine{\Hypertarget{R__x_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{R__x_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ (*rotmat)(1,1)\ =\ 1.0;\ \ (*rotmat)(1,2)\ =\ \ \ \ 0.0;\ \ (*rotmat)(1,3)\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{R__x_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ (*rotmat)(2,1)\ =\ 0.0;\ \ (*rotmat)(2,2)\ =\ \ \ \ \ \ C;\ \ (*rotmat)(2,3)\ =\ \ \ S;}
+\DoxyCodeLine{\Hypertarget{R__x_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ (*rotmat)(3,1)\ =\ 0.0;\ \ (*rotmat)(3,2)\ =\ -\/1.0*S;\ \ (*rotmat)(3,3)\ =\ \ \ C;}
+\DoxyCodeLine{\Hypertarget{R__x_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *rotmat;}
+\DoxyCodeLine{\Hypertarget{R__x_8cpp_source_l00018}00018\ \ \ \ \ \}}
+
+\end{DoxyCode}

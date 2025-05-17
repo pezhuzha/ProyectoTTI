@@ -198,15 +198,6 @@ EKF_GEOS3_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 EKF_GEOS3_SOURCE_DIR:STATIC=/home/fghfgh/Escritorio/ProyectoTTI/src
 
-//Value Computed by CMake
-PAIN_BINARY_DIR:STATIC=/home/fghfgh/Escritorio/ProyectoTTI/build
-
-//Value Computed by CMake
-PAIN_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-PAIN_SOURCE_DIR:STATIC=/home/fghfgh/Escritorio/ProyectoTTI/src
-
 
 ########################
 # INTERNAL cache entries

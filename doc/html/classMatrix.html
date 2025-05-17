@@ -5,12 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ProyectoTTI: Matrix Class Reference</title>
+<title>My Project: Matrix Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -25,9 +27,8 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ProyectoTTI<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">My Project<span id="projectnumber">&#160;2.0</span>
    </div>
-   <div id="projectbrief">ProyectoTTI</div>
   </td>
  </tr>
  </tbody>
@@ -50,17 +51,29 @@ $(function() { codefold.init(0); });
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Search',false);
+  initMenu('',true,false,'search.php','Search',true);
   $(function() { init_search(); });
 });
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){ initResizable(false); });
+$(function(){initNavTree('classMatrix.html',''); initResizable(true); });
 /* @license-end */
 </script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -82,8 +95,6 @@ $(function(){ initResizable(false); });
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -127,23 +138,22 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a25155ffcead67af4aaab4d78256af86f" id="r_a25155ffcead67af4aaab4d78256af86f"><td class="memItemLeft" align="right" valign="top"><a id="a25155ffcead67af4aaab4d78256af86f" name="a25155ffcead67af4aaab4d78256af86f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>n_row</b></td></tr>
+<tr class="memitem:a25155ffcead67af4aaab4d78256af86f" id="r_a25155ffcead67af4aaab4d78256af86f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25155ffcead67af4aaab4d78256af86f">n_row</a></td></tr>
 <tr class="separator:a25155ffcead67af4aaab4d78256af86f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72848e6895f6a6b638410be60b25ed7a" id="r_a72848e6895f6a6b638410be60b25ed7a"><td class="memItemLeft" align="right" valign="top"><a id="a72848e6895f6a6b638410be60b25ed7a" name="a72848e6895f6a6b638410be60b25ed7a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>n_column</b></td></tr>
+<tr class="memitem:a72848e6895f6a6b638410be60b25ed7a" id="r_a72848e6895f6a6b638410be60b25ed7a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72848e6895f6a6b638410be60b25ed7a">n_column</a></td></tr>
 <tr class="separator:a72848e6895f6a6b638410be60b25ed7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a650e1452576e2c59a410eebd79331560" id="r_a650e1452576e2c59a410eebd79331560"><td class="memItemLeft" align="right" valign="top"><a id="a650e1452576e2c59a410eebd79331560" name="a650e1452576e2c59a410eebd79331560"></a>
-double **&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
+<tr class="memitem:a650e1452576e2c59a410eebd79331560" id="r_a650e1452576e2c59a410eebd79331560"><td class="memItemLeft" align="right" valign="top">double **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a650e1452576e2c59a410eebd79331560">data</a></td></tr>
 <tr class="separator:a650e1452576e2c59a410eebd79331560"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a6ce0bc529fe2ee6fb2d0eb8acbdc1e92" id="r_a6ce0bc529fe2ee6fb2d0eb8acbdc1e92"><td class="memItemLeft" align="right" valign="top"><a id="a6ce0bc529fe2ee6fb2d0eb8acbdc1e92" name="a6ce0bc529fe2ee6fb2d0eb8acbdc1e92"></a>
-ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (ostream &amp;o, <a class="el" href="classMatrix.html">Matrix</a> &amp;m)</td></tr>
+<tr class="memitem:a6ce0bc529fe2ee6fb2d0eb8acbdc1e92" id="r_a6ce0bc529fe2ee6fb2d0eb8acbdc1e92"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ce0bc529fe2ee6fb2d0eb8acbdc1e92">operator&lt;&lt;</a> (ostream &amp;o, <a class="el" href="classMatrix.html">Matrix</a> &amp;m)</td></tr>
 <tr class="separator:a6ce0bc529fe2ee6fb2d0eb8acbdc1e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00018">18</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2dba13c45127354c9f75ef576f49269b" name="a2dba13c45127354c9f75ef576f49269b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2dba13c45127354c9f75ef576f49269b">&#9670;&#160;</a></span>Matrix() <span class="overload">[1/3]</span></h2>
 
@@ -159,6 +169,34 @@ ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;
       </table>
 </div><div class="memdoc">
 <p>Crea un objeto <a class="el" href="classMatrix.html">Matrix</a> vacio </p>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8cpp_source.html#l00010">10</a> of file <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMatrix_a2dba13c45127354c9f75ef576f49269b_icgraph.png" border="0" usemap="#aclassMatrix_a2dba13c45127354c9f75ef576f49269b_icgraph" alt=""/></div>
+<map name="aclassMatrix_a2dba13c45127354c9f75ef576f49269b_icgraph" id="aclassMatrix_a2dba13c45127354c9f75ef576f49269b_icgraph">
+<area shape="rect" title=" " alt="" coords="192,203,307,228"/>
+<area shape="rect" href="classMatrix.html#ac8ff0062737ec513839ee575608f789b" title=" " alt="" coords="7,5,142,31"/>
+<area shape="poly" title=" " alt="" coords="237,191,223,158,202,118,176,78,142,44,124,33,127,28,146,40,180,75,207,115,228,155,242,189"/>
+<area shape="rect" href="classMatrix.html#ae1bc7e1fda06dab52353ac01b3196efd" title=" " alt="" coords="7,55,142,80"/>
+<area shape="poly" title=" " alt="" coords="231,193,195,143,170,116,143,94,121,82,124,78,145,89,174,112,199,139,236,190"/>
+<area shape="rect" href="classMatrix.html#adce95924da629314f86bc84b911e3000" title=" " alt="" coords="5,104,144,129"/>
+<area shape="poly" title=" " alt="" coords="221,196,185,169,143,143,117,132,119,127,145,138,188,164,224,192"/>
+<area shape="rect" href="classMatrix.html#a7cc7127ce96c997c9d14f1f8874ed742" title=" " alt="" coords="5,153,144,179"/>
+<area shape="poly" title=" " alt="" coords="190,201,120,181,121,176,191,196"/>
+<area shape="rect" href="classMatrix.html#a588c13e626bfff07e50f991b8c3a097c" title=" " alt="" coords="9,203,141,228"/>
+<area shape="poly" title=" " alt="" coords="178,218,141,218,141,213,178,213"/>
+<area shape="rect" href="classMatrix.html#ac13e11282bf8fb3e88eb4e743c6dc019" title=" " alt="" coords="9,252,141,277"/>
+<area shape="poly" title=" " alt="" coords="191,234,121,254,120,249,190,229"/>
+<area shape="rect" href="classMatrix.html#abc7f7f6a41b5b9f1ee9f3e65e2c33d19" title=" " alt="" coords="9,301,140,327"/>
+<area shape="poly" title=" " alt="" coords="223,239,187,265,145,291,117,304,115,299,143,286,184,261,220,235"/>
+<area shape="rect" href="classMatrix.html#afa8805316703c98abf5fefd7788b92ef" title=" " alt="" coords="9,351,140,376"/>
+<area shape="poly" title=" " alt="" coords="235,241,198,291,173,317,145,340,122,353,119,348,143,336,170,313,194,287,231,238"/>
+<area shape="rect" href="classMatrix.html#ade03836bffb81664225dc544b5d5e6db" title=" " alt="" coords="5,400,144,425"/>
+<area shape="poly" title=" " alt="" coords="241,242,207,314,179,354,146,389,124,402,122,398,142,385,175,351,202,312,237,240"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -182,6 +220,8 @@ ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8cpp_source.html#l00017">17</a> of file <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a>.</p>
 
 </div>
 </div>
@@ -211,6 +251,8 @@ ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="matrix_8cpp_source.html#l00035">35</a> of file <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -234,6 +276,8 @@ ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8cpp_source.html#l00055">55</a> of file <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a>.</p>
 
 </div>
 </div>
@@ -263,6 +307,8 @@ ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="matrix_8cpp_source.html#l00064">64</a> of file <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a>.</p>
+
 </div>
 </div>
 <a id="ac8ff0062737ec513839ee575608f789b" name="ac8ff0062737ec513839ee575608f789b"></a>
@@ -286,6 +332,20 @@ ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>una <a class="el" href="classMatrix.html">Matrix</a> donde todas sus componentes se le multiplica d, sin modificar las matrices </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8cpp_source.html#l00192">192</a> of file <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMatrix_ac8ff0062737ec513839ee575608f789b_cgraph.png" border="0" usemap="#aclassMatrix_ac8ff0062737ec513839ee575608f789b_cgraph" alt=""/></div>
+<map name="aclassMatrix_ac8ff0062737ec513839ee575608f789b_cgraph" id="aclassMatrix_ac8ff0062737ec513839ee575608f789b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,140,56"/>
+<area shape="rect" href="classMatrix.html#a2dba13c45127354c9f75ef576f49269b" title=" " alt="" coords="188,5,303,31"/>
+<area shape="poly" title=" " alt="" coords="140,31,174,26,175,31,141,36"/>
+<area shape="rect" href="matrix_8cpp.html#a56d60ea1f08402246a7cfd477d69a618" title=" " alt="" coords="217,55,274,80"/>
+<area shape="poly" title=" " alt="" coords="141,50,203,59,202,64,140,55"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -311,6 +371,20 @@ ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>devuelve un <a class="el" href="classMatrix.html">Matrix</a> = this*m, sin modificarlos </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="matrix_8cpp_source.html#l00108">108</a> of file <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMatrix_ae1bc7e1fda06dab52353ac01b3196efd_cgraph.png" border="0" usemap="#aclassMatrix_ae1bc7e1fda06dab52353ac01b3196efd_cgraph" alt=""/></div>
+<map name="aclassMatrix_ae1bc7e1fda06dab52353ac01b3196efd_cgraph" id="aclassMatrix_ae1bc7e1fda06dab52353ac01b3196efd_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,140,56"/>
+<area shape="rect" href="classMatrix.html#a2dba13c45127354c9f75ef576f49269b" title=" " alt="" coords="188,5,303,31"/>
+<area shape="poly" title=" " alt="" coords="140,31,174,26,175,31,141,36"/>
+<area shape="rect" href="matrix_8cpp.html#a56d60ea1f08402246a7cfd477d69a618" title=" " alt="" coords="217,55,274,80"/>
+<area shape="poly" title=" " alt="" coords="141,50,203,59,202,64,140,55"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="adce95924da629314f86bc84b911e3000" name="adce95924da629314f86bc84b911e3000"></a>
@@ -334,6 +408,20 @@ ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>una <a class="el" href="classMatrix.html">Matrix</a> donde todas sus componentes se le suma d, sin modificar las matrices </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8cpp_source.html#l00168">168</a> of file <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMatrix_adce95924da629314f86bc84b911e3000_cgraph.png" border="0" usemap="#aclassMatrix_adce95924da629314f86bc84b911e3000_cgraph" alt=""/></div>
+<map name="aclassMatrix_adce95924da629314f86bc84b911e3000_cgraph" id="aclassMatrix_adce95924da629314f86bc84b911e3000_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,144,56"/>
+<area shape="rect" href="classMatrix.html#a2dba13c45127354c9f75ef576f49269b" title=" " alt="" coords="192,5,307,31"/>
+<area shape="poly" title=" " alt="" coords="144,31,178,26,179,31,145,36"/>
+<area shape="rect" href="matrix_8cpp.html#a56d60ea1f08402246a7cfd477d69a618" title=" " alt="" coords="221,55,278,80"/>
+<area shape="poly" title=" " alt="" coords="145,50,207,59,207,64,144,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -359,6 +447,18 @@ ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>devuelve un <a class="el" href="classMatrix.html">Matrix</a> suma de this+ m, sin modificarlos </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="matrix_8cpp_source.html#l00074">74</a> of file <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMatrix_a7cc7127ce96c997c9d14f1f8874ed742_cgraph.png" border="0" usemap="#aclassMatrix_a7cc7127ce96c997c9d14f1f8874ed742_cgraph" alt=""/></div>
+<map name="aclassMatrix_a7cc7127ce96c997c9d14f1f8874ed742_cgraph" id="aclassMatrix_a7cc7127ce96c997c9d14f1f8874ed742_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,144,31"/>
+<area shape="rect" href="classMatrix.html#a2dba13c45127354c9f75ef576f49269b" title=" " alt="" coords="192,5,307,31"/>
+<area shape="poly" title=" " alt="" coords="144,15,178,15,178,21,144,21"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a588c13e626bfff07e50f991b8c3a097c" name="a588c13e626bfff07e50f991b8c3a097c"></a>
@@ -382,6 +482,20 @@ ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>una <a class="el" href="classMatrix.html">Matrix</a> donde todas sus componentes se le resta d, sin modificar las matrices </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8cpp_source.html#l00180">180</a> of file <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMatrix_a588c13e626bfff07e50f991b8c3a097c_cgraph.png" border="0" usemap="#aclassMatrix_a588c13e626bfff07e50f991b8c3a097c_cgraph" alt=""/></div>
+<map name="aclassMatrix_a588c13e626bfff07e50f991b8c3a097c_cgraph" id="aclassMatrix_a588c13e626bfff07e50f991b8c3a097c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,137,56"/>
+<area shape="rect" href="classMatrix.html#a2dba13c45127354c9f75ef576f49269b" title=" " alt="" coords="185,5,300,31"/>
+<area shape="poly" title=" " alt="" coords="137,31,172,26,172,31,138,36"/>
+<area shape="rect" href="matrix_8cpp.html#a56d60ea1f08402246a7cfd477d69a618" title=" " alt="" coords="214,55,271,80"/>
+<area shape="poly" title=" " alt="" coords="138,50,201,59,200,64,137,55"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -407,6 +521,18 @@ ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>devuelve un <a class="el" href="classMatrix.html">Matrix</a> resta de this-m, sin modificarlos </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="matrix_8cpp_source.html#l00091">91</a> of file <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMatrix_ac13e11282bf8fb3e88eb4e743c6dc019_cgraph.png" border="0" usemap="#aclassMatrix_ac13e11282bf8fb3e88eb4e743c6dc019_cgraph" alt=""/></div>
+<map name="aclassMatrix_ac13e11282bf8fb3e88eb4e743c6dc019_cgraph" id="aclassMatrix_ac13e11282bf8fb3e88eb4e743c6dc019_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,137,31"/>
+<area shape="rect" href="classMatrix.html#a2dba13c45127354c9f75ef576f49269b" title=" " alt="" coords="185,5,300,31"/>
+<area shape="poly" title=" " alt="" coords="137,15,172,15,172,21,137,21"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="abc7f7f6a41b5b9f1ee9f3e65e2c33d19" name="abc7f7f6a41b5b9f1ee9f3e65e2c33d19"></a>
@@ -430,6 +556,20 @@ ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>una <a class="el" href="classMatrix.html">Matrix</a> donde todas sus componentes se le divide d, sin modificar las matrices </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8cpp_source.html#l00202">202</a> of file <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMatrix_abc7f7f6a41b5b9f1ee9f3e65e2c33d19_cgraph.png" border="0" usemap="#aclassMatrix_abc7f7f6a41b5b9f1ee9f3e65e2c33d19_cgraph" alt=""/></div>
+<map name="aclassMatrix_abc7f7f6a41b5b9f1ee9f3e65e2c33d19_cgraph" id="aclassMatrix_abc7f7f6a41b5b9f1ee9f3e65e2c33d19_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,136,56"/>
+<area shape="rect" href="classMatrix.html#a2dba13c45127354c9f75ef576f49269b" title=" " alt="" coords="184,5,299,31"/>
+<area shape="poly" title=" " alt="" coords="136,31,170,26,171,31,137,36"/>
+<area shape="rect" href="matrix_8cpp.html#a56d60ea1f08402246a7cfd477d69a618" title=" " alt="" coords="213,55,270,80"/>
+<area shape="poly" title=" " alt="" coords="137,50,199,59,198,64,136,55"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -455,6 +595,22 @@ ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>devuelve un <a class="el" href="classMatrix.html">Matrix</a> =this-*m^(-1), sin modificarlos </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="matrix_8cpp_source.html#l00127">127</a> of file <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMatrix_afa8805316703c98abf5fefd7788b92ef_cgraph.png" border="0" usemap="#aclassMatrix_afa8805316703c98abf5fefd7788b92ef_cgraph" alt=""/></div>
+<map name="aclassMatrix_afa8805316703c98abf5fefd7788b92ef_cgraph" id="aclassMatrix_afa8805316703c98abf5fefd7788b92ef_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,136,56"/>
+<area shape="rect" href="matrix_8cpp.html#ad8d8519e7f94df41a4c5b535b4899222" title=" " alt="" coords="220,5,263,31"/>
+<area shape="poly" title=" " alt="" coords="136,31,206,20,207,26,137,36"/>
+<area shape="rect" href="classMatrix.html#a2dba13c45127354c9f75ef576f49269b" title=" " alt="" coords="184,55,299,80"/>
+<area shape="poly" title=" " alt="" coords="137,50,171,55,170,60,136,55"/>
+<area shape="rect" href="matrix_8cpp.html#a8749816ebeb8c1fe55345f9dd24f314b" title=" " alt="" coords="347,5,393,31"/>
+<area shape="poly" title=" " alt="" coords="263,15,332,15,332,21,263,21"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="ade03836bffb81664225dc544b5d5e6db" name="ade03836bffb81664225dc544b5d5e6db"></a>
@@ -479,17 +635,113 @@ ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>una <a class="el" href="classMatrix.html">Matrix</a>=m, sin modificar las matrices </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="matrix_8cpp_source.html#l00138">138</a> of file <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMatrix_ade03836bffb81664225dc544b5d5e6db_cgraph.png" border="0" usemap="#aclassMatrix_ade03836bffb81664225dc544b5d5e6db_cgraph" alt=""/></div>
+<map name="aclassMatrix_ade03836bffb81664225dc544b5d5e6db_cgraph" id="aclassMatrix_ade03836bffb81664225dc544b5d5e6db_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,144,31"/>
+<area shape="rect" href="classMatrix.html#a2dba13c45127354c9f75ef576f49269b" title=" " alt="" coords="192,5,307,31"/>
+<area shape="poly" title=" " alt="" coords="144,15,178,15,178,21,144,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="a6ce0bc529fe2ee6fb2d0eb8acbdc1e92" name="a6ce0bc529fe2ee6fb2d0eb8acbdc1e92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ce0bc529fe2ee6fb2d0eb8acbdc1e92">&#9670;&#160;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>o</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classMatrix.html">Matrix</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>m</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8cpp_source.html#l00212">212</a> of file <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a650e1452576e2c59a410eebd79331560" name="a650e1452576e2c59a410eebd79331560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a650e1452576e2c59a410eebd79331560">&#9670;&#160;</a></span>data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double** Matrix::data</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00021">21</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="a72848e6895f6a6b638410be60b25ed7a" name="a72848e6895f6a6b638410be60b25ed7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72848e6895f6a6b638410be60b25ed7a">&#9670;&#160;</a></span>n_column</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Matrix::n_column</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00020">20</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="a25155ffcead67af4aaab4d78256af86f" name="a25155ffcead67af4aaab4d78256af86f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25155ffcead67af4aaab4d78256af86f">&#9670;&#160;</a></span>n_row</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Matrix::n_row</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00020">20</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/fghfgh/Escritorio/ProyectoTTI/include/<a class="el" href="matrix_8h_source.html">matrix.h</a></li>
-<li>/home/fghfgh/Escritorio/ProyectoTTI/src/<a class="el" href="matrix_8cpp.html">matrix.cpp</a></li>
+<li><a class="el" href="matrix_8h_source.html">matrix.h</a></li>
+<li><a class="el" href="matrix_8cpp_source.html">matrix.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
-</small></address>
 </div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classMatrix.html">Matrix</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
 </body>
 </html>

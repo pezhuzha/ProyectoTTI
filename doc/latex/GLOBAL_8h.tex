@@ -1,5 +1,5 @@
-\doxysection{/home/fghfgh/\+Escritorio/\+Proyecto\+TTI/include/\+GLOBAL.h File Reference}
-\hypertarget{GLOBAL_8h}{}\label{GLOBAL_8h}\index{/home/fghfgh/Escritorio/ProyectoTTI/include/GLOBAL.h@{/home/fghfgh/Escritorio/ProyectoTTI/include/GLOBAL.h}}
+\doxysection{GLOBAL.\+h File Reference}
+\hypertarget{GLOBAL_8h}{}\label{GLOBAL_8h}\index{GLOBAL.h@{GLOBAL.h}}
 
 
 El archivo contiene la funcion GLOBAL.  
@@ -11,11 +11,10 @@ Include dependency graph for GLOBAL.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{GLOBAL_8h__incl}
+\includegraphics[width=338pt]{GLOBAL_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -37,24 +36,23 @@ void \mbox{\hyperlink{GLOBAL_8h_a74acebd49f327dc00f58429eb876b0c7}{GGM03S}} (int
 void \mbox{\hyperlink{GLOBAL_8h_ade2d947387a8d0619724515e334a0387}{DE430\+Coeff}} (int row=2285, int column=1020)
 \item 
 void \mbox{\hyperlink{GLOBAL_8h_a75b612999c468928cbed5a99f875de1f}{Aux\+Param\+Load}} ()
+\item 
+void \mbox{\hyperlink{GLOBAL_8h_ae432d4afcde590fd86760abb5fbe6005}{GEOS3}} (int nobs=46)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{GLOBAL_8h_a5706b12963234f7382e60cb7324441f9}\label{GLOBAL_8h_a5706b12963234f7382e60cb7324441f9} 
-\mbox{\hyperlink{structParam}{Param}} {\bfseries Aux\+Param}
+\mbox{\hyperlink{structParam}{Param}} \mbox{\hyperlink{GLOBAL_8h_a5706b12963234f7382e60cb7324441f9}{Aux\+Param}}
 \item 
-\Hypertarget{GLOBAL_8h_a16817456f74489dad2c22ee5b145a1c4}\label{GLOBAL_8h_a16817456f74489dad2c22ee5b145a1c4} 
-\mbox{\hyperlink{classMatrix}{Matrix}} {\bfseries eopdata}
+\mbox{\hyperlink{classMatrix}{Matrix}} \mbox{\hyperlink{GLOBAL_8h_a16817456f74489dad2c22ee5b145a1c4}{eopdata}}
 \item 
-\Hypertarget{GLOBAL_8h_aae4f5247dbe2733ec80f005dfbb2c3ed}\label{GLOBAL_8h_aae4f5247dbe2733ec80f005dfbb2c3ed} 
-\mbox{\hyperlink{classMatrix}{Matrix}} {\bfseries Cnm}
+\mbox{\hyperlink{classMatrix}{Matrix}} \mbox{\hyperlink{GLOBAL_8h_aae4f5247dbe2733ec80f005dfbb2c3ed}{Cnm}}
 \item 
-\Hypertarget{GLOBAL_8h_a19b1b61df2d43fbf34bc708611f8d589}\label{GLOBAL_8h_a19b1b61df2d43fbf34bc708611f8d589} 
-\mbox{\hyperlink{classMatrix}{Matrix}} {\bfseries Snm}
+\mbox{\hyperlink{classMatrix}{Matrix}} \mbox{\hyperlink{GLOBAL_8h_a19b1b61df2d43fbf34bc708611f8d589}{Snm}}
 \item 
-\Hypertarget{GLOBAL_8h_abdf16b7def3047932352a98d4f907e0a}\label{GLOBAL_8h_abdf16b7def3047932352a98d4f907e0a} 
-\mbox{\hyperlink{classMatrix}{Matrix}} {\bfseries PC}
+\mbox{\hyperlink{classMatrix}{Matrix}} \mbox{\hyperlink{GLOBAL_8h_abdf16b7def3047932352a98d4f907e0a}{PC}}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \mbox{\hyperlink{GLOBAL_8h_a61c854c38aa6b9b8d4ed8d7c52530b78}{obs}}
 \end{DoxyCompactItemize}
 
 
@@ -65,7 +63,11 @@ El archivo contiene la funcion GLOBAL.
 Pedro Zhuzhan 
 \end{DoxyAuthor}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000012}{Bug}}]No known bugs \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000013}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+Definition in file \mbox{\hyperlink{GLOBAL_8h_source}{GLOBAL.\+h}}.
+
 
 
 \doxysubsection{Function Documentation}
@@ -75,7 +77,11 @@ Pedro Zhuzhan
 {\footnotesize\ttfamily \label{GLOBAL_8h_a75b612999c468928cbed5a99f875de1f} 
 void Aux\+Param\+Load (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Carga Aux\+Param \Hypertarget{GLOBAL_8h_ade2d947387a8d0619724515e334a0387}\index{GLOBAL.h@{GLOBAL.h}!DE430Coeff@{DE430Coeff}}
+Carga Aux\+Param 
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+
+\Hypertarget{GLOBAL_8h_ade2d947387a8d0619724515e334a0387}\index{GLOBAL.h@{GLOBAL.h}!DE430Coeff@{DE430Coeff}}
 \index{DE430Coeff@{DE430Coeff}!GLOBAL.h@{GLOBAL.h}}
 \doxysubsubsection{\texorpdfstring{DE430Coeff()}{DE430Coeff()}}
 {\footnotesize\ttfamily \label{GLOBAL_8h_ade2d947387a8d0619724515e334a0387} 
@@ -88,6 +94,17 @@ Lee el archivo DE430\+Coeff.\+txt y recoge cada fila y lo asigna a PC
 {\em column} & número de columnas a recoger \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{GLOBAL_8h_ade2d947387a8d0619724515e334a0387_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{GLOBAL_8h_ad733f697fb9098526f74dbedf42c2e66}\index{GLOBAL.h@{GLOBAL.h}!eop19620101@{eop19620101}}
 \index{eop19620101@{eop19620101}!GLOBAL.h@{GLOBAL.h}}
 \doxysubsubsection{\texorpdfstring{eop19620101()}{eop19620101()}}
@@ -99,6 +116,39 @@ Lee el archivo eop19620101.\+txt y recoge cada fila y lo asigna a eopdata
 {\em c} & número de filas a recoger \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{GLOBAL_8h_ad733f697fb9098526f74dbedf42c2e66_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{GLOBAL_8h_ae432d4afcde590fd86760abb5fbe6005}\index{GLOBAL.h@{GLOBAL.h}!GEOS3@{GEOS3}}
+\index{GEOS3@{GEOS3}!GLOBAL.h@{GLOBAL.h}}
+\doxysubsubsection{\texorpdfstring{GEOS3()}{GEOS3()}}
+{\footnotesize\ttfamily \label{GLOBAL_8h_ae432d4afcde590fd86760abb5fbe6005} 
+void GEOS3 (\begin{DoxyParamCaption}\item[{int}]{nobs}{ = {\ttfamily 46}}\end{DoxyParamCaption})}
+
+Lee el archivo GEOS3.\+txt y recoge cada fila y lo asigna a obs 
+\begin{DoxyParams}{Parameters}
+{\em nobs} & número de filas a recoger \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00087}{87}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{GLOBAL_8h_ae432d4afcde590fd86760abb5fbe6005_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{GLOBAL_8h_a74acebd49f327dc00f58429eb876b0c7}\index{GLOBAL.h@{GLOBAL.h}!GGM03S@{GGM03S}}
 \index{GGM03S@{GGM03S}!GLOBAL.h@{GLOBAL.h}}
 \doxysubsubsection{\texorpdfstring{GGM03S()}{GGM03S()}}
@@ -110,3 +160,77 @@ Lee el archivo GGM03\+S.\+txt y recoge cada fila y lo asigna a Cnm y Snm
 {\em c} & dimension de la matriz \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{GLOBAL_8h_a74acebd49f327dc00f58429eb876b0c7_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{GLOBAL_8h_a5706b12963234f7382e60cb7324441f9}\index{GLOBAL.h@{GLOBAL.h}!AuxParam@{AuxParam}}
+\index{AuxParam@{AuxParam}!GLOBAL.h@{GLOBAL.h}}
+\doxysubsubsection{\texorpdfstring{AuxParam}{AuxParam}}
+{\footnotesize\ttfamily \label{GLOBAL_8h_a5706b12963234f7382e60cb7324441f9} 
+\mbox{\hyperlink{structParam}{Param}} Aux\+Param\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+
+\Hypertarget{GLOBAL_8h_aae4f5247dbe2733ec80f005dfbb2c3ed}\index{GLOBAL.h@{GLOBAL.h}!Cnm@{Cnm}}
+\index{Cnm@{Cnm}!GLOBAL.h@{GLOBAL.h}}
+\doxysubsubsection{\texorpdfstring{Cnm}{Cnm}}
+{\footnotesize\ttfamily \label{GLOBAL_8h_aae4f5247dbe2733ec80f005dfbb2c3ed} 
+\mbox{\hyperlink{classMatrix}{Matrix}} Cnm\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+
+\Hypertarget{GLOBAL_8h_a16817456f74489dad2c22ee5b145a1c4}\index{GLOBAL.h@{GLOBAL.h}!eopdata@{eopdata}}
+\index{eopdata@{eopdata}!GLOBAL.h@{GLOBAL.h}}
+\doxysubsubsection{\texorpdfstring{eopdata}{eopdata}}
+{\footnotesize\ttfamily \label{GLOBAL_8h_a16817456f74489dad2c22ee5b145a1c4} 
+\mbox{\hyperlink{classMatrix}{Matrix}} eopdata\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+
+\Hypertarget{GLOBAL_8h_a61c854c38aa6b9b8d4ed8d7c52530b78}\index{GLOBAL.h@{GLOBAL.h}!obs@{obs}}
+\index{obs@{obs}!GLOBAL.h@{GLOBAL.h}}
+\doxysubsubsection{\texorpdfstring{obs}{obs}}
+{\footnotesize\ttfamily \label{GLOBAL_8h_a61c854c38aa6b9b8d4ed8d7c52530b78} 
+\mbox{\hyperlink{classMatrix}{Matrix}} obs\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+
+\Hypertarget{GLOBAL_8h_abdf16b7def3047932352a98d4f907e0a}\index{GLOBAL.h@{GLOBAL.h}!PC@{PC}}
+\index{PC@{PC}!GLOBAL.h@{GLOBAL.h}}
+\doxysubsubsection{\texorpdfstring{PC}{PC}}
+{\footnotesize\ttfamily \label{GLOBAL_8h_abdf16b7def3047932352a98d4f907e0a} 
+\mbox{\hyperlink{classMatrix}{Matrix}} PC\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+
+\Hypertarget{GLOBAL_8h_a19b1b61df2d43fbf34bc708611f8d589}\index{GLOBAL.h@{GLOBAL.h}!Snm@{Snm}}
+\index{Snm@{Snm}!GLOBAL.h@{GLOBAL.h}}
+\doxysubsubsection{\texorpdfstring{Snm}{Snm}}
+{\footnotesize\ttfamily \label{GLOBAL_8h_a19b1b61df2d43fbf34bc708611f8d589} 
+\mbox{\hyperlink{classMatrix}{Matrix}} Snm\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+

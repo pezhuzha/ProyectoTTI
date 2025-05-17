@@ -1,0 +1,15 @@
+\doxysection{Mjday\+\_\+\+TDB.\+cpp}
+\hypertarget{Mjday__TDB_8cpp_source}{}\label{Mjday__TDB_8cpp_source}\index{Mjday\_TDB.cpp@{Mjday\_TDB.cpp}}
+\mbox{\hyperlink{Mjday__TDB_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Mjday__TDB_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Mjday__TDB_8h}{../include/Mjday\_TDB.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Mjday__TDB_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{Mjday__TDB_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{Mjday__TDB_8cpp_source_l00010}\mbox{\hyperlink{Mjday__TDB_8h_a2512825285329f54df7d9f0be4966336}{00010}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{Mjday__TDB_8cpp_a2512825285329f54df7d9f0be4966336}{Mjday\_TDB}}(\textcolor{keywordtype}{double}\ Mjd\_TT)\{}
+\DoxyCodeLine{\Hypertarget{Mjday__TDB_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ T\_TT\ =\ (Mjd\_TT\ -\/\ 51544.5)/36525;}
+\DoxyCodeLine{\Hypertarget{Mjday__TDB_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{Mjday__TDB_8cpp_source_l00013}00013\ \textcolor{keywordflow}{return}\ Mjd\_TT\ +\ (\ 0.001658*sin(628.3076*T\_TT\ +\ 6.2401)+\ 0.000022*sin(575.3385*T\_TT+4.2970)+\ 0.000014*sin(1256.6152*T\_TT\ +\ 6.1969)+\ }
+\DoxyCodeLine{\Hypertarget{Mjday__TDB_8cpp_source_l00014}00014\ \ \ \ \ 0.000005*sin(606.9777*T\_TT+4.0212)+\ 0.000005*sin(52.9691*T\_TT+0.4444)+\ 0.000002*sin(21.3299*T\_TT+5.5431)\ +\ \ \ 0.000010*sin(628.3076*T\_TT+4.2490)\ )/86400;}
+\DoxyCodeLine{\Hypertarget{Mjday__TDB_8cpp_source_l00015}00015\ \ \ \ \ \}}
+
+\end{DoxyCode}

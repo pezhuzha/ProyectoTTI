@@ -1,5 +1,9 @@
-<map id="/home/fghfgh/Escritorio/ProyectoTTI/include/VarEqn.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/VarEqn.h">
-<area shape="rect" id="Node000001" title="El archivo contiene la funcion VarEqn." alt="" coords="5,5,220,45"/>
-<area shape="rect" id="Node000002" href="$VarEqn_8cpp.html" title="El archivo contiene las implementaciones de VarEqn.h." alt="" coords="11,93,214,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,59,115,93,110,93,110,59"/>
+<map id="VarEqn.h" name="VarEqn.h">
+<area shape="rect" id="Node000001" title="El archivo contiene la funcion VarEqn." alt="" coords="163,5,242,31"/>
+<area shape="rect" id="Node000002" href="$EKF__GEOS3_8cpp.html" title="Es el archivo principal del programa." alt="" coords="5,79,131,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,39,91,81,89,76,168,35"/>
+<area shape="rect" id="Node000003" href="$VarEqn_8cpp.html" title="El archivo contiene las implementaciones de VarEqn.h." alt="" coords="155,79,250,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="205,44,205,79,200,79,200,44"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp_source.html" title=" " alt="" coords="274,79,355,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="234,36,298,76,295,81,231,40"/>
 </map>

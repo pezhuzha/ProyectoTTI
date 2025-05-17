@@ -1,0 +1,34 @@
+\doxysection{Az\+El\+Pa.\+cpp}
+\hypertarget{AzElPa_8cpp_source}{}\label{AzElPa_8cpp_source}\index{AzElPa.cpp@{AzElPa.cpp}}
+\mbox{\hyperlink{AzElPa_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{AzElPa_8h}{../include/AzElPa.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SAT__Const_8h}{../include/SAT\_Const.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00009}\mbox{\hyperlink{AzElPa_8h_a64759900540133eb0f6a8337ef0634db}{00009}}\ \ \ \ \ tuple<double,double,Matrix\&,Matrix\&>\ \mbox{\hyperlink{AzElPa_8cpp_a64759900540133eb0f6a8337ef0634db}{AzElPa}}(\mbox{\hyperlink{classMatrix}{Matrix}}\ s)\ \{}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ rho\ =\ sqrt(s(1)*s(1)+s(2)*s(2));}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Angles}}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Az\ =\ atan2(s(1),s(2));}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Az<0.0)\ \{}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ Az\ =\ Az+pi2;}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ El\ =\ atan\ (\ s(3)\ /\ rho\ );}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Partials}}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ \&dAds\ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(3);}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ dAds(1)=s(2)/(rho*rho);}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ dAds(2)=-\/s(1)/(rho*rho);}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ dAds(3)=0.0\ ;}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ \&dEds=\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(3);}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ dEds(1)=-\/s(1)*s(3)/rho;}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ dEds(2)=-\/s(2)*s(3)/rho;}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ dEds(3)=rho;}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ dEds=\ dEds/\ \mbox{\hyperlink{matrix_8h_ace64c1017d252d104fe1c99329ae9ecc}{dot}}(s,s);}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tie(Az,\ El,\ dAds,\ dEds);}
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{AzElPa_8cpp_source_l00034}00034\ \ \ \ \ \}}
+
+\end{DoxyCode}

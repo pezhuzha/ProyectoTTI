@@ -1,0 +1,15 @@
+\doxysection{Mjday.\+cpp}
+\hypertarget{Mjday_8cpp_source}{}\label{Mjday_8cpp_source}\index{Mjday.cpp@{Mjday.cpp}}
+\mbox{\hyperlink{Mjday_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Mjday_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Mjday_8h}{../include/Mjday.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Mjday_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{Mjday_8cpp_source_l00009}\mbox{\hyperlink{Mjday_8h_a3d8c32be4ba9222405b66aabe80409e2}{00009}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{Mjday_8cpp_a7229dc26cbec47322b5b2fd5c3cfe98d}{Mjday}}(\textcolor{keywordtype}{int}\ yr,\ \textcolor{keywordtype}{int}\ mon,\textcolor{keywordtype}{int}\ day,\textcolor{keywordtype}{int}\ hr,\textcolor{keywordtype}{int}\ min,\textcolor{keywordtype}{int}\ sec)\{}
+\DoxyCodeLine{\Hypertarget{Mjday_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Mjday_8cpp_source_l00011}00011\ \textcolor{keywordtype}{double}\ jd\ =\ 367.0\ *\ yr-\/\ floor(\ (7\ *\ (yr\ +\ floor(\ (mon\ +\ 9)\ /\ 12.0)\ )\ )\ *\ 0.25\ )+\ floor(\ 275\ *\ mon\ /\ 9.0\ )\ +\ day\ +\ 1721013.5\ +\ (\ (sec/60.0\ +\ min\ )\ /\ 60.0\ +\ hr\ )\ /\ 24.0;}
+\DoxyCodeLine{\Hypertarget{Mjday_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{Mjday_8cpp_source_l00013}00013\ \textcolor{keywordflow}{return}\ jd-\/2400000.5;}
+\DoxyCodeLine{\Hypertarget{Mjday_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{Mjday_8cpp_source_l00015}00015\ \ \ \ \ \}}
+
+\end{DoxyCode}

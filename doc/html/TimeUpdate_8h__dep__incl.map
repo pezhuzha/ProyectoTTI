@@ -1,5 +1,9 @@
-<map id="/home/fghfgh/Escritorio/ProyectoTTI/include/TimeUpdate.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/TimeUpdate.h">
-<area shape="rect" id="Node000001" title="El archivo contiene la funcion TimeUpdate." alt="" coords="5,5,256,45"/>
-<area shape="rect" id="Node000002" href="$TimeUpdate_8cpp.html" title="El archivo contiene las implementaciones de TimeUpdate.h." alt="" coords="12,93,249,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,59,133,93,128,93,128,59"/>
+<map id="TimeUpdate.h" name="TimeUpdate.h">
+<area shape="rect" id="Node000001" title="El archivo contiene la funcion TimeUpdate." alt="" coords="163,5,277,31"/>
+<area shape="rect" id="Node000002" href="$EKF__GEOS3_8cpp.html" title="Es el archivo principal del programa." alt="" coords="5,79,131,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,39,94,81,92,76,182,34"/>
+<area shape="rect" id="Node000003" href="$TimeUpdate_8cpp.html" title="El archivo contiene las implementaciones de TimeUpdate.h." alt="" coords="155,79,285,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="223,44,223,79,217,79,217,44"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp_source.html" title=" " alt="" coords="309,79,390,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="254,35,329,76,327,81,252,40"/>
 </map>

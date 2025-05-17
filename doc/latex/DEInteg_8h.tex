@@ -1,0 +1,70 @@
+\doxysection{DEInteg.\+h File Reference}
+\hypertarget{DEInteg_8h}{}\label{DEInteg_8h}\index{DEInteg.h@{DEInteg.h}}
+
+
+El archivo contiene la funcion DEInteg.  
+
+
+{\ttfamily \#include "{}matrix.\+h"{}}\newline
+Include dependency graph for DEInteg.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{DEInteg_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{DEInteg_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{DEInteg_8h_a4dd69868d913586235caced1243ab3eb}{DEInteg}} (\mbox{\hyperlink{classMatrix}{Matrix}} \&f(double t, \mbox{\hyperlink{classMatrix}{Matrix}} y), double t, double tout, double relerr, double abserr, int n\+\_\+eqn, \mbox{\hyperlink{classMatrix}{Matrix}} \&y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+El archivo contiene la funcion DEInteg. 
+
+\begin{DoxyAuthor}{Author}
+Pedro Zhuzhan 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000006}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+Definition in file \mbox{\hyperlink{DEInteg_8h_source}{DEInteg.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{DEInteg_8h_a4dd69868d913586235caced1243ab3eb}\index{DEInteg.h@{DEInteg.h}!DEInteg@{DEInteg}}
+\index{DEInteg@{DEInteg}!DEInteg.h@{DEInteg.h}}
+\doxysubsubsection{\texorpdfstring{DEInteg()}{DEInteg()}}
+{\footnotesize\ttfamily \label{DEInteg_8h_a4dd69868d913586235caced1243ab3eb} 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& DEInteg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}} \&}]{f}{double t, Matrix y, }\item[{double}]{t}{, }\item[{double}]{tout}{, }\item[{double}]{relerr}{, }\item[{double}]{abserr}{, }\item[{int}]{n\+\_\+eqn}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}} \&}]{y}{}\end{DoxyParamCaption})}
+
+Numerical integration methods for ordinaray differential equations This module provides implemenation of the variable order variable stepsize multistep method of Shampine \& Gordon. 
+\begin{DoxyParams}{Parameters}
+{\em f} & funcion pasas double y \doxylink{classMatrix}{Matrix} devuelve \doxylink{classMatrix}{Matrix} \\
+\hline
+{\em t} & double \\
+\hline
+{\em tout} & double \\
+\hline
+{\em relerr} & double \\
+\hline
+{\em abserr} & double \\
+\hline
+{\em n\+\_\+eqn} & int \\
+\hline
+{\em y} & \doxylink{classMatrix}{Matrix} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classMatrix}{Matrix} resultado 
+\end{DoxyReturn}

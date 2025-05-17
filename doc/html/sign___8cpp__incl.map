@@ -1,7 +1,7 @@
-<map id="/home/fghfgh/Escritorio/ProyectoTTI/src/sign_.cpp" name="/home/fghfgh/Escritorio/ProyectoTTI/src/sign_.cpp">
-<area shape="rect" id="Node000001" title="El archivo contiene las implementaciones de sign_.h." alt="" coords="35,5,226,45"/>
-<area shape="rect" id="Node000002" href="$sign___8h.html" title="El archivo contiene la funcion sign_." alt="" coords="5,93,136,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,47,90,84,86,81,114,44"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="161,93,223,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="148,44,177,81,172,84,143,47"/>
+<map id="sign_.cpp" name="sign_.cpp">
+<area shape="rect" id="Node000001" title="El archivo contiene las implementaciones de sign_.h." alt="" coords="89,5,172,31"/>
+<area shape="rect" id="Node000002" href="$sign___8h.html" title="El archivo contiene la funcion sign_." alt="" coords="5,79,136,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,33,91,70,87,66,119,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="161,79,223,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,29,175,66,171,70,139,33"/>
 </map>

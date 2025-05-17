@@ -1,9 +1,13 @@
-<map id="/home/fghfgh/Escritorio/ProyectoTTI/include/timediff.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/timediff.h">
-<area shape="rect" id="Node000001" title="El archivo contiene la funcion timediff." alt="" coords="212,5,433,45"/>
-<area shape="rect" id="Node000002" href="$Accel_8cpp.html" title="El archivo contiene las implementaciones de Accel.h." alt="" coords="5,93,197,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="262,53,151,96,149,91,261,48"/>
-<area shape="rect" id="Node000003" href="$VarEqn_8cpp.html" title="El archivo contiene las implementaciones de VarEqn.h." alt="" coords="221,93,424,133"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="325,59,325,93,320,93,320,59"/>
-<area shape="rect" id="Node000004" href="$timediff_8cpp.html" title="El archivo contiene las implementaciones de timediff.h." alt="" coords="448,93,656,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="386,48,503,91,501,96,385,53"/>
+<map id="timediff.h" name="timediff.h">
+<area shape="rect" id="Node000001" title="El archivo contiene la funcion timediff." alt="" coords="269,5,354,31"/>
+<area shape="rect" id="Node000002" href="$Accel_8cpp.html" title="El archivo contiene las implementaciones de Accel.h." alt="" coords="5,79,89,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="256,37,90,81,89,76,255,32"/>
+<area shape="rect" id="Node000003" href="$EKF__GEOS3_8cpp.html" title="Es el archivo principal del programa." alt="" coords="114,79,239,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="279,39,200,81,197,76,276,35"/>
+<area shape="rect" id="Node000004" href="$VarEqn_8cpp.html" title="El archivo contiene las implementaciones de VarEqn.h." alt="" coords="264,79,359,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="314,44,314,79,309,79,309,44"/>
+<area shape="rect" id="Node000005" href="$tests_8cpp_source.html" title=" " alt="" coords="383,79,464,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="343,36,406,76,404,81,340,40"/>
+<area shape="rect" id="Node000006" href="$timediff_8cpp.html" title="El archivo contiene las implementaciones de timediff.h." alt="" coords="488,79,588,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="362,32,502,76,501,81,360,37"/>
 </map>

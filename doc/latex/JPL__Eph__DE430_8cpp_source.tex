@@ -1,0 +1,234 @@
+\doxysection{JPL\+\_\+\+Eph\+\_\+\+DE430.\+cpp}
+\hypertarget{JPL__Eph__DE430_8cpp_source}{}\label{JPL__Eph__DE430_8cpp_source}\index{JPL\_Eph\_DE430.cpp@{JPL\_Eph\_DE430.cpp}}
+\mbox{\hyperlink{JPL__Eph__DE430_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include"{}\mbox{\hyperlink{JPL__Eph__DE430_8h}{../include/JPL\_Eph\_DE430.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include"{}\mbox{\hyperlink{Cheb3D_8h}{../include/Cheb3D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include"{}\mbox{\hyperlink{GLOBAL_8h}{../include/GLOBAL.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include<tuple>}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00012}\mbox{\hyperlink{JPL__Eph__DE430_8h_a5e6fedfbbbe0ca32aa62a9016e7d3293}{00012}}\ tuple<Matrix\&,Matrix\&,Matrix\&,Matrix\&,Matrix\&,Matrix\&,Matrix\&,Matrix\&,Matrix\&,Matrix\&,Matrix\&>\ \ \mbox{\hyperlink{JPL__Eph__DE430_8cpp_a5e6fedfbbbe0ca32aa62a9016e7d3293}{JPL\_Eph\_DE430}}(\textcolor{keywordtype}{double}\ Mjd\_TDB)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00014}00014\ \textcolor{keywordtype}{double}\ JD,t1,dt,j,Mjd0;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00015}00015\ \mbox{\hyperlink{classMatrix}{Matrix}}\ Cx\_Earth(12),Cy\_Earth(12),Cz\_Earth(12),Cx(12),Cy(12),Cz(12),}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00016}00016\ Cx\_Moon(12),Cy\_Moon(12),Cz\_Moon(12),temp(4),Cx\_Sun(12),Cy\_Sun(12),Cz\_Sun(12),Cx\_Venus(12),Cy\_Venus(12),Cz\_Venus(12),Cx\_Mercury(12),Cy\_Mercury(12),Cz\_Mercury(12),}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00017}00017\ Cx\_Mars(12),Cy\_Mars(12),Cz\_Mars(12),Cx\_Jupiter(12),Cy\_Jupiter(12),Cz\_Jupiter(12),Cx\_Saturn(12),Cy\_Saturn(12),Cz\_Saturn(12),Cx\_Uranus(12),Cy\_Uranus(12),Cz\_Uranus(12)}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00018}00018\ ,Cx\_Neptune(12),Cy\_Neptune(12),Cz\_Neptune(12),Cx\_Pluto(12),Cy\_Pluto(12),Cz\_Pluto(12),}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00019}00019\ \&r\_Mercury=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(3),\&r\_Venus=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(3),\&r\_Earth=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(3),\&r\_Mars=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(3),\&r\_Jupiter=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(3),}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00020}00020\ \&r\_Saturn=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(3),\&r\_Uranus=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(3),\&r\_Neptune=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(3),\&r\_Pluto=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(3),\&r\_Moon=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(3),\&r\_Sun=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(3);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00021}00021\ JD=Mjd\_TDB+2400000.5;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00022}00022\ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00023}00023\ \textcolor{keywordflow}{for}(i=1;i<=PC.n\_row;i++)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{if}(PC(i,1)<=JD\&\&JD<=PC(i,2))\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00027}00027\ \}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00028}00028\ \mbox{\hyperlink{classMatrix}{Matrix}}\ PCtemp=\mbox{\hyperlink{matrix_8h_afa94ffe6b27ac353488f90897fe2f3a9}{extract\_row}}(PC,i);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00029}00029\ t1=PCtemp(1)-\/2400000.5;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00031}00031\ dt=Mjd\_TDB-\/t1;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00032}00032\ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k=1;k<=4;k++)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00033}00033\ \ \ \ \ temp(k)=231+(k-\/1)*13;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00034}00034\ \}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00035}00035\ \ \ \ \ Cx\_Earth=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(1),temp(2)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00036}00036\ \ \ \ \ Cy\_Earth=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(2),temp(3)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00037}00037\ \ \ \ \ Cz\_Earth=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(3),temp(4)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00038}00038\ \ \ \ \ temp=temp+39;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00039}00039\ \ \ \ \ Cx=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(1),temp(2)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00040}00040\ \ \ \ \ Cy=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(2),temp(3)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00041}00041\ \ \ \ \ Cz=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(3),temp(4)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00042}00042\ \ \ \ \ Cx\_Earth=\mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(Cx\_Earth,Cx);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00043}00043\ \ \ \ \ Cy\_Earth=\mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(Cy\_Earth,Cy);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00044}00044\ \ \ \ \ Cz\_Earth=\mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(Cz\_Earth,Cz);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00045}00045\ \textcolor{keywordflow}{if}(0<=dt\&\&dt<=16)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00046}00046\ \ \ \ \ j=0;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00047}00047\ Mjd0=t1;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00048}00048\ \}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00049}00049\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(16<dt\&\&dt<=32)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00050}00050\ \ \ \ \ j=1;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00051}00051\ Mjd0=t1+16*j;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00053}00053\ r\_Earth=\mbox{\hyperlink{Cheb3D_8h_a05a110559834c211c7a7eeac28dd8246}{Cheb3D}}(Mjd\_TDB,13,Mjd0,Mjd0+16,\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Cx\_Earth,13*j+1,13*j+13),\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Cy\_Earth,13*j+1,13*j+13),\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Cz\_Earth,13*j+1,13*j+13))*1e3;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00056}00056\ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k=1;k<=4;k++)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00057}00057\ \ \ \ \ temp(k)=441+(k-\/1)*13;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00058}00058\ \}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00059}00059\ Cx\_Moon=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(1),temp(2)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00060}00060\ Cy\_Moon=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(2),temp(3)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00061}00061\ Cz\_Moon=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(3),temp(4)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00062}00062\ \textcolor{keywordflow}{for}(i=1;i<7;i++)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00063}00063\ \ \ \ \ temp=temp+39;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00064}00064\ Cx=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(1),temp(2)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00065}00065\ Cy=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(2),temp(3)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00066}00066\ Cz=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(3),temp(4)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00067}00067\ Cx\_Moon=\mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(Cx\_Moon,Cx);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00068}00068\ Cy\_Moon=\mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(Cy\_Moon,Cy);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00069}00069\ Cz\_Moon=\mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(Cz\_Moon,Cz);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00070}00070\ \}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00071}00071\ \textcolor{keywordflow}{if}(0<=dt\&\&dt<=4)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00072}00072\ j=0;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00073}00073\ Mjd0=t1;\}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00074}00074\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(4<dt\&\&dt<=8)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00075}00075\ j=1;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00076}00076\ Mjd0=t1+4*j;\}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00077}00077\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(8<dt\&\&dt<=12)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00078}00078\ j=2;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00079}00079\ Mjd0=t1+4*j;\}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00080}00080\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(12<dt\&\&dt<=16)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00081}00081\ j=3;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00082}00082\ Mjd0=t1+4*j;\}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00083}00083\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(16<dt\&\&dt<=20)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00084}00084\ j=4;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00085}00085\ Mjd0=t1+4*j;\}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00086}00086\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(20<dt\&\&dt<=24)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00087}00087\ j=5;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00088}00088\ Mjd0=t1+4*j;\}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00089}00089\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(24<dt\&\&dt<=28)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00090}00090\ j=6;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00091}00091\ Mjd0=t1+4*j;\}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00092}00092\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(28<dt\&\&dt<=32)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00093}00093\ j=7;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00094}00094\ Mjd0=t1+4*j;\}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00095}00095\ r\_Moon=\mbox{\hyperlink{Cheb3D_8h_a05a110559834c211c7a7eeac28dd8246}{Cheb3D}}(Mjd\_TDB,13,Mjd0,Mjd0+4,\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Cx\_Moon,13*j+1,13*j+13),\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Cy\_Moon,13*j+1,13*j+13),\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Cz\_Moon,13*j+1,13*j+13))*1e3;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00096}00096\ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k=1;k<=4;k++)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00097}00097\ \ \ \ \ temp(k)=753+(k-\/1)*11;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00098}00098\ \}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00099}00099\ Cx\_Sun=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(1),temp(2)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00100}00100\ Cy\_Sun=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(2),temp(3)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00101}00101\ Cz\_Sun=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(3),temp(4)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00102}00102\ temp=temp+33;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00103}00103\ Cx=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(1),temp(2)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00104}00104\ Cy=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(2),temp(3)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00105}00105\ Cz=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(3),temp(4)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00106}00106\ Cx\_Sun=\mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(Cx\_Sun,Cx);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00107}00107\ Cy\_Sun=\mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(Cy\_Sun,Cy);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00108}00108\ Cz\_Sun=\mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(Cz\_Sun,Cz);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00109}00109\ \textcolor{keywordflow}{if}(0<=dt\&\&dt<=16)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00110}00110\ j=0;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00111}00111\ Mjd0=t1;\}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00112}00112\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(16<dt\&\&dt<=32)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00113}00113\ j=1;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00114}00114\ Mjd0=t1+16*j;\}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00115}00115\ r\_Sun=\mbox{\hyperlink{Cheb3D_8h_a05a110559834c211c7a7eeac28dd8246}{Cheb3D}}(Mjd\_TDB,11,Mjd0,Mjd0+16,\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Cx\_Sun,11*j+1,11*j+11),\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Cy\_Sun,11*j+1,11*j+11),\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Cz\_Sun,11*j+1,11*j+11))*1e3;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00116}00116\ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k=1;k<=4;k++)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00117}00117\ \ \ \ \ temp(k)=3+(k-\/1)*14;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00118}00118\ \}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00119}00119\ Cx\_Mercury=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(1),temp(2)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00120}00120\ Cy\_Mercury=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(2),temp(3)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00121}00121\ Cz\_Mercury=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(3),temp(4)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00122}00122\ temp=temp+42;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00123}00123\ Cx=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(1),temp(2)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00124}00124\ Cy=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(2),temp(3)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00125}00125\ Cz=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(3),temp(4)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00126}00126\ Cx\_Mercury=\mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(Cx\_Mercury,Cx);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00127}00127\ Cy\_Mercury=\mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(Cy\_Mercury,Cy);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00128}00128\ Cz\_Mercury=\mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(Cz\_Mercury,Cz);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00129}00129\ \textcolor{keywordflow}{if}(0<=dt\&\&dt<=8)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00130}00130\ j=0;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00131}00131\ Mjd0=t1;\}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00132}00132\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(8<dt\&\&dt<=16)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00133}00133\ j=1;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00134}00134\ Mjd0=t1+8*j;\}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00135}00135\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(16<dt\&\&dt<=24)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00136}00136\ j=2;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00137}00137\ Mjd0=t1+8*j;\}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00138}00138\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(24<dt\&\&dt<=32)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00139}00139\ j=3;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00140}00140\ Mjd0=t1+8*j;\}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00141}00141\ r\_Mercury=\mbox{\hyperlink{Cheb3D_8h_a05a110559834c211c7a7eeac28dd8246}{Cheb3D}}(Mjd\_TDB,14,Mjd0,Mjd0+8,\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Cx\_Mercury,14*j+1,14*j+14),\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Cy\_Mercury,14*j+1,14*j+14),\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Cz\_Mercury,14*j+1,14*j+14))*1e3;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00142}00142\ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k=1;k<=4;k++)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00143}00143\ \ \ \ \ temp(k)=171+(k-\/1)*10;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00144}00144\ \}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00145}00145\ Cx\_Venus=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(1),temp(2)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00146}00146\ Cy\_Venus=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(2),temp(3)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00147}00147\ Cz\_Venus=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(3),temp(4)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00148}00148\ temp=temp+30;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00149}00149\ Cx=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(1),temp(2)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00150}00150\ Cy=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(2),temp(3)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00151}00151\ Cz=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(3),temp(4)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00152}00152\ Cx\_Venus=\mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(Cx\_Venus,Cx);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00153}00153\ Cy\_Venus=\mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(Cy\_Venus,Cy);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00154}00154\ Cz\_Venus=\mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(Cz\_Venus,Cz);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00155}00155\ \textcolor{keywordflow}{if}(0<=dt\&\&dt<=16)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00156}00156\ j=0;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00157}00157\ Mjd0=t1;\}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00158}00158\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(16<dt\&\&dt<=32)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00159}00159\ j=1;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00160}00160\ Mjd0=t1+16*j;\}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00161}00161\ r\_Venus=\mbox{\hyperlink{Cheb3D_8h_a05a110559834c211c7a7eeac28dd8246}{Cheb3D}}(Mjd\_TDB,10,Mjd0,Mjd0+16,\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Cx\_Venus,10*j+1,10*j+10),\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Cy\_Venus,10*j+1,10*j+10),\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Cz\_Venus,10*j+1,10*j+10))*1e3;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00162}00162\ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k=1;k<=4;k++)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00163}00163\ \ \ \ \ temp(k)=309+(k-\/1)*11;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00164}00164\ \}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00165}00165\ Cx\_Mars=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(1),temp(2)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00166}00166\ Cy\_Mars=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(2),temp(3)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00167}00167\ Cz\_Mars=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(3),temp(4)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00168}00168\ Mjd0=t1;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00169}00169\ r\_Mars=\mbox{\hyperlink{Cheb3D_8h_a05a110559834c211c7a7eeac28dd8246}{Cheb3D}}(Mjd\_TDB,11,Mjd0,Mjd0+32,Cx\_Mars,Cy\_Mars,Cz\_Mars)*1e3;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00171}00171\ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k=1;k<=4;k++)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00172}00172\ \ \ \ \ temp(k)=342+(k-\/1)*8;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00173}00173\ \}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00174}00174\ Cx\_Jupiter=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(1),temp(2)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00175}00175\ Cy\_Jupiter=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(2),temp(3)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00176}00176\ Cz\_Jupiter=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(3),temp(4)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00177}00177\ Mjd0=t1;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00178}00178\ r\_Jupiter=\mbox{\hyperlink{Cheb3D_8h_a05a110559834c211c7a7eeac28dd8246}{Cheb3D}}(Mjd\_TDB,8,Mjd0,Mjd0+32,Cx\_Jupiter,Cy\_Jupiter,Cz\_Jupiter)*1e3;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00180}00180\ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k=1;k<=4;k++)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00181}00181\ \ \ \ \ temp(k)=366+(k-\/1)*7;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00182}00182\ \}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00183}00183\ Cx\_Saturn=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(1),temp(2)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00184}00184\ Cy\_Saturn=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(2),temp(3)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00185}00185\ Cz\_Saturn=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(3),temp(4)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00186}00186\ Mjd0=t1;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00187}00187\ r\_Saturn=\mbox{\hyperlink{Cheb3D_8h_a05a110559834c211c7a7eeac28dd8246}{Cheb3D}}(Mjd\_TDB,7,Mjd0,Mjd0+32,Cx\_Saturn,}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00188}00188\ Cy\_Saturn,Cz\_Saturn)*1e3;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00190}00190\ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k=1;k<=4;k++)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00191}00191\ \ \ \ \ temp(k)=387+(k-\/1)*6;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00192}00192\ \}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00193}00193\ Cx\_Uranus=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(1),temp(2)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00194}00194\ Cy\_Uranus=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(2),temp(3)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00195}00195\ Cz\_Uranus=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(3),temp(4)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00196}00196\ Mjd0=t1;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00197}00197\ r\_Uranus=\mbox{\hyperlink{Cheb3D_8h_a05a110559834c211c7a7eeac28dd8246}{Cheb3D}}(Mjd\_TDB,6,Mjd0,Mjd0+32,Cx\_Uranus,}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00198}00198\ Cy\_Uranus,Cz\_Uranus)*1e3;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00200}00200\ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k=1;k<=4;k++)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00201}00201\ \ \ \ \ temp(k)=405+(k-\/1)*6;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00202}00202\ \}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00203}00203\ Cx\_Neptune=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(1),temp(2)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00204}00204\ Cy\_Neptune=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(2),temp(3)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00205}00205\ Cz\_Neptune=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(3),temp(4)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00206}00206\ Mjd0=t1;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00207}00207\ r\_Neptune=\mbox{\hyperlink{Cheb3D_8h_a05a110559834c211c7a7eeac28dd8246}{Cheb3D}}(Mjd\_TDB,6,Mjd0,Mjd0+32,Cx\_Neptune,}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00208}00208\ Cy\_Neptune,Cz\_Neptune)*1e3;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00209}00209\ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k=1;k<=4;k++)\{}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00210}00210\ \ \ \ \ temp(k)=423+(k-\/1)*6;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00211}00211\ \}}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00212}00212\ Cx\_Pluto=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(1),temp(2)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00213}00213\ Cy\_Pluto=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(2),temp(3)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00214}00214\ Cz\_Pluto=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(PCtemp,temp(3),temp(4)-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00215}00215\ Mjd0=t1;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00216}00216\ r\_Pluto=\mbox{\hyperlink{Cheb3D_8h_a05a110559834c211c7a7eeac28dd8246}{Cheb3D}}(Mjd\_TDB,6,Mjd0,Mjd0+32,Cx\_Pluto,Cy\_Pluto,Cz\_Pluto)*1e3;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00217}00217\ \textcolor{keywordtype}{double}\ EMRAT=81.30056907419062;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00218}00218\ \textcolor{keywordtype}{double}\ EMRAT1=1/(1+EMRAT);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00219}00219\ \mbox{\hyperlink{classMatrix}{Matrix}}\ aux(3);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00220}00220\ aux=r\_Moon;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00221}00221\ \ r\_Earth=r\_Earth-\/aux*EMRAT1;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00222}00222\ \ aux=r\_Earth;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00223}00223\ \ aux=aux*(-\/1);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00224}00224\ \ r\_Mercury=aux+r\_Mercury;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00225}00225\ \ r\_Venus=aux+r\_Venus;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00226}00226\ \ r\_Mars=aux+r\_Mars;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00227}00227\ \ r\_Jupiter=aux+r\_Jupiter;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00228}00228\ \ r\_Saturn=aux+r\_Saturn;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00229}00229\ \ r\_Uranus=aux+r\_Uranus;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00230}00230\ \ r\_Neptune=aux+r\_Neptune;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00231}00231\ \ r\_Pluto=aux+r\_Pluto;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00232}00232\ \ r\_Sun=aux+r\_Sun;}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00233}00233\ \ \textcolor{keywordflow}{return}\ tie(r\_Mercury,r\_Venus,r\_Earth,r\_Mars,r\_Jupiter,r\_Saturn,r\_Uranus,r\_Neptune,r\_Pluto,r\_Moon,r\_Sun);}
+\DoxyCodeLine{\Hypertarget{JPL__Eph__DE430_8cpp_source_l00234}00234\ \ \ \ \ \}}
+
+\end{DoxyCode}

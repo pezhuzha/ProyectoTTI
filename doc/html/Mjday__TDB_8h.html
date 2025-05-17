@@ -5,12 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ProyectoTTI: /home/fghfgh/Escritorio/ProyectoTTI/include/Mjday_TDB.h File Reference</title>
+<title>My Project: Mjday_TDB.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -25,9 +27,8 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ProyectoTTI<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">My Project<span id="projectnumber">&#160;2.0</span>
    </div>
-   <div id="projectbrief">ProyectoTTI</div>
   </td>
  </tr>
  </tbody>
@@ -50,17 +51,29 @@ $(function() { codefold.init(0); });
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Search',false);
+  initMenu('',true,false,'search.php','Search',true);
   $(function() { init_search(); });
 });
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){ initResizable(false); });
+$(function(){initNavTree('Mjday__TDB_8h.html',''); initResizable(true); });
 /* @license-end */
 </script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -82,12 +95,6 @@ $(function(){ initResizable(false); });
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
@@ -100,13 +107,17 @@ $(function(){ initResizable(false); });
 <div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="Mjday__TDB_8h__dep__incl.png" border="0" usemap="#a_2home_2fghfgh_2Escritorio_2ProyectoTTI_2include_2Mjday__TDB_8hdep" alt=""/></div>
-<map name="a_2home_2fghfgh_2Escritorio_2ProyectoTTI_2include_2Mjday__TDB_8hdep" id="a_2home_2fghfgh_2Escritorio_2ProyectoTTI_2include_2Mjday__TDB_8hdep">
-<area shape="rect" title="El archivo contiene la funcion Mjday_TDB." alt="" coords="83,5,327,45"/>
-<area shape="rect" href="Accel_8cpp.html" title="El archivo contiene las implementaciones de Accel.h." alt="" coords="5,101,197,141"/>
-<area shape="poly" title=" " alt="" coords="176,57,124,103,121,99,172,53"/>
-<area shape="rect" href="Mjday__TDB_8cpp.html" title="El archivo contiene las implementaciones de Mjday_TDB.h." alt="" coords="222,93,397,148"/>
-<area shape="poly" title=" " alt="" coords="238,52,282,91,278,95,235,56"/>
+<div class="center"><img src="Mjday__TDB_8h__dep__incl.png" border="0" usemap="#aMjday__TDB_8hdep" alt=""/></div>
+<map name="aMjday__TDB_8hdep" id="aMjday__TDB_8hdep">
+<area shape="rect" title="El archivo contiene la funcion Mjday_TDB." alt="" coords="196,5,304,31"/>
+<area shape="rect" href="Accel_8cpp.html" title="El archivo contiene las implementaciones de Accel.h." alt="" coords="5,79,89,104"/>
+<area shape="poly" title=" " alt="" coords="206,38,81,81,79,76,204,33"/>
+<area shape="rect" href="EKF__GEOS3_8cpp.html" title="Es el archivo principal del programa." alt="" coords="114,79,239,104"/>
+<area shape="poly" title=" " alt="" coords="230,42,190,80,187,77,226,38"/>
+<area shape="rect" href="Mjday__TDB_8cpp.html" title="El archivo contiene las implementaciones de Mjday_TDB.h." alt="" coords="263,79,386,104"/>
+<area shape="poly" title=" " alt="" coords="274,38,314,77,311,80,270,42"/>
+<area shape="rect" href="tests_8cpp_source.html" title=" " alt="" coords="411,79,492,104"/>
+<area shape="poly" title=" " alt="" coords="296,33,419,76,418,81,295,38"/>
 </map>
 </div>
 </div>
@@ -120,7 +131,9 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>El archivo contiene la funcion Mjday_TDB. </p>
 <dl class="section author"><dt>Author</dt><dd>Pedro Zhuzhan </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000022">Bug</a></b></dt><dd>No known bugs </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000023">Bug</a></b></dt><dd>No known bugs </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="Mjday__TDB_8h_source.html">Mjday_TDB.h</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a2512825285329f54df7d9f0be4966336" name="a2512825285329f54df7d9f0be4966336"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2512825285329f54df7d9f0be4966336">&#9670;&#160;</a></span>Mjday_TDB()</h2>
@@ -144,13 +157,28 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Modified julian date (TDB) </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="Mjday__TDB_8cpp_source.html#l00010">10</a> of file <a class="el" href="Mjday__TDB_8cpp_source.html">Mjday_TDB.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="Mjday__TDB_8h_a2512825285329f54df7d9f0be4966336_icgraph.png" border="0" usemap="#aMjday__TDB_8h_a2512825285329f54df7d9f0be4966336_icgraph" alt=""/></div>
+<map name="aMjday__TDB_8h_a2512825285329f54df7d9f0be4966336_icgraph" id="aMjday__TDB_8h_a2512825285329f54df7d9f0be4966336_icgraph">
+<area shape="rect" title=" " alt="" coords="111,5,207,31"/>
+<area shape="rect" href="Accel_8cpp.html#a90a9d07270cea0a2accb38d118fff177" title=" " alt="" coords="5,5,63,31"/>
+<area shape="poly" title=" " alt="" coords="97,21,63,21,63,15,97,15"/>
+</map>
+</div>
+
 </div>
 </div>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
-</small></address>
 </div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="Mjday__TDB_8h.html">Mjday_TDB.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
 </body>
 </html>

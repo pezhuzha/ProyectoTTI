@@ -1,0 +1,27 @@
+\doxysection{Position.\+cpp}
+\hypertarget{Position_8cpp_source}{}\label{Position_8cpp_source}\index{Position.cpp@{Position.cpp}}
+\mbox{\hyperlink{Position_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Position_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Position_8h}{../include/Position.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Position_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SAT__Const_8h}{../include/SAT\_Const.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Position_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{Position_8cpp_source_l00010}\mbox{\hyperlink{Position_8h_ad3ff3004edb305ae3aed0230373b848e}{00010}}\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\&\ \mbox{\hyperlink{Position_8cpp_ad3ff3004edb305ae3aed0230373b848e}{Position}}(\textcolor{keywordtype}{double}\ lon,\textcolor{keywordtype}{double}\ lat,\textcolor{keywordtype}{double}\ h)\{}
+\DoxyCodeLine{\Hypertarget{Position_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ R\_equ\ =\ R\_Earth;}
+\DoxyCodeLine{\Hypertarget{Position_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ f\ \ \ \ \ =\ f\_Earth;}
+\DoxyCodeLine{\Hypertarget{Position_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{Position_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ e2\ \ \ \ \ =\ f*(2.0-\/f);}
+\DoxyCodeLine{\Hypertarget{Position_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ CosLat\ =\ cos(lat);}
+\DoxyCodeLine{\Hypertarget{Position_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ SinLat\ =\ sin(lat);}
+\DoxyCodeLine{\Hypertarget{Position_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{Position_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ N\ =\ R\_equ\ /\ sqrt(1.0-\/e2*SinLat*SinLat);}
+\DoxyCodeLine{\Hypertarget{Position_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{Position_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ *r=\textcolor{keyword}{new}\ \mbox{\hyperlink{classMatrix}{Matrix}}(3);}
+\DoxyCodeLine{\Hypertarget{Position_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{Position_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ (*r)(1)\ =\ \ (\ \ \ \ \ \ \ \ \ N+h)*CosLat*cos(lon);}
+\DoxyCodeLine{\Hypertarget{Position_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ (*r)(2)\ =\ \ (\ \ \ \ \ \ \ \ \ N+h)*CosLat*sin(lon);}
+\DoxyCodeLine{\Hypertarget{Position_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ (*r)(3)\ =\ \ ((1.0-\/e2)*N+h)*SinLat;}
+\DoxyCodeLine{\Hypertarget{Position_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{Position_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *r;}
+\DoxyCodeLine{\Hypertarget{Position_8cpp_source_l00027}00027\ \ \ \ \ \}}
+
+\end{DoxyCode}

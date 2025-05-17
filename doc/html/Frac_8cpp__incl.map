@@ -1,7 +1,7 @@
-<map id="/home/fghfgh/Escritorio/ProyectoTTI/src/Frac.cpp" name="/home/fghfgh/Escritorio/ProyectoTTI/src/Frac.cpp">
-<area shape="rect" id="Node000001" title="El archivo contiene las implementaciones de Frac.h." alt="" coords="34,5,218,45"/>
-<area shape="rect" id="Node000002" href="$Frac_8h.html" title="El archivo contiene la funcion Frac." alt="" coords="5,93,129,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,47,87,84,82,80,110,44"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="153,93,216,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="142,44,170,80,165,84,138,47"/>
+<map id="Frac.cpp" name="Frac.cpp">
+<area shape="rect" id="Node000001" title="El archivo contiene las implementaciones de Frac.h." alt="" coords="88,5,164,31"/>
+<area shape="rect" id="Node000002" href="$Frac_8h.html" title="El archivo contiene la funcion Frac." alt="" coords="5,79,129,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,33,87,70,83,67,114,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="153,79,216,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="138,29,169,67,165,70,134,33"/>
 </map>

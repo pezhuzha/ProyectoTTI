@@ -1,7 +1,9 @@
-<map id="/home/fghfgh/Escritorio/ProyectoTTI/include/Frac.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/Frac.h">
-<area shape="rect" id="Node000001" title="El archivo contiene la funcion Frac." alt="" coords="104,5,301,45"/>
-<area shape="rect" id="Node000002" href="$Frac_8cpp.html" title="El archivo contiene las implementaciones de Frac.h." alt="" coords="5,93,189,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,56,122,95,119,91,167,52"/>
-<area shape="rect" id="Node000003" href="$gmst_8cpp.html" title="El archivo contiene las implementaciones de gmst.h." alt="" coords="214,93,405,133"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="239,52,287,91,284,95,235,56"/>
+<map id="Frac.h" name="Frac.h">
+<area shape="rect" id="Node000001" title="El archivo contiene la funcion Frac." alt="" coords="117,5,178,31"/>
+<area shape="rect" id="Node000002" href="$Frac_8cpp.html" title="El archivo contiene las implementaciones de Frac.h." alt="" coords="5,79,81,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,41,62,81,59,76,118,36"/>
+<area shape="rect" id="Node000003" href="$gmst_8cpp.html" title="El archivo contiene las implementaciones de gmst.h." alt="" coords="106,79,189,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,44,150,79,145,79,145,44"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp_source.html" title=" " alt="" coords="213,79,295,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="177,36,238,76,235,81,174,40"/>
 </map>

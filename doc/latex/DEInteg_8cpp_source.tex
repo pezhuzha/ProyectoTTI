@@ -1,0 +1,592 @@
+\doxysection{DEInteg.\+cpp}
+\hypertarget{DEInteg_8cpp_source}{}\label{DEInteg_8cpp_source}\index{DEInteg.cpp@{DEInteg.cpp}}
+\mbox{\hyperlink{DEInteg_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{DEInteg_8h}{../include/DEInteg.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SAT__Const_8h}{../include/SAT\_Const.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sign___8h}{../include/sign\_.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00011}00011\ \mbox{\hyperlink{classMatrix}{Matrix}}\&\ \mbox{\hyperlink{DEInteg_8h_a4dd69868d913586235caced1243ab3eb}{DEInteg}}(\mbox{\hyperlink{classMatrix}{Matrix}}\&\ f(\textcolor{keywordtype}{double}\ t,\mbox{\hyperlink{classMatrix}{Matrix}}\ z),\textcolor{keywordtype}{double}\ t,\ \textcolor{keywordtype}{double}\ tout,\textcolor{keywordtype}{double}\ relerr,\textcolor{keywordtype}{double}\ abserr,\textcolor{keywordtype}{int}\ n\_eqn,\mbox{\hyperlink{classMatrix}{Matrix}}\ \&y)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00012}00012\ \ \ \textcolor{keywordflow}{if}(y.n\_row<y.n\_column)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00013}00013\ \ \ \ \ y=\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(y);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00014}00014\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00016}00016\ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ yout=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(n\_eqn,1),ypout=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(n\_eqn,1),two(14),gstr(14);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00017}00017\ \ \ \textcolor{keywordtype}{bool}\ start=\textcolor{keyword}{false},phase1=\textcolor{keyword}{false},nornd=\textcolor{keyword}{false},crash=\textcolor{keyword}{false},success=\textcolor{keyword}{false},PermitTOUT=\textcolor{keyword}{false},OldPermit=\textcolor{keyword}{false},stiff=\textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00018}00018\ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ delsgn=0.0,x=0.0,hi=0.0,ki=0.0,kold=0.0,temp1=0.0,term=0.0,psijm1=0.0,eta=0.0,sum=0.0,absh=0.0,hold=0.0,hnew=0.0,}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00019}00019\ \ \ k=0.0,round=0.0,gamma=0.0,i=0.0,p5eps=0.0,ifail=0.0,kp1=0.0,kp2=0.0,km1=0.0,km2=0.0,ns=0.0,nsp1=0.0,realns=0.0,im1=0.0,temp2=0.0,}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00020}00020\ \ \ temp3=0.0,reali=0.0,temp4=0.0,nsm2=0.0,limit1=0.0,temp5=0.0,temp6=0.0,limit2=0.0,nsp2=0.0,ip1=0.0,tau=0.0,xold=0.0,erkm2=0.0,}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00021}00021\ \ \ erkm1=0.0,erk,err=0.0,knew=0.0,rhi=0.0,h=0.0,erkp1=0.0,rhodouble=0.0,told=0.0,epsilon=0.0,del=0.0,absdel=0.0,tend=0.0,nostep=0.0,kle4=0.0,}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00022}00022\ \ \ releps=0.0,abseps=0.0,twou=0.0,fouru=0.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00023}00023\ \ \ \textcolor{keywordtype}{double}\ r=0.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00024}00024\ \ \ \textcolor{keywordtype}{int}\ l=0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00025}00025\ \ \ twou\ \ =\ 2*eps;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00026}00026\ \ \ fouru\ =\ 4*eps;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00029}00029\ \ \ \textcolor{keyword}{struct\ }DE\_STATE\_t\ \{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{int}\ DE\_INIT\ =\ 1;\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{int}\ DE\_DONE\ =\ 2;\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{int}\ DE\_BADACC\ =\ 3;\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{int}\ DE\_NUMSTEPS\ =\ 4;\ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{int}\ DE\_STIFF\ =\ 5;\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{int}\ DE\_INVPARAM\ =\ 6;\ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00036}00036\ \ \ \};}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00038}00038\ \ \ DE\_STATE\_t\ DE\_STATE;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00040}00040\ \ \ \textcolor{keywordtype}{int}\ State\_\ =\ DE\_STATE.DE\_INIT;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00041}00041\ PermitTOUT\ =\ \textcolor{keyword}{true},OldPermit;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00042}00042\ told\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00045}00045\ \textcolor{keywordtype}{double}\ arrtwo[]\ \ =\ \{1.0,\ 2.0,\ 4.0,\ 8.0,\ 16.0,\ 32.0,\ 64.0,\ 128.0,256.0,\ 512.0,\ 1024.0,\ 2048.0,\ 4096.0,\ 8192.0\};}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00046}00046\ \textcolor{keywordtype}{double}\ arrgstr[]\ =\ \{1.0,\ 0.5,\ 0.0833,\ 0.0417,\ 0.0264,\ 0.0188,\ 0.0143,\ 0.0114,\ 0.00936,\ 0.00789,\ 0.00679,0.00592,\ 0.00524,\ 0.00468\};}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00047}00047\ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ wxy=1;wxy<=14;wxy++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00048}00048\ \ \ two(wxy)=arrtwo[wxy-\/1];}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00049}00049\ \ \ gstr(wxy)=arrgstr[wxy-\/1];}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00052}00052\ \mbox{\hyperlink{classMatrix}{Matrix}}\ yy\ \ \ \ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(n\_eqn,1);\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00053}00053\ \mbox{\hyperlink{classMatrix}{Matrix}}\ wt\ \ \ \ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(n\_eqn,1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00054}00054\ \mbox{\hyperlink{classMatrix}{Matrix}}\ p\ \ \ \ \ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(n\_eqn,1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00055}00055\ \mbox{\hyperlink{classMatrix}{Matrix}}\ yp\ \ \ \ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(n\_eqn,1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00056}00056\ \mbox{\hyperlink{classMatrix}{Matrix}}\ phi\ \ \ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(n\_eqn,17);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00057}00057\ \mbox{\hyperlink{classMatrix}{Matrix}}\ g\ \ \ \ \ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(14,1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00058}00058\ \mbox{\hyperlink{classMatrix}{Matrix}}\ sig\ \ \ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(14,1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00059}00059\ \mbox{\hyperlink{classMatrix}{Matrix}}\ rho\ \ \ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(14,1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00060}00060\ \mbox{\hyperlink{classMatrix}{Matrix}}\ w\ \ \ \ \ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(13,1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00061}00061\ \mbox{\hyperlink{classMatrix}{Matrix}}\ alpha\ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(13,1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00062}00062\ \mbox{\hyperlink{classMatrix}{Matrix}}\ beta\ \ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(13,1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00063}00063\ \mbox{\hyperlink{classMatrix}{Matrix}}\ v\ \ \ \ \ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(13,1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00064}00064\ \mbox{\hyperlink{classMatrix}{Matrix}}\ psi\_\ \ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(13,1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00066}00066\ \textcolor{keywordflow}{if}\ (t==tout)\ \{\ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00067}00067\ \ \ \textcolor{keywordflow}{return}\ y;\}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00069}00069\ \ \ epsilon\ =\ fmax(relerr,abserr);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00070}00070\ \ \ \textcolor{keywordflow}{if}\ (\ (\ relerr\ <\ \ 0.0\ \ )\ ||\ (\ abserr\ <\ \ 0.0\ )\ ||\ \ (\ epsilon\ \ \ \ <=\ 0.0\ \ )\ ||}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00071}00071\ \ \ \ \ (\ State\_\ \ >\ \ DE\_STATE.DE\_INVPARAM\ )\ ||\ \ (\ (State\_\ !=\ DE\_STATE.DE\_INIT)\ \&\&\ \ (t\ !=\ told)\ \ \ \ \ \ \ \ \ \ \ )\ )}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00072}00072\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00073}00073\ \ \ \ \ \ State\_\ =\ DE\_STATE.DE\_INVPARAM;\ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00075}00075\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00077}00077\ \ \ del\ \ \ \ =\ tout\ -\/\ t;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00078}00078\ \ \ absdel\ =\ fabs(del);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00080}00080\ \ \ tend\ \ \ =\ t\ +\ 100.0*del;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00081}00081\ \ \ \textcolor{keywordflow}{if}\ (!PermitTOUT)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00082}00082\ \ \ \ \ tend\ =\ tout;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00083}00083\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00084}00084\ \ \ nostep\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00085}00085\ \ \ kle4\ \ \ =\ 0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00086}00086\ \ \ stiff\ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00087}00087\ \ \ releps\ =\ relerr/epsilon;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00088}00088\ \ \ abseps\ =\ abserr/epsilon;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00090}00090\ \ \ \textcolor{keywordflow}{if}\ \ (\ (State\_==DE\_STATE.DE\_INIT)\ ||\ (!OldPermit)\ ||\ (delsgn*del<=0.0)\ )\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00091}00091\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00092}00092\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00093}00093\ \ \ \ \ start\ \ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00094}00094\ \ \ \ \ x\ \ \ \ \ \ =\ t;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00095}00095\ \ \ \ \ yy\ \ \ \ \ =\ y;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00096}00096\ \ \ \ \ delsgn\ =\ \mbox{\hyperlink{sign___8h_acaf6f309594b8f14ca0ec7750d41738f}{sign\_}}(1.0,\ del);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00097}00097\ \ \ \ \ h\ =\ \mbox{\hyperlink{sign___8h_acaf6f309594b8f14ca0ec7750d41738f}{sign\_}}(\ fmax(fouru*fabs(x),\ fabs(tout-\/x)),\ tout-\/x\ );\}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00098}00098\ \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00099}00099\ \ \ \textcolor{keywordflow}{if}\ (fabs(x-\/t)\ >=\ absdel)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00100}00100\ \ \ \ \ yout\ \ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(n\_eqn,1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00101}00101\ \ \ \ \ ypout\ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(n\_eqn,1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00102}00102\ \ \ \ \ g(2)\ \ \ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00103}00103\ \ \ \ \ rho(2)\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00104}00104\ \ \ \ \ hi\ =\ tout\ -\/\ x;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00105}00105\ \ \ \ \ ki\ =\ kold\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00107}00107\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=1;i<=k;i++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00108}00108\ \ \ \ \ \ \ temp1\ =\ i;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00109}00109\ \ \ \ \ \ \ w(i+1)\ =\ 1.0/temp1;\}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00110}00110\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00111}00111\ \ \ \ \ \ \ term\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00112}00112\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j=2;j<=ki;j++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ psijm1\ =\ psi\_(j);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ gamma\ =\ (hi\ +\ term)/psijm1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ eta\ =\ hi/psijm1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=1;i<=ki+1-\/j;i++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ w(i+1)\ =\ gamma*w(i+1)\ -\/\ eta*w(i+2);\}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ g(j+1)\ =\ w(2);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ rho(j+1)\ =\ gamma*rho(j);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ term\ =\ psijm1;\}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00121}00121\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(yout.n\_row>yout.n\_column)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ yout=\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(yout);\}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ypout.n\_row>ypout.n\_column)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ ypout=\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(ypout);\}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y.n\_row>y.n\_column)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ y=\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(y);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j=1;j<=ki;j++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ ki+1-\/j;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ yout\ \ =\ yout\ \ +\ \mbox{\hyperlink{matrix_8h_aca6da092294b7d44ef5bf19d74f88e7e}{extract\_column}}(phi,i+1)*g(i+1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ ypout\ =\ ypout\ +\ \mbox{\hyperlink{matrix_8h_aca6da092294b7d44ef5bf19d74f88e7e}{extract\_column}}(phi,i+1)*rho(i+1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ yout\ =\ y\ +yout*hi;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ y\ \ \ \ =\ yout;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00136}00136\ \ \ \ \ \ \ State\_\ \ \ \ =\ DE\_STATE.DE\_DONE;\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00137}00137\ \ \ \ \ \ \ t\ \ \ \ \ \ \ \ \ =\ tout;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00138}00138\ \ \ \ \ \ \ told\ \ \ \ \ \ =\ t;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00139}00139\ \ \ \ \ \ \ OldPermit\ =\ PermitTOUT;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00140}00140\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00141}00141\ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ !PermitTOUT\ \&\&\ (\ fabs(tout-\/x)\ <\ fouru*fabs(x)\ )\ )\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00144}00144\ \ \ \ \ \ \ h\ =\ tout\ -\/\ x;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00145}00145\ \ \ \ \ \ \ yp\ =\ f(x,yy);\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00146}00146\ \ \ \ \ \ \ y\ =\ yy\ +\ yp*h;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00147}00147\ \ \ \ \ \ \ State\_\ \ \ \ =\ DE\_STATE.DE\_DONE;\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00148}00148\ \ \ \ \ \ \ t\ \ \ \ \ \ \ \ \ =\ tout;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00149}00149\ \ \ \ \ \ \ told\ \ \ \ \ \ =\ t;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00150}00150\ \ \ \ \ \ \ OldPermit\ =\ PermitTOUT;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00151}00151\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00152}00152\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00154}00154\ \ \ \ \ h\ \ =\ \mbox{\hyperlink{sign___8h_acaf6f309594b8f14ca0ec7750d41738f}{sign\_}}(min(fabs(h),\ fabs(tend-\/x)),\ h);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00155}00155\ \ \ \ \ \textcolor{keywordflow}{for}\ (l=1;l<=n\_eqn;l++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00156}00156\ \ \ \ \ \ \ wt(l)\ =\ releps*fabs(yy(l))\ +\ abseps;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00157}00157\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00159}00159\ \ \ \ \ \textcolor{keywordflow}{if}\ (fabs(h)\ <\ fouru*fabs(x))\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00160}00160\ \ \ \ \ \ \ h\ =\ \mbox{\hyperlink{sign___8h_acaf6f309594b8f14ca0ec7750d41738f}{sign\_}}(fouru*fabs(x),h);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00161}00161\ \ \ \ \ \ \ crash\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00162}00162\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00163}00163\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00165}00165\ \ \ p5eps\ \ =\ 0.5*epsilon;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00166}00166\ \ \ crash\ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00167}00167\ \ \ g(2)\ \ \ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00168}00168\ \ \ g(3)\ \ \ =\ 0.5;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00169}00169\ \ \ sig(2)\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00171}00171\ \ \ ifail\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00173}00173\ \ \ round\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00174}00174\ \ \ \textcolor{keywordflow}{for}\ (l=1;l<=n\_eqn;l++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00175}00175\ \ \ \ \ round\ =\ round\ +\ (y(l)*y(l))/(wt(l)*wt(l));}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00176}00176\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00177}00177\ \ \ round\ =\ twou*sqrt(round);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00178}00178\ \ \ \textcolor{keywordflow}{if}\ (p5eps<round)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00179}00179\ \ \ \ \ epsilon\ =\ 2.0*round*(1.0+fouru);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00180}00180\ \ \ \ \ crash\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00181}00181\ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00182}00182\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00183}00183\ \ \ \textcolor{keywordflow}{if}\ (start)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00184}00184\ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00185}00185\ \ \ \ \ yp\ =\ \mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(f(x,y));}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00186}00186\ \ \ \ \ sum\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00187}00187\ \ \ \ \ \textcolor{keywordflow}{for}\ (l=1;l<=n\_eqn;l++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00188}00188\ \ \ \ \ \ \ phi(l,2)\ =\ yp(l);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00189}00189\ \ \ \ \ \ \ phi(l,3)\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00190}00190\ \ \ \ \ \ \ sum\ =\ sum\ +\ (yp(l)*yp(l))/(wt(l)*wt(l));}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00191}00191\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00192}00192\ \ \ \ \ sum\ \ =\ sqrt(sum);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00193}00193\ \ \ \ \ absh\ =\ fabs(h);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00194}00194\ \ \ \ \ \textcolor{keywordflow}{if}\ (epsilon<16.0*sum*h*h)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00195}00195\ \ \ \ \ \ \ absh=0.25*sqrt(epsilon/sum);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00196}00196\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00197}00197\ \ \ \ \ h\ \ \ \ =\ \mbox{\hyperlink{sign___8h_acaf6f309594b8f14ca0ec7750d41738f}{sign\_}}(fmax(absh,\ fouru*fabs(x)),\ h);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00198}00198\ \ \ \ \ hold\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00199}00199\ \ \ \ \ hnew\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00200}00200\ \ \ \ \ k\ \ \ \ =\ 1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00201}00201\ \ \ \ \ kold\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00202}00202\ \ \ \ \ start\ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00203}00203\ \ \ \ \ phase1\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00204}00204\ \ \ \ \ nornd\ \ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00205}00205\ \ \ \ \ \textcolor{keywordflow}{if}\ (p5eps<=100.0*round)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00206}00206\ \ \ \ \ \ \ nornd\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00207}00207\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (l=1;l<=n\_eqn;l++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ phi(l,16)=0.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00209}00209\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00210}00210\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00211}00211\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00213}00213\ \ \ \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00215}00215\ \ \ \ \ kp1\ =\ k+1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00216}00216\ \ \ \ \ kp2\ =\ k+2;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00217}00217\ \ \ \ \ km1\ =\ k-\/1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00218}00218\ \ \ \ \ km2\ =\ k-\/2;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00220}00220\ \ \ \ \ \textcolor{keywordflow}{if}\ (h\ !=hold)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00221}00221\ \ \ \ \ \ \ ns=0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00222}00222\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00223}00223\ \ \ \ \ \textcolor{keywordflow}{if}\ (ns<=kold)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00224}00224\ \ \ \ \ \ \ ns=ns+1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00225}00225\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00226}00226\ \ \ \ \ nsp1\ =\ ns+1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00228}00228\ \ \ \ \ \textcolor{keywordflow}{if}\ (k>=ns)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00229}00229\ \ \ \ \ \ \ beta(ns+1)\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00230}00230\ \ \ \ \ \ \ realns\ =\ ns;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00231}00231\ \ \ \ \ \ \ alpha(ns+1)\ =\ 1.0/realns;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00232}00232\ \ \ \ \ \ \ temp1\ =\ h*realns;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00233}00233\ \ \ \ \ \ \ sig(nsp1+1)\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00234}00234\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (k>=nsp1)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=nsp1;i<=k;i++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ im1\ \ \ =\ i-\/1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ temp2\ =\ psi\_(im1+1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ psi\_(im1+1)\ =\ temp1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ beta(i+1)\ \ =\ beta(im1+1)*psi\_(im1+1)/temp2;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ temp1\ \ \ \ =\ temp2\ +\ h;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ alpha(i+1)\ =\ h/temp1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ reali\ =\ i;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ sig(i+2)\ =\ reali*alpha(i+1)*sig(i+1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00245}00245\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00246}00246\ \ \ \ \ \ \ psi\_(k+1)\ =\ temp1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00247}00247\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00248}00248\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00249}00249\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ns>1)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (k>kold)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ temp4\ =\ k*kp1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ v(k+1)\ =\ 1.0/temp4;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ nsm2\ =\ ns-\/2;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j=1;j<=nsm2;j++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ k-\/j;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ v(i+1)\ =\ v(i+1)\ -\/\ alpha(j+2)*v(i+2);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00260}00260\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ limit1\ =\ kp1\ -\/\ ns;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ temp5\ \ =\ alpha(ns+1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ iq=1;iq<=limit1;iq++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ v(iq+1)\ =\ v(iq+1)\ -\/\ temp5*v(iq+2);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ w(iq+1)\ =\ v(iq+1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ g(nsp1+1)\ =\ w(2);\}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ iq=1;iq<=k;iq++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ temp3\ =\ iq*(iq+1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ v(iq+1)\ =\ 1.0/temp3;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ w(iq+1)\ =\ v(iq+1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00276}00276\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00277}00277\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ nsp2\ =\ ns\ +\ 2;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (kp1>=nsp2)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=nsp2;i<=kp1;i++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ limit2\ =\ kp2\ -\/\ i;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ temp6\ \ =\ alpha(i);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ iq=1;iq<=limit2;iq++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ w(iq+1)\ =\ w(iq+1)\ -\/\ temp6*w(iq+2);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ g(i+1)\ =\ w(2);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00289}00289\ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00290}00290\ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00291}00291\ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00292}00292\ \ \ \textcolor{keywordflow}{if}\ (k>=nsp1)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00293}00293\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=nsp1;i<=k;i++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00294}00294\ \ \ \ \ \ \ temp1\ =\ beta(i+1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00295}00295\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (l=1;l<=n\_eqn;l++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ phi(l,i+1)\ =\ temp1\ *\ phi(l,i+1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00297}00297\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00298}00298\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00299}00299\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00300}00300\ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00301}00301\ \ \ \textcolor{keywordflow}{for}\ (l=1;l<=n\_eqn;l++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00302}00302\ \ \ \ \ phi(l,kp2+1)\ =\ phi(l,kp1+1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00303}00303\ \ \ \ \ phi(l,kp1+1)\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00304}00304\ \ \ \ \ p(l)\ \ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00305}00305\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00306}00306\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j=1;j<=k;j++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00307}00307\ \ \ \ \ i\ \ \ \ \ =\ kp1\ -\/\ j;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00308}00308\ \ \ \ \ ip1\ \ \ =\ i+1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00309}00309\ \ \ \ \ temp2\ =\ g(i+1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00310}00310\ \ \ \ \ \textcolor{keywordflow}{for}\ (l=1;l<=n\_eqn;l++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00311}00311\ \ \ \ \ \ \ p(l)\ \ \ \ \ =\ p(l)\ +\ temp2*phi(l,i+1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00312}00312\ \ \ \ \ \ \ phi(l,i+1)\ =\ phi(l,i+1)\ +\ phi(l,ip1+1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00313}00313\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00314}00314\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00315}00315\ \ \ \textcolor{keywordflow}{if}\ (nornd)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00316}00316\ \ \ \ p\ =\ y\ +\ p*h;\}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00317}00317\ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00318}00318\ \ \ \ \ \textcolor{keywordflow}{for}\ (l=1;l<=n\_eqn;l++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00319}00319\ \ \ \ \ \ \ tau\ =\ h*p(l)\ -\/\ phi(l,16);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00320}00320\ \ \ \ \ \ \ p(l)\ =\ y(l)\ +\ tau;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00321}00321\ \ \ \ \ \ \ phi(l,17)\ =\ (p(l)\ -\/\ y(l))\ -\/\ tau;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00322}00322\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00323}00323\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00324}00324\ \ \ xold\ =\ x;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00325}00325\ \ \ x\ =\ x\ +\ h;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00326}00326\ \ \ absh\ =\ fabs(h);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00327}00327\ \ \ yp\ =\ f(x,p);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00328}00328\ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00329}00329\ \ \ erkm2\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00330}00330\ \ \ erkm1\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00331}00331\ \ \ erk\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00332}00332\ \ \ \textcolor{keywordflow}{for}\ (l=1;l<=n\_eqn;l++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00333}00333\ \ \ \ \ temp3\ =\ 1.0/wt(l);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00334}00334\ \ \ \ \ temp4\ =\ yp(l)\ -\/\ phi(l,1+1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00335}00335\ \ \ \ \ \textcolor{keywordflow}{if}\ (km2>\ 0)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00336}00336\ \ \ \ \ \ \ erkm2\ =\ erkm2\ +\ ((phi(l,km1+1)+temp4)*temp3)*((phi(l,km1+1)+temp4)*temp3);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00337}00337\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00338}00338\ \ \ \ \ \textcolor{keywordflow}{if}\ (km2>=0)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00339}00339\ \ \ \ \ \ \ erkm1\ =\ erkm1\ +\ ((phi(l,k+1)+temp4)*temp3)*((phi(l,k+1)+temp4)*temp3);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00340}00340\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00341}00341\ \ \ \ \ erk\ =\ erk\ +\ (temp4*temp3)*(temp4*temp3);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00342}00342\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00343}00343\ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00344}00344\ \ \ \textcolor{keywordflow}{if}\ (km2>\ 0)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00345}00345\ \ \ \ \ erkm2\ =\ absh*sig(km1+1)*gstr(km2+1)*sqrt(erkm2);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00346}00346\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00347}00347\ \ \ \textcolor{keywordflow}{if}\ (km2>=0)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00348}00348\ \ \ \ \ erkm1\ =\ absh*sig(k+1)*gstr(km1+1)*sqrt(erkm1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00349}00349\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00350}00350\ \ \ temp5\ =\ absh*sqrt(erk);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00351}00351\ \ \ err\ =\ temp5*(g(k+1)-\/g(kp1+1));}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00352}00352\ \ \ erk\ =\ temp5*sig(kp1+1)*gstr(k+1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00353}00353\ \ \ knew\ =\ k;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00354}00354\ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00355}00355\ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00356}00356\ \ \ \textcolor{keywordflow}{if}\ (km2\ >0)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00357}00357\ \ \ \ \ \textcolor{keywordflow}{if}\ (fmax(erkm1,erkm2)<=erk)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00358}00358\ \ \ \ \ \ \ knew=km1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00359}00359\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00360}00360\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00361}00361\ \ \ \textcolor{keywordflow}{if}\ (km2==0)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00362}00362\ \ \ \ \ \textcolor{keywordflow}{if}\ (erkm1<=0.5*erk)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00363}00363\ \ \ \ \ \ \ knew=km1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00364}00364\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00365}00365\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00366}00366\ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00367}00367\ \ \ success\ =\ (err<=epsilon);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00368}00368\ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00369}00369\ \ \ \textcolor{keywordflow}{if}\ (!success)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00370}00370\ \ \ \ \ phase1\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00371}00371\ \ \ \ \ x\ =\ xold;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00372}00372\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=1;i<=k;i++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00373}00373\ \ \ \ \ \ \ temp1\ =\ 1.0/beta(i+1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00374}00374\ \ \ \ \ \ \ ip1\ =\ i+1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00375}00375\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (l=1;l<=n\_eqn;l++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00376}00376\ \ \ \ \ \ \ \ \ phi(l,i+1)=temp1*(phi(l,i+1)-\/phi(l,ip1+1));}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00377}00377\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00378}00378\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00379}00379\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00380}00380\ \ \ \ \ \textcolor{keywordflow}{if}\ (k>=2)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00381}00381\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=2;i<=k;i++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00382}00382\ \ \ \ \ \ \ \ \ psi\_(i)\ =\ h-\/psi\_(i+1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00383}00383\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00384}00384\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00385}00385\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00386}00386\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00387}00387\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00388}00388\ \ \ \ \ ifail\ =\ ifail+1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00389}00389\ \ \ \ \ temp2\ =\ 0.5;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00390}00390\ \ \ \ \ \textcolor{keywordflow}{if}\ (ifail>3)\ \{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00391}00391\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (p5eps\ <\ 0.25*erk)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ temp2\ =\ sqrt(p5eps/erk);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00393}00393\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00394}00394\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00395}00395\ \ \ \ \ \textcolor{keywordflow}{if}\ (ifail>=3)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00396}00396\ \ \ \ \ \ \ knew\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00397}00397\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00398}00398\ \ \ \ \ h\ =\ temp2*h;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00399}00399\ \ \ \ \ k\ =\ knew;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00400}00400\ \ \ \ \ \textcolor{keywordflow}{if}\ (fabs(h)<fouru*fabs(x))\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00401}00401\ \ \ \ \ \ \ crash\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00402}00402\ \ \ \ \ \ \ h\ =\ \mbox{\hyperlink{sign___8h_acaf6f309594b8f14ca0ec7750d41738f}{sign\_}}(fouru*fabs(x),\ h);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00403}00403\ \ \ \ \ \ \ epsilon\ =\ epsilon*2.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00404}00404\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00405}00405\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00406}00406\ \ \ \}\ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00407}00407\ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00408}00408\ \ \ \textcolor{keywordflow}{if}\ (success)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00409}00409\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00410}00410\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00411}00411\ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00412}00412\ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00413}00413\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00414}00414\ kold\ =\ k;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00415}00415\ hold\ =\ h;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00416}00416\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00417}00417\ temp1\ =\ h*g(kp1+1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00418}00418\ \textcolor{keywordflow}{if}\ (nornd)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00419}00419\ \ \ \textcolor{keywordflow}{for}\ (l=1;l<=n\_eqn;l++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00420}00420\ \ \ \ \ y(l)\ =\ p(l)\ +\ temp1*(yp(l)\ -\/\ phi(l,2));}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00421}00421\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00422}00422\ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00423}00423\ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00424}00424\ \ \ \textcolor{keywordflow}{for}\ (l=1;l<=n\_eqn;l++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00425}00425\ \ \ \ \ rhodouble\ =\ temp1*(yp(l)\ -\/\ phi(l,2))\ -\/\ phi(l,17);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00426}00426\ \ \ \ \ y(l)\ =\ rhi\ +\ p(l);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00427}00427\ \ \ \ \ phi(l,16)\ =\ (y(l)\ -\/\ p(l))\ -\/\ rhodouble;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00428}00428\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00429}00429\ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00430}00430\ yp\ =\ f(x,y);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00431}00431\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00432}00432\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00433}00433\ \textcolor{keywordflow}{for}\ (l=1;l<=n\_eqn;l++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00434}00434\ \ \ phi(l,kp1+1)\ =\ yp(l)\ -\/\ phi(l,2);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00435}00435\ \ \ phi(l,kp2+1)\ =\ phi(l,kp1+1)\ -\/\ phi(l,kp2+1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00436}00436\ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00437}00437\ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=1;i<=k;i++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00438}00438\ \ \ \textcolor{keywordflow}{for}\ (l=1;l<=n\_eqn;l++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00439}00439\ \ \ \ \ phi(l,i+1)\ =\ phi(l,i+1)\ +\ phi(l,kp1+1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00440}00440\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00441}00441\ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00442}00442\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00443}00443\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00444}00444\ erkp1\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00445}00445\ \textcolor{keywordflow}{if}\ (\ (knew==km1)\ ||\ (k==12)\ )\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00446}00446\ \ \ phase1\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00447}00447\ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00448}00448\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00449}00449\ \textcolor{keywordflow}{if}\ (phase1)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00450}00450\ \ \ k\ =\ kp1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00451}00451\ \ \ erk\ =\ erkp1;\}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00452}00452\ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00453}00453\ \ \ \ \ \textcolor{keywordflow}{if}\ (knew==km1)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00454}00454\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00455}00455\ \ \ \ \ \ \ k\ =\ km1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00456}00456\ \ \ \ \ \ \ erk\ =\ erkm1;\}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00457}00457\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00458}00458\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (kp1<=ns)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00459}00459\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (l=1;l<=n\_eqn;l++)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00460}00460\ \ \ \ \ \ \ \ \ \ \ \ \ erkp1\ =\ erkp1\ +\ (phi(l,kp2+1)/wt(l))*(phi(l,kp2+1)/wt(l));}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00461}00461\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00462}00462\ \ \ \ \ \ \ \ \ \ \ erkp1\ =\ absh*gstr(kp1+1)*sqrt(erkp1);}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00463}00463\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00464}00464\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (k>1)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00466}00466\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ erkm1<=min(erk,erkp1))\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00467}00467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00468}00468\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ k=km1;\ erk=erkm1;\}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00469}00469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00470}00470\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ (erkp1<erk)\ \&\&\ (k!=12)\ )\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00471}00471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00472}00472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ k=kp1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00473}00473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ erk=erkp1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00474}00474\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00475}00475\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00476}00476\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00477}00477\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (erkp1<0.5*erk)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00478}00478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00479}00479\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ k\ =\ kp1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00480}00480\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ erk\ =\ erkp1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00481}00481\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00482}00482\ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00483}00483\ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00484}00484\ \}\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00485}00485\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00486}00486\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00487}00487\ \textcolor{keywordflow}{if}\ (\ phase1\ ||\ (p5eps>=erk*two(k+2))\ )\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00488}00488\ \ \ hnew\ =\ 2.0*h;\}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00489}00489\ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00490}00490\ \ \ \ \ \textcolor{keywordflow}{if}\ (p5eps<erk)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00491}00491\ \ \ \ \ \ \ temp2\ =\ k+1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00492}00492\ \ \ \ \ \ \ r\ =\ pow(p5eps/erk,(1.0/temp2));}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00493}00493\ \ \ \ \ \ \ hnew\ =\ absh*fmax(0.5,\ min(0.9,r));}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00494}00494\ \ \ \ \ \ \ hnew\ =\ \mbox{\hyperlink{sign___8h_acaf6f309594b8f14ca0ec7750d41738f}{sign\_}}(fmax(hnew,\ fouru*fabs(x)),\ h);\}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00495}00495\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00496}00496\ \ \ \ \ \ \ \ \ hnew\ =\ h;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00497}00497\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00498}00498\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00499}00499\ \ \ \ \ h\ =\ hnew;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00500}00500\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00501}00501\ \ \ \ \ \textcolor{keywordflow}{if}\ (crash)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00502}00502\ \ \ \ \ \ \ State\_\ \ \ \ =\ DE\_STATE.DE\_BADACC;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00503}00503\ \ \ \ \ \ \ relerr\ \ \ \ =\ epsilon*releps;\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00504}00504\ \ \ \ \ \ \ abserr\ \ \ \ =\ epsilon*abseps;\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00505}00505\ \ \ \ \ \ \ y\ \ \ \ \ \ \ \ \ =\ yy;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00506}00506\ \ \ \ \ \ \ t\ \ \ \ \ \ \ \ \ =\ x;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00507}00507\ \ \ \ \ \ \ told\ \ \ \ \ \ =\ t;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00508}00508\ \ \ \ \ \ \ OldPermit\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00509}00509\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00510}00510\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00511}00511\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00512}00512\ \ \ nostep\ =\ nostep+1;\ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00513}00513\ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00514}00514\ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00515}00515\ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00516}00516\ \ \ kle4\ =\ kle4+1;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00517}00517\ \ \ \textcolor{keywordflow}{if}\ (kold>\ \ 4)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00518}00518\ \ \ \ \ kle4\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00519}00519\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00520}00520\ \ \ \textcolor{keywordflow}{if}\ (kle4>=50)\{}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00521}00521\ \ \ \ \ stiff\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00522}00522\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00523}00523\ \}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00524}00524\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00525}00525\ \textcolor{comment}{cout\ <<\ "{}delsgn:\ "{}\ <<\ delsgn\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00526}00526\ \textcolor{comment}{cout\ <<\ "{}x:\ "{}\ <<\ x\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00527}00527\ \textcolor{comment}{cout\ <<\ "{}hi:\ "{}\ <<\ hi\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00528}00528\ \textcolor{comment}{cout\ <<\ "{}ki:\ "{}\ <<\ ki\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00529}00529\ \textcolor{comment}{cout\ <<\ "{}kold:\ "{}\ <<\ kold\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00530}00530\ \textcolor{comment}{cout\ <<\ "{}temp1:\ "{}\ <<\ temp1\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00531}00531\ \textcolor{comment}{cout\ <<\ "{}term:\ "{}\ <<\ term\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00532}00532\ \textcolor{comment}{cout\ <<\ "{}psijm1:\ "{}\ <<\ psijm1\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00533}00533\ \textcolor{comment}{cout\ <<\ "{}eta:\ "{}\ <<\ eta\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00534}00534\ \textcolor{comment}{cout\ <<\ "{}sum:\ "{}\ <<\ sum\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00535}00535\ \textcolor{comment}{cout\ <<\ "{}absh:\ "{}\ <<\ absh\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00536}00536\ \textcolor{comment}{cout\ <<\ "{}hold:\ "{}\ <<\ hold\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00537}00537\ \textcolor{comment}{cout\ <<\ "{}hnew:\ "{}\ <<\ hnew\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00538}00538\ \textcolor{comment}{cout\ <<\ "{}k:\ "{}\ <<\ k\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00539}00539\ \textcolor{comment}{cout\ <<\ "{}round:\ "{}\ <<\ round\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00540}00540\ \textcolor{comment}{cout\ <<\ "{}gamma:\ "{}\ <<\ gamma\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00541}00541\ \textcolor{comment}{cout\ <<\ "{}i:\ "{}\ <<\ i\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00542}00542\ \textcolor{comment}{cout\ <<\ "{}p5eps:\ "{}\ <<\ p5eps\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00543}00543\ \textcolor{comment}{cout\ <<\ "{}ifail:\ "{}\ <<\ ifail\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00544}00544\ \textcolor{comment}{cout\ <<\ "{}kp1:\ "{}\ <<\ kp1\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00545}00545\ \textcolor{comment}{cout\ <<\ "{}kp2:\ "{}\ <<\ kp2\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00546}00546\ \textcolor{comment}{cout\ <<\ "{}km1:\ "{}\ <<\ km1\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00547}00547\ \textcolor{comment}{cout\ <<\ "{}km2:\ "{}\ <<\ km2\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00548}00548\ \textcolor{comment}{cout\ <<\ "{}ns:\ "{}\ <<\ ns\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00549}00549\ \textcolor{comment}{cout\ <<\ "{}nsp1:\ "{}\ <<\ nsp1\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00550}00550\ \textcolor{comment}{cout\ <<\ "{}realns:\ "{}\ <<\ realns\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00551}00551\ \textcolor{comment}{cout\ <<\ "{}im1:\ "{}\ <<\ im1\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00552}00552\ \textcolor{comment}{cout\ <<\ "{}temp2:\ "{}\ <<\ temp2\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00553}00553\ \textcolor{comment}{cout\ <<\ "{}temp3:\ "{}\ <<\ temp3\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00554}00554\ \textcolor{comment}{cout\ <<\ "{}reali:\ "{}\ <<\ reali\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00555}00555\ \textcolor{comment}{cout\ <<\ "{}temp4:\ "{}\ <<\ temp4\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00556}00556\ \textcolor{comment}{cout\ <<\ "{}nsm2:\ "{}\ <<\ nsm2\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00557}00557\ \textcolor{comment}{cout\ <<\ "{}limit1:\ "{}\ <<\ limit1\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00558}00558\ \textcolor{comment}{cout\ <<\ "{}temp5:\ "{}\ <<\ temp5\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00559}00559\ \textcolor{comment}{cout\ <<\ "{}temp6:\ "{}\ <<\ temp6\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00560}00560\ \textcolor{comment}{cout\ <<\ "{}limit2:\ "{}\ <<\ limit2\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00561}00561\ \textcolor{comment}{cout\ <<\ "{}nsp2:\ "{}\ <<\ nsp2\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00562}00562\ \textcolor{comment}{cout\ <<\ "{}ip1:\ "{}\ <<\ ip1\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00563}00563\ \textcolor{comment}{cout\ <<\ "{}tau:\ "{}\ <<\ tau\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00564}00564\ \textcolor{comment}{cout\ <<\ "{}xold:\ "{}\ <<\ xold\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00565}00565\ \textcolor{comment}{cout\ <<\ "{}erkm2:\ "{}\ <<\ erkm2\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00566}00566\ \textcolor{comment}{cout\ <<\ "{}erkm1:\ "{}\ <<\ erkm1\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00567}00567\ \textcolor{comment}{cout\ <<\ "{}erk:\ "{}\ <<\ erk\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00568}00568\ \textcolor{comment}{cout\ <<\ "{}err:\ "{}\ <<\ err\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00569}00569\ \textcolor{comment}{cout\ <<\ "{}knew:\ "{}\ <<\ knew\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00570}00570\ \textcolor{comment}{cout\ <<\ "{}rhi:\ "{}\ <<\ rhi\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00571}00571\ \textcolor{comment}{cout\ <<\ "{}h:\ "{}\ <<\ h\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00572}00572\ \textcolor{comment}{cout\ <<\ "{}r:\ "{}\ <<\ r\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00573}00573\ \textcolor{comment}{cout\ <<\ "{}erkp1:\ "{}\ <<\ erkp1\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00574}00574\ \textcolor{comment}{cout\ <<\ "{}rhodouble:\ "{}\ <<\ rhodouble\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00575}00575\ \textcolor{comment}{cout\ <<\ "{}told:\ "{}\ <<\ told\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00576}00576\ \textcolor{comment}{cout\ <<\ "{}epsilon:\ "{}\ <<\ epsilon\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00577}00577\ \textcolor{comment}{cout\ <<\ "{}del:\ "{}\ <<\ del\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00578}00578\ \textcolor{comment}{cout\ <<\ "{}absdel:\ "{}\ <<\ absdel\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00579}00579\ \textcolor{comment}{cout\ <<\ "{}tend:\ "{}\ <<\ tend\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00580}00580\ \textcolor{comment}{cout\ <<\ "{}nostep:\ "{}\ <<\ nostep\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00581}00581\ \textcolor{comment}{cout\ <<\ "{}kle4:\ "{}\ <<\ kle4\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00582}00582\ \textcolor{comment}{cout\ <<\ "{}releps:\ "{}\ <<\ releps\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00583}00583\ \textcolor{comment}{cout\ <<\ "{}abseps:\ "{}\ <<\ abseps\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00584}00584\ \textcolor{comment}{cout\ <<\ "{}twou:\ "{}\ <<\ twou\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00585}00585\ \textcolor{comment}{cout\ <<\ "{}fouru:\ "{}\ <<\ fouru\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00586}00586\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00587}00587\ \textcolor{comment}{cout\ <<\ "{}l:\ "{}\ <<\ l\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00588}00588\ \textcolor{comment}{cout\ <<\ "{}y:\ \(\backslash\)n"{}\ <<\ y\ <<\ endl;*/}}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00589}00589\ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00590}00590\ \ \ cout<<69<<endl;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00591}00591\ \textcolor{keywordflow}{return}\ y;}
+\DoxyCodeLine{\Hypertarget{DEInteg_8cpp_source_l00592}00592\ \}}
+
+\end{DoxyCode}

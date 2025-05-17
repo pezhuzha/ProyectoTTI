@@ -1,9 +1,13 @@
-<map id="/home/fghfgh/Escritorio/ProyectoTTI/include/PoleMatrix.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/PoleMatrix.h">
-<area shape="rect" id="Node000001" title="El archivo contiene la funcion PoleMatrix." alt="" coords="215,5,455,45"/>
-<area shape="rect" id="Node000002" href="$Accel_8cpp.html" title="El archivo contiene las implementaciones de Accel.h." alt="" coords="5,93,197,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="272,53,153,96,152,91,270,48"/>
-<area shape="rect" id="Node000003" href="$PoleMatrix_8cpp.html" title="El archivo contiene las implementaciones de PoleMatrix.h." alt="" coords="221,93,448,133"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="337,59,337,93,332,93,332,59"/>
-<area shape="rect" id="Node000004" href="$VarEqn_8cpp.html" title="El archivo contiene las implementaciones de VarEqn.h." alt="" coords="472,93,675,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="401,48,522,91,520,96,399,53"/>
+<map id="PoleMatrix.h" name="PoleMatrix.h">
+<area shape="rect" id="Node000001" title="El archivo contiene la funcion PoleMatrix." alt="" coords="271,5,375,31"/>
+<area shape="rect" id="Node000002" href="$Accel_8cpp.html" title="El archivo contiene las implementaciones de Accel.h." alt="" coords="5,79,89,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="267,37,90,82,89,77,265,31"/>
+<area shape="rect" id="Node000003" href="$EKF__GEOS3_8cpp.html" title="Es el archivo principal del programa." alt="" coords="114,79,239,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="289,39,202,81,200,76,287,34"/>
+<area shape="rect" id="Node000004" href="$PoleMatrix_8cpp.html" title="El archivo contiene las implementaciones de PoleMatrix.h." alt="" coords="264,79,383,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="326,44,326,79,321,79,321,44"/>
+<area shape="rect" id="Node000005" href="$VarEqn_8cpp.html" title="El archivo contiene las implementaciones de VarEqn.h." alt="" coords="407,79,501,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="358,35,434,76,431,81,355,40"/>
+<area shape="rect" id="Node000006" href="$tests_8cpp_source.html" title=" " alt="" coords="525,79,607,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="376,32,527,76,526,81,374,37"/>
 </map>

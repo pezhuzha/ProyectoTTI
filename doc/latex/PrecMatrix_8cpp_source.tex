@@ -1,0 +1,24 @@
+\doxysection{Prec\+Matrix.\+cpp}
+\hypertarget{PrecMatrix_8cpp_source}{}\label{PrecMatrix_8cpp_source}\index{PrecMatrix.cpp@{PrecMatrix.cpp}}
+\mbox{\hyperlink{PrecMatrix_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{PrecMatrix_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PrecMatrix_8h}{../include/PrecMatrix.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{PrecMatrix_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{R__x_8h}{../include/R\_x.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{PrecMatrix_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{R__y_8h}{../include/R\_y.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{PrecMatrix_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{R__z_8h}{../include/R\_z.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{PrecMatrix_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SAT__Const_8h}{../include/SAT\_Const.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{PrecMatrix_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{PrecMatrix_8cpp_source_l00013}\mbox{\hyperlink{PrecMatrix_8h_a95bbb47a6bcd9ecaf7b5bc46f88dc7d1}{00013}}\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\&\ \mbox{\hyperlink{PrecMatrix_8cpp_a95bbb47a6bcd9ecaf7b5bc46f88dc7d1}{PrecMatrix}}\ (\textcolor{keywordtype}{double}\ Mjd\_1,\ \textcolor{keywordtype}{double}\ Mjd\_2)\{}
+\DoxyCodeLine{\Hypertarget{PrecMatrix_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ zeta,z,theta,dT,T;}
+\DoxyCodeLine{\Hypertarget{PrecMatrix_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ T\ \ =\ (Mjd\_1-\/MJD\_J2000)/36525;}
+\DoxyCodeLine{\Hypertarget{PrecMatrix_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ dT\ =\ (Mjd\_2-\/Mjd\_1)/36525;}
+\DoxyCodeLine{\Hypertarget{PrecMatrix_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{PrecMatrix_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{PrecMatrix_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ zeta\ \ =\ \ (\ (2306.2181+(1.39656-\/0.000139*T)*T)+\ ((0.30188-\/0.000344*T)+0.017998*dT)*dT\ )*dT/Arcs;}
+\DoxyCodeLine{\Hypertarget{PrecMatrix_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ z\ \ \ \ \ =\ \ zeta\ +\ (\ (0.79280+0.000411*T)+0.000205*dT)*dT*dT/Arcs;}
+\DoxyCodeLine{\Hypertarget{PrecMatrix_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ theta\ =\ \ (\ (2004.3109-\/(0.85330+0.000217*T)*T)-\/((0.42665+0.000217*T)+0.041833*dT)*dT\ )*dT/Arcs;}
+\DoxyCodeLine{\Hypertarget{PrecMatrix_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{PrecMatrix_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{R__z_8h_a4f688959a9ab144bf27d272e54bf7258}{R\_z}}(-\/z)\ *\ \mbox{\hyperlink{R__y_8h_a25114557991f92fd6b027118c591a98f}{R\_y}}(theta)\ *\ \mbox{\hyperlink{R__z_8h_a4f688959a9ab144bf27d272e54bf7258}{R\_z}}(-\/zeta);}
+\DoxyCodeLine{\Hypertarget{PrecMatrix_8cpp_source_l00024}00024\ \}}
+
+\end{DoxyCode}

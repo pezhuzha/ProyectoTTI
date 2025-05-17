@@ -1,0 +1,483 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Bug List}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Class Index}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class List}{7}{section.2.1}%
+\contentsline {chapter}{\numberline {3}File Index}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}File List}{9}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Class Documentation}{13}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Matrix Class Reference}{13}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{13}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Constructor \& Destructor Documentation}{14}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}Matrix()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{14}{subsubsection.4.1.2.1}%
+\contentsline {subsubsection}{\numberline {4.1.2.2}Matrix()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{14}{subsubsection.4.1.2.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.3}Matrix()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{15}{subsubsection.4.1.2.3}%
+\contentsline {subsection}{\numberline {4.1.3}Member Function Documentation}{15}{subsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.3.1}operator()()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{15}{subsubsection.4.1.3.1}%
+\contentsline {subsubsection}{\numberline {4.1.3.2}operator()()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{15}{subsubsection.4.1.3.2}%
+\contentsline {subsubsection}{\numberline {4.1.3.3}operator$\ast $()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{15}{subsubsection.4.1.3.3}%
+\contentsline {subsubsection}{\numberline {4.1.3.4}operator$\ast $()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{16}{subsubsection.4.1.3.4}%
+\contentsline {subsubsection}{\numberline {4.1.3.5}operator+()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{17}{subsubsection.4.1.3.5}%
+\contentsline {subsubsection}{\numberline {4.1.3.6}operator+()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{17}{subsubsection.4.1.3.6}%
+\contentsline {subsubsection}{\numberline {4.1.3.7}operator-\/()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{18}{subsubsection.4.1.3.7}%
+\contentsline {subsubsection}{\numberline {4.1.3.8}operator-\/()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{18}{subsubsection.4.1.3.8}%
+\contentsline {subsubsection}{\numberline {4.1.3.9}operator/()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{19}{subsubsection.4.1.3.9}%
+\contentsline {subsubsection}{\numberline {4.1.3.10}operator/()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{19}{subsubsection.4.1.3.10}%
+\contentsline {subsubsection}{\numberline {4.1.3.11}operator=()}{20}{subsubsection.4.1.3.11}%
+\contentsline {subsection}{\numberline {4.1.4}Friends And Related Symbol Documentation}{21}{subsection.4.1.4}%
+\contentsline {subsubsection}{\numberline {4.1.4.1}operator$<$$<$}{21}{subsubsection.4.1.4.1}%
+\contentsline {subsection}{\numberline {4.1.5}Member Data Documentation}{21}{subsection.4.1.5}%
+\contentsline {subsubsection}{\numberline {4.1.5.1}data}{21}{subsubsection.4.1.5.1}%
+\contentsline {subsubsection}{\numberline {4.1.5.2}n\_column}{21}{subsubsection.4.1.5.2}%
+\contentsline {subsubsection}{\numberline {4.1.5.3}n\_row}{21}{subsubsection.4.1.5.3}%
+\contentsline {section}{\numberline {4.2}Param Struct Reference}{21}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{22}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Member Data Documentation}{22}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}m}{22}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}Mjd\_TT}{22}{subsubsection.4.2.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.3}Mjd\_UTC}{22}{subsubsection.4.2.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.2.4}moon}{22}{subsubsection.4.2.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.2.5}n}{22}{subsubsection.4.2.2.5}%
+\contentsline {subsubsection}{\numberline {4.2.2.6}planets}{22}{subsubsection.4.2.2.6}%
+\contentsline {subsubsection}{\numberline {4.2.2.7}sun}{22}{subsubsection.4.2.2.7}%
+\contentsline {chapter}{\numberline {5}File Documentation}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Accel.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{23}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{24}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Function Documentation}{24}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.1}Accel()}{24}{subsubsection.5.1.2.1}%
+\contentsline {section}{\numberline {5.2}Accel.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{25}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Accel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Harmonic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{26}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{26}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Function Documentation}{27}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}AccelHarmonic()}{27}{subsubsection.5.3.2.1}%
+\contentsline {section}{\numberline {5.4}Accel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Harmonic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{28}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Accel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Point\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mass.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{28}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{29}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Function Documentation}{29}{subsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.1}AccelPointMass()}{29}{subsubsection.5.5.2.1}%
+\contentsline {section}{\numberline {5.6}Accel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Point\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mass.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{30}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Az\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}El\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Pa.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{30}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{31}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}Function Documentation}{31}{subsection.5.7.2}%
+\contentsline {subsubsection}{\numberline {5.7.2.1}AzElPa()}{31}{subsubsection.5.7.2.1}%
+\contentsline {section}{\numberline {5.8}Az\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}El\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Pa.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{32}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Cheb3\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{32}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Detailed Description}{33}{subsection.5.9.1}%
+\contentsline {subsection}{\numberline {5.9.2}Function Documentation}{33}{subsection.5.9.2}%
+\contentsline {subsubsection}{\numberline {5.9.2.1}Cheb3D()}{33}{subsubsection.5.9.2.1}%
+\contentsline {section}{\numberline {5.10}Cheb3\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{34}{section.5.10}%
+\contentsline {section}{\numberline {5.11}DEInteg.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{34}{section.5.11}%
+\contentsline {subsection}{\numberline {5.11.1}Detailed Description}{35}{subsection.5.11.1}%
+\contentsline {subsection}{\numberline {5.11.2}Function Documentation}{36}{subsection.5.11.2}%
+\contentsline {subsubsection}{\numberline {5.11.2.1}DEInteg()}{36}{subsubsection.5.11.2.1}%
+\contentsline {section}{\numberline {5.12}DEInteg.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{36}{section.5.12}%
+\contentsline {section}{\numberline {5.13}Ecc\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Anom.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{36}{section.5.13}%
+\contentsline {subsection}{\numberline {5.13.1}Detailed Description}{37}{subsection.5.13.1}%
+\contentsline {subsection}{\numberline {5.13.2}Function Documentation}{37}{subsection.5.13.2}%
+\contentsline {subsubsection}{\numberline {5.13.2.1}EccAnom()}{37}{subsubsection.5.13.2.1}%
+\contentsline {section}{\numberline {5.14}Ecc\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Anom.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{38}{section.5.14}%
+\contentsline {section}{\numberline {5.15}Eqn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Equinox.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{38}{section.5.15}%
+\contentsline {subsection}{\numberline {5.15.1}Detailed Description}{38}{subsection.5.15.1}%
+\contentsline {subsection}{\numberline {5.15.2}Function Documentation}{38}{subsection.5.15.2}%
+\contentsline {subsubsection}{\numberline {5.15.2.1}EqnEquinox()}{38}{subsubsection.5.15.2.1}%
+\contentsline {section}{\numberline {5.16}Eqn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Equinox.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{39}{section.5.16}%
+\contentsline {section}{\numberline {5.17}Frac.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{40}{section.5.17}%
+\contentsline {subsection}{\numberline {5.17.1}Detailed Description}{40}{subsection.5.17.1}%
+\contentsline {subsection}{\numberline {5.17.2}Function Documentation}{40}{subsection.5.17.2}%
+\contentsline {subsubsection}{\numberline {5.17.2.1}Frac()}{40}{subsubsection.5.17.2.1}%
+\contentsline {section}{\numberline {5.18}Frac.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{41}{section.5.18}%
+\contentsline {section}{\numberline {5.19}G\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Accel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Harmonic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{41}{section.5.19}%
+\contentsline {subsection}{\numberline {5.19.1}Detailed Description}{42}{subsection.5.19.1}%
+\contentsline {subsection}{\numberline {5.19.2}Function Documentation}{42}{subsection.5.19.2}%
+\contentsline {subsubsection}{\numberline {5.19.2.1}G\_AccelHarmonic()}{42}{subsubsection.5.19.2.1}%
+\contentsline {section}{\numberline {5.20}G\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Accel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Harmonic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{43}{section.5.20}%
+\contentsline {section}{\numberline {5.21}gast.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{43}{section.5.21}%
+\contentsline {subsection}{\numberline {5.21.1}Detailed Description}{44}{subsection.5.21.1}%
+\contentsline {subsection}{\numberline {5.21.2}Function Documentation}{44}{subsection.5.21.2}%
+\contentsline {subsubsection}{\numberline {5.21.2.1}gast()}{44}{subsubsection.5.21.2.1}%
+\contentsline {section}{\numberline {5.22}gast.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{45}{section.5.22}%
+\contentsline {section}{\numberline {5.23}GHAMatrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{46}{section.5.23}%
+\contentsline {subsection}{\numberline {5.23.1}Detailed Description}{46}{subsection.5.23.1}%
+\contentsline {subsection}{\numberline {5.23.2}Function Documentation}{47}{subsection.5.23.2}%
+\contentsline {subsubsection}{\numberline {5.23.2.1}GHAMatrix()}{47}{subsubsection.5.23.2.1}%
+\contentsline {section}{\numberline {5.24}GHAMatrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{48}{section.5.24}%
+\contentsline {section}{\numberline {5.25}GLOBAL.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{48}{section.5.25}%
+\contentsline {subsection}{\numberline {5.25.1}Detailed Description}{49}{subsection.5.25.1}%
+\contentsline {subsection}{\numberline {5.25.2}Function Documentation}{49}{subsection.5.25.2}%
+\contentsline {subsubsection}{\numberline {5.25.2.1}AuxParamLoad()}{49}{subsubsection.5.25.2.1}%
+\contentsline {subsubsection}{\numberline {5.25.2.2}DE430Coeff()}{49}{subsubsection.5.25.2.2}%
+\contentsline {subsubsection}{\numberline {5.25.2.3}eop19620101()}{50}{subsubsection.5.25.2.3}%
+\contentsline {subsubsection}{\numberline {5.25.2.4}GEOS3()}{50}{subsubsection.5.25.2.4}%
+\contentsline {subsubsection}{\numberline {5.25.2.5}GGM03S()}{51}{subsubsection.5.25.2.5}%
+\contentsline {subsection}{\numberline {5.25.3}Variable Documentation}{51}{subsection.5.25.3}%
+\contentsline {subsubsection}{\numberline {5.25.3.1}AuxParam}{51}{subsubsection.5.25.3.1}%
+\contentsline {subsubsection}{\numberline {5.25.3.2}Cnm}{52}{subsubsection.5.25.3.2}%
+\contentsline {subsubsection}{\numberline {5.25.3.3}eopdata}{52}{subsubsection.5.25.3.3}%
+\contentsline {subsubsection}{\numberline {5.25.3.4}obs}{52}{subsubsection.5.25.3.4}%
+\contentsline {subsubsection}{\numberline {5.25.3.5}PC}{52}{subsubsection.5.25.3.5}%
+\contentsline {subsubsection}{\numberline {5.25.3.6}Snm}{52}{subsubsection.5.25.3.6}%
+\contentsline {section}{\numberline {5.26}GLOBAL.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{52}{section.5.26}%
+\contentsline {section}{\numberline {5.27}gmst.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{53}{section.5.27}%
+\contentsline {subsection}{\numberline {5.27.1}Detailed Description}{53}{subsection.5.27.1}%
+\contentsline {subsection}{\numberline {5.27.2}Function Documentation}{53}{subsection.5.27.2}%
+\contentsline {subsubsection}{\numberline {5.27.2.1}gmst()}{53}{subsubsection.5.27.2.1}%
+\contentsline {section}{\numberline {5.28}gmst.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{54}{section.5.28}%
+\contentsline {section}{\numberline {5.29}IERS.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{54}{section.5.29}%
+\contentsline {subsection}{\numberline {5.29.1}Detailed Description}{55}{subsection.5.29.1}%
+\contentsline {subsection}{\numberline {5.29.2}Function Documentation}{56}{subsection.5.29.2}%
+\contentsline {subsubsection}{\numberline {5.29.2.1}IERS()}{56}{subsubsection.5.29.2.1}%
+\contentsline {section}{\numberline {5.30}IERS.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{57}{section.5.30}%
+\contentsline {section}{\numberline {5.31}JPL\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Eph\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DE430.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{57}{section.5.31}%
+\contentsline {subsection}{\numberline {5.31.1}Detailed Description}{58}{subsection.5.31.1}%
+\contentsline {subsection}{\numberline {5.31.2}Function Documentation}{58}{subsection.5.31.2}%
+\contentsline {subsubsection}{\numberline {5.31.2.1}JPL\_Eph\_DE430()}{58}{subsubsection.5.31.2.1}%
+\contentsline {section}{\numberline {5.32}JPL\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Eph\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DE430.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{59}{section.5.32}%
+\contentsline {section}{\numberline {5.33}Legendre.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{59}{section.5.33}%
+\contentsline {subsection}{\numberline {5.33.1}Detailed Description}{60}{subsection.5.33.1}%
+\contentsline {subsection}{\numberline {5.33.2}Function Documentation}{60}{subsection.5.33.2}%
+\contentsline {subsubsection}{\numberline {5.33.2.1}Legendre()}{60}{subsubsection.5.33.2.1}%
+\contentsline {section}{\numberline {5.34}Legendre.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{61}{section.5.34}%
+\contentsline {section}{\numberline {5.35}LTC.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{61}{section.5.35}%
+\contentsline {subsection}{\numberline {5.35.1}Detailed Description}{62}{subsection.5.35.1}%
+\contentsline {subsection}{\numberline {5.35.2}Function Documentation}{63}{subsection.5.35.2}%
+\contentsline {subsubsection}{\numberline {5.35.2.1}LTC()}{63}{subsubsection.5.35.2.1}%
+\contentsline {section}{\numberline {5.36}LTC.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{63}{section.5.36}%
+\contentsline {section}{\numberline {5.37}matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{64}{section.5.37}%
+\contentsline {subsection}{\numberline {5.37.1}Detailed Description}{65}{subsection.5.37.1}%
+\contentsline {subsection}{\numberline {5.37.2}Function Documentation}{65}{subsection.5.37.2}%
+\contentsline {subsubsection}{\numberline {5.37.2.1}assign\_column()}{65}{subsubsection.5.37.2.1}%
+\contentsline {subsubsection}{\numberline {5.37.2.2}assign\_row()}{65}{subsubsection.5.37.2.2}%
+\contentsline {subsubsection}{\numberline {5.37.2.3}cross()}{66}{subsubsection.5.37.2.3}%
+\contentsline {subsubsection}{\numberline {5.37.2.4}dot()}{66}{subsubsection.5.37.2.4}%
+\contentsline {subsubsection}{\numberline {5.37.2.5}extract\_column()}{67}{subsubsection.5.37.2.5}%
+\contentsline {subsubsection}{\numberline {5.37.2.6}extract\_row()}{68}{subsubsection.5.37.2.6}%
+\contentsline {subsubsection}{\numberline {5.37.2.7}extract\_vector()}{69}{subsubsection.5.37.2.7}%
+\contentsline {subsubsection}{\numberline {5.37.2.8}eye()}{70}{subsubsection.5.37.2.8}%
+\contentsline {subsubsection}{\numberline {5.37.2.9}inv()}{70}{subsubsection.5.37.2.9}%
+\contentsline {subsubsection}{\numberline {5.37.2.10}norm()}{71}{subsubsection.5.37.2.10}%
+\contentsline {subsubsection}{\numberline {5.37.2.11}operator$<$$<$()}{72}{subsubsection.5.37.2.11}%
+\contentsline {subsubsection}{\numberline {5.37.2.12}transpose()}{72}{subsubsection.5.37.2.12}%
+\contentsline {subsubsection}{\numberline {5.37.2.13}union\_vector()}{73}{subsubsection.5.37.2.13}%
+\contentsline {subsubsection}{\numberline {5.37.2.14}zeros()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{74}{subsubsection.5.37.2.14}%
+\contentsline {subsubsection}{\numberline {5.37.2.15}zeros()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{74}{subsubsection.5.37.2.15}%
+\contentsline {section}{\numberline {5.38}matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{75}{section.5.38}%
+\contentsline {section}{\numberline {5.39}Mean\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Obliquity.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{76}{section.5.39}%
+\contentsline {subsection}{\numberline {5.39.1}Detailed Description}{77}{subsection.5.39.1}%
+\contentsline {subsection}{\numberline {5.39.2}Function Documentation}{77}{subsection.5.39.2}%
+\contentsline {subsubsection}{\numberline {5.39.2.1}MeanObliquity()}{77}{subsubsection.5.39.2.1}%
+\contentsline {section}{\numberline {5.40}Mean\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Obliquity.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{77}{section.5.40}%
+\contentsline {section}{\numberline {5.41}Meas\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Update.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{78}{section.5.41}%
+\contentsline {subsection}{\numberline {5.41.1}Detailed Description}{78}{subsection.5.41.1}%
+\contentsline {subsection}{\numberline {5.41.2}Function Documentation}{79}{subsection.5.41.2}%
+\contentsline {subsubsection}{\numberline {5.41.2.1}MeasUpdate()}{79}{subsubsection.5.41.2.1}%
+\contentsline {section}{\numberline {5.42}Meas\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Update.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{79}{section.5.42}%
+\contentsline {section}{\numberline {5.43}Mjday.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{80}{section.5.43}%
+\contentsline {subsection}{\numberline {5.43.1}Detailed Description}{80}{subsection.5.43.1}%
+\contentsline {subsection}{\numberline {5.43.2}Function Documentation}{80}{subsection.5.43.2}%
+\contentsline {subsubsection}{\numberline {5.43.2.1}Mjday()}{80}{subsubsection.5.43.2.1}%
+\contentsline {section}{\numberline {5.44}Mjday.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{81}{section.5.44}%
+\contentsline {section}{\numberline {5.45}Mjday\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}TDB.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{81}{section.5.45}%
+\contentsline {subsection}{\numberline {5.45.1}Detailed Description}{82}{subsection.5.45.1}%
+\contentsline {subsection}{\numberline {5.45.2}Function Documentation}{82}{subsection.5.45.2}%
+\contentsline {subsubsection}{\numberline {5.45.2.1}Mjday\_TDB()}{82}{subsubsection.5.45.2.1}%
+\contentsline {section}{\numberline {5.46}Mjday\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}TDB.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{83}{section.5.46}%
+\contentsline {section}{\numberline {5.47}Nut\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Angles.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{83}{section.5.47}%
+\contentsline {subsection}{\numberline {5.47.1}Detailed Description}{84}{subsection.5.47.1}%
+\contentsline {subsection}{\numberline {5.47.2}Function Documentation}{84}{subsection.5.47.2}%
+\contentsline {subsubsection}{\numberline {5.47.2.1}NutAngles()}{84}{subsubsection.5.47.2.1}%
+\contentsline {section}{\numberline {5.48}Nut\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Angles.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{84}{section.5.48}%
+\contentsline {section}{\numberline {5.49}Nut\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{85}{section.5.49}%
+\contentsline {subsection}{\numberline {5.49.1}Detailed Description}{85}{subsection.5.49.1}%
+\contentsline {subsection}{\numberline {5.49.2}Function Documentation}{86}{subsection.5.49.2}%
+\contentsline {subsubsection}{\numberline {5.49.2.1}NutMatrix()}{86}{subsubsection.5.49.2.1}%
+\contentsline {section}{\numberline {5.50}Nut\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{87}{section.5.50}%
+\contentsline {section}{\numberline {5.51}Pole\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{87}{section.5.51}%
+\contentsline {subsection}{\numberline {5.51.1}Detailed Description}{88}{subsection.5.51.1}%
+\contentsline {subsection}{\numberline {5.51.2}Function Documentation}{88}{subsection.5.51.2}%
+\contentsline {subsubsection}{\numberline {5.51.2.1}PoleMatrix()}{88}{subsubsection.5.51.2.1}%
+\contentsline {section}{\numberline {5.52}Pole\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{89}{section.5.52}%
+\contentsline {section}{\numberline {5.53}Position.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{89}{section.5.53}%
+\contentsline {subsection}{\numberline {5.53.1}Detailed Description}{90}{subsection.5.53.1}%
+\contentsline {subsection}{\numberline {5.53.2}Function Documentation}{90}{subsection.5.53.2}%
+\contentsline {subsubsection}{\numberline {5.53.2.1}Position()}{90}{subsubsection.5.53.2.1}%
+\contentsline {section}{\numberline {5.54}Position.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{91}{section.5.54}%
+\contentsline {section}{\numberline {5.55}Prec\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{91}{section.5.55}%
+\contentsline {subsection}{\numberline {5.55.1}Detailed Description}{92}{subsection.5.55.1}%
+\contentsline {subsection}{\numberline {5.55.2}Function Documentation}{92}{subsection.5.55.2}%
+\contentsline {subsubsection}{\numberline {5.55.2.1}PrecMatrix()}{92}{subsubsection.5.55.2.1}%
+\contentsline {section}{\numberline {5.56}Prec\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{93}{section.5.56}%
+\contentsline {section}{\numberline {5.57}R\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}x.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{93}{section.5.57}%
+\contentsline {subsection}{\numberline {5.57.1}Detailed Description}{94}{subsection.5.57.1}%
+\contentsline {subsection}{\numberline {5.57.2}Function Documentation}{94}{subsection.5.57.2}%
+\contentsline {subsubsection}{\numberline {5.57.2.1}R\_x()}{94}{subsubsection.5.57.2.1}%
+\contentsline {section}{\numberline {5.58}R\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}x.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{95}{section.5.58}%
+\contentsline {section}{\numberline {5.59}R\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}y.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{95}{section.5.59}%
+\contentsline {subsection}{\numberline {5.59.1}Detailed Description}{96}{subsection.5.59.1}%
+\contentsline {subsection}{\numberline {5.59.2}Function Documentation}{96}{subsection.5.59.2}%
+\contentsline {subsubsection}{\numberline {5.59.2.1}R\_y()}{96}{subsubsection.5.59.2.1}%
+\contentsline {section}{\numberline {5.60}R\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}y.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{97}{section.5.60}%
+\contentsline {section}{\numberline {5.61}R\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}z.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{98}{section.5.61}%
+\contentsline {subsection}{\numberline {5.61.1}Detailed Description}{98}{subsection.5.61.1}%
+\contentsline {subsection}{\numberline {5.61.2}Function Documentation}{99}{subsection.5.61.2}%
+\contentsline {subsubsection}{\numberline {5.61.2.1}R\_z()}{99}{subsubsection.5.61.2.1}%
+\contentsline {section}{\numberline {5.62}R\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}z.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{100}{section.5.62}%
+\contentsline {section}{\numberline {5.63}SAT\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Const.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{101}{section.5.63}%
+\contentsline {subsection}{\numberline {5.63.1}Detailed Description}{101}{subsection.5.63.1}%
+\contentsline {subsection}{\numberline {5.63.2}Variable Documentation}{102}{subsection.5.63.2}%
+\contentsline {subsubsection}{\numberline {5.63.2.1}Arcs}{102}{subsubsection.5.63.2.1}%
+\contentsline {subsubsection}{\numberline {5.63.2.2}AU}{102}{subsubsection.5.63.2.2}%
+\contentsline {subsubsection}{\numberline {5.63.2.3}c\_light}{102}{subsubsection.5.63.2.3}%
+\contentsline {subsubsection}{\numberline {5.63.2.4}Deg}{102}{subsubsection.5.63.2.4}%
+\contentsline {subsubsection}{\numberline {5.63.2.5}eps}{102}{subsubsection.5.63.2.5}%
+\contentsline {subsubsection}{\numberline {5.63.2.6}f\_Earth}{102}{subsubsection.5.63.2.6}%
+\contentsline {subsubsection}{\numberline {5.63.2.7}GM\_Earth}{102}{subsubsection.5.63.2.7}%
+\contentsline {subsubsection}{\numberline {5.63.2.8}GM\_Jupiter}{103}{subsubsection.5.63.2.8}%
+\contentsline {subsubsection}{\numberline {5.63.2.9}GM\_Mars}{103}{subsubsection.5.63.2.9}%
+\contentsline {subsubsection}{\numberline {5.63.2.10}GM\_Mercury}{103}{subsubsection.5.63.2.10}%
+\contentsline {subsubsection}{\numberline {5.63.2.11}GM\_Moon}{103}{subsubsection.5.63.2.11}%
+\contentsline {subsubsection}{\numberline {5.63.2.12}GM\_Neptune}{103}{subsubsection.5.63.2.12}%
+\contentsline {subsubsection}{\numberline {5.63.2.13}GM\_Pluto}{103}{subsubsection.5.63.2.13}%
+\contentsline {subsubsection}{\numberline {5.63.2.14}GM\_Saturn}{103}{subsubsection.5.63.2.14}%
+\contentsline {subsubsection}{\numberline {5.63.2.15}GM\_Sun}{103}{subsubsection.5.63.2.15}%
+\contentsline {subsubsection}{\numberline {5.63.2.16}GM\_Uranus}{104}{subsubsection.5.63.2.16}%
+\contentsline {subsubsection}{\numberline {5.63.2.17}GM\_Venus}{104}{subsubsection.5.63.2.17}%
+\contentsline {subsubsection}{\numberline {5.63.2.18}MJD\_J2000}{104}{subsubsection.5.63.2.18}%
+\contentsline {subsubsection}{\numberline {5.63.2.19}omega\_Earth}{104}{subsubsection.5.63.2.19}%
+\contentsline {subsubsection}{\numberline {5.63.2.20}P\_Sol}{104}{subsubsection.5.63.2.20}%
+\contentsline {subsubsection}{\numberline {5.63.2.21}pi}{104}{subsubsection.5.63.2.21}%
+\contentsline {subsubsection}{\numberline {5.63.2.22}pi2}{104}{subsubsection.5.63.2.22}%
+\contentsline {subsubsection}{\numberline {5.63.2.23}R\_Earth}{104}{subsubsection.5.63.2.23}%
+\contentsline {subsubsection}{\numberline {5.63.2.24}R\_Moon}{105}{subsubsection.5.63.2.24}%
+\contentsline {subsubsection}{\numberline {5.63.2.25}R\_Sun}{105}{subsubsection.5.63.2.25}%
+\contentsline {subsubsection}{\numberline {5.63.2.26}Rad}{105}{subsubsection.5.63.2.26}%
+\contentsline {subsubsection}{\numberline {5.63.2.27}T\_B1950}{105}{subsubsection.5.63.2.27}%
+\contentsline {section}{\numberline {5.64}SAT\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Const.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{105}{section.5.64}%
+\contentsline {section}{\numberline {5.65}sign\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{106}{section.5.65}%
+\contentsline {subsection}{\numberline {5.65.1}Detailed Description}{106}{subsection.5.65.1}%
+\contentsline {subsection}{\numberline {5.65.2}Function Documentation}{106}{subsection.5.65.2}%
+\contentsline {subsubsection}{\numberline {5.65.2.1}sign\_()}{106}{subsubsection.5.65.2.1}%
+\contentsline {section}{\numberline {5.66}sign\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{107}{section.5.66}%
+\contentsline {section}{\numberline {5.67}timediff.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{107}{section.5.67}%
+\contentsline {subsection}{\numberline {5.67.1}Detailed Description}{108}{subsection.5.67.1}%
+\contentsline {subsection}{\numberline {5.67.2}Function Documentation}{108}{subsection.5.67.2}%
+\contentsline {subsubsection}{\numberline {5.67.2.1}timediff()}{108}{subsubsection.5.67.2.1}%
+\contentsline {section}{\numberline {5.68}timediff.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{109}{section.5.68}%
+\contentsline {section}{\numberline {5.69}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Update.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{109}{section.5.69}%
+\contentsline {subsection}{\numberline {5.69.1}Detailed Description}{110}{subsection.5.69.1}%
+\contentsline {subsection}{\numberline {5.69.2}Function Documentation}{110}{subsection.5.69.2}%
+\contentsline {subsubsection}{\numberline {5.69.2.1}TimeUpdate()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{110}{subsubsection.5.69.2.1}%
+\contentsline {subsubsection}{\numberline {5.69.2.2}TimeUpdate()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{110}{subsubsection.5.69.2.2}%
+\contentsline {section}{\numberline {5.70}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Update.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{111}{section.5.70}%
+\contentsline {section}{\numberline {5.71}Var\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Eqn.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{111}{section.5.71}%
+\contentsline {subsection}{\numberline {5.71.1}Detailed Description}{112}{subsection.5.71.1}%
+\contentsline {subsection}{\numberline {5.71.2}Function Documentation}{113}{subsection.5.71.2}%
+\contentsline {subsubsection}{\numberline {5.71.2.1}VarEqn()}{113}{subsubsection.5.71.2.1}%
+\contentsline {section}{\numberline {5.72}Var\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Eqn.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{114}{section.5.72}%
+\contentsline {section}{\numberline {5.73}Accel.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{114}{section.5.73}%
+\contentsline {subsection}{\numberline {5.73.1}Detailed Description}{114}{subsection.5.73.1}%
+\contentsline {subsection}{\numberline {5.73.2}Function Documentation}{115}{subsection.5.73.2}%
+\contentsline {subsubsection}{\numberline {5.73.2.1}Accel()}{115}{subsubsection.5.73.2.1}%
+\contentsline {section}{\numberline {5.74}Accel.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{116}{section.5.74}%
+\contentsline {section}{\numberline {5.75}Accel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Harmonic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{117}{section.5.75}%
+\contentsline {subsection}{\numberline {5.75.1}Detailed Description}{118}{subsection.5.75.1}%
+\contentsline {subsection}{\numberline {5.75.2}Function Documentation}{118}{subsection.5.75.2}%
+\contentsline {subsubsection}{\numberline {5.75.2.1}AccelHarmonic()}{118}{subsubsection.5.75.2.1}%
+\contentsline {section}{\numberline {5.76}Accel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Harmonic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{119}{section.5.76}%
+\contentsline {section}{\numberline {5.77}Accel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Point\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mass.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{120}{section.5.77}%
+\contentsline {subsection}{\numberline {5.77.1}Detailed Description}{120}{subsection.5.77.1}%
+\contentsline {subsection}{\numberline {5.77.2}Function Documentation}{120}{subsection.5.77.2}%
+\contentsline {subsubsection}{\numberline {5.77.2.1}AccelPointMass()}{120}{subsubsection.5.77.2.1}%
+\contentsline {section}{\numberline {5.78}Accel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Point\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mass.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{121}{section.5.78}%
+\contentsline {section}{\numberline {5.79}Az\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}El\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Pa.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{122}{section.5.79}%
+\contentsline {subsection}{\numberline {5.79.1}Detailed Description}{122}{subsection.5.79.1}%
+\contentsline {subsection}{\numberline {5.79.2}Function Documentation}{122}{subsection.5.79.2}%
+\contentsline {subsubsection}{\numberline {5.79.2.1}AzElPa()}{122}{subsubsection.5.79.2.1}%
+\contentsline {section}{\numberline {5.80}Az\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}El\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Pa.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{123}{section.5.80}%
+\contentsline {section}{\numberline {5.81}Cheb3\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{124}{section.5.81}%
+\contentsline {subsection}{\numberline {5.81.1}Detailed Description}{124}{subsection.5.81.1}%
+\contentsline {subsection}{\numberline {5.81.2}Function Documentation}{125}{subsection.5.81.2}%
+\contentsline {subsubsection}{\numberline {5.81.2.1}Cheb3D()}{125}{subsubsection.5.81.2.1}%
+\contentsline {section}{\numberline {5.82}Cheb3\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{126}{section.5.82}%
+\contentsline {section}{\numberline {5.83}DEInteg.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{127}{section.5.83}%
+\contentsline {subsection}{\numberline {5.83.1}Detailed Description}{127}{subsection.5.83.1}%
+\contentsline {subsection}{\numberline {5.83.2}Function Documentation}{128}{subsection.5.83.2}%
+\contentsline {subsubsection}{\numberline {5.83.2.1}DEInteg()}{128}{subsubsection.5.83.2.1}%
+\contentsline {section}{\numberline {5.84}DEInteg.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{128}{section.5.84}%
+\contentsline {section}{\numberline {5.85}Ecc\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Anom.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{135}{section.5.85}%
+\contentsline {subsection}{\numberline {5.85.1}Detailed Description}{135}{subsection.5.85.1}%
+\contentsline {subsection}{\numberline {5.85.2}Function Documentation}{136}{subsection.5.85.2}%
+\contentsline {subsubsection}{\numberline {5.85.2.1}EccAnom()}{136}{subsubsection.5.85.2.1}%
+\contentsline {section}{\numberline {5.86}Ecc\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Anom.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{136}{section.5.86}%
+\contentsline {section}{\numberline {5.87}Eqn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Equinox.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{137}{section.5.87}%
+\contentsline {subsection}{\numberline {5.87.1}Detailed Description}{137}{subsection.5.87.1}%
+\contentsline {subsection}{\numberline {5.87.2}Function Documentation}{137}{subsection.5.87.2}%
+\contentsline {subsubsection}{\numberline {5.87.2.1}EqnEquinox()}{137}{subsubsection.5.87.2.1}%
+\contentsline {section}{\numberline {5.88}Eqn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Equinox.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{138}{section.5.88}%
+\contentsline {section}{\numberline {5.89}Frac.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{139}{section.5.89}%
+\contentsline {subsection}{\numberline {5.89.1}Detailed Description}{139}{subsection.5.89.1}%
+\contentsline {subsection}{\numberline {5.89.2}Function Documentation}{139}{subsection.5.89.2}%
+\contentsline {subsubsection}{\numberline {5.89.2.1}Frac()}{139}{subsubsection.5.89.2.1}%
+\contentsline {section}{\numberline {5.90}Frac.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{140}{section.5.90}%
+\contentsline {section}{\numberline {5.91}G\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Accel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Harmonic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{140}{section.5.91}%
+\contentsline {subsection}{\numberline {5.91.1}Detailed Description}{141}{subsection.5.91.1}%
+\contentsline {subsection}{\numberline {5.91.2}Function Documentation}{141}{subsection.5.91.2}%
+\contentsline {subsubsection}{\numberline {5.91.2.1}G\_AccelHarmonic()}{141}{subsubsection.5.91.2.1}%
+\contentsline {section}{\numberline {5.92}G\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Accel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Harmonic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{142}{section.5.92}%
+\contentsline {section}{\numberline {5.93}gast.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{142}{section.5.93}%
+\contentsline {subsection}{\numberline {5.93.1}Detailed Description}{143}{subsection.5.93.1}%
+\contentsline {subsection}{\numberline {5.93.2}Function Documentation}{143}{subsection.5.93.2}%
+\contentsline {subsubsection}{\numberline {5.93.2.1}gast()}{143}{subsubsection.5.93.2.1}%
+\contentsline {section}{\numberline {5.94}gast.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{144}{section.5.94}%
+\contentsline {section}{\numberline {5.95}GHAMatrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{144}{section.5.95}%
+\contentsline {subsection}{\numberline {5.95.1}Detailed Description}{145}{subsection.5.95.1}%
+\contentsline {subsection}{\numberline {5.95.2}Function Documentation}{145}{subsection.5.95.2}%
+\contentsline {subsubsection}{\numberline {5.95.2.1}GHAMatrix()}{145}{subsubsection.5.95.2.1}%
+\contentsline {section}{\numberline {5.96}GHAMatrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{146}{section.5.96}%
+\contentsline {section}{\numberline {5.97}GLOBAL.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{146}{section.5.97}%
+\contentsline {subsection}{\numberline {5.97.1}Detailed Description}{147}{subsection.5.97.1}%
+\contentsline {subsection}{\numberline {5.97.2}Function Documentation}{147}{subsection.5.97.2}%
+\contentsline {subsubsection}{\numberline {5.97.2.1}AuxParamLoad()}{147}{subsubsection.5.97.2.1}%
+\contentsline {subsubsection}{\numberline {5.97.2.2}DE430Coeff()}{147}{subsubsection.5.97.2.2}%
+\contentsline {subsubsection}{\numberline {5.97.2.3}eop19620101()}{148}{subsubsection.5.97.2.3}%
+\contentsline {subsubsection}{\numberline {5.97.2.4}GEOS3()}{148}{subsubsection.5.97.2.4}%
+\contentsline {subsubsection}{\numberline {5.97.2.5}GGM03S()}{149}{subsubsection.5.97.2.5}%
+\contentsline {subsection}{\numberline {5.97.3}Variable Documentation}{149}{subsection.5.97.3}%
+\contentsline {subsubsection}{\numberline {5.97.3.1}AuxParam}{149}{subsubsection.5.97.3.1}%
+\contentsline {subsubsection}{\numberline {5.97.3.2}Cnm}{149}{subsubsection.5.97.3.2}%
+\contentsline {subsubsection}{\numberline {5.97.3.3}eopdata}{149}{subsubsection.5.97.3.3}%
+\contentsline {subsubsection}{\numberline {5.97.3.4}obs}{149}{subsubsection.5.97.3.4}%
+\contentsline {subsubsection}{\numberline {5.97.3.5}PC}{150}{subsubsection.5.97.3.5}%
+\contentsline {subsubsection}{\numberline {5.97.3.6}Snm}{150}{subsubsection.5.97.3.6}%
+\contentsline {section}{\numberline {5.98}GLOBAL.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{150}{section.5.98}%
+\contentsline {section}{\numberline {5.99}gmst.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{151}{section.5.99}%
+\contentsline {subsection}{\numberline {5.99.1}Detailed Description}{152}{subsection.5.99.1}%
+\contentsline {subsection}{\numberline {5.99.2}Function Documentation}{152}{subsection.5.99.2}%
+\contentsline {subsubsection}{\numberline {5.99.2.1}gmst()}{152}{subsubsection.5.99.2.1}%
+\contentsline {section}{\numberline {5.100}gmst.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{153}{section.5.100}%
+\contentsline {section}{\numberline {5.101}IERS.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{154}{section.5.101}%
+\contentsline {subsection}{\numberline {5.101.1}Detailed Description}{154}{subsection.5.101.1}%
+\contentsline {subsection}{\numberline {5.101.2}Function Documentation}{154}{subsection.5.101.2}%
+\contentsline {subsubsection}{\numberline {5.101.2.1}IERS()}{154}{subsubsection.5.101.2.1}%
+\contentsline {section}{\numberline {5.102}IERS.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{155}{section.5.102}%
+\contentsline {section}{\numberline {5.103}JPL\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Eph\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DE430.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{156}{section.5.103}%
+\contentsline {subsection}{\numberline {5.103.1}Detailed Description}{157}{subsection.5.103.1}%
+\contentsline {subsection}{\numberline {5.103.2}Function Documentation}{157}{subsection.5.103.2}%
+\contentsline {subsubsection}{\numberline {5.103.2.1}JPL\_Eph\_DE430()}{157}{subsubsection.5.103.2.1}%
+\contentsline {section}{\numberline {5.104}JPL\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Eph\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DE430.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{158}{section.5.104}%
+\contentsline {section}{\numberline {5.105}Legendre.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{161}{section.5.105}%
+\contentsline {subsection}{\numberline {5.105.1}Detailed Description}{162}{subsection.5.105.1}%
+\contentsline {subsection}{\numberline {5.105.2}Function Documentation}{162}{subsection.5.105.2}%
+\contentsline {subsubsection}{\numberline {5.105.2.1}Legendre()}{162}{subsubsection.5.105.2.1}%
+\contentsline {section}{\numberline {5.106}Legendre.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{163}{section.5.106}%
+\contentsline {section}{\numberline {5.107}LTC.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{164}{section.5.107}%
+\contentsline {subsection}{\numberline {5.107.1}Detailed Description}{165}{subsection.5.107.1}%
+\contentsline {subsection}{\numberline {5.107.2}Function Documentation}{165}{subsection.5.107.2}%
+\contentsline {subsubsection}{\numberline {5.107.2.1}LTC()}{165}{subsubsection.5.107.2.1}%
+\contentsline {section}{\numberline {5.108}LTC.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{166}{section.5.108}%
+\contentsline {section}{\numberline {5.109}matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{166}{section.5.109}%
+\contentsline {subsection}{\numberline {5.109.1}Detailed Description}{167}{subsection.5.109.1}%
+\contentsline {subsection}{\numberline {5.109.2}Function Documentation}{167}{subsection.5.109.2}%
+\contentsline {subsubsection}{\numberline {5.109.2.1}assign\_column()}{167}{subsubsection.5.109.2.1}%
+\contentsline {subsubsection}{\numberline {5.109.2.2}assign\_row()}{168}{subsubsection.5.109.2.2}%
+\contentsline {subsubsection}{\numberline {5.109.2.3}cross()}{168}{subsubsection.5.109.2.3}%
+\contentsline {subsubsection}{\numberline {5.109.2.4}dot()}{168}{subsubsection.5.109.2.4}%
+\contentsline {subsubsection}{\numberline {5.109.2.5}extract\_column()}{169}{subsubsection.5.109.2.5}%
+\contentsline {subsubsection}{\numberline {5.109.2.6}extract\_row()}{170}{subsubsection.5.109.2.6}%
+\contentsline {subsubsection}{\numberline {5.109.2.7}extract\_vector()}{170}{subsubsection.5.109.2.7}%
+\contentsline {subsubsection}{\numberline {5.109.2.8}eye()}{171}{subsubsection.5.109.2.8}%
+\contentsline {subsubsection}{\numberline {5.109.2.9}inv()}{172}{subsubsection.5.109.2.9}%
+\contentsline {subsubsection}{\numberline {5.109.2.10}norm()}{173}{subsubsection.5.109.2.10}%
+\contentsline {subsubsection}{\numberline {5.109.2.11}operator$<$$<$()}{174}{subsubsection.5.109.2.11}%
+\contentsline {subsubsection}{\numberline {5.109.2.12}swap\_row()}{174}{subsubsection.5.109.2.12}%
+\contentsline {subsubsection}{\numberline {5.109.2.13}transpose()}{174}{subsubsection.5.109.2.13}%
+\contentsline {subsubsection}{\numberline {5.109.2.14}union\_vector()}{175}{subsubsection.5.109.2.14}%
+\contentsline {subsubsection}{\numberline {5.109.2.15}zeros()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{176}{subsubsection.5.109.2.15}%
+\contentsline {subsubsection}{\numberline {5.109.2.16}zeros()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{176}{subsubsection.5.109.2.16}%
+\contentsline {section}{\numberline {5.110}matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{177}{section.5.110}%
+\contentsline {section}{\numberline {5.111}Mean\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Obliquity.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{182}{section.5.111}%
+\contentsline {subsection}{\numberline {5.111.1}Detailed Description}{183}{subsection.5.111.1}%
+\contentsline {subsection}{\numberline {5.111.2}Function Documentation}{183}{subsection.5.111.2}%
+\contentsline {subsubsection}{\numberline {5.111.2.1}MeanObliquity()}{183}{subsubsection.5.111.2.1}%
+\contentsline {section}{\numberline {5.112}Mean\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Obliquity.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{184}{section.5.112}%
+\contentsline {section}{\numberline {5.113}Meas\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Update.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{184}{section.5.113}%
+\contentsline {subsection}{\numberline {5.113.1}Detailed Description}{185}{subsection.5.113.1}%
+\contentsline {subsection}{\numberline {5.113.2}Function Documentation}{185}{subsection.5.113.2}%
+\contentsline {subsubsection}{\numberline {5.113.2.1}MeasUpdate()}{185}{subsubsection.5.113.2.1}%
+\contentsline {section}{\numberline {5.114}Meas\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Update.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{186}{section.5.114}%
+\contentsline {section}{\numberline {5.115}Mjday.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{186}{section.5.115}%
+\contentsline {subsection}{\numberline {5.115.1}Detailed Description}{187}{subsection.5.115.1}%
+\contentsline {subsection}{\numberline {5.115.2}Function Documentation}{187}{subsection.5.115.2}%
+\contentsline {subsubsection}{\numberline {5.115.2.1}Mjday()}{187}{subsubsection.5.115.2.1}%
+\contentsline {section}{\numberline {5.116}Mjday.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{188}{section.5.116}%
+\contentsline {section}{\numberline {5.117}Mjday\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}TDB.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{188}{section.5.117}%
+\contentsline {subsection}{\numberline {5.117.1}Detailed Description}{189}{subsection.5.117.1}%
+\contentsline {subsection}{\numberline {5.117.2}Function Documentation}{189}{subsection.5.117.2}%
+\contentsline {subsubsection}{\numberline {5.117.2.1}Mjday\_TDB()}{189}{subsubsection.5.117.2.1}%
+\contentsline {section}{\numberline {5.118}Mjday\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}TDB.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{190}{section.5.118}%
+\contentsline {section}{\numberline {5.119}Nut\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Angles.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{190}{section.5.119}%
+\contentsline {subsection}{\numberline {5.119.1}Detailed Description}{191}{subsection.5.119.1}%
+\contentsline {subsection}{\numberline {5.119.2}Function Documentation}{191}{subsection.5.119.2}%
+\contentsline {subsubsection}{\numberline {5.119.2.1}NutAngles()}{191}{subsubsection.5.119.2.1}%
+\contentsline {section}{\numberline {5.120}Nut\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Angles.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{192}{section.5.120}%
+\contentsline {section}{\numberline {5.121}Nut\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{193}{section.5.121}%
+\contentsline {subsection}{\numberline {5.121.1}Detailed Description}{194}{subsection.5.121.1}%
+\contentsline {subsection}{\numberline {5.121.2}Function Documentation}{194}{subsection.5.121.2}%
+\contentsline {subsubsection}{\numberline {5.121.2.1}NutMatrix()}{194}{subsubsection.5.121.2.1}%
+\contentsline {section}{\numberline {5.122}Nut\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{195}{section.5.122}%
+\contentsline {section}{\numberline {5.123}Pole\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{196}{section.5.123}%
+\contentsline {subsection}{\numberline {5.123.1}Detailed Description}{196}{subsection.5.123.1}%
+\contentsline {subsection}{\numberline {5.123.2}Function Documentation}{196}{subsection.5.123.2}%
+\contentsline {subsubsection}{\numberline {5.123.2.1}PoleMatrix()}{196}{subsubsection.5.123.2.1}%
+\contentsline {section}{\numberline {5.124}Pole\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{197}{section.5.124}%
+\contentsline {section}{\numberline {5.125}Position.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{198}{section.5.125}%
+\contentsline {subsection}{\numberline {5.125.1}Detailed Description}{198}{subsection.5.125.1}%
+\contentsline {subsection}{\numberline {5.125.2}Function Documentation}{198}{subsection.5.125.2}%
+\contentsline {subsubsection}{\numberline {5.125.2.1}Position()}{198}{subsubsection.5.125.2.1}%
+\contentsline {section}{\numberline {5.126}Position.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{199}{section.5.126}%
+\contentsline {section}{\numberline {5.127}Prec\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{199}{section.5.127}%
+\contentsline {subsection}{\numberline {5.127.1}Detailed Description}{200}{subsection.5.127.1}%
+\contentsline {subsection}{\numberline {5.127.2}Function Documentation}{200}{subsection.5.127.2}%
+\contentsline {subsubsection}{\numberline {5.127.2.1}PrecMatrix()}{200}{subsubsection.5.127.2.1}%
+\contentsline {section}{\numberline {5.128}Prec\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{201}{section.5.128}%
+\contentsline {section}{\numberline {5.129}R\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}x.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{201}{section.5.129}%
+\contentsline {subsection}{\numberline {5.129.1}Detailed Description}{202}{subsection.5.129.1}%
+\contentsline {subsection}{\numberline {5.129.2}Function Documentation}{202}{subsection.5.129.2}%
+\contentsline {subsubsection}{\numberline {5.129.2.1}R\_x()}{202}{subsubsection.5.129.2.1}%
+\contentsline {section}{\numberline {5.130}R\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}x.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{203}{section.5.130}%
+\contentsline {section}{\numberline {5.131}R\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}y.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{204}{section.5.131}%
+\contentsline {subsection}{\numberline {5.131.1}Detailed Description}{204}{subsection.5.131.1}%
+\contentsline {subsection}{\numberline {5.131.2}Function Documentation}{204}{subsection.5.131.2}%
+\contentsline {subsubsection}{\numberline {5.131.2.1}R\_y()}{204}{subsubsection.5.131.2.1}%
+\contentsline {section}{\numberline {5.132}R\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}y.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{205}{section.5.132}%
+\contentsline {section}{\numberline {5.133}R\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}z.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{206}{section.5.133}%
+\contentsline {subsection}{\numberline {5.133.1}Detailed Description}{206}{subsection.5.133.1}%
+\contentsline {subsection}{\numberline {5.133.2}Function Documentation}{206}{subsection.5.133.2}%
+\contentsline {subsubsection}{\numberline {5.133.2.1}R\_z()}{206}{subsubsection.5.133.2.1}%
+\contentsline {section}{\numberline {5.134}R\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}z.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{207}{section.5.134}%
+\contentsline {section}{\numberline {5.135}sign\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{208}{section.5.135}%
+\contentsline {subsection}{\numberline {5.135.1}Detailed Description}{208}{subsection.5.135.1}%
+\contentsline {subsection}{\numberline {5.135.2}Function Documentation}{208}{subsection.5.135.2}%
+\contentsline {subsubsection}{\numberline {5.135.2.1}sign\_()}{208}{subsubsection.5.135.2.1}%
+\contentsline {section}{\numberline {5.136}sign\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{209}{section.5.136}%
+\contentsline {section}{\numberline {5.137}timediff.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{209}{section.5.137}%
+\contentsline {subsection}{\numberline {5.137.1}Detailed Description}{209}{subsection.5.137.1}%
+\contentsline {subsection}{\numberline {5.137.2}Function Documentation}{210}{subsection.5.137.2}%
+\contentsline {subsubsection}{\numberline {5.137.2.1}timediff()}{210}{subsubsection.5.137.2.1}%
+\contentsline {section}{\numberline {5.138}timediff.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{210}{section.5.138}%
+\contentsline {section}{\numberline {5.139}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Update.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{211}{section.5.139}%
+\contentsline {subsection}{\numberline {5.139.1}Detailed Description}{211}{subsection.5.139.1}%
+\contentsline {subsection}{\numberline {5.139.2}Function Documentation}{211}{subsection.5.139.2}%
+\contentsline {subsubsection}{\numberline {5.139.2.1}TimeUpdate()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{211}{subsubsection.5.139.2.1}%
+\contentsline {subsubsection}{\numberline {5.139.2.2}TimeUpdate()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{212}{subsubsection.5.139.2.2}%
+\contentsline {section}{\numberline {5.140}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Update.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{213}{section.5.140}%
+\contentsline {section}{\numberline {5.141}Var\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Eqn.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{213}{section.5.141}%
+\contentsline {subsection}{\numberline {5.141.1}Detailed Description}{213}{subsection.5.141.1}%
+\contentsline {subsection}{\numberline {5.141.2}Function Documentation}{214}{subsection.5.141.2}%
+\contentsline {subsubsection}{\numberline {5.141.2.1}VarEqn()}{214}{subsubsection.5.141.2.1}%
+\contentsline {section}{\numberline {5.142}Var\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Eqn.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{215}{section.5.142}%
+\contentsline {section}{\numberline {5.143}EKF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}GEOS3.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{215}{section.5.143}%
+\contentsline {subsection}{\numberline {5.143.1}Detailed Description}{216}{subsection.5.143.1}%
+\contentsline {subsection}{\numberline {5.143.2}Function Documentation}{217}{subsection.5.143.2}%
+\contentsline {subsubsection}{\numberline {5.143.2.1}main()}{217}{subsubsection.5.143.2.1}%
+\contentsline {section}{\numberline {5.144}EKF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}GEOS3.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{217}{section.5.144}%
+\contentsline {section}{\numberline {5.145}tests.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{219}{section.5.145}%
+\contentsline {chapter}{Index}{235}{section*.315}%

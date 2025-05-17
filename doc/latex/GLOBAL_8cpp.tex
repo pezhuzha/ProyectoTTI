@@ -1,16 +1,19 @@
-\doxysection{/home/fghfgh/\+Escritorio/\+Proyecto\+TTI/src/\+GLOBAL.cpp File Reference}
-\hypertarget{GLOBAL_8cpp}{}\label{GLOBAL_8cpp}\index{/home/fghfgh/Escritorio/ProyectoTTI/src/GLOBAL.cpp@{/home/fghfgh/Escritorio/ProyectoTTI/src/GLOBAL.cpp}}
+\doxysection{GLOBAL.\+cpp File Reference}
+\hypertarget{GLOBAL_8cpp}{}\label{GLOBAL_8cpp}\index{GLOBAL.cpp@{GLOBAL.cpp}}
 
 
 El archivo contiene las implementaciones de \doxylink{GLOBAL_8h}{GLOBAL.\+h}.  
 
 
 {\ttfamily \#include "{}../include/\+GLOBAL.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+Mjday.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+SAT\+\_\+\+Const.\+h"{}}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
 Include dependency graph for GLOBAL.\+cpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=349pt]{GLOBAL_8cpp__incl}
+\includegraphics[width=350pt]{GLOBAL_8cpp__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Functions}
@@ -23,24 +26,23 @@ void \mbox{\hyperlink{GLOBAL_8cpp_af1504e3e975e6f502042c7fa8b7abe60}{eop19620101
 void \mbox{\hyperlink{GLOBAL_8cpp_a1e2e54b5a8bda6f8402f3e8bbe5f3175}{GGM03S}} (int n)
 \item 
 void \mbox{\hyperlink{GLOBAL_8cpp_a55037cf2b485a56ae2aae3c2a97d4992}{DE430\+Coeff}} (int row, int column)
+\item 
+void \mbox{\hyperlink{GLOBAL_8cpp_ae898bc6077eb6bdcd9ad3919b83001f0}{GEOS3}} (int nobs)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{GLOBAL_8cpp_a5706b12963234f7382e60cb7324441f9}\label{GLOBAL_8cpp_a5706b12963234f7382e60cb7324441f9} 
-\mbox{\hyperlink{structParam}{Param}} {\bfseries Aux\+Param}
+\mbox{\hyperlink{structParam}{Param}} \mbox{\hyperlink{GLOBAL_8cpp_a5706b12963234f7382e60cb7324441f9}{Aux\+Param}}
 \item 
-\Hypertarget{GLOBAL_8cpp_a16817456f74489dad2c22ee5b145a1c4}\label{GLOBAL_8cpp_a16817456f74489dad2c22ee5b145a1c4} 
-\mbox{\hyperlink{classMatrix}{Matrix}} {\bfseries eopdata}
+\mbox{\hyperlink{classMatrix}{Matrix}} \mbox{\hyperlink{GLOBAL_8cpp_a16817456f74489dad2c22ee5b145a1c4}{eopdata}}
 \item 
-\Hypertarget{GLOBAL_8cpp_aae4f5247dbe2733ec80f005dfbb2c3ed}\label{GLOBAL_8cpp_aae4f5247dbe2733ec80f005dfbb2c3ed} 
-\mbox{\hyperlink{classMatrix}{Matrix}} {\bfseries Cnm}
+\mbox{\hyperlink{classMatrix}{Matrix}} \mbox{\hyperlink{GLOBAL_8cpp_aae4f5247dbe2733ec80f005dfbb2c3ed}{Cnm}}
 \item 
-\Hypertarget{GLOBAL_8cpp_a19b1b61df2d43fbf34bc708611f8d589}\label{GLOBAL_8cpp_a19b1b61df2d43fbf34bc708611f8d589} 
-\mbox{\hyperlink{classMatrix}{Matrix}} {\bfseries Snm}
+\mbox{\hyperlink{classMatrix}{Matrix}} \mbox{\hyperlink{GLOBAL_8cpp_a19b1b61df2d43fbf34bc708611f8d589}{Snm}}
 \item 
-\Hypertarget{GLOBAL_8cpp_abdf16b7def3047932352a98d4f907e0a}\label{GLOBAL_8cpp_abdf16b7def3047932352a98d4f907e0a} 
-\mbox{\hyperlink{classMatrix}{Matrix}} {\bfseries PC}
+\mbox{\hyperlink{classMatrix}{Matrix}} \mbox{\hyperlink{GLOBAL_8cpp_abdf16b7def3047932352a98d4f907e0a}{PC}}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \mbox{\hyperlink{GLOBAL_8cpp_a61c854c38aa6b9b8d4ed8d7c52530b78}{obs}}
 \end{DoxyCompactItemize}
 
 
@@ -51,7 +53,11 @@ El archivo contiene las implementaciones de \doxylink{GLOBAL_8h}{GLOBAL.\+h}.
 Pedro Zhuzhan 
 \end{DoxyAuthor}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000047}{Bug}}]No known bugs \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000049}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+Definition in file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+
 
 
 \doxysubsection{Function Documentation}
@@ -61,7 +67,11 @@ Pedro Zhuzhan
 {\footnotesize\ttfamily \label{GLOBAL_8cpp_a75b612999c468928cbed5a99f875de1f} 
 void Aux\+Param\+Load (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Carga Aux\+Param \Hypertarget{GLOBAL_8cpp_a55037cf2b485a56ae2aae3c2a97d4992}\index{GLOBAL.cpp@{GLOBAL.cpp}!DE430Coeff@{DE430Coeff}}
+Carga Aux\+Param 
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+
+\Hypertarget{GLOBAL_8cpp_a55037cf2b485a56ae2aae3c2a97d4992}\index{GLOBAL.cpp@{GLOBAL.cpp}!DE430Coeff@{DE430Coeff}}
 \index{DE430Coeff@{DE430Coeff}!GLOBAL.cpp@{GLOBAL.cpp}}
 \doxysubsubsection{\texorpdfstring{DE430Coeff()}{DE430Coeff()}}
 {\footnotesize\ttfamily \label{GLOBAL_8cpp_a55037cf2b485a56ae2aae3c2a97d4992} 
@@ -74,6 +84,17 @@ Lee el archivo DE430\+Coeff.\+txt y recoge cada fila y lo asigna a PC
 {\em column} & número de columnas a recoger \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{GLOBAL_8cpp_a55037cf2b485a56ae2aae3c2a97d4992_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{GLOBAL_8cpp_af1504e3e975e6f502042c7fa8b7abe60}\index{GLOBAL.cpp@{GLOBAL.cpp}!eop19620101@{eop19620101}}
 \index{eop19620101@{eop19620101}!GLOBAL.cpp@{GLOBAL.cpp}}
 \doxysubsubsection{\texorpdfstring{eop19620101()}{eop19620101()}}
@@ -85,6 +106,39 @@ Lee el archivo eop19620101.\+txt y recoge cada fila y lo asigna a eopdata
 {\em c} & número de filas a recoger \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{GLOBAL_8cpp_af1504e3e975e6f502042c7fa8b7abe60_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{GLOBAL_8cpp_ae898bc6077eb6bdcd9ad3919b83001f0}\index{GLOBAL.cpp@{GLOBAL.cpp}!GEOS3@{GEOS3}}
+\index{GEOS3@{GEOS3}!GLOBAL.cpp@{GLOBAL.cpp}}
+\doxysubsubsection{\texorpdfstring{GEOS3()}{GEOS3()}}
+{\footnotesize\ttfamily \label{GLOBAL_8cpp_ae898bc6077eb6bdcd9ad3919b83001f0} 
+void GEOS3 (\begin{DoxyParamCaption}\item[{int}]{nobs}{ = {\ttfamily 46}}\end{DoxyParamCaption})}
+
+Lee el archivo GEOS3.\+txt y recoge cada fila y lo asigna a obs 
+\begin{DoxyParams}{Parameters}
+{\em nobs} & número de filas a recoger \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00087}{87}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{GLOBAL_8cpp_ae898bc6077eb6bdcd9ad3919b83001f0_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{GLOBAL_8cpp_a1e2e54b5a8bda6f8402f3e8bbe5f3175}\index{GLOBAL.cpp@{GLOBAL.cpp}!GGM03S@{GGM03S}}
 \index{GGM03S@{GGM03S}!GLOBAL.cpp@{GLOBAL.cpp}}
 \doxysubsubsection{\texorpdfstring{GGM03S()}{GGM03S()}}
@@ -96,3 +150,77 @@ Lee el archivo GGM03\+S.\+txt y recoge cada fila y lo asigna a Cnm y Snm
 {\em c} & dimension de la matriz \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{GLOBAL_8cpp_a1e2e54b5a8bda6f8402f3e8bbe5f3175_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{GLOBAL_8cpp_a5706b12963234f7382e60cb7324441f9}\index{GLOBAL.cpp@{GLOBAL.cpp}!AuxParam@{AuxParam}}
+\index{AuxParam@{AuxParam}!GLOBAL.cpp@{GLOBAL.cpp}}
+\doxysubsubsection{\texorpdfstring{AuxParam}{AuxParam}}
+{\footnotesize\ttfamily \label{GLOBAL_8cpp_a5706b12963234f7382e60cb7324441f9} 
+\mbox{\hyperlink{structParam}{Param}} Aux\+Param}
+
+
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+
+\Hypertarget{GLOBAL_8cpp_aae4f5247dbe2733ec80f005dfbb2c3ed}\index{GLOBAL.cpp@{GLOBAL.cpp}!Cnm@{Cnm}}
+\index{Cnm@{Cnm}!GLOBAL.cpp@{GLOBAL.cpp}}
+\doxysubsubsection{\texorpdfstring{Cnm}{Cnm}}
+{\footnotesize\ttfamily \label{GLOBAL_8cpp_aae4f5247dbe2733ec80f005dfbb2c3ed} 
+\mbox{\hyperlink{classMatrix}{Matrix}} Cnm}
+
+
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+
+\Hypertarget{GLOBAL_8cpp_a16817456f74489dad2c22ee5b145a1c4}\index{GLOBAL.cpp@{GLOBAL.cpp}!eopdata@{eopdata}}
+\index{eopdata@{eopdata}!GLOBAL.cpp@{GLOBAL.cpp}}
+\doxysubsubsection{\texorpdfstring{eopdata}{eopdata}}
+{\footnotesize\ttfamily \label{GLOBAL_8cpp_a16817456f74489dad2c22ee5b145a1c4} 
+\mbox{\hyperlink{classMatrix}{Matrix}} eopdata}
+
+
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+
+\Hypertarget{GLOBAL_8cpp_a61c854c38aa6b9b8d4ed8d7c52530b78}\index{GLOBAL.cpp@{GLOBAL.cpp}!obs@{obs}}
+\index{obs@{obs}!GLOBAL.cpp@{GLOBAL.cpp}}
+\doxysubsubsection{\texorpdfstring{obs}{obs}}
+{\footnotesize\ttfamily \label{GLOBAL_8cpp_a61c854c38aa6b9b8d4ed8d7c52530b78} 
+\mbox{\hyperlink{classMatrix}{Matrix}} obs}
+
+
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+
+\Hypertarget{GLOBAL_8cpp_abdf16b7def3047932352a98d4f907e0a}\index{GLOBAL.cpp@{GLOBAL.cpp}!PC@{PC}}
+\index{PC@{PC}!GLOBAL.cpp@{GLOBAL.cpp}}
+\doxysubsubsection{\texorpdfstring{PC}{PC}}
+{\footnotesize\ttfamily \label{GLOBAL_8cpp_abdf16b7def3047932352a98d4f907e0a} 
+\mbox{\hyperlink{classMatrix}{Matrix}} PC}
+
+
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+
+\Hypertarget{GLOBAL_8cpp_a19b1b61df2d43fbf34bc708611f8d589}\index{GLOBAL.cpp@{GLOBAL.cpp}!Snm@{Snm}}
+\index{Snm@{Snm}!GLOBAL.cpp@{GLOBAL.cpp}}
+\doxysubsubsection{\texorpdfstring{Snm}{Snm}}
+{\footnotesize\ttfamily \label{GLOBAL_8cpp_a19b1b61df2d43fbf34bc708611f8d589} 
+\mbox{\hyperlink{classMatrix}{Matrix}} Snm}
+
+
+
+Definition at line \mbox{\hyperlink{GLOBAL_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{GLOBAL_8cpp_source}{GLOBAL.\+cpp}}.
+

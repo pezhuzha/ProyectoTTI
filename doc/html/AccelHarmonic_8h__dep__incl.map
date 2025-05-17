@@ -1,11 +1,15 @@
-<map id="/home/fghfgh/Escritorio/ProyectoTTI/include/AccelHarmonic.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/AccelHarmonic.h">
-<area shape="rect" id="Node000001" title="El archivo contiene la funcion AccelHarmonic." alt="" coords="359,5,627,45"/>
-<area shape="rect" id="Node000002" href="$Accel_8cpp.html" title="El archivo contiene las implementaciones de Accel.h." alt="" coords="5,93,197,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="395,51,188,96,187,91,393,46"/>
-<area shape="rect" id="Node000003" href="$AccelHarmonic_8cpp.html" title="El archivo contiene las implementaciones de AccelHarmonic.h." alt="" coords="222,93,477,133"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="451,55,382,96,380,91,449,50"/>
-<area shape="rect" id="Node000004" href="$G__AccelHarmonic_8cpp.html" title="El archivo contiene las implementaciones de G_AccelHarmonic.h." alt="" coords="501,93,773,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="538,50,607,91,604,96,535,55"/>
-<area shape="rect" id="Node000005" href="$VarEqn_8cpp.html" title="El archivo contiene las implementaciones de VarEqn.h." alt="" coords="797,93,1000,133"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="596,46,810,91,809,96,595,51"/>
+<map id="AccelHarmonic.h" name="AccelHarmonic.h">
+<area shape="rect" id="Node000001" title="El archivo contiene la funcion AccelHarmonic." alt="" coords="365,5,497,31"/>
+<area shape="rect" id="Node000002" href="$Accel_8cpp.html" title="El archivo contiene las implementaciones de Accel.h." alt="" coords="5,79,89,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="352,36,102,81,90,84,89,78,102,76,351,30"/>
+<area shape="rect" id="Node000003" href="$AccelHarmonic_8cpp.html" title="El archivo contiene las implementaciones de AccelHarmonic.h." alt="" coords="114,79,261,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="380,37,228,81,226,76,378,32"/>
+<area shape="rect" id="Node000004" href="$EKF__GEOS3_8cpp.html" title="Es el archivo principal del programa." alt="" coords="285,79,410,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="409,42,363,80,359,76,406,38"/>
+<area shape="rect" id="Node000005" href="$G__AccelHarmonic_8cpp.html" title="El archivo contiene las implementaciones de G_AccelHarmonic.h." alt="" coords="435,79,599,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="457,37,504,76,501,80,454,41"/>
+<area shape="rect" id="Node000006" href="$VarEqn_8cpp.html" title="El archivo contiene las implementaciones de VarEqn.h." alt="" coords="623,79,717,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="484,32,632,76,631,81,482,37"/>
+<area shape="rect" id="Node000007" href="$tests_8cpp_source.html" title=" " alt="" coords="741,79,823,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="504,31,731,76,742,78,741,84,729,81,503,36"/>
 </map>

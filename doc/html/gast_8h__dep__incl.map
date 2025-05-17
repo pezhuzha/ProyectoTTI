@@ -1,7 +1,9 @@
-<map id="/home/fghfgh/Escritorio/ProyectoTTI/include/gast.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/gast.h">
-<area shape="rect" id="Node000001" title="El archivo contiene la funcion gast." alt="" coords="135,5,333,45"/>
-<area shape="rect" id="Node000002" href="$GHAMatrix_8cpp.html" title="El archivo contiene las implementaciones de GHAMatrix.h." alt="" coords="5,93,233,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,56,146,95,143,91,196,52"/>
-<area shape="rect" id="Node000003" href="$gast_8cpp.html" title="El archivo contiene las implementaciones de gast.h." alt="" coords="257,93,443,133"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="272,52,326,91,323,95,269,56"/>
+<map id="gast.h" name="gast.h">
+<area shape="rect" id="Node000001" title="El archivo contiene la funcion gast." alt="" coords="157,5,219,31"/>
+<area shape="rect" id="Node000002" href="$GHAMatrix_8cpp.html" title="El archivo contiene las implementaciones de GHAMatrix.h." alt="" coords="5,79,125,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,40,87,81,84,76,155,35"/>
+<area shape="rect" id="Node000003" href="$gast_8cpp.html" title="El archivo contiene las implementaciones de gast.h." alt="" coords="149,79,227,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="191,44,191,79,185,79,185,44"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp_source.html" title=" " alt="" coords="251,79,333,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="218,36,276,76,273,81,215,41"/>
 </map>

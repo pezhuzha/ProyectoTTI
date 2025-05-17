@@ -1,7 +1,11 @@
-<map id="/home/fghfgh/Escritorio/ProyectoTTI/include/AccelPointMass.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/AccelPointMass.h">
-<area shape="rect" id="Node000001" title="El archivo contiene la funcion AccelPointMass." alt="" coords="112,5,339,60"/>
-<area shape="rect" id="Node000002" href="$Accel_8cpp.html" title="El archivo contiene las implementaciones de Accel.h." alt="" coords="5,108,197,148"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,71,128,110,125,106,178,66"/>
-<area shape="rect" id="Node000003" href="$AccelPointMass_8cpp.html" title="El archivo contiene las implementaciones de AccelPointMass.h." alt="" coords="221,108,480,148"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="273,66,327,106,324,110,270,70"/>
+<map id="AccelPointMass.h" name="AccelPointMass.h">
+<area shape="rect" id="Node000001" title="El archivo contiene la funcion AccelPointMass." alt="" coords="202,5,338,31"/>
+<area shape="rect" id="Node000002" href="$Accel_8cpp.html" title="El archivo contiene las implementaciones de Accel.h." alt="" coords="5,79,89,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,37,84,81,83,76,221,32"/>
+<area shape="rect" id="Node000003" href="$AccelPointMass_8cpp.html" title="El archivo contiene las implementaciones de AccelPointMass.h." alt="" coords="113,79,264,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="248,42,204,80,200,76,245,38"/>
+<area shape="rect" id="Node000004" href="$EKF__GEOS3_8cpp.html" title="Es el archivo principal del programa." alt="" coords="289,79,414,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="295,38,340,76,336,80,292,42"/>
+<area shape="rect" id="Node000005" href="$tests_8cpp_source.html" title=" " alt="" coords="439,79,520,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="318,33,446,76,445,81,316,38"/>
 </map>

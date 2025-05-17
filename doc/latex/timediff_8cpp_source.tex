@@ -1,0 +1,33 @@
+\doxysection{timediff.\+cpp}
+\hypertarget{timediff_8cpp_source}{}\label{timediff_8cpp_source}\index{timediff.cpp@{timediff.cpp}}
+\mbox{\hyperlink{timediff_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{timediff_8h}{../include/timediff.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00009}\mbox{\hyperlink{timediff_8h_a0772112289293a570d2edb0667dbb3a9}{00009}}\ \ \ \ \ tuple<double,double,double,double,double>\ \ \mbox{\hyperlink{timediff_8cpp_a0772112289293a570d2edb0667dbb3a9}{timediff}}(\textcolor{keywordtype}{double}\ UT1\_UTC,\textcolor{keywordtype}{double}\ TAI\_UTC)\{}
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ TT\_TAI\ \ =\ +32.184;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TT-\/TAI\ time\ difference\ [s]}}
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GPS\_TAI\ =\ -\/19.0;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ GPS-\/TAI\ time\ difference\ [s]}}
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00014}00014\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00015}00015\ \textcolor{comment}{\ \ \ \ \ \ \ \ double\ TT\_GPS\ \ =\ \ TT\_TAI-\/GPS\_TAI;\ \ //\ TT-\/GPS\ time\ difference\ [s]}}
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00016}00016\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00017}00017\ \textcolor{comment}{\ \ \ \ \ \ \ \ double\ TAI\_GPS\ =\ -\/GPS\_TAI;\ \ \ \ \ \ \ \ \ //\ TAI-\/GPS\ time\ difference\ [s]}}
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00018}00018\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ UT1\_TAI\ =\ UT1\_UTC-\/TAI\_UTC;\ \ \textcolor{comment}{//\ UT1-\/TAI\ time\ difference\ [s]}}
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ UTC\_TAI\ =\ -\/TAI\_UTC;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ UTC-\/TAI\ time\ difference\ [s]}}
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ UTC\_GPS\ =\ UTC\_TAI-\/GPS\_TAI;\ \ \textcolor{comment}{//\ UTC\_GPS\ time\ difference\ [s]}}
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ UT1\_GPS\ =\ UT1\_TAI-\/GPS\_TAI;\ \ \textcolor{comment}{//\ UT1-\/GPS\ time\ difference\ [s]}}
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ TT\_UTC\ \ =\ TT\_TAI-\/UTC\_TAI;\ \ \ \textcolor{comment}{//\ \ TT-\/UTC\ time\ difference\ [s]}}
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GPS\_UTC\ =\ GPS\_TAI-\/UTC\_TAI;\ \ \textcolor{comment}{//\ GPS-\/UTC\ time\ difference\ [s]}}
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tie(UT1\_TAI,\ UTC\_GPS,\ UT1\_GPS,\ TT\_UTC,\ GPS\_UTC);}
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{timediff_8cpp_source_l00033}00033\ \ \ \ \ \}}
+
+\end{DoxyCode}

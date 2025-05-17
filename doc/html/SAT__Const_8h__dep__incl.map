@@ -1,27 +1,33 @@
-<map id="/home/fghfgh/Escritorio/ProyectoTTI/include/SAT_Const.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/SAT_Const.h">
-<area shape="rect" id="Node000001" title="El archivo contiene SAT_Const." alt="" coords="1343,5,1526,60"/>
-<area shape="rect" id="Node000002" href="$Accel_8cpp.html" title="El archivo contiene las implementaciones de Accel.h." alt="" coords="5,108,197,148"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1330,39,1123,46,845,59,529,80,210,111,198,112,197,107,209,105,529,75,845,54,1123,41,1330,34"/>
-<area shape="rect" id="Node000003" href="$AccelHarmonic_8cpp.html" title="El archivo contiene las implementaciones de AccelHarmonic.h." alt="" coords="222,108,477,148"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1330,43,958,69,490,111,477,112,476,107,489,105,958,64,1329,38"/>
-<area shape="rect" id="Node000004" href="$AzElPa_8cpp.html" title="El archivo contiene las implementaciones de AzElPa.h." alt="" coords="501,108,701,148"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1329,45,1051,72,714,111,702,112,701,107,713,105,1050,66,1329,40"/>
-<area shape="rect" id="Node000005" href="$EccAnom_8cpp.html" title="El archivo contiene las implementaciones de EccAnom.h." alt="" coords="726,108,943,148"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1330,53,944,112,943,107,1329,48"/>
-<area shape="rect" id="Node000006" href="$IERS_8cpp.html" title="El archivo contiene las implementaciones de IERS.h." alt="" coords="968,108,1155,148"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1330,63,1138,110,1136,105,1329,57"/>
-<area shape="rect" id="Node000007" href="$MeanObliquity_8cpp.html" title="El archivo contiene las implementaciones de MeanObliquity.h." alt="" coords="1179,108,1429,148"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1389,70,1332,110,1329,106,1385,66"/>
-<area shape="rect" id="Node000008" href="$NutAngles_8cpp.html" title="El archivo contiene las implementaciones de NutAngles.h." alt="" coords="1453,108,1677,148"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1484,66,1540,106,1537,110,1481,70"/>
-<area shape="rect" id="Node000009" href="$Position_8cpp.html" title="El archivo contiene las implementaciones de Position.h." alt="" coords="1702,108,1911,148"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1540,57,1732,105,1731,110,1539,63"/>
-<area shape="rect" id="Node000010" href="$PrecMatrix_8cpp.html" title="El archivo contiene las implementaciones de PrecMatrix.h." alt="" coords="1936,108,2163,148"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1540,47,1936,107,1935,112,1539,52"/>
-<area shape="rect" id="Node000011" href="$VarEqn_8cpp.html" title="El archivo contiene las implementaciones de VarEqn.h." alt="" coords="2187,108,2389,148"/>
-<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="1540,40,1827,66,2175,105,2186,107,2186,112,2174,111,1826,71,1539,45"/>
-<area shape="rect" id="Node000012" href="$gast_8cpp.html" title="El archivo contiene las implementaciones de gast.h." alt="" coords="2414,108,2599,148"/>
-<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="1540,36,1920,59,2160,79,2402,105,2414,107,2413,112,2401,111,2160,84,1920,64,1540,41"/>
-<area shape="rect" id="Node000013" href="$gmst_8cpp.html" title="El archivo contiene las implementaciones de gmst.h." alt="" coords="2623,108,2814,148"/>
-<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="1540,34,1739,41,2006,55,2308,75,2612,105,2623,107,2622,112,2612,111,2307,81,2006,60,1739,47,1540,39"/>
+<map id="SAT_Const.h" name="SAT_Const.h">
+<area shape="rect" id="Node000001" title="El archivo contiene SAT_Const." alt="" coords="923,5,1025,31"/>
+<area shape="rect" id="Node000002" href="$Accel_8cpp.html" title="El archivo contiene las implementaciones de Accel.h." alt="" coords="5,79,89,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="909,23,564,38,335,55,102,81,90,83,89,78,102,76,334,50,564,33,909,18"/>
+<area shape="rect" id="Node000003" href="$AccelHarmonic_8cpp.html" title="El archivo contiene las implementaciones de AccelHarmonic.h." alt="" coords="114,79,261,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="909,26,632,48,273,81,261,83,261,77,272,76,632,42,909,21"/>
+<area shape="rect" id="Node000004" href="$AzElPa_8cpp.html" title="El archivo contiene las implementaciones de AzElPa.h." alt="" coords="285,79,377,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="909,27,679,46,534,62,389,81,378,83,377,78,388,76,534,57,678,41,908,21"/>
+<area shape="rect" id="Node000005" href="$DEInteg_8cpp.html" title="El archivo contiene las implementaciones de DEInteg.h." alt="" coords="401,79,501,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="909,29,731,51,514,81,502,83,501,78,514,76,730,46,909,24"/>
+<area shape="rect" id="Node000006" href="$EKF__GEOS3_8cpp.html" title="Es el archivo principal del programa." alt="" coords="526,79,651,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="910,34,651,81,650,76,909,29"/>
+<area shape="rect" id="Node000007" href="$EccAnom_8cpp.html" title="El archivo contiene las implementaciones de EccAnom.h." alt="" coords="675,79,785,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="923,37,770,81,769,76,921,32"/>
+<area shape="rect" id="Node000008" href="$GLOBAL_8cpp.html" title="El archivo contiene las implementaciones de GLOBAL.h." alt="" coords="809,79,910,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="946,40,879,81,877,76,943,35"/>
+<area shape="rect" id="Node000009" href="$IERS_8cpp.html" title="El archivo contiene las implementaciones de IERS.h." alt="" coords="935,79,1013,104"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="977,44,977,79,971,79,971,44"/>
+<area shape="rect" id="Node000010" href="$MeanObliquity_8cpp.html" title="El archivo contiene las implementaciones de MeanObliquity.h." alt="" coords="1037,79,1180,104"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1009,35,1088,76,1085,81,1006,39"/>
+<area shape="rect" id="Node000011" href="$NutAngles_8cpp.html" title="El archivo contiene las implementaciones de NutAngles.h." alt="" coords="1204,79,1320,104"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="1034,31,1216,76,1215,81,1033,37"/>
+<area shape="rect" id="Node000012" href="$Position_8cpp.html" title="El archivo contiene las implementaciones de Position.h." alt="" coords="1345,79,1446,104"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="1039,27,1333,76,1345,78,1344,83,1332,81,1039,32"/>
+<area shape="rect" id="Node000013" href="$PrecMatrix_8cpp.html" title="El archivo contiene las implementaciones de PrecMatrix.h." alt="" coords="1471,79,1589,104"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="1040,24,1458,76,1471,78,1470,83,1458,81,1039,29"/>
+<area shape="rect" id="Node000014" href="$VarEqn_8cpp.html" title="El archivo contiene las implementaciones de VarEqn.h." alt="" coords="1613,79,1708,104"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="1039,21,1287,40,1444,56,1602,76,1613,78,1612,83,1602,81,1444,61,1286,46,1039,26"/>
+<area shape="rect" id="Node000015" href="$gast_8cpp.html" title="El archivo contiene las implementaciones de gast.h." alt="" coords="1733,79,1810,104"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="1039,19,1335,35,1527,52,1721,76,1733,78,1732,83,1720,81,1527,57,1335,40,1039,24"/>
+<area shape="rect" id="Node000016" href="$gmst_8cpp.html" title="El archivo contiene las implementaciones de gmst.h." alt="" coords="1834,79,1917,104"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="1039,18,1375,33,1597,50,1822,76,1834,78,1833,83,1822,81,1597,56,1375,39,1039,23"/>
 </map>

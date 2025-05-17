@@ -175,8 +175,8 @@ ostream& operator << (ostream &o, Matrix &m);
 
     /**
      * Devuelve la matriz resultado de realizar la union entre v y w
-     * @param v Matrix con tamaño 1 x n ,n∈N
-     * @param w Matrix con tamaño 1 x n ,n∈N
+     * @param v Matrix con tamaño 1 x n ,n pertenece a N
+     * @param w Matrix con tamaño 1 x n ,n pertenece a N
      * @return producto escalar de v x w
      */
     Matrix& union_vector(Matrix &v,Matrix &w);
@@ -202,8 +202,8 @@ ostream& operator << (ostream &o, Matrix &m);
 
     /**
      * Asigna la fila i-1 con w y lo devuelve
-     * @param v Matrix con tamaño x x y ,x∈N y∈N
-     * @param w Matrix con tamaño 1 x y ,y∈N
+     * @param v Matrix con tamaño x x y ,x pertenece a N y pertenece a N
+     * @param w Matrix con tamaño 1 x y ,y pertenece a N
      * @param i es la fila tiene que ser >=1 && <=v.n_row
      * @return Matrix v con la fila i-1 cambiada por los elementos de w
      */
@@ -212,8 +212,8 @@ ostream& operator << (ostream &o, Matrix &m);
 
     /**
      * Asigna la columna i-1 con w y lo devuelve
-     * @param v Matrix con tamaño x x y ,x∈N y∈N
-     * @param w Matrix con tamaño 1 x y ,y∈N
+     * @param v Matrix con tamaño x x y ,x pertenece a N y pertenece a N
+     * @param w Matrix con tamaño 1 x y ,y pertenece a N
      * @param i es la columna tiene que ser >=1 && <=v.n_column
      * @return Matrix v con la columna i-1 cambiada por los elementos de w
      */

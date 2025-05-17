@@ -1,5 +1,5 @@
-\doxysection{/home/fghfgh/\+Escritorio/\+Proyecto\+TTI/include/matrix.h File Reference}
-\hypertarget{matrix_8h}{}\label{matrix_8h}\index{/home/fghfgh/Escritorio/ProyectoTTI/include/matrix.h@{/home/fghfgh/Escritorio/ProyectoTTI/include/matrix.h}}
+\doxysection{matrix.\+h File Reference}
+\hypertarget{matrix_8h}{}\label{matrix_8h}\index{matrix.h@{matrix.h}}
 
 
 El archivo contiene las funciones para operaciones con matrices y vectores junto con su definicion.  
@@ -16,8 +16,7 @@ Include dependency graph for matrix.\+h\+:\nopagebreak
 \includegraphics[width=337pt]{matrix_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -32,8 +31,7 @@ class \mbox{\hyperlink{classMatrix}{Matrix}}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{matrix_8h_a6ce0bc529fe2ee6fb2d0eb8acbdc1e92}\label{matrix_8h_a6ce0bc529fe2ee6fb2d0eb8acbdc1e92} 
-ostream \& {\bfseries operator$<$$<$} (ostream \&o, \mbox{\hyperlink{classMatrix}{Matrix}} \&m)
+ostream \& \mbox{\hyperlink{matrix_8h_a6ce0bc529fe2ee6fb2d0eb8acbdc1e92}{operator$<$$<$}} (ostream \&o, \mbox{\hyperlink{classMatrix}{Matrix}} \&m)
 \item 
 \mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}} (const int n\+\_\+row, const int n\+\_\+column)
 \item 
@@ -72,7 +70,11 @@ El archivo contiene las funciones para operaciones con matrices y vectores junto
 Pedro Zhuzhan 
 \end{DoxyAuthor}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000018}{Bug}}]No known bugs \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000019}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+Definition in file \mbox{\hyperlink{matrix_8h_source}{matrix.\+h}}.
+
 
 
 \doxysubsection{Function Documentation}
@@ -84,9 +86,9 @@ Pedro Zhuzhan
 
 Asigna la columna i-\/1 con w y lo devuelve 
 \begin{DoxyParams}{Parameters}
-{\em v} & \doxylink{classMatrix}{Matrix} con tamaño x x y ,x∈N y∈N \\
+{\em v} & \doxylink{classMatrix}{Matrix} con tamaño x x y ,x pertenece a N y pertenece a N \\
 \hline
-{\em w} & \doxylink{classMatrix}{Matrix} con tamaño 1 x y ,y∈N \\
+{\em w} & \doxylink{classMatrix}{Matrix} con tamaño 1 x y ,y pertenece a N \\
 \hline
 {\em i} & es la columna tiene que ser \texorpdfstring{$>$}{>}=1 \&\& \texorpdfstring{$<$}{<}=v.\+n\+\_\+column \\
 \hline
@@ -94,6 +96,17 @@ Asigna la columna i-\/1 con w y lo devuelve
 \begin{DoxyReturn}{Returns}
 \doxylink{classMatrix}{Matrix} v con la columna i-\/1 cambiada por los elementos de w 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00424}{424}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{matrix_8h_a78e903d58755232911e3b5232f38747c_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{matrix_8h_ab8aeb190b046a07e123a93315cdf5b36}\index{matrix.h@{matrix.h}!assign\_row@{assign\_row}}
 \index{assign\_row@{assign\_row}!matrix.h@{matrix.h}}
 \doxysubsubsection{\texorpdfstring{assign\_row()}{assign\_row()}}
@@ -102,9 +115,9 @@ Asigna la columna i-\/1 con w y lo devuelve
 
 Asigna la fila i-\/1 con w y lo devuelve 
 \begin{DoxyParams}{Parameters}
-{\em v} & \doxylink{classMatrix}{Matrix} con tamaño x x y ,x∈N y∈N \\
+{\em v} & \doxylink{classMatrix}{Matrix} con tamaño x x y ,x pertenece a N y pertenece a N \\
 \hline
-{\em w} & \doxylink{classMatrix}{Matrix} con tamaño 1 x y ,y∈N \\
+{\em w} & \doxylink{classMatrix}{Matrix} con tamaño 1 x y ,y pertenece a N \\
 \hline
 {\em i} & es la fila tiene que ser \texorpdfstring{$>$}{>}=1 \&\& \texorpdfstring{$<$}{<}=v.\+n\+\_\+row \\
 \hline
@@ -112,6 +125,10 @@ Asigna la fila i-\/1 con w y lo devuelve
 \begin{DoxyReturn}{Returns}
 \doxylink{classMatrix}{Matrix} v con la fila i-\/1 cambiada por los elementos de w 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00412}{412}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
 \Hypertarget{matrix_8h_a8f26ea7eab92d1fd60ac732719a486e8}\index{matrix.h@{matrix.h}!cross@{cross}}
 \index{cross@{cross}!matrix.h@{matrix.h}}
 \doxysubsubsection{\texorpdfstring{cross()}{cross()}}
@@ -128,6 +145,10 @@ Devulve el producto vectorial
 \begin{DoxyReturn}{Returns}
 producto escalar de v x w 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00353}{353}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
 \Hypertarget{matrix_8h_ace64c1017d252d104fe1c99329ae9ecc}\index{matrix.h@{matrix.h}!dot@{dot}}
 \index{dot@{dot}!matrix.h@{matrix.h}}
 \doxysubsubsection{\texorpdfstring{dot()}{dot()}}
@@ -144,6 +165,17 @@ Devulve el producto escalar
 \begin{DoxyReturn}{Returns}
 producto escalar de v·w 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00342}{342}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{matrix_8h_ace64c1017d252d104fe1c99329ae9ecc_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{matrix_8h_aca6da092294b7d44ef5bf19d74f88e7e}\index{matrix.h@{matrix.h}!extract\_column@{extract\_column}}
 \index{extract\_column@{extract\_column}!matrix.h@{matrix.h}}
 \doxysubsubsection{\texorpdfstring{extract\_column()}{extract\_column()}}
@@ -160,6 +192,17 @@ Extrae la columna i-\/1 de v y lo devuelve
 \begin{DoxyReturn}{Returns}
 \doxylink{classMatrix}{Matrix} con la columna i-\/1 de v 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00401}{401}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{matrix_8h_aca6da092294b7d44ef5bf19d74f88e7e_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{matrix_8h_afa94ffe6b27ac353488f90897fe2f3a9}\index{matrix.h@{matrix.h}!extract\_row@{extract\_row}}
 \index{extract\_row@{extract\_row}!matrix.h@{matrix.h}}
 \doxysubsubsection{\texorpdfstring{extract\_row()}{extract\_row()}}
@@ -176,6 +219,17 @@ Extrae la fila i-\/1 de v y lo devuelve
 \begin{DoxyReturn}{Returns}
 \doxylink{classMatrix}{Matrix} con la fila i-\/1 de v 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00389}{389}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{matrix_8h_afa94ffe6b27ac353488f90897fe2f3a9_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}\index{matrix.h@{matrix.h}!extract\_vector@{extract\_vector}}
 \index{extract\_vector@{extract\_vector}!matrix.h@{matrix.h}}
 \doxysubsubsection{\texorpdfstring{extract\_vector()}{extract\_vector()}}
@@ -194,6 +248,17 @@ Extrae del vector v desde la posicion start hasta end, incluidos
 \begin{DoxyReturn}{Returns}
 \doxylink{classMatrix}{Matrix} 1 x (end -\/ start + 1) 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00364}{364}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{matrix_8h_a8749816ebeb8c1fe55345f9dd24f314b}\index{matrix.h@{matrix.h}!eye@{eye}}
 \index{eye@{eye}!matrix.h@{matrix.h}}
 \doxysubsubsection{\texorpdfstring{eye()}{eye()}}
@@ -208,6 +273,17 @@ Crea una \doxylink{classMatrix}{Matrix} identidad con tamaño size x size
 \begin{DoxyReturn}{Returns}
 una \doxylink{classMatrix}{Matrix} tamaño size x size 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00233}{233}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{matrix_8h_a8749816ebeb8c1fe55345f9dd24f314b_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{matrix_8h_ad8d8519e7f94df41a4c5b535b4899222}\index{matrix.h@{matrix.h}!inv@{inv}}
 \index{inv@{inv}!matrix.h@{matrix.h}}
 \doxysubsubsection{\texorpdfstring{inv()}{inv()}}
@@ -222,6 +298,24 @@ Crea una \doxylink{classMatrix}{Matrix} inversa de m, sin modificar m
 \begin{DoxyReturn}{Returns}
 una \doxylink{classMatrix}{Matrix} inversa de m 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00267}{267}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{matrix_8h_ad8d8519e7f94df41a4c5b535b4899222_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{matrix_8h_ad8d8519e7f94df41a4c5b535b4899222_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{matrix_8h_a907c9c6f53fc52d17e86b507b156536f}\index{matrix.h@{matrix.h}!norm@{norm}}
 \index{norm@{norm}!matrix.h@{matrix.h}}
 \doxysubsubsection{\texorpdfstring{norm()}{norm()}}
@@ -236,6 +330,27 @@ Devulve la norma 2 de una \doxylink{classMatrix}{Matrix} que simula un vector
 \begin{DoxyReturn}{Returns}
 la norma 2 de m 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00333}{333}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{matrix_8h_a907c9c6f53fc52d17e86b507b156536f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{matrix_8h_a6ce0bc529fe2ee6fb2d0eb8acbdc1e92}\index{matrix.h@{matrix.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!matrix.h@{matrix.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \label{matrix_8h_a6ce0bc529fe2ee6fb2d0eb8acbdc1e92} 
+ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{o}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}} \&}]{m}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00212}{212}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
 \Hypertarget{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}\index{matrix.h@{matrix.h}!transpose@{transpose}}
 \index{transpose@{transpose}!matrix.h@{matrix.h}}
 \doxysubsubsection{\texorpdfstring{transpose()}{transpose()}}
@@ -250,6 +365,17 @@ Crea una \doxylink{classMatrix}{Matrix} traspuesta de m,sin modificar m
 \begin{DoxyReturn}{Returns}
 una \doxylink{classMatrix}{Matrix} traspuesta de m 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00246}{246}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}\index{matrix.h@{matrix.h}!union\_vector@{union\_vector}}
 \index{union\_vector@{union\_vector}!matrix.h@{matrix.h}}
 \doxysubsubsection{\texorpdfstring{union\_vector()}{union\_vector()}}
@@ -258,14 +384,25 @@ una \doxylink{classMatrix}{Matrix} traspuesta de m
 
 Devuelve la matriz resultado de realizar la union entre v y w 
 \begin{DoxyParams}{Parameters}
-{\em v} & \doxylink{classMatrix}{Matrix} con tamaño 1 x n ,n∈N \\
+{\em v} & \doxylink{classMatrix}{Matrix} con tamaño 1 x n ,n pertenece a N \\
 \hline
-{\em w} & \doxylink{classMatrix}{Matrix} con tamaño 1 x n ,n∈N \\
+{\em w} & \doxylink{classMatrix}{Matrix} con tamaño 1 x n ,n pertenece a N \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 producto escalar de v x w 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00375}{375}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{matrix_8h_ab2f05195ce5c6c4b6e00df63a50c329d}\index{matrix.h@{matrix.h}!zeros@{zeros}}
 \index{zeros@{zeros}!matrix.h@{matrix.h}}
 \doxysubsubsection{\texorpdfstring{zeros()}{zeros()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -280,6 +417,10 @@ Crea una \doxylink{classMatrix}{Matrix} con todas sus componentes a 0
 \begin{DoxyReturn}{Returns}
 una \doxylink{classMatrix}{Matrix} tamaño 1 x n 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00323}{323}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
 \Hypertarget{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}\index{matrix.h@{matrix.h}!zeros@{zeros}}
 \index{zeros@{zeros}!matrix.h@{matrix.h}}
 \doxysubsubsection{\texorpdfstring{zeros()}{zeros()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -296,3 +437,14 @@ Crea una \doxylink{classMatrix}{Matrix} con todas sus componentes a 0
 \begin{DoxyReturn}{Returns}
 una \doxylink{classMatrix}{Matrix} tamaño n\+\_\+row x n\+\_\+column 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00222}{222}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{matrix_8h_a56d60ea1f08402246a7cfd477d69a618_icgraph}
+\end{center}
+\end{figure}

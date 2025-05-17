@@ -1,5 +1,9 @@
-<map id="/home/fghfgh/Escritorio/ProyectoTTI/include/LTC.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/LTC.h">
-<area shape="rect" id="Node000001" title="El archivo contiene la funcion LTC." alt="" coords="5,5,197,45"/>
-<area shape="rect" id="Node000002" href="$LTC_8cpp.html" title="El archivo contiene las implementaciones de LTC.h." alt="" coords="12,93,191,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,59,104,93,99,93,99,59"/>
+<map id="LTC.h" name="LTC.h">
+<area shape="rect" id="Node000001" title="El archivo contiene la funcion LTC." alt="" coords="163,5,219,31"/>
+<area shape="rect" id="Node000002" href="$EKF__GEOS3_8cpp.html" title="Es el archivo principal del programa." alt="" coords="5,79,131,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,40,89,81,87,76,158,35"/>
+<area shape="rect" id="Node000003" href="$LTC_8cpp.html" title="El archivo contiene las implementaciones de LTC.h." alt="" coords="155,79,226,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,44,193,79,188,79,188,44"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp_source.html" title=" " alt="" coords="250,79,331,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="219,36,276,76,273,81,216,41"/>
 </map>

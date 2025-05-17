@@ -1,17 +1,13 @@
-<map id="/home/fghfgh/Escritorio/ProyectoTTI/src/gast.cpp" name="/home/fghfgh/Escritorio/ProyectoTTI/src/gast.cpp">
-<area shape="rect" id="Node000001" title="El archivo contiene las implementaciones de gast.h." alt="" coords="498,5,683,45"/>
-<area shape="rect" id="Node000002" href="$gast_8h.html" title="El archivo contiene la funcion gast." alt="" coords="5,93,131,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="498,43,145,96,144,90,498,38"/>
-<area shape="rect" id="Node000003" href="$gmst_8h.html" title="El archivo contiene la funcion gmst." alt="" coords="155,93,285,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="502,48,288,93,287,88,501,43"/>
-<area shape="rect" id="Node000004" href="$EqnEquinox_8h.html" title="El archivo contiene la funcion EqnEquinox." alt="" coords="309,93,483,119"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="545,48,438,91,436,86,543,43"/>
-<area shape="rect" id="Node000005" href="$SAT__Const_8h.html" title="El archivo contiene SAT_Const." alt="" coords="507,93,674,119"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="593,46,593,79,588,79,588,46"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="698,93,761,119"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="625,43,698,84,696,89,623,48"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="785,93,865,119"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="648,43,779,87,777,92,646,48"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="889,93,964,119"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="672,43,877,90,876,96,671,48"/>
+<map id="gast.cpp" name="gast.cpp">
+<area shape="rect" id="Node000001" title="El archivo contiene las implementaciones de gast.h." alt="" coords="357,5,435,31"/>
+<area shape="rect" id="Node000002" href="$gast_8h.html" title="El archivo contiene la funcion gast." alt="" coords="5,79,131,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="358,30,135,78,134,73,357,25"/>
+<area shape="rect" id="Node000003" href="$gmst_8h.html" title="El archivo contiene la funcion gmst." alt="" coords="155,79,285,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="369,33,263,76,261,71,367,28"/>
+<area shape="rect" id="Node000004" href="$EqnEquinox_8h.html" title="El archivo contiene la funcion EqnEquinox." alt="" coords="309,79,483,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="399,31,399,65,393,65,393,31"/>
+<area shape="rect" id="Node000005" href="$SAT__Const_8h.html" title="El archivo contiene SAT_Const." alt="" coords="507,79,674,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="428,28,547,71,545,76,426,33"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="698,79,761,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="435,24,685,76,684,81,434,29"/>
 </map>

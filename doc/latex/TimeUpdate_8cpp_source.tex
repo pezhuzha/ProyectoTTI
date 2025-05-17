@@ -1,0 +1,19 @@
+\doxysection{Time\+Update.\+cpp}
+\hypertarget{TimeUpdate_8cpp_source}{}\label{TimeUpdate_8cpp_source}\index{TimeUpdate.cpp@{TimeUpdate.cpp}}
+\mbox{\hyperlink{TimeUpdate_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{TimeUpdate_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TimeUpdate_8h}{../include/TimeUpdate.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TimeUpdate_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{TimeUpdate_8cpp_source_l00009}\mbox{\hyperlink{TimeUpdate_8h_a4ba2551be43a982e9ea65bcd3971209d}{00009}}\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\&\ \mbox{\hyperlink{TimeUpdate_8cpp_a4ba2551be43a982e9ea65bcd3971209d}{TimeUpdate}}(\mbox{\hyperlink{classMatrix}{Matrix}}\ P,\mbox{\hyperlink{classMatrix}{Matrix}}\ Phi,\mbox{\hyperlink{classMatrix}{Matrix}}\ Qdt)\{}
+\DoxyCodeLine{\Hypertarget{TimeUpdate_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{TimeUpdate_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Phi*P*\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(Phi)+\ Qdt;}
+\DoxyCodeLine{\Hypertarget{TimeUpdate_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{TimeUpdate_8cpp_source_l00013}00013\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TimeUpdate_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{TimeUpdate_8cpp_source_l00015}\mbox{\hyperlink{TimeUpdate_8h_acf5644887e31dd850ca360130ec8116a}{00015}}\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\&\ \mbox{\hyperlink{TimeUpdate_8cpp_a4ba2551be43a982e9ea65bcd3971209d}{TimeUpdate}}(\mbox{\hyperlink{classMatrix}{Matrix}}\ P,\mbox{\hyperlink{classMatrix}{Matrix}}\ Phi)\{}
+\DoxyCodeLine{\Hypertarget{TimeUpdate_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ Qdt=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(P.n\_column,P.n\_row);}
+\DoxyCodeLine{\Hypertarget{TimeUpdate_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Phi*P*\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(Phi)+\ Qdt;}
+\DoxyCodeLine{\Hypertarget{TimeUpdate_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{TimeUpdate_8cpp_source_l00019}00019\ \ \ \ \ \}}
+
+\end{DoxyCode}

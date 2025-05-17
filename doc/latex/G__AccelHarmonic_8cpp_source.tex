@@ -1,0 +1,30 @@
+\doxysection{G\+\_\+\+Accel\+Harmonic.\+cpp}
+\hypertarget{G__AccelHarmonic_8cpp_source}{}\label{G__AccelHarmonic_8cpp_source}\index{G\_AccelHarmonic.cpp@{G\_AccelHarmonic.cpp}}
+\mbox{\hyperlink{G__AccelHarmonic_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{G__AccelHarmonic_8h}{../include/G\_AccelHarmonic.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{AccelHarmonic_8h}{../include/AccelHarmonic.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00010}\mbox{\hyperlink{G__AccelHarmonic_8h_a99252400abd160067d7d1bb16a727832}{00010}}\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\&\ \mbox{\hyperlink{G__AccelHarmonic_8cpp_a99252400abd160067d7d1bb16a727832}{G\_AccelHarmonic}}(\ \mbox{\hyperlink{classMatrix}{Matrix}}\ r,\mbox{\hyperlink{classMatrix}{Matrix}}\ U,\ \textcolor{keywordtype}{int}\ n\_max,\ \textcolor{keywordtype}{int}\ m\_max\ )\{}
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(r.n\_row<r.n\_column)\{}
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r=\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(r);}
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ da;}
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordtype}{double}\ d\ =\ 1.0;\ \ \ }
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ \&G\ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(3,3);}
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00019}00019\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ dr\ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(3,1);}
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=1;i<=3;i++)\{}
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ dr\ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(3,1);}
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ dr(i)\ =\ d/2;}
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ da\ =\ \mbox{\hyperlink{AccelHarmonic_8h_a7f668d23f40f64900d52d3c77c9bacfa}{AccelHarmonic}}\ (\ r+dr,U,\ n\_max,\ m\_max\ )\ -\/\ }
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{AccelHarmonic_8h_a7f668d23f40f64900d52d3c77c9bacfa}{AccelHarmonic}}\ (\ r-\/dr,U,\ n\_max,\ m\_max\ );}
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ G=\mbox{\hyperlink{matrix_8h_a78e903d58755232911e3b5232f38747c}{assign\_column}}(G,da/d,i)\ ;}
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{return}\ G;}
+\DoxyCodeLine{\Hypertarget{G__AccelHarmonic_8cpp_source_l00030}00030\ \ \ \ \ \}}
+
+\end{DoxyCode}

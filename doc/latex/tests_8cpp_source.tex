@@ -1,0 +1,1318 @@
+\doxysection{tests.\+cpp}
+\hypertarget{tests_8cpp_source}{}\label{tests_8cpp_source}\index{tests.cpp@{tests.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{matrix_8h}{../include/matrix.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{R__x_8h}{../include/R\_x.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{R__y_8h}{../include/R\_y.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{R__z_8h}{../include/R\_z.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{AccelPointMass_8h}{../include/AccelPointMass.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Cheb3D_8h}{../include/Cheb3D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{EccAnom_8h}{../include/EccAnom.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Frac_8h}{../include/Frac.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MeanObliquity_8h}{../include/MeanObliquity.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Mjday_8h}{../include/Mjday.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Mjday__TDB_8h}{../include/Mjday\_TDB.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Position_8h}{../include/Position.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sign___8h}{../include/sign\_.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{timediff_8h}{../include/timediff.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{AzElPa_8h}{../include/AzElPa.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{IERS_8h}{../include/IERS.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Legendre_8h}{../include/Legendre.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{NutAngles_8h}{../include/NutAngles.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TimeUpdate_8h}{../include/TimeUpdate.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GLOBAL_8h}{../include/GLOBAL.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{AccelHarmonic_8h}{../include/AccelHarmonic.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{EqnEquinox_8h}{../include/EqnEquinox.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{JPL__Eph__DE430_8h}{../include/JPL\_Eph\_DE430.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{LTC_8h}{../include/LTC.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00025}00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{NutMatrix_8h}{../include/NutMatrix.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00026}00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PoleMatrix_8h}{../include/PoleMatrix.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PrecMatrix_8h}{../include/PrecMatrix.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gmst_8h}{../include/gmst.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gast_8h}{../include/gast.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MeasUpdate_8h}{../include/MeasUpdate.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{G__AccelHarmonic_8h}{../include/G\_AccelHarmonic.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00032}00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GHAMatrix_8h}{../include/GHAMatrix.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Accel_8h}{../include/Accel.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00034}00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{VarEqn_8h}{../include/VarEqn.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00035}00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{DEInteg_8h}{../include/DEInteg.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00036}00036\ \textcolor{preprocessor}{\#include\ <cstdio>}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00037}00037\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00038}00038\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00040}00040\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00041}00041\ \textcolor{keywordtype}{int}\ tests\_run\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00043}00043\ \textcolor{preprocessor}{\#define\ FAIL()\ printf("{}\(\backslash\)nfailure\ in\ \%s()\ line\ \%d\(\backslash\)n"{},\ \_\_func\_\_,\ \_\_LINE\_\_)}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00044}00044\ \textcolor{preprocessor}{\#define\ \_assert(test)\ do\ \{\ if\ (!(test))\ \{\ FAIL();\ return\ 1;\ \}\ \}\ while(0)}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00045}00045\ \textcolor{preprocessor}{\#define\ \_verify(test)\ do\ \{\ int\ r=test();\ tests\_run++;\ if(r)\ return\ r;\ \}\ while(0)}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00047}00047\ \textcolor{keywordtype}{int}\ m\_equals(\mbox{\hyperlink{classMatrix}{Matrix}}\ A,\ \mbox{\hyperlink{classMatrix}{Matrix}}\ B,\ \textcolor{keywordtype}{double}\ p)\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{if}\ (A.n\_row\ !=\ B.n\_row\ ||\ A.n\_column\ !=\ B.n\_column)}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ A.n\_row;\ i++)}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 1;\ j\ <=\ A.n\_column;\ j++)}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(fabs(A(i,j)-\/B(i,j))\ >\ p)\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%2.20lf\ \%2.20lf\(\backslash\)n"{}},A(i,j),B(i,j));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00057}00057\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00060}00060\ \textcolor{keywordtype}{int}\ m\_sum\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00063}00063\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00064}00064\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00065}00065\ \ \ \ \ A(1,1)\ =\ 0;\ A(1,2)\ =\ \ 2;\ A(1,3)\ =\ 8;\ A(1,4)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00066}00066\ \ \ \ \ A(2,1)\ =\ 1;\ A(2,2)\ =\ -\/1;\ A(2,3)\ =\ 0;\ A(2,4)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00067}00067\ \ \ \ \ A(3,1)\ =\ 0;\ A(3,2)\ =\ \ 1;\ A(3,3)\ =\ 0;\ A(3,4)\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00068}00068\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00069}00069\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00070}00070\ \ \ \ \ B(1,1)\ =\ 2;\ B(1,2)\ =\ \ 0;\ B(1,3)\ =\ 0;\ B(1,4)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00071}00071\ \ \ \ \ B(2,1)\ =\ 7;\ B(2,2)\ =\ -\/2;\ B(2,3)\ =\ 1;\ B(2,4)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00072}00072\ \ \ \ \ B(3,1)\ =\ 0;\ B(3,2)\ =\ -\/3;\ B(3,3)\ =\ 0;\ B(3,4)\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00073}00073\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00074}00074\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ C(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00075}00075\ \ \ \ \ C(1,1)\ =\ 2;\ C(1,2)\ =\ \ 2;\ C(1,3)\ =\ 8;\ C(1,4)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00076}00076\ \ \ \ \ C(2,1)\ =\ 8;\ C(2,2)\ =\ -\/3;\ C(2,3)\ =\ 1;\ C(2,4)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00077}00077\ \ \ \ \ C(3,1)\ =\ 0;\ C(3,2)\ =\ -\/2;\ C(3,3)\ =\ 0;\ C(3,4)\ =\ 7;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00078}00078\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00079}00079\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R\ =\ A\ +\ B;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00080}00080\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00081}00081\ \ \ \ \ \_assert(m\_equals(C,\ R,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00082}00082\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00084}00084\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00086}00086\ \textcolor{keywordtype}{int}\ m\_sub\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00089}00089\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00090}00090\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00091}00091\ \ \ \ \ A(1,1)\ =\ 0;\ A(1,2)\ =\ 2;\ A(1,3)\ =\ 8;\ A(1,4)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00092}00092\ \ \ \ \ A(2,1)\ =\ 1;\ A(2,2)\ =\ -\/1;\ A(2,3)\ =\ 0;\ A(2,4)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00093}00093\ \ \ \ \ A(3,1)\ =\ 0;\ A(3,2)\ =\ 1;\ A(3,3)\ =\ 0;\ A(3,4)\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00094}00094\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00095}00095\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00096}00096\ \ \ \ \ B(1,1)\ =\ 2;\ B(1,2)\ =\ 0;\ B(1,3)\ =\ 0;\ B(1,4)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00097}00097\ \ \ \ \ B(2,1)\ =\ 7;\ B(2,2)\ =\ -\/2;\ B(2,3)\ =\ 1;\ B(2,4)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00098}00098\ \ \ \ \ B(3,1)\ =\ 0;\ B(3,2)\ =\ -\/3;\ B(3,3)\ =\ 0;\ B(3,4)\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00099}00099\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00100}00100\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ C(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00101}00101\ \ \ \ \ C(1,1)\ =\ -\/2;\ C(1,2)\ =\ 2;\ C(1,3)\ =\ 8;\ C(1,4)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00102}00102\ \ \ \ \ C(2,1)\ =\ -\/6;\ C(2,2)\ =\ 1;\ C(2,3)\ =\ -\/1;\ C(2,4)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00103}00103\ \ \ \ \ C(3,1)\ =\ 0;\ C(3,2)\ =\ 4;\ C(3,3)\ =\ 0;\ C(3,4)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00104}00104\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00105}00105\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R\ =\ A\ -\/\ B;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00106}00106\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00107}00107\ \ \ \ \ \_assert(m\_equals(C,\ R,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00108}00108\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00110}00110\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00112}00112\ \textcolor{keywordtype}{int}\ m\_mul\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00115}00115\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00116}00116\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00117}00117\ \ \ \ \ A(1,1)\ =\ 5;\ A(1,2)\ =\ 8;\ A(1,3)\ =\ 2;\ A(1,4)\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00118}00118\ \ \ \ \ A(2,1)\ =\ 2;\ A(2,2)\ =\ 2;\ A(2,3)\ =\ 2;\ A(2,4)\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00119}00119\ \ \ \ \ A(3,1)\ =\ 2;\ A(3,2)\ =\ 2;\ A(3,3)\ =\ 1;\ A(3,4)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00120}00120\ \ \ \ \ A(4,1)\ =\ 2;\ A(4,2)\ =\ 2;\ A(4,3)\ =\ 2;\ A(4,4)\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00121}00121\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00122}00122\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00124}00124\ \ \ \ \ B(1,1)\ =\ 4;\ B(1,2)\ =\ 2;\ B(1,3)\ =\ 9;\ B(1,4)\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00125}00125\ \ \ \ \ B(2,1)\ =\ 2;\ B(2,2)\ =\ 9;\ B(2,3)\ =\ 2;\ B(2,4)\ =\ 7;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00126}00126\ \ \ \ \ B(3,1)\ =\ 2;\ B(3,2)\ =\ 2;\ B(3,3)\ =\ 4;\ B(3,4)\ =\ 9;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00127}00127\ \ \ \ \ B(4,1)\ =\ 3;\ B(4,2)\ =\ 4;\ B(4,3)\ =\ 2;\ B(4,4)\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00128}00128\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00129}00129\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ C(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00131}00131\ \ \ \ \ C(1,1)\ =\ 52\ ;\ C(1,2)\ =\ 102\ \ ;\ C(1,3)\ =\ 77\ \ \ ;\ C(1,4)\ =\ 99\ \ \ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00132}00132\ \ \ \ \ C(2,1)\ =\ 22\ ;\ C(2,2)\ =\ 34\ \ \ ;\ C(2,3)\ =\ 34\ \ \ ;\ C(2,4)\ =\ 44\ \ \ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00133}00133\ \ \ \ \ C(3,1)\ =\ 23\ ;\ C(3,2)\ =\ 36\ \ \ ;\ C(3,3)\ =\ 32\ \ \ ;\ C(3,4)\ =\ 40\ \ \ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00134}00134\ \ \ \ \ C(4,1)\ =\ 19\ ;\ C(4,2)\ =\ 30\ \ \ ;\ C(4,3)\ =\ 32\ \ \ ;\ C(4,4)\ =\ 39\ \ \ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00136}00136\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R\ =\ A\ *\ B;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00137}00137\ \ \ \ \ \_assert(m\_equals(R,\ C,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00138}00138\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00139}00139\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00140}00140\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00141}00141\ \textcolor{keywordtype}{int}\ m\_div\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00142}00142\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00144}00144\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00145}00145\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00146}00146\ \ \ \ \ A(1,1)\ =\ 1;\ A(1,2)\ =\ 2;\ A(1,3)\ =\ 5;\ A(1,4)\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00147}00147\ \ \ \ \ A(2,1)\ =\ 2;\ A(2,2)\ =\ 1;\ A(2,3)\ =\ 3;\ A(2,4)\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00148}00148\ \ \ \ \ A(3,1)\ =\ 5;\ A(3,2)\ =\ 3;\ A(3,3)\ =\ 2;\ A(3,4)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00149}00149\ \ \ \ \ A(4,1)\ =\ 1;\ A(4,2)\ =\ 2;\ A(4,3)\ =\ 4;\ A(4,4)\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00150}00150\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00151}00151\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00153}00153\ \ \ \ \ B(1,1)\ =\ 4;\ B(1,2)\ =\ 2;\ B(1,3)\ =\ 9;\ B(1,4)\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00154}00154\ \ \ \ \ B(2,1)\ =\ 2;\ B(2,2)\ =\ 9;\ B(2,3)\ =\ 2;\ B(2,4)\ =\ 7;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00155}00155\ \ \ \ \ B(3,1)\ =\ 2;\ B(3,2)\ =\ 2;\ B(3,3)\ =\ 4;\ B(3,4)\ =\ 9;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00156}00156\ \ \ \ \ B(4,1)\ =\ 3;\ B(4,2)\ =\ 4;\ B(4,3)\ =\ 2;\ B(4,4)\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00157}00157\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00158}00158\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ C(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00160}00160\ \ \ \ \ C(1,1)\ =\ 337./963\ \ \ ;\ C(1,2)\ =\ 350./963\ \ \ \ \ ;\ C(1,3)\ =\ 677./963\ ;\ C(1,4)\ =\ -\/271./321;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00161}00161\ \ \ \ \ C(2,1)\ =\ 23./963\ \ \ \ ;\ C(2,2)\ =\ -\/179./963\ \ \ \ ;\ C(2,3)\ =\ 592./963\ ;\ C(2,4)\ =\ 112./321\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00162}00162\ \ \ \ \ C(3,1)\ =\ 58./963\ \ \ \ \ \ \ \ ;\ C(3,2)\ =\ -\/577./963;\ C(3,3)\ =\ -\/475./963\ \ \ \ ;\ C(3,4)\ =\ 743./321\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00163}00163\ \ \ \ \ C(4,1)\ =\ 430./963\ \ \ ;\ C(4,2)\ =\ 338./963\ \ \ \ \ ;\ C(4,3)\ =\ 98./963\ \ ;\ C(4,4)\ =\ -\/181./321\ \ \ \ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00165}00165\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R\ =\ A\ /\ B;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00166}00166\ \ \ \ \ \_assert(m\_equals(R,\ C,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00167}00167\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00168}00168\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00169}00169\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00171}00171\ \textcolor{keywordtype}{int}\ m\_sum\_d\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00172}00172\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00173}00173\ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00174}00174\ \ \ \ \ \textcolor{keywordtype}{double}\ num=2;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00175}00175\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00176}00176\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00177}00177\ \ \ \ \ A(1,1)\ =\ 1;\ A(1,2)\ =\ 2;\ A(1,3)\ =\ 5;\ A(1,4)\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00178}00178\ \ \ \ \ A(2,1)\ =\ 2;\ A(2,2)\ =\ 1;\ A(2,3)\ =\ 3;\ A(2,4)\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00179}00179\ \ \ \ \ A(3,1)\ =\ 5;\ A(3,2)\ =\ 3;\ A(3,3)\ =\ 2;\ A(3,4)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00180}00180\ \ \ \ \ A(4,1)\ =\ 1;\ A(4,2)\ =\ 2;\ A(4,3)\ =\ 4;\ A(4,4)\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00181}00181\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00183}00183\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00184}00184\ \ \ \ \ B(1,1)\ =\ 1+num;\ B(1,2)\ =\ 2+num;\ B(1,3)\ =\ 5+num;\ B(1,4)\ =\ 5+num;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00185}00185\ \ \ \ \ B(2,1)\ =\ 2+num;\ B(2,2)\ =\ 1+num;\ B(2,3)\ =\ 3+num;\ B(2,4)\ =\ 6+num;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00186}00186\ \ \ \ \ B(3,1)\ =\ 5+num;\ B(3,2)\ =\ 3+num;\ B(3,3)\ =\ 2+num;\ B(3,4)\ =\ 3+num;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00187}00187\ \ \ \ \ B(4,1)\ =\ 1+num;\ B(4,2)\ =\ 2+num;\ B(4,3)\ =\ 4+num;\ B(4,4)\ =\ 1+num;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00190}00190\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R=A+num;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00192}00192\ \ \ \ \ \_assert(m\_equals(B,\ R,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00193}00193\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00194}00194\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00195}00195\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00197}00197\ \textcolor{keywordtype}{int}\ m\_sub\_d\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00198}00198\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00199}00199\ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00200}00200\ \ \ \ \ \textcolor{keywordtype}{double}\ num=2;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00201}00201\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00202}00202\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00203}00203\ \ \ \ \ A(1,1)\ =\ 1;\ A(1,2)\ =\ 2;\ A(1,3)\ =\ 5;\ A(1,4)\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00204}00204\ \ \ \ \ A(2,1)\ =\ 2;\ A(2,2)\ =\ 1;\ A(2,3)\ =\ 3;\ A(2,4)\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00205}00205\ \ \ \ \ A(3,1)\ =\ 5;\ A(3,2)\ =\ 3;\ A(3,3)\ =\ 2;\ A(3,4)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00206}00206\ \ \ \ \ A(4,1)\ =\ 1;\ A(4,2)\ =\ 2;\ A(4,3)\ =\ 4;\ A(4,4)\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00209}00209\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00210}00210\ \ \ \ \ B(1,1)\ =\ 1-\/num;\ B(1,2)\ =\ 2-\/num;\ B(1,3)\ =\ 5-\/num;\ B(1,4)\ =\ 5-\/num;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00211}00211\ \ \ \ \ B(2,1)\ =\ 2-\/num;\ B(2,2)\ =\ 1-\/num;\ B(2,3)\ =\ 3-\/num;\ B(2,4)\ =\ 6-\/num;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00212}00212\ \ \ \ \ B(3,1)\ =\ 5-\/num;\ B(3,2)\ =\ 3-\/num;\ B(3,3)\ =\ 2-\/num;\ B(3,4)\ =\ 3-\/num;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00213}00213\ \ \ \ \ B(4,1)\ =\ 1-\/num;\ B(4,2)\ =\ 2-\/num;\ B(4,3)\ =\ 4-\/num;\ B(4,4)\ =\ 1-\/num;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00216}00216\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R=A-\/num;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00218}00218\ \ \ \ \ \_assert(m\_equals(B,\ R,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00219}00219\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00220}00220\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00221}00221\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00222}00222\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00223}00223\ \textcolor{keywordtype}{int}\ m\_mul\_d\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00224}00224\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00225}00225\ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00226}00226\ \ \ \ \ \textcolor{keywordtype}{double}\ num=2;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00228}00228\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00229}00229\ \ \ \ \ A(1,1)\ =\ 1;\ A(1,2)\ =\ 2;\ A(1,3)\ =\ 5;\ A(1,4)\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00230}00230\ \ \ \ \ A(2,1)\ =\ 2;\ A(2,2)\ =\ 1;\ A(2,3)\ =\ 3;\ A(2,4)\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00231}00231\ \ \ \ \ A(3,1)\ =\ 5;\ A(3,2)\ =\ 3;\ A(3,3)\ =\ 2;\ A(3,4)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00232}00232\ \ \ \ \ A(4,1)\ =\ 1;\ A(4,2)\ =\ 2;\ A(4,3)\ =\ 4;\ A(4,4)\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00235}00235\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00236}00236\ \ \ \ \ B(1,1)\ =\ 1.*num;\ B(1,2)\ =\ 2.*num;\ B(1,3)\ =\ 5.*num;\ B(1,4)\ =\ 5.*num;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00237}00237\ \ \ \ \ B(2,1)\ =\ 2.*num;\ B(2,2)\ =\ 1.*num;\ B(2,3)\ =\ 3.*num;\ B(2,4)\ =\ 6.*num;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00238}00238\ \ \ \ \ B(3,1)\ =\ 5.*num;\ B(3,2)\ =\ 3.*num;\ B(3,3)\ =\ 2.*num;\ B(3,4)\ =\ 3.*num;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00239}00239\ \ \ \ \ B(4,1)\ =\ 1.*num;\ B(4,2)\ =\ 2.*num;\ B(4,3)\ =\ 4.*num;\ B(4,4)\ =\ 1.*num;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00241}00241\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R=A*num;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00243}00243\ \ \ \ \ \_assert(m\_equals(R,\ B,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00244}00244\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00245}00245\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00246}00246\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00247}00247\ \textcolor{keywordtype}{int}\ m\_div\_d\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00248}00248\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00249}00249\ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00250}00250\ \ \ \ \ \textcolor{keywordtype}{double}\ num=2;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00252}00252\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00253}00253\ \ \ \ \ A(1,1)\ =\ 1;\ A(1,2)\ =\ 2;\ A(1,3)\ =\ 5;\ A(1,4)\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00254}00254\ \ \ \ \ A(2,1)\ =\ 2;\ A(2,2)\ =\ 1;\ A(2,3)\ =\ 3;\ A(2,4)\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00255}00255\ \ \ \ \ A(3,1)\ =\ 5;\ A(3,2)\ =\ 3;\ A(3,3)\ =\ 2;\ A(3,4)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00256}00256\ \ \ \ \ A(4,1)\ =\ 1;\ A(4,2)\ =\ 2;\ A(4,3)\ =\ 4;\ A(4,4)\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00258}00258\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00259}00259\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00260}00260\ \ \ \ \ B(1,1)\ =\ 1./num;\ B(1,2)\ =\ 2./num;\ B(1,3)\ =\ 5./num;\ B(1,4)\ =\ 5./num;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00261}00261\ \ \ \ \ B(2,1)\ =\ 2./num;\ B(2,2)\ =\ 1./num;\ B(2,3)\ =\ 3./num;\ B(2,4)\ =\ 6./num;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00262}00262\ \ \ \ \ B(3,1)\ =\ 5./num;\ B(3,2)\ =\ 3./num;\ B(3,3)\ =\ 2./num;\ B(3,4)\ =\ 3./num;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00263}00263\ \ \ \ \ B(4,1)\ =\ 1./num;\ B(4,2)\ =\ 2./num;\ B(4,3)\ =\ 4./num;\ B(4,4)\ =\ 1./num;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00264}00264\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00265}00265\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R=A/num;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00266}00266\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00267}00267\ \ \ \ \ \_assert(m\_equals(R,\ B,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00268}00268\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00269}00269\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00270}00270\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00271}00271\ \textcolor{keywordtype}{int}\ m\_asig\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00272}00272\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00273}00273\ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00274}00274\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00275}00275\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00276}00276\ \ \ \ \ A(1,1)\ =\ 1;\ A(1,2)\ =\ 2;\ A(1,3)\ =\ 5;\ A(1,4)\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00277}00277\ \ \ \ \ A(2,1)\ =\ 2;\ A(2,2)\ =\ 1;\ A(2,3)\ =\ 3;\ A(2,4)\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00278}00278\ \ \ \ \ A(3,1)\ =\ 5;\ A(3,2)\ =\ 3;\ A(3,3)\ =\ 2;\ A(3,4)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00279}00279\ \ \ \ \ A(4,1)\ =\ 1;\ A(4,2)\ =\ 2;\ A(4,3)\ =\ 4;\ A(4,4)\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00280}00280\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00281}00281\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B=A;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00282}00282\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00283}00283\ \ \ \ \ \_assert(m\_equals(A,\ B,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00284}00284\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00285}00285\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00286}00286\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00287}00287\ \textcolor{keywordtype}{int}\ m\_zeros\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00288}00288\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00289}00289\ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00290}00290\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00291}00291\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00292}00292\ \ \ \ \ A(1,1)\ =\ 0;\ A(1,2)\ =\ 0;\ A(1,3)\ =\ 0;\ A(1,4)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00293}00293\ \ \ \ \ A(2,1)\ =\ 0;\ A(2,2)\ =\ 0;\ A(2,3)\ =\ 0;\ A(2,4)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00294}00294\ \ \ \ \ A(3,1)\ =\ 0;\ A(3,2)\ =\ 0;\ A(3,3)\ =\ 0;\ A(3,4)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00295}00295\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00296}00296\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B\ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(3,\ 4);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00297}00297\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00298}00298\ \ \ \ \ \_assert(m\_equals(A,\ B,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00299}00299\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00300}00300\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00301}00301\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00302}00302\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00303}00303\ \textcolor{keywordtype}{int}\ m\_eye\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00304}00304\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00305}00305\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00306}00306\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00307}00307\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f,\ f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00308}00308\ \ \ \ \ A(1,1)\ =\ 1;\ A(1,2)\ =\ 0;\ A(1,3)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00309}00309\ \ \ \ \ A(2,1)\ =\ 0;\ A(2,2)\ =\ 1;\ A(2,3)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00310}00310\ \ \ \ \ A(3,1)\ =\ 0;\ A(3,2)\ =\ 0;\ A(3,3)\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00311}00311\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00312}00312\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00313}00313\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B\ =\ \mbox{\hyperlink{matrix_8h_a8749816ebeb8c1fe55345f9dd24f314b}{eye}}(f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00314}00314\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00315}00315\ \ \ \ \ \_assert(m\_equals(A,\ B,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00316}00316\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00317}00317\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00318}00318\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00319}00319\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00320}00320\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00321}00321\ \textcolor{keywordtype}{int}\ m\_transpose\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00322}00322\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00323}00323\ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00324}00324\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00325}00325\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00326}00326\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f,\ c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00327}00327\ \ \ \ \ A(1,1)\ =\ 1;\ A(1,2)\ =\ 4;\ A(1,3)\ =\ 9;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00328}00328\ \ \ \ \ A(2,1)\ =\ 2;\ A(2,2)\ =\ 3;\ A(2,3)\ =\ 8;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00329}00329\ \ \ \ \ A(3,1)\ =\ 5;\ A(3,2)\ =\ 6;\ A(3,3)\ =\ 7;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00330}00330\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00331}00331\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00332}00332\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B(f,c);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00333}00333\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00334}00334\ \ \ \ \ B(1,1)\ =\ 1;\ B(1,2)\ =\ 2;\ B(1,3)\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00335}00335\ \ \ \ \ B(2,1)\ =\ 4;\ B(2,2)\ =\ 3;\ B(2,3)\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00336}00336\ \ \ \ \ B(3,1)\ =\ 9;\ B(3,2)\ =\ 8;\ B(3,3)\ =\ 7;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00337}00337\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00338}00338\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R=\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(A);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00339}00339\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00340}00340\ \ \ \ \ \_assert(m\_equals(R,\ B,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00341}00341\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00342}00342\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00343}00343\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00344}00344\ \textcolor{keywordtype}{int}\ m\_inv\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00345}00345\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00346}00346\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00347}00347\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00348}00348\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f,\ f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00349}00349\ \ \ \ \ A(1,1)\ =\ 1;\ A(1,2)\ =\ 2;\ A(1,3)\ =\ 5;\ A(1,4)\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00350}00350\ \ \ \ \ A(2,1)\ =\ 2;\ A(2,2)\ =\ 1;\ A(2,3)\ =\ 3;\ A(2,4)\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00351}00351\ \ \ \ \ A(3,1)\ =\ 5;\ A(3,2)\ =\ 3;\ A(3,3)\ =\ 2;\ A(3,4)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00352}00352\ \ \ \ \ A(4,1)\ =\ 1;\ A(4,2)\ =\ 2;\ A(4,3)\ =\ 4;\ A(4,4)\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00353}00353\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00354}00354\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B(f,\ f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00355}00355\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00356}00356\ \ \ \ \ B(1,1)=-\/47./42;\ B(1,2)\ =\ 5./6;\ B(1,3)\ =\ -\/1./14\ ;\ B(1,4)\ =17./21;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00357}00357\ \ \ \ \ B(2,1)=41./21;\ B(2,2)\ =\ -\/5./3;\ B(2,3)\ =\ 4./7\ ;\ B(2,4)\ =-\/31./21;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00358}00358\ \ \ \ \ B(3,1)\ =\ -\/17./21\ ;\ B(3,2)\ =\ 2./3\ ;\ B(3,3)\ =\ -\/2./7;\ B(3,4)\ =19./21;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00359}00359\ \ \ \ \ B(4,1)\ =\ 19./42\ ;\ B(4,2)\ =\ -\/1./6;\ B(4,3)\ =\ 1./14\ ;\ B(4,4)\ =\ -\/10./21;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00360}00360\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00361}00361\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R=\mbox{\hyperlink{matrix_8h_ad8d8519e7f94df41a4c5b535b4899222}{inv}}(A);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00362}00362\ \ \ \ \ \_assert(m\_equals(R,\ B,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00363}00363\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00364}00364\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00365}00365\ \textcolor{keywordtype}{int}\ m\_norm\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00366}00366\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00367}00367\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00368}00368\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00369}00369\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00370}00370\ \ \ \ \ A(1,1)\ =\ 1;\ A(1,2)\ =\ 2;\ A(1,3)\ =\ 5;\ A(1,4)\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00371}00371\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00372}00372\ \ \ \ \ \textcolor{keywordtype}{double}\ B=7.4161984870956629487113974408007;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00373}00373\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00374}00374\ \ \ \ \ \textcolor{keywordtype}{double}\ R=\mbox{\hyperlink{matrix_8h_a907c9c6f53fc52d17e86b507b156536f}{norm}}(A);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00375}00375\ \ \ \ \ \_assert(fabs(R-\/B)<1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00376}00376\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00377}00377\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00378}00378\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00379}00379\ \textcolor{keywordtype}{int}\ m\_dot\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00380}00380\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00381}00381\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00382}00382\ \ \ \ \ A(1,1)\ =\ 1;\ A(1,2)\ =\ 2;\ A(1,3)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00383}00383\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00384}00384\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B(f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00385}00385\ \ \ \ \ B(1,1)=\ 1;\ B(1,2)\ =\ 2;\ B(1,3)\ =\ 3\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00386}00386\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00387}00387\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00388}00388\ \ \ \ \ \textcolor{keywordtype}{double}\ R=14;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00389}00389\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00390}00390\ \ \ \ \ \textcolor{keywordtype}{double}\ C=\mbox{\hyperlink{matrix_8h_ace64c1017d252d104fe1c99329ae9ecc}{dot}}(A,B);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00391}00391\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00392}00392\ \ \ \ \ \_assert(fabs(R-\/C)<1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00393}00393\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00394}00394\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00395}00395\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00396}00396\ \textcolor{keywordtype}{int}\ m\_cross\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00397}00397\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00398}00398\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00399}00399\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B(f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00400}00400\ \ \ \ \ A(1,1)\ =\ 2;\ A(1,2)\ =\ 1;\ A(1,3)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00401}00401\ \ \ \ \ B(1,1)=\ 3;\ B(1,2)\ =\ 5;\ B(1,3)\ =\ 6\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00402}00402\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00403}00403\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R(f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00404}00404\ \ \ \ \ R(1,1)=\ 6;\ R(1,2)\ =\ -\/12;\ R(1,3)\ =\ 7\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00405}00405\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00406}00406\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ C=\mbox{\hyperlink{matrix_8h_a8f26ea7eab92d1fd60ac732719a486e8}{cross}}(A,B);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00407}00407\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00408}00408\ \ \ \ \ \_assert(m\_equals(R,\ C,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00409}00409\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00410}00410\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00411}00411\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00412}00412\ \textcolor{keywordtype}{int}\ m\_extract\_vector\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00413}00413\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00414}00414\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00415}00415\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00416}00416\ \ \ \ \ A(1,1)\ =\ 2;\ A(1,2)\ =\ 1;\ A(1,3)\ =\ 0;\ A(1,4)\ =\ 5;\ A(1,5)\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00417}00417\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00418}00418\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B=\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(A,1,3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00419}00419\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00420}00420\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00421}00421\ \ \ \ \ R(1,1)=\ 2;\ R(1,2)\ =\ 1;\ R(1,3)\ =\ 0\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00422}00422\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00423}00423\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00424}00424\ \ \ \ \ \_assert(m\_equals(R,\ B,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00425}00425\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00426}00426\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00427}00427\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00428}00428\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00429}00429\ \textcolor{keywordtype}{int}\ m\_union\_vector\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00430}00430\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00431}00431\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00432}00432\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B(f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00433}00433\ \ \ \ \ A(1,1)\ =\ 2;\ A(1,2)\ =\ 1;\ A(1,3)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00434}00434\ \ \ \ \ B(1,1)=\ 3;\ B(1,2)\ =\ 1;\ B(1,3)\ =\ 6\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00435}00435\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00436}00436\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R(6);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00437}00437\ \ \ \ \ R(1,1)\ =\ 2;\ R(1,2)\ =\ 1;\ R(1,3)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00438}00438\ \ \ \ \ R(1,4)=\ 3;\ R(1,5)\ =\ 1;R(1,6)\ =\ 6\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00439}00439\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ C=\mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(A,B);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00440}00440\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00441}00441\ \ \ \ \ \_assert(m\_equals(R,\ C,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00442}00442\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00443}00443\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00444}00444\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00445}00445\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00446}00446\ \textcolor{keywordtype}{int}\ m\_extract\_row\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00447}00447\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00448}00448\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f,f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00449}00449\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00450}00450\ \ \ \ \ A(1,1)\ =\ 2;\ A(1,2)\ =\ 1;\ A(1,3)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00451}00451\ \ \ \ \ A(2,1)\ =\ 2;\ A(2,2)\ =\ 1;\ A(2,3)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00452}00452\ \ \ \ \ A(3,1)\ =\ 5;\ A(3,2)\ =\ 3;\ A(3,3)\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00453}00453\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00454}00454\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B=\mbox{\hyperlink{matrix_8h_afa94ffe6b27ac353488f90897fe2f3a9}{extract\_row}}(A,f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00455}00455\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00456}00456\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R(f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00457}00457\ \ \ \ \ R(1,1)=\ 5;\ R(1,2)\ =\ 3;\ R(1,3)\ =\ 2\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00458}00458\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00459}00459\ \ \ \ \ \_assert(m\_equals(R,\ B,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00460}00460\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00461}00461\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00462}00462\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00463}00463\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00464}00464\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00465}00465\ \textcolor{keywordtype}{int}\ m\_extract\_column\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00466}00466\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00467}00467\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f,f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00468}00468\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00469}00469\ \ \ \ \ A(1,1)\ =\ 2;\ A(1,2)\ =\ 1;\ A(1,3)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00470}00470\ \ \ \ \ A(2,1)\ =\ 2;\ A(2,2)\ =\ 1;\ A(2,3)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00471}00471\ \ \ \ \ A(3,1)\ =\ 5;\ A(3,2)\ =\ 3;\ A(3,3)\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00472}00472\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00473}00473\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B=\mbox{\hyperlink{matrix_8h_aca6da092294b7d44ef5bf19d74f88e7e}{extract\_column}}(A,f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00474}00474\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00475}00475\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R(f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00476}00476\ \ \ \ \ R(1,1)=\ 0;\ R(1,2)\ =\ 3;\ R(1,3)\ =\ 2\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00477}00477\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00478}00478\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00479}00479\ \ \ \ \ \_assert(m\_equals(R,\ B,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00480}00480\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00481}00481\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00482}00482\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00483}00483\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00484}00484\ \textcolor{keywordtype}{int}\ m\_assign\_row\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00485}00485\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00486}00486\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f,f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00487}00487\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00488}00488\ \ \ \ \ A(1,1)\ =\ 2;\ A(1,2)\ =\ 1;\ A(1,3)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00489}00489\ \ \ \ \ A(2,1)\ =\ 2;\ A(2,2)\ =\ 1;\ A(2,3)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00490}00490\ \ \ \ \ A(3,1)\ =\ 5;\ A(3,2)\ =\ 3;\ A(3,3)\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00491}00491\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00492}00492\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B(f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00493}00493\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00494}00494\ \ \ \ \ B(1,1)=\ 3;\ B(1,2)\ =\ 5;\ B(1,3)\ =\ 6\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00495}00495\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00496}00496\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00497}00497\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ C=\mbox{\hyperlink{matrix_8h_ab8aeb190b046a07e123a93315cdf5b36}{assign\_row}}(A,B,f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00498}00498\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00499}00499\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R(f,f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00500}00500\ \ \ \ \ R(1,1)\ =\ 2;\ R(1,2)\ =\ 1;\ R(1,3)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00501}00501\ \ \ \ \ R(2,1)\ =\ 2;\ R(2,2)\ =\ 1;\ R(2,3)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00502}00502\ \ \ \ \ R(3,1)\ =\ 3;\ R(3,2)\ =\ 5;\ R(3,3)\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00503}00503\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00504}00504\ \ \ \ \ \_assert(m\_equals(R,\ C,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00505}00505\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00506}00506\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00507}00507\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00508}00508\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00509}00509\ \textcolor{keywordtype}{int}\ m\_assign\_column\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00510}00510\ \ \ \ \ \textcolor{keywordtype}{int}\ f\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00511}00511\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f,f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00512}00512\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00513}00513\ \ \ \ \ A(1,1)\ =\ 2;\ A(1,2)\ =\ 1;\ A(1,3)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00514}00514\ \ \ \ \ A(2,1)\ =\ 2;\ A(2,2)\ =\ 1;\ A(2,3)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00515}00515\ \ \ \ \ A(3,1)\ =\ 5;\ A(3,2)\ =\ 3;\ A(3,3)\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00516}00516\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00517}00517\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B(f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00518}00518\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00519}00519\ \ \ \ \ B(1,1)=\ 3;\ B(1,2)\ =\ 5;\ B(1,3)\ =\ 6\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00520}00520\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00521}00521\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ C=\mbox{\hyperlink{matrix_8h_a78e903d58755232911e3b5232f38747c}{assign\_column}}(A,B,f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00522}00522\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00523}00523\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R(f,f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00524}00524\ \ \ \ \ R(1,1)\ =\ 2;\ R(1,2)\ =\ 1;\ R(1,3)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00525}00525\ \ \ \ \ R(2,1)\ =\ 2;\ R(2,2)\ =\ 1;\ R(2,3)\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00526}00526\ \ \ \ \ R(3,1)\ =\ 5;\ R(3,2)\ =\ 3;\ R(3,3)\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00527}00527\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00528}00528\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00529}00529\ \ \ \ \ \_assert(m\_equals(R,\ C,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00530}00530\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00531}00531\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00532}00532\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00533}00533\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00534}00534\ \textcolor{keywordtype}{int}\ m\_R\_x\_01()\ \{\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00535}00535\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A=\mbox{\hyperlink{R__x_8h_ab96741dfe3b3590793f2b318ceed5f53}{R\_x}}(10);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00536}00536\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00537}00537\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00538}00538\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R(3,3);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00539}00539\ \ \ \ \ R(1,1)\ =\ 1;\ R(1,2)\ =\ 0;\ R(1,3)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00540}00540\ \ \ \ \ R(2,1)\ =\ 0;\ R(2,2)\ =\ -\/0.839071529076452;\ R(2,3)\ =\ -\/0.54402111088937;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00541}00541\ \ \ \ \ R(3,1)\ =\ 0;\ R(3,2)\ =\ 0.54402111088937;\ R(3,3)\ =\ -\/0.839071529076452;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00542}00542\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00543}00543\ \ \ \ \ \_assert(m\_equals(R,\ A,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00544}00544\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00545}00545\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00546}00546\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00547}00547\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00548}00548\ \textcolor{keywordtype}{int}\ m\_R\_y\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00549}00549\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00550}00550\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A=\mbox{\hyperlink{R__y_8h_a25114557991f92fd6b027118c591a98f}{R\_y}}(10);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00551}00551\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00552}00552\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R(3,3);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00553}00553\ \ \ \ \ R(1,1)\ =\ -\/0.839071529076452\ ;\ R(1,2)\ =\ 0;\ R(1,3)\ =\ 0.54402111088937;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00554}00554\ \ \ \ \ R(2,1)\ =\ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ;\ R(2,2)\ =\ 1;\ R(2,3)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00555}00555\ \ \ \ \ R(3,1)\ =\ -\/0.54402111088937\ \ ;\ R(3,2)\ =\ 0;\ R(3,3)\ =\ -\/0.839071529076452;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00556}00556\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00557}00557\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00558}00558\ \ \ \ \ \_assert(m\_equals(R,\ A,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00559}00559\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00560}00560\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00561}00561\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00562}00562\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00563}00563\ \textcolor{keywordtype}{int}\ m\_R\_z\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00564}00564\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00565}00565\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A=\mbox{\hyperlink{R__z_8h_a4f688959a9ab144bf27d272e54bf7258}{R\_z}}(10);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00566}00566\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00567}00567\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00568}00568\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R(3,3);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00569}00569\ \ \ \ \ R(1,1)\ =\ -\/0.839071529076452;\ R(1,2)\ =\ -\/0.54402111088937;\ R(1,3)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00570}00570\ \ \ \ \ R(2,1)\ =\ 0.54402111088937;\ R(2,2)\ =\ -\/0.839071529076452;\ R(2,3)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00571}00571\ \ \ \ \ R(3,1)\ =\ 0;\ R(3,2)\ =\ 0;\ R(3,3)\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00572}00572\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00573}00573\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00574}00574\ \ \ \ \ \_assert(m\_equals(R,\ A,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00575}00575\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00576}00576\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00577}00577\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00578}00578\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00579}00579\ \textcolor{keywordtype}{int}\ m\_AccelPointMass\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00580}00580\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00581}00581\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(3);\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00582}00582\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00583}00583\ \ \ \ \ A(1,1)\ =\ 1;\ A(1,2)\ =\ 1;\ A(1,3)\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00584}00584\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00585}00585\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00586}00586\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00587}00587\ \ \ \ \ B(1,1)=\ 2;\ B(1,2)\ =\ 3;\ B(1,3)\ =\ 4\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00588}00588\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00589}00589\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ C=\mbox{\hyperlink{AccelPointMass_8h_a72b636f377c135454d41655c935c0eb3}{AccelPointMass}}(A,B,10);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00590}00590\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00591}00591\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R(3);\ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00592}00592\ \ \ \ \ R(1,1)\ =\ 0.0628351366133708;\ R(1,2)\ =\ 0.189703148460208;\ R(1,3)\ =\ 0.316571160307045;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00593}00593\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00594}00594\ \ \ \ \ \_assert(m\_equals(R,\ A,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00595}00595\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00596}00596\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00597}00597\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00598}00598\ \textcolor{keywordtype}{int}\ m\_Cheb3D\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00599}00599\ \ \ \ \ \textcolor{keywordtype}{double}\ f\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00600}00600\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00601}00601\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00602}00602\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00603}00603\ \ \ \ \ A(1,1)\ =\ 1;\ A(1,2)\ =\ 2;\ A(1,3)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00604}00604\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00605}00605\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B(f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00606}00606\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00607}00607\ \ \ \ \ B(1,1)=\ 1;\ B(1,2)\ =\ 2;\ B(1,3)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00608}00608\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00609}00609\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ C(f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00610}00610\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00611}00611\ \ \ \ \ C(1,1)=\ 5;\ C(1,2)\ =\ 2;\ C(1,3)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00612}00612\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00613}00613\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ D=\mbox{\hyperlink{Cheb3D_8h_a05a110559834c211c7a7eeac28dd8246}{Cheb3D}}(1,3,0.5,1,A,B,C);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00614}00614\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00615}00615\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R(f);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00616}00616\ \ \ \ \ R(1,1)\ =\ 6;\ R(1,2)\ =\ 6;\ R(1,3)\ =\ 10;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00617}00617\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00618}00618\ \ \ \ \ \_assert(m\_equals(R,\ D,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00619}00619\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00620}00620\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00621}00621\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00622}00622\ \textcolor{keywordtype}{int}\ m\_EccAnom\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00623}00623\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00624}00624\ \ \ \ \ \textcolor{keywordtype}{double}\ R\ =\ 2.38006127313934;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00625}00625\ \ \ \ \ \textcolor{keywordtype}{double}\ D=\mbox{\hyperlink{EccAnom_8h_a2ad531000471d74f459467a747a79aff}{EccAnom}}(1,2);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00626}00626\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00627}00627\ \ \ \ \ \_assert(fabs(R-\/D)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00628}00628\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00629}00629\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00630}00630\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00631}00631\ \textcolor{keywordtype}{int}\ m\_Frac\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00632}00632\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00633}00633\ \ \ \ \ \textcolor{keywordtype}{double}\ R\ =\ 0.3801;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00634}00634\ \ \ \ \ \textcolor{keywordtype}{double}\ D=\mbox{\hyperlink{Frac_8h_a92f2f0f91c99cd6bec1a0e9a3b6443fc}{Frac}}(2.3801);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00635}00635\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00636}00636\ \ \ \ \ \_assert(fabs(R-\/D)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00637}00637\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00638}00638\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00639}00639\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00640}00640\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00641}00641\ \textcolor{keywordtype}{int}\ m\_MeanObliquity\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00642}00642\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00643}00643\ \ \ \ \ \textcolor{keywordtype}{double}\ R\ =\ 0.409412815476201;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00644}00644\ \ \ \ \ \textcolor{keywordtype}{double}\ D=\mbox{\hyperlink{MeanObliquity_8h_a11f057ac4e8a0c5a7958f77379e30d40}{MeanObliquity}}(41);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00645}00645\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00646}00646\ \ \ \ \ \_assert(fabs(R-\/D)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00647}00647\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00648}00648\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00649}00649\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00650}00650\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00651}00651\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00652}00652\ \textcolor{keywordtype}{int}\ m\_Mjday\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00653}00653\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00654}00654\ \ \ \ \ \textcolor{keywordtype}{double}\ R\ =\ 60800;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00655}00655\ \ \ \ \ \textcolor{keywordtype}{double}\ D=\ \mbox{\hyperlink{Mjday_8h_a3d8c32be4ba9222405b66aabe80409e2}{Mjday}}(2025,5,5);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00656}00656\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00657}00657\ \ \ \ \ \_assert(fabs(R-\/D)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00658}00658\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00659}00659\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00660}00660\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00661}00661\ \textcolor{keywordtype}{int}\ m\_Mjday\_TDB\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00662}00662\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00663}00663\ \ \ \ \ \textcolor{keywordtype}{double}\ R\ =\ 2025.0000000092;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00664}00664\ \ \ \ \ \textcolor{keywordtype}{double}\ D=\ \mbox{\hyperlink{Mjday__TDB_8h_a2512825285329f54df7d9f0be4966336}{Mjday\_TDB}}(2025);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00665}00665\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00666}00666\ \ \ \ \ \_assert(fabs(R-\/D)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00667}00667\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00668}00668\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00669}00669\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00670}00670\ \textcolor{keywordtype}{int}\ m\_Position\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00671}00671\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00672}00672\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00673}00673\ \ \ \ \ R(1)\ =\ 2.627855739427486e+06;\ R(2)\ =\ -\/5.741969545549633e+06;\ R(3)\ =\ 8.941173180321892e+05;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00674}00674\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00675}00675\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ D=\ \mbox{\hyperlink{Position_8h_ad3ff3004edb305ae3aed0230373b848e}{Position}}(2,3,4);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00676}00676\ \ \ \ \ \_assert(m\_equals(R,\ D,\ 1e-\/8));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00677}00677\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00678}00678\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00679}00679\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00680}00680\ \textcolor{keywordtype}{int}\ m\_sign\_\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00681}00681\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00682}00682\ \ \ \ \ \textcolor{keywordtype}{double}\ R\ =\ -\/4;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00683}00683\ \ \ \ \ \textcolor{keywordtype}{double}\ D=\ \mbox{\hyperlink{sign___8h_acaf6f309594b8f14ca0ec7750d41738f}{sign\_}}(4,-\/3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00684}00684\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00685}00685\ \ \ \ \ \_assert(fabs(R-\/D)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00686}00686\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00687}00687\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00688}00688\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00689}00689\ \textcolor{keywordtype}{int}\ m\_timediff\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00690}00690\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00691}00691\ \ \ \ \ \textcolor{keywordtype}{double}\ R0\ =\ -\/6;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00692}00692\ \ \ \ \ \textcolor{keywordtype}{double}\ R1\ =\ 9;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00693}00693\ \ \ \ \ \textcolor{keywordtype}{double}\ R2\ =\ 13;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00694}00694\ \ \ \ \ \textcolor{keywordtype}{double}\ R3\ =\ 42.184;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00695}00695\ \ \ \ \ \textcolor{keywordtype}{double}\ R4\ =\ -\/9;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00696}00696\ \ \ \ \ \textcolor{keyword}{auto}\ D=\ \mbox{\hyperlink{timediff_8h_a0772112289293a570d2edb0667dbb3a9}{timediff}}(4,10);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00697}00697\ \ \ \ \ \_assert(fabs(get<0>(D)-\/R0)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00698}00698\ \ \ \ \ \_assert(fabs(get<1>(D)-\/R1)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00699}00699\ \ \ \ \ \_assert(fabs(get<2>(D)-\/R2)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00700}00700\ \ \ \ \ \_assert(fabs(get<3>(D)-\/R3)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00701}00701\ \ \ \ \ \_assert(fabs(get<4>(D)-\/R4)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00702}00702\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00703}00703\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00704}00704\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00705}00705\ \textcolor{keywordtype}{int}\ m\_AzElPa\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00706}00706\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00707}00707\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00708}00708\ \ \ \ \ A(1)\ =\ 1;\ A(2)\ =\ 2;\ A(3)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00709}00709\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00710}00710\ \ \ \ \ \textcolor{keywordtype}{double}\ R0=0.463647609000806;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00711}00711\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00712}00712\ \ \ \ \ \textcolor{keywordtype}{double}\ R1=0.930274014115472;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00713}00713\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00714}00714\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R2(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00715}00715\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00716}00716\ \ \ \ \ R2(1)\ =\ 0.4;\ R2(2)\ =\ -\/0.2;\ R2(3)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00717}00717\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R3(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00718}00718\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00719}00719\ \ \ \ \ R3(1)\ =\ -\/0.095831484749991;\ R3(2)\ =\ -\/0.191662969499982;\ R3(3)\ =\ 0.159719141249985;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00720}00720\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00721}00721\ \ \ \ \ \textcolor{keyword}{auto}\ [Az,\ El,\ dAds,\ dEds]=\ \mbox{\hyperlink{AzElPa_8h_a64759900540133eb0f6a8337ef0634db}{AzElPa}}(A);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00722}00722\ \ \ \ \ \_assert(fabs(Az-\/R0)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00723}00723\ \ \ \ \ \_assert(fabs(El-\/R1)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00724}00724\ \ \ \ \ \_assert(m\_equals(dAds,R2,1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00725}00725\ \ \ \ \ \_assert(m\_equals(dEds,R3,1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00726}00726\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00727}00727\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00728}00728\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00729}00729\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00730}00730\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00731}00731\ \textcolor{keywordtype}{int}\ m\_IERS\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00732}00732\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00733}00733\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00734}00734\ \ \ \ \ \mbox{\hyperlink{GLOBAL_8h_ad733f697fb9098526f74dbedf42c2e66}{eop19620101}}(21413);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00735}00735\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00736}00736\ \ \ \ \ \textcolor{keywordtype}{double}\ R0\ =\ -\/5.59518621231704e-\/07;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00737}00737\ \ \ \ \ \textcolor{keywordtype}{double}\ R1\ =\ 2.33458634442529e-\/06;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00738}00738\ \ \ \ \ \textcolor{keywordtype}{double}\ R2\ =\ \ 0.3260677;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00739}00739\ \ \ \ \ \textcolor{keywordtype}{double}\ R3\ =\ 0.0027213;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00740}00740\ \ \ \ \ \textcolor{keywordtype}{double}\ R4\ =\ -\/1.16864337831454e-\/07;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00741}00741\ \ \ \ \ \textcolor{keywordtype}{double}\ R5\ =\ -\/2.48709418409192e-\/08;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00742}00742\ \ \ \ \ \textcolor{keywordtype}{double}\ R6\ =\ -\/8.19335121075116e-\/10;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00743}00743\ \ \ \ \ \textcolor{keywordtype}{double}\ R7\ =\ \ -\/1.53201123230613e-\/09;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00744}00744\ \ \ \ \ \textcolor{keywordtype}{double}\ R8\ =\ 29;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00745}00745\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00746}00746\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00747}00747\ \ \ \ \ \textcolor{keyword}{auto}\ [x\_pole,y\_pole,UT1\_UTC,LOD,dpsi,deps,dx\_pole,dy\_pole,TAI\_UTC]=\ \mbox{\hyperlink{IERS_8h_afdc37e22b677cc00a94f8dfcadd2df15}{IERS}}(eopdata,49746,\textcolor{charliteral}{'l'});}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00748}00748\ \ \ \ \ \_assert(fabs(x\_pole-\/R0)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00749}00749\ \ \ \ \ \_assert(fabs(y\_pole-\/R1)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00750}00750\ \ \ \ \ \_assert(fabs(UT1\_UTC-\/R2)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00751}00751\ \ \ \ \ \_assert(fabs(LOD-\/R3)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00752}00752\ \ \ \ \ \_assert(fabs(dpsi-\/R4)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00753}00753\ \ \ \ \ \_assert(fabs(deps-\/R5)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00754}00754\ \ \ \ \ \_assert(fabs(dx\_pole-\/R6)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00755}00755\ \ \ \ \ \_assert(fabs(dy\_pole-\/R7)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00756}00756\ \ \ \ \ \_assert(fabs(TAI\_UTC-\/R8)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00757}00757\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00758}00758\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00759}00759\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00760}00760\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00761}00761\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00762}00762\ \textcolor{keywordtype}{int}\ m\_Legendre\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00763}00763\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00764}00764\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00765}00765\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R0\ (4,4);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00766}00766\ \ \ \ \ R0(1,1)\ =\ 1;\ R0(1,2)\ =\ 0;\ R0(1,3)\ =\ 0;\ R0(1,4)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00767}00767\ \ \ \ \ R0(2,1)\ =\ \ 1.4574704987823;\ R0(2,2)\ =\ \ 0.935831045210238;\ R0(2,3)\ =\ 0;\ R0(2,4)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00768}00768\ \ \ \ \ R0(3,1)\ =\ \ 1.25691645573063\ ;\ R0(3,2)\ =\ 1.76084689542256\ \ ;\ R0(3,3)\ =\ 0.565313394670859\ ;\ R0(3,4)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00769}00769\ \ \ \ \ R0(4,1)\ =\ 0.601515831515714;\ R0(4,2)\ =\ 2.22381140389174\ ;\ R0(4,3)\ =\ 1.25857019087392\ ;\ R0(4,4)\ =\ 0.329913047636197;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00770}00770\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R1\ (4,4);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00771}00771\ \ \ \ \ R1(1,1)\ =\ 0;\ R1(1,2)\ =\ 0;\ R1(1,3)\ =\ 0;\ R1(1,4)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00772}00772\ \ \ \ \ R1(2,1)\ =\ 0.935831045210238\ ;\ R1(2,2)\ =\ -\/1.4574704987823\ ;\ R1(2,3)\ =\ 0;\ R1(2,4)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00773}00773\ \ \ \ \ R1(3,1)\ =\ \ 3.0498762872218;\ R1(3,2)\ =\ -\/1.61172976752398\ ;\ R1(3,3)\ =\ -\/1.76084689542256\ \ ;\ R1(3,4)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00774}00774\ \ \ \ \ R1(4,1)\ =\ 5.44720322371707\ \ ;\ R1(4,2)\ =\ \ 0.516567339757783\ ;\ R1(4,3)\ =\ \ -\/3.11209524837966\ ;\ R1(4,4)\ =\ -\/1.54142738655916;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00775}00775\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00776}00776\ \ \ \ \ \textcolor{keyword}{auto}\ [pnm,\ dpnm]=\ \mbox{\hyperlink{Legendre_8h_a55ce532de3c95506384990ae714dd99d}{Legendre}}(3,3,1);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00777}00777\ \ \ \ \ \_assert(m\_equals(pnm,R0,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00778}00778\ \ \ \ \ \_assert(m\_equals(dpnm,R1,1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00779}00779\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00780}00780\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00781}00781\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00782}00782\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00783}00783\ \textcolor{keywordtype}{int}\ m\_NutAngles\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00784}00784\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00785}00785\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00786}00786\ \ \ \ \ \textcolor{keywordtype}{double}\ R0\ =\ 2.72256565175042e-\/05;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00787}00787\ \ \ \ \ \textcolor{keywordtype}{double}\ R1\ =\ \ 3.87947551912632e-\/05;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00788}00788\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00789}00789\ \ \ \ \ \textcolor{keyword}{auto}\ [dpsi,\ deps]=\ \mbox{\hyperlink{NutAngles_8h_a8028f5f2ac1a0a2126d8edf6a5ed80c6}{NutAngles}}(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00790}00790\ \ \ \ \ \_assert(fabs(dpsi-\/R0)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00791}00791\ \ \ \ \ \_assert(fabs(deps-\/R1)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00792}00792\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00793}00793\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00794}00794\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00795}00795\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00796}00796\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00797}00797\ \textcolor{keywordtype}{int}\ m\_TimeUpdate\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00798}00798\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00799}00799\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(3,\ 3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00800}00800\ \ \ \ \ A(1,1)\ =\ 1;\ A(1,2)\ =\ 4;\ A(1,3)\ =\ 9;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00801}00801\ \ \ \ \ A(2,1)\ =\ 2;\ A(2,2)\ =\ 3;\ A(2,3)\ =\ 8;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00802}00802\ \ \ \ \ A(3,1)\ =\ 5;\ A(3,2)\ =\ 6;\ A(3,3)\ =\ 7;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00803}00803\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00804}00804\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00805}00805\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B(3,3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00806}00806\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00807}00807\ \ \ \ \ B(1,1)\ =\ 1;\ B(1,2)\ =\ 2;\ B(1,3)\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00808}00808\ \ \ \ \ B(2,1)\ =\ 4;\ B(2,2)\ =\ 3;\ B(2,3)\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00809}00809\ \ \ \ \ B(3,1)\ =\ 9;\ B(3,2)\ =\ 8;\ B(3,3)\ =\ 7;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00810}00810\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00811}00811\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ C(3,\ 3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00812}00812\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00813}00813\ \ \ \ \ C(1,1)\ =\ 52\ ;\ C(1,2)\ =\ 102\ \ ;\ C(1,3)\ =\ 77\ \ \ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00814}00814\ \ \ \ \ C(2,1)\ =\ 22\ ;\ C(2,2)\ =\ 34\ \ \ ;\ C(2,3)\ =\ 34\ \ \ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00815}00815\ \ \ \ \ C(3,1)\ =\ 23\ ;\ C(3,2)\ =\ 36\ \ \ ;\ C(3,3)\ =\ 32\ \ \ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00816}00816\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00817}00817\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00818}00818\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ D(3,\ 3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00819}00819\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00820}00820\ \ \ \ \ D(1,1)\ =\ 462\ \ \ \ ;\ D(1,2)\ =\ 702\ \ ;\ D(1,3)\ =\ 1087\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00821}00821\ \ \ \ \ D(2,1)\ =\ 694\ \ \ \ ;\ D(2,2)\ =\ 989\ \ ;\ D(2,3)\ =\ 1596\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00822}00822\ \ \ \ \ D(3,1)\ =\ 1257\ \ \ ;\ D(3,2)\ =\ 1746\ ;\ D(3,3)\ =\ 2746\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00823}00823\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00824}00824\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R\ =\ \mbox{\hyperlink{TimeUpdate_8h_a4ba2551be43a982e9ea65bcd3971209d}{TimeUpdate}}(A,B,C);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00825}00825\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00826}00826\ \ \ \ \ \_assert(m\_equals(R,D,1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00827}00827\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00828}00828\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00829}00829\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00830}00830\ \textcolor{keywordtype}{int}\ m\_AccelHarmonic\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00831}00831\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00832}00832\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R0(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00833}00833\ \ \ \ \ R0(1)=2.42488766379455e+34;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00834}00834\ \ \ \ \ R0(2)=2.65762182552943e+34;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00835}00835\ \ \ \ \ R0(3)=2.65762182552943e+34;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00836}00836\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00837}00837\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00838}00838\ \ \ \ \ A(1)=1.0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00839}00839\ \ \ \ \ A(2)=2.0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00840}00840\ \ \ \ \ A(3)=3.0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00841}00841\ \ \ \ \ A=\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(A);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00842}00842\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B(3,3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00843}00843\ \ \ \ \ B(1,1)=\ 1.0;\ B(1,2)\ =\ 1.0;\ B(1,3)\ =\ 1.0\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00844}00844\ \ \ \ \ B(2,1)=\ 1.0;\ B(2,2)\ =\ 2.0;\ B(2,3)\ =\ 2.0\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00845}00845\ \ \ \ \ B(3,1)=\ 1.0;\ B(3,2)\ =\ 3.0;\ B(3,3)\ =\ 3.0\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00846}00846\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00847}00847\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R\ =\ \mbox{\hyperlink{AccelHarmonic_8h_a7f668d23f40f64900d52d3c77c9bacfa}{AccelHarmonic}}(A,B,5,5);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00848}00848\ \ \ \ \ \_assert(m\_equals(R,R0,R0(1)*1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00849}00849\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00850}00850\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00851}00851\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00852}00852\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00853}00853\ \textcolor{keywordtype}{int}\ m\_EqnEquinox\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00854}00854\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00855}00855\ \ \ \ \ \textcolor{keywordtype}{double}\ R0=2.6045897022442e-\/05;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00856}00856\ \ \ \ \ \textcolor{keywordtype}{double}\ R\ =\ \mbox{\hyperlink{EqnEquinox_8h_a1178917cf376ea4f15cea33c59028635}{EqnEquinox}}(5);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00857}00857\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00858}00858\ \ \ \ \ \_assert(fabs(R-\/R0)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00859}00859\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00860}00860\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00861}00861\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00862}00862\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00863}00863\ \textcolor{keywordtype}{int}\ m\_JPL\_Eph\_DE430\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00864}00864\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00865}00865\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R0(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00866}00866\ \ \ \ \ R0(1)=147208460159.245;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00867}00867\ \ \ \ \ R0(2)=\ \ 54592844683.9181;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00868}00868\ \ \ \ \ R0(3)=\ 15319523517.8098;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00869}00869\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R1(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00870}00870\ \ \ \ \ R1(1)=\ 72752904522.483;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00871}00871\ \ \ \ \ R1(2)=2340227175.73022;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00872}00872\ \ \ \ \ R1(3)=1670913926.26657;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00873}00873\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R2(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00874}00874\ \ \ \ \ R2(1)=-\/108493583087.765;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00875}00875\ \ \ \ \ R2(2)=-\/97599455066.7732;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00876}00876\ \ \ \ \ R2(3)=-\/42280555048.3341;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00877}00877\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R3(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00878}00878\ \ \ \ \ R3(1)=-\/131548434829.954;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00879}00879\ \ \ \ \ R3(2)=\ 156673495960.063;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00880}00880\ \ \ \ \ R3(3)=\ 75876841465.0958;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00881}00881\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R4(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00882}00882\ \ \ \ \ R4(1)=125152801267.633;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00883}00883\ \ \ \ \ R4(2)=\ 801496792415.556;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00884}00884\ \ \ \ \ R4(3)=343590087271.679;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00885}00885\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R5(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00886}00886\ \ \ \ \ R5(1)=\ 1532648188929.54;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00887}00887\ \ \ \ \ R5(2)=-\/30170201818.4012;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00888}00888\ \ \ \ \ R5(3)=-\/71835402852.1091;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00889}00889\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R6(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00890}00890\ \ \ \ \ R6(1)=\ 1707620424797.68;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00891}00891\ \ \ \ \ R6(2)=\ 2344787198692.63;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00892}00892\ \ \ \ \ R6(3)=1003869836966.23;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00893}00893\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R7(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00894}00894\ \ \ \ \ R7(1)=\ 4578089056071.27;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00895}00895\ \ \ \ \ R7(2)=\ 104288160816.022;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00896}00896\ \ \ \ \ R7(3)=\ -\/66258775563.9107;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00897}00897\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R8(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00898}00898\ \ \ \ \ R8(1)=2885822907234;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00899}00899\ \ \ \ \ R8(2)=\ -\/3876433792795.09;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00900}00900\ \ \ \ \ R8(3)=-\/2034695099132.45;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00901}00901\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R9(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00902}00902\ \ \ \ \ R9(1)=-\/295931131.772483;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00903}00903\ \ \ \ \ R9(2)=\ 224622149.622798;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00904}00904\ \ \ \ \ R9(3)=\ 120216992.495936;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00905}00905\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R10(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00906}00906\ \ \ \ \ R10(1)=\ 107770931597.498;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00907}00907\ \ \ \ \ R10(2)=96865992179.6201;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00908}00908\ \ \ \ \ R10(3)=41989334136.8052;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00909}00909\ \ \ \ \ \textcolor{keyword}{auto}\ [r\_Mercury,r\_Venus,r\_Earth,r\_Mars,r\_Jupiter,r\_Saturn,r\_Uranus,r\_Neptune,r\_Pluto,r\_Moon,r\_Sun]\ =\ \mbox{\hyperlink{JPL__Eph__DE430_8h_a5e6fedfbbbe0ca32aa62a9016e7d3293}{JPL\_Eph\_DE430}}(60800);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00910}00910\ \ \ \ \ \_assert(m\_equals(r\_Mercury,R0,\ abs(R0(1)*1e-\/11)));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00911}00911\ \ \ \ \ \_assert(m\_equals(r\_Venus,R1,abs(R1(1)*1e-\/11)));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00912}00912\ \ \ \ \ \_assert(m\_equals(r\_Earth,R2,\ abs(R2(1)*1e-\/11)));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00913}00913\ \ \ \ \ \_assert(m\_equals(r\_Mars,R3,abs(R3(1)*1e-\/11)));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00914}00914\ \ \ \ \ \_assert(m\_equals(r\_Jupiter,R4,\ abs(R4(1)*1e-\/11)));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00915}00915\ \ \ \ \ \_assert(m\_equals(r\_Saturn,R5,abs(R5(1)*1e-\/11)));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00916}00916\ \ \ \ \ \_assert(m\_equals(r\_Uranus,R6,\ abs(R6(1)*1e-\/11)));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00917}00917\ \ \ \ \ \_assert(m\_equals(r\_Neptune,R7,abs(R7(1)*1e-\/11)));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00918}00918\ \ \ \ \ \_assert(m\_equals(r\_Pluto,R8,\ abs(R8(1)*1e-\/11)));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00919}00919\ \ \ \ \ \_assert(m\_equals(r\_Moon,R9,abs(R9(1)*1e-\/11)));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00920}00920\ \ \ \ \ \_assert(m\_equals(r\_Sun,R10,\ abs(R10(1)*1e-\/11)));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00921}00921\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00922}00922\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00923}00923\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00924}00924\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00925}00925\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00926}00926\ \textcolor{keywordtype}{int}\ m\_LTC\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00927}00927\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00928}00928\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A=\mbox{\hyperlink{LTC_8h_a27b89059a0c4bc52a9192df16ead3359}{LTC}}(10,10);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00929}00929\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00930}00930\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00931}00931\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R(3,3);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00932}00932\ \ \ \ \ R(1,1)\ =\ 0.54402111088937;\ R(1,2)\ =\ -\/0.839071529076452;\ R(1,3)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00933}00933\ \ \ \ \ R(2,1)\ =\ -\/0.456472625363814;\ R(2,2)\ =\ -\/0.295958969093304;\ R(2,3)\ =\ -\/0.839071529076452;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00934}00934\ \ \ \ \ R(3,1)\ =\ 0.704041030906696;\ R(3,2)\ =\ 0.456472625363814;\ R(3,3)\ =\ -\/0.54402111088937;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00935}00935\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00936}00936\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00937}00937\ \ \ \ \ \_assert(m\_equals(R,\ A,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00938}00938\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00939}00939\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00940}00940\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00941}00941\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00942}00942\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00943}00943\ \textcolor{keywordtype}{int}\ m\_NutMatrix\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00944}00944\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00945}00945\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A=\mbox{\hyperlink{NutMatrix_8h_ac7fb7e48f2d2d4fd63ac42e17e44ff23}{NutMatrix}}(10);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00946}00946\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00947}00947\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00948}00948\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R(3,3);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00949}00949\ \ \ \ \ R(1,1)\ =\ 0.999999999492159;\ R(1,2)\ =\ -\/2.92358797494727e-\/05\ ;\ R(1,3)\ =\ -\/1.26864277798066e-\/05;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00950}00950\ \ \ \ \ R(2,1)\ =\ 2.9235393806329e-\/05\ ;\ R(2,2)\ =\ 0.999999998839099;\ R(2,3)\ =\ -\/3.83026695232602e-\/05;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00951}00951\ \ \ \ \ R(3,1)\ =\ 1.26875475773192e-\/05;\ R(3,2)\ =\ \ 3.83022986110704e-\/05\ ;\ R(3,3)\ =\ \ 0.99999999918598;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00952}00952\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00953}00953\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00954}00954\ \ \ \ \ \_assert(m\_equals(R,\ A,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00955}00955\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00956}00956\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00957}00957\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00958}00958\ \textcolor{keywordtype}{int}\ m\_PoleMatrix\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00959}00959\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00960}00960\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A=\mbox{\hyperlink{PoleMatrix_8h_aa20f72601d5ff91f277b999d15b7d6c9}{PoleMatrix}}(10,10);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00961}00961\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00962}00962\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00963}00963\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R(3,3);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00964}00964\ \ \ \ \ R(1,1)\ =\ -\/0.839071529076452;\ R(1,2)\ =\ 0.295958969093304;\ R(1,3)\ =\ 0.456472625363814;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00965}00965\ \ \ \ \ R(2,1)\ =\ 0;\ R(2,2)\ =\ -\/0.839071529076452;\ R(2,3)\ =\ 0.54402111088937;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00966}00966\ \ \ \ \ R(3,1)\ =\ 0.54402111088937;\ R(3,2)\ =\ 0.456472625363814;\ R(3,3)\ =\ 0.704041030906696;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00967}00967\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00968}00968\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00969}00969\ \ \ \ \ \_assert(m\_equals(R,\ A,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00970}00970\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00971}00971\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00972}00972\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00973}00973\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00974}00974\ \textcolor{keywordtype}{int}\ m\_PrecMatrix\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00975}00975\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00976}00976\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A=\mbox{\hyperlink{PrecMatrix_8h_a95bbb47a6bcd9ecaf7b5bc46f88dc7d1}{PrecMatrix}}(100,1);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00977}00977\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00978}00978\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00979}00979\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R(3,3);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00980}00980\ \ \ \ \ R(1,1)\ =\ 0.999999997819034;\ R(1,2)\ =\ \ 6.05590736738844e-\/05;\ R(1,3)\ =\ 2.63539319986234e-\/05;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00981}00981\ \ \ \ \ R(2,1)\ =\ \ -\/6.05590736738844e-\/05;\ R(2,2)\ =\ 0.999999998166299\ ;\ R(2,3)\ =\ -\/7.97984483806257e-\/10;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00982}00982\ \ \ \ \ R(3,1)\ =\ -\/2.63539319986234e-\/05;\ R(3,2)\ =\ \ \ -\/7.97985227435292e-\/10;\ R(3,3)\ =\ \ 0.999999999652735;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00983}00983\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00984}00984\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00985}00985\ \ \ \ \ \_assert(m\_equals(R,\ A,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00986}00986\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00987}00987\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00988}00988\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00989}00989\ \ \ \ \textcolor{keywordtype}{int}\ m\_gmst\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00990}00990\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00991}00991\ \ \ \ \ \textcolor{keywordtype}{double}\ A=\mbox{\hyperlink{gmst_8h_a22a9ee5ea799a7511f4b5b1939c9de76}{gmst}}(10);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00992}00992\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00993}00993\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00994}00994\ \ \ \ \ \textcolor{keywordtype}{double}\ R=1.14523606099042;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00995}00995\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00996}00996\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00997}00997\ \ \ \ \ \_assert(fabs(R-\/A)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00998}00998\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l00999}00999\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01000}01000\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01001}01001\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01002}01002\ \ \ \ \textcolor{keywordtype}{int}\ m\_gast\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01003}01003\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01004}01004\ \ \ \ \ \textcolor{keywordtype}{double}\ A=\mbox{\hyperlink{gast_8h_a4eb2d09c87615520077aec1005b8e0ad}{gast}}(10);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01005}01005\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01006}01006\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01007}01007\ \ \ \ \ \textcolor{keywordtype}{double}\ R=1.14526529687017;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01008}01008\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01009}01009\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01010}01010\ \ \ \ \ \_assert(fabs(R-\/A)<\ 1e-\/11);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01011}01011\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01012}01012\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01013}01013\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01014}01014\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01015}01015\ \textcolor{keywordtype}{int}\ m\_MeasUpdate\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01016}01016\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01017}01017\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01018}01018\ \ \ \ \ A(1)=1;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01019}01019\ \ \ \ \ A(2)=2;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01020}01020\ \ \ \ \ A(3)=3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01021}01021\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B=\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(A);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01022}01022\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01023}01023\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ C(3,3);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01024}01024\ \ \ \ \ C(1,1)\ =\ 1;\ C(1,2)\ =\ 2;\ C(1,3)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01025}01025\ \ \ \ \ C(2,1)\ =\ 6;\ C(2,2)\ =\ 2;\ C(2,3)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01026}01026\ \ \ \ \ C(3,1)\ =\ 8;\ C(3,2)\ =\ 2;\ C(3,3)\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01027}01027\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01028}01028\ \ \ \ \ \textcolor{keyword}{auto}\ [K,\ x,\ P]=\mbox{\hyperlink{MeasUpdate_8h_a7d681f8dbcf8357623182f9f56ff815b}{MeasUpdate}}(B,2,3,4,A,C,3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01029}01029\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01030}01030\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01031}01031\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R0(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01032}01032\ \ \ \ \ R0(1)=0.106870229007634;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01033}01033\ \ \ \ \ R0(2)=\ \ 0.145038167938931;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01034}01034\ \ \ \ \ R0(3)=\ 0.16030534351145;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01035}01035\ \ \ \ \ R0=\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(R0);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01036}01036\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R1(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01037}01037\ \ \ \ \ R1(1)=\ 0.893129770992366;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01038}01038\ \ \ \ \ R1(2)=\ 1.85496183206107;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01039}01039\ \ \ \ \ R1(3)=2.83969465648855;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01040}01040\ \ \ \ \ R1=\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(R1);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01041}01041\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01042}01042\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R2(3,3);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01043}01043\ \ \ \ \ R2(1,1)\ =\ -\/2.95419847328244\ \ ;\ R2(1,2)\ =\ 0.717557251908397;\ R2(1,3)\ =\ 1.0763358778626;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01044}01044\ \ \ \ \ R2(2,1)\ =\ 0.633587786259541;\ R2(2,2)\ =\ 0.259541984732824;\ R2(2,3)\ =\ 0.389312977099237;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01045}01045\ \ \ \ \ R2(3,1)\ =\ 2.06870229007634;\ R2(3,2)\ =\ 0.0763358778625954\ ;\ R2(3,3)\ =\ 0.114503816793893;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01046}01046\ \ \ \ \ \_assert(m\_equals(R0,\ K,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01047}01047\ \ \ \ \ \_assert(m\_equals(R1,\ x,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01048}01048\ \ \ \ \ \_assert(m\_equals(R2,\ P,\ 1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01049}01049\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01050}01050\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01051}01051\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01052}01052\ \ \ \ \textcolor{keywordtype}{int}\ m\_G\_AccelHarmonic\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01053}01053\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01054}01054\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R2(3,3);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01055}01055\ \ \ \ \ R2(1,1)\ =\ -\/2.0122905124052e+34\ \ \ ;\ R2(1,2)\ =-\/3.29511632095482e+34\ ;\ R2(1,3)\ =\ -\/3.29511632095482e+34;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01056}01056\ \ \ \ \ R2(2,1)\ =\ -\/3.11072371483497e+34\ \ ;\ R2(2,2)\ =\ -\/3.38401367341354e+34\ ;\ R2(2,3)\ =\ -\/3.38401367341354e+34;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01057}01057\ \ \ \ \ R2(3,1)\ =\ \ -\/3.11072371483497e+34\ ;\ R2(3,2)\ =\ \ -\/3.38401367341354e+34\ ;\ R2(3,3)\ =\ -\/3.38401367341354e+34;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01058}01058\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01059}01059\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01060}01060\ \ \ \ \ A(1)=1.0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01061}01061\ \ \ \ \ A(2)=2.0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01062}01062\ \ \ \ \ A(3)=3.0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01063}01063\ \ \ \ \ A=\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(A);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01064}01064\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B(3,3);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01065}01065\ \ \ \ \ B(1,1)=\ 1.0;\ B(1,2)\ =\ 1.0;\ B(1,3)\ =\ 1.0\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01066}01066\ \ \ \ \ B(2,1)=\ 1.0;\ B(2,2)\ =\ 2.0;\ B(2,3)\ =\ 2.0\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01067}01067\ \ \ \ \ B(3,1)=\ 1.0;\ B(3,2)\ =\ 3.0;\ B(3,3)\ =\ 3.0\ ;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01068}01068\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01069}01069\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R\ =\ \mbox{\hyperlink{G__AccelHarmonic_8h_a99252400abd160067d7d1bb16a727832}{G\_AccelHarmonic}}(A,B,5,5);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01070}01070\ \ \ \ \ \_assert(m\_equals(R,R2,fabs(R2(1)*1e-\/11)));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01071}01071\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01072}01072\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01073}01073\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01074}01074\ \textcolor{keywordtype}{int}\ m\_GHAMatrix\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01075}01075\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01076}01076\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R(3,3);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01077}01077\ \ \ \ \ R(1,1)\ =\ 0.412804512414729;\ R(1,2)\ =\ 0.910819649837463\ ;\ R(1,3)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01078}01078\ \ \ \ \ R(2,1)\ =\ -\/0.910819649837463\ ;\ R(2,2)\ =\ 0.412804512414729;\ R(2,3)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01079}01079\ \ \ \ \ R(3,1)\ =\ 0;\ R(3,2)\ =\ 0;\ R(3,3)\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01080}01080\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01081}01081\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01082}01082\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A\ =\ \mbox{\hyperlink{GHAMatrix_8h_a49218ae38846c1175342d13a65d41f4d}{GHAMatrix}}(10);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01083}01083\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01084}01084\ \ \ \ \ \_assert(m\_equals(R,A,1e-\/11));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01085}01085\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01086}01086\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01087}01087\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01088}01088\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01089}01089\ \textcolor{keywordtype}{int}\ m\_Accel\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01090}01090\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01091}01091\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R(6);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01092}01092\ \ \ \ \ R(1)=1.0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01093}01093\ \ \ \ \ R(2)=2.0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01094}01094\ \ \ \ \ R(3)=3.0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01095}01095\ \ \ \ \ R(4)=-\/9.52489066332755e+131;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01096}01096\ \ \ \ \ R(5)=-\/1.68703107956274e+132;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01097}01097\ \ \ \ \ R(6)=-\/4.07471909292663e+132;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01098}01098\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01099}01099\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(6);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01100}01100\ \ \ \ \ A(1)=1.0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01101}01101\ \ \ \ \ A(2)=2.0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01102}01102\ \ \ \ \ A(3)=3.0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01103}01103\ \ \ \ \ A(4)=1.0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01104}01104\ \ \ \ \ A(5)=2.0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01105}01105\ \ \ \ \ A(6)=3.0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01106}01106\ \ \ \ \ A=\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(A);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01107}01107\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B\ =\ \mbox{\hyperlink{Accel_8h_a90a9d07270cea0a2accb38d118fff177}{Accel}}(10,A);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01108}01108\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01109}01109\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01110}01110\ \ \ \ \ \_assert(m\_equals(R,B,abs(R(6)*1e-\/11)));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01111}01111\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01112}01112\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01113}01113\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01114}01114\ \textcolor{keywordtype}{int}\ m\_VarEqn\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01115}01115\ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(42);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01116}01116\ \ \ \ \ A(1)=7101800.90695315;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01117}01117\ \ \ \ \ A(2)=1293997.58115302;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01118}01118\ \ \ \ \ A(3)=10114.014948955;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01119}01119\ \ \ \ \ A(4)=\ 573.068082065557;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01120}01120\ \ \ \ \ A(5)=\ -\/3085.15736953138;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01121}01121\ \ \ \ \ A(6)=\ \ \ \ \ \ -\/6736.03068347156;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01122}01122\ \ \ \ \ A(7)=\ \ \ \ \ \ \ \ 1.0000293469741;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01123}01123\ \ \ \ \ A(8)=\ \ \ \ 8.22733917593032e-\/06;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01124}01124\ \ \ \ \ A(9)=\ \ \ 2.17104932968693e-\/07;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01125}01125\ \ \ \ \ A(10)=\ \ \ \ 1.08925458231315e-\/05;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01126}01126\ \ \ \ \ A(11)=\ \ \ 3.04673932160225e-\/06;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01127}01127\ \ \ \ \ A(12)=\ \ \ \ 6.63504292706821e-\/08;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01128}01128\ \ \ \ \ A(13)=\ \ \ \ 8.22733944423959e-\/06;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01129}01129\ \ \ \ \ A(14)=\ \ \ \ \ \ 0.999986101965304;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01130}01130\ \ \ \ \ A(15)=\ \ \ 3.99927483270551e-\/08;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01131}01131\ \ \ \ \ A(16)=\ \ \ \ 3.04673960163327e-\/06;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01132}01132\ \ \ \ \ A(17)=\ \ \ -\/5.1596062466179e-\/06;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01133}01133\ \ \ \ \ A(18)=\ \ \ \ 1.22075292404534e-\/08;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01134}01134\ \ \ \ \ A(19)=\ \ \ 2.17105640392839e-\/07;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01135}01135\ \ \ \ \ A(20)=\ \ \ \ \ 3.9992870847826e-\/08;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01136}01136\ \ \ \ \ A(21)=\ \ \ \ \ \ \ 0.999984551298692;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01137}01137\ \ \ \ \ A(22)=\ \ \ \ 6.63510875632706e-\/08;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01138}01138\ \ \ \ \ A(23)=\ \ \ \ 1.22076480274715e-\/08;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01139}01139\ \ \ \ \ A(24)=\ \ -\/5.73276287738792e-\/06;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01140}01140\ \ \ \ \ A(25)=\ \ \ \ \ \ 5.38976081674752;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01141}01141\ \ \ \ \ A(26)=\ \ \ \ 1.47507305174403e-\/05;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01142}01142\ \ \ \ \ A(27)=\ \ \ 3.21241787851554e-\/07;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01143}01143\ \ \ \ \ A(28)=\ \ \ \ \ \ \ 1.00002936035846;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01144}01144\ \ \ \ \ A(29)=\ \ \ 8.19365458482084e-\/06;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01145}01145\ \ \ \ \ A(30)=\ \ \ \ 1.40504658112974e-\/07;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01146}01146\ \ \ \ \ A(31)=\ \ \ \ 1.47507306419397e-\/05;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01147}01147\ \ \ \ \ A(32)=\ \ \ \ \ \ \ \ 5.38968310056198;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01148}01148\ \ \ \ \ A(33)=\ \ \ \ 5.90697768748029e-\/08;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01149}01149\ \ \ \ \ A(34)=\ \ \ 8.19365482653896e-\/06;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01150}01150\ \ \ \ \ A(35)=\ \ \ \ \ \ \ \ \ \ 0.9999860891763;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01151}01151\ \ \ \ \ A(36)=\ \ \ \ 2.58022974647481e-\/08;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01152}01152\ \ \ \ \ A(37)=\ \ \ \ \ 3.21242427100724e-\/07;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01153}01153\ \ \ \ \ A(38)=\ \ 5.90698876854246e-\/08;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01154}01154\ \ \ \ \ A(39)=\ \ \ \ \ \ \ \ \ 5.38968032557769;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01155}01155\ \ \ \ \ A(40)=\ \ \ \ \ \ 1.4050537070756e-\/07;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01156}01156\ \ \ \ \ A(41)=\ \ \ \ 2.58024285760964e-\/08;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01157}01157\ \ \ \ \ A(42)=\ \ \ \ \ \ \ \ 0.999984550703337;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01158}01158\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R(42);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01159}01159\ \ \ \ \ R(1)\ =\ 573.068082065557;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01160}01160\ \ \ \ \ R(2)\ =\ -\/3085.15736953138;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01161}01161\ \ \ \ \ R(3)\ =\ -\/6736.03068347156;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01162}01162\ \ \ \ \ R(4)\ =\ -\/7.53489822593659;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01163}01163\ \ \ \ \ R(5)\ =\ -\/1.37294429126638;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01164}01164\ \ \ \ \ R(6)\ =\ -\/0.0107597986473575;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01165}01165\ \ \ \ \ R(7)\ =\ 1.08925458231315e-\/05;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01166}01166\ \ \ \ \ R(8)\ =\ 3.04673932160225e-\/06;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01167}01167\ \ \ \ \ R(9)\ =\ 6.63504292706821e-\/08;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01168}01168\ \ \ \ \ R(10)\ =\ 2.02239897508587e-\/06;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01169}01169\ \ \ \ \ R(11)\ =\ 5.61811901849645e-\/07;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01170}01170\ \ \ \ \ R(12)\ =\ 4.39846387071934e-\/09;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01171}01171\ \ \ \ \ R(13)\ =\ 3.04673960163327e-\/06;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01172}01172\ \ \ \ \ R(14)\ =\ -\/5.1596062466179e-\/06;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01173}01173\ \ \ \ \ R(15)\ =\ 1.22075292404534e-\/08;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01174}01174\ \ \ \ \ R(16)\ =\ 5.61812134084449e-\/07;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01175}01175\ \ \ \ \ R(17)\ =\ -\/9.58613689243416e-\/07;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01176}01176\ \ \ \ \ R(18)\ =\ 8.05616500343474e-\/10;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01177}01177\ \ \ \ \ R(19)\ =\ 6.63510875632706e-\/08;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01178}01178\ \ \ \ \ R(20)\ =\ 1.22076480274715e-\/08;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01179}01179\ \ \ \ \ R(21)\ =\ -\/5.73276287738792e-\/06;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01180}01180\ \ \ \ \ R(22)\ =\ 4.39895597958216e-\/09;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01181}01181\ \ \ \ \ R(23)\ =\ 8.0570607835305e-\/10;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01182}01182\ \ \ \ \ R(24)\ =\ -\/1.06368693580442e-\/06;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01183}01183\ \ \ \ \ R(25)\ =\ 1.00002936035846;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01184}01184\ \ \ \ \ R(26)\ =\ 8.19365458482084e-\/06;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01185}01185\ \ \ \ \ R(27)\ =\ 1.40504658112974e-\/07;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01186}01186\ \ \ \ \ R(28)\ =\ 1.08999102436198e-\/05;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01187}01187\ \ \ \ \ R(29)\ =\ 3.02797128053784e-\/06;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01188}01188\ \ \ \ \ R(30)\ =\ 2.37068516291712e-\/08;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01189}01189\ \ \ \ \ R(31)\ =\ 8.19365482653896e-\/06;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01190}01190\ \ \ \ \ R(32)\ =\ 0.9999860891763;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01191}01191\ \ \ \ \ R(33)\ =\ 2.58022974647481e-\/08;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01192}01192\ \ \ \ \ R(34)\ =\ 3.02797160153579e-\/06;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01193}01193\ \ \ \ \ R(35)\ =\ -\/5.16671243316801e-\/06;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01194}01194\ \ \ \ \ R(36)\ =\ 4.34211426867344e-\/09;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01195}01195\ \ \ \ \ R(37)\ =\ 1.4050537070756e-\/07;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01196}01196\ \ \ \ \ R(38)\ =\ 2.58024285760964e-\/08;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01197}01197\ \ \ \ \ R(39)\ =\ 0.999984550703337;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01198}01198\ \ \ \ \ R(40)\ =\ 2.37075280907946e-\/08;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01199}01199\ \ \ \ \ R(41)\ =\ 4.34223837651307e-\/09;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01200}01200\ \ \ \ \ R(42)\ =\ -\/5.73302112206999e-\/06;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01201}01201\ \ \ \ \ R=\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(R);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01202}01202\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B\ =\ \mbox{\hyperlink{VarEqn_8h_a502bdb5c8e9c335cd3fc942d1816f2e2}{VarEqn}}(\ 5.38970808087706,A);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01203}01203\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01204}01204\ \ \ \ \ \_assert(m\_equals(R,B,abs(R(1)*1e-\/11)));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01205}01205\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01206}01206\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01207}01207\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01208}01208\ \textcolor{keywordtype}{int}\ m\_DEInteg\_01()\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01209}01209\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01210}01210\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ R(6);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01211}01211\ \ \ \ \ R(1)=5542555.89427452;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01212}01212\ \ \ \ \ R(2)=3213514.83814162;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01213}01213\ \ \ \ \ R(3)=\ 3990892.92789074;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01214}01214\ \ \ \ \ R(4)=5394.06894044389;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01215}01215\ \ \ \ \ R(5)=-\/2365.2129057402;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01216}01216\ \ \ \ \ R(6)=-\/7061.8448137347;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01217}01217\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01218}01218\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ A(6);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01219}01219\ \ \ \ \ A(1)=\ \ \ 6221397.62857869;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01220}01220\ \ \ \ \ A(2)=\ \ \ 2867713.77965738;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01221}01221\ \ \ \ \ A(3)=\ \ \ 3006155.98509949;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01222}01222\ \ \ \ \ A(4)=\ \ \ 4645.04725161806;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01223}01223\ \ \ \ \ A(5)=\ \ -\/2752.21591588204;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01224}01224\ \ \ \ \ A(6)=\ \ -\/7507.99940987031;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01225}01225\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01226}01226\ \ \ \ \ A=\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(A);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01227}01227\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ B\ =\ \mbox{\hyperlink{DEInteg_8h_a4dd69868d913586235caced1243ab3eb}{DEInteg}}(\mbox{\hyperlink{Accel_8h_a90a9d07270cea0a2accb38d118fff177}{Accel}},0,-\/134.999991953373,1e-\/13,1e-\/6,6,A);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01228}01228\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01229}01229\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01230}01230\ \ \ \ \ \_assert(m\_equals(R,B,abs(R(5)*1e-\/11)));}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01231}01231\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01232}01232\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01233}01233\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01234}01234\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01235}01235\ \textcolor{keywordtype}{int}\ all\_tests()}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01236}01236\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01237}01237\ \ \ \ \ \_verify(m\_sum\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01238}01238\ \ \ \ \ \_verify(m\_sub\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01239}01239\ \ \ \ \ \_verify(m\_mul\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01240}01240\ \ \ \ \ \_verify(m\_div\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01241}01241\ \ \ \ \ \_verify(m\_sum\_d\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01242}01242\ \ \ \ \ \_verify(m\_sub\_d\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01243}01243\ \ \ \ \ \_verify(m\_mul\_d\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01244}01244\ \ \ \ \ \_verify(m\_div\_d\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01245}01245\ \ \ \ \ \_verify(m\_asig\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01246}01246\ \ \ \ \ \_verify(m\_zeros\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01247}01247\ \ \ \ \ \_verify(m\_eye\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01248}01248\ \ \ \ \ \_verify(m\_transpose\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01249}01249\ \ \ \ \ \_verify(m\_inv\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01250}01250\ \ \ \ \ \_verify(m\_norm\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01251}01251\ \ \ \ \ \_verify(m\_dot\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01252}01252\ \ \ \ \ \_verify(m\_cross\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01253}01253\ \ \ \ \ \_verify(m\_extract\_vector\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01254}01254\ \ \ \ \ \_verify(m\_union\_vector\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01255}01255\ \ \ \ \ \_verify(m\_extract\_row\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01256}01256\ \ \ \ \ \_verify(m\_extract\_column\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01257}01257\ \ \ \ \ \_verify(m\_assign\_row\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01258}01258\ \ \ \ \ \_verify(m\_assign\_column\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01259}01259\ \ \ \ \ \_verify(m\_R\_x\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01260}01260\ \ \ \ \ \_verify(m\_R\_y\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01261}01261\ \ \ \ \ \_verify(m\_R\_z\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01262}01262\ \ \ \ \ \_verify(m\_Cheb3D\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01263}01263\ \ \ \ \ \_verify(m\_EccAnom\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01264}01264\ \ \ \ \ \_verify(m\_Frac\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01265}01265\ \ \ \ \ \_verify(m\_MeanObliquity\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01266}01266\ \ \ \ \ \_verify(m\_Mjday\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01267}01267\ \ \ \ \ \_verify(m\_Mjday\_TDB\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01268}01268\ \ \ \ \ \_verify(m\_Position\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01269}01269\ \ \ \ \ \_verify(m\_sign\_\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01270}01270\ \ \ \ \ \_verify(m\_timediff\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01271}01271\ \ \ \ \ \_verify(m\_AzElPa\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01272}01272\ \ \ \ \ \_verify(m\_IERS\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01273}01273\ \ \ \ \ \_verify(m\_Legendre\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01274}01274\ \ \ \ \ \_verify(m\_NutAngles\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01275}01275\ \ \ \ \ \_verify(m\_TimeUpdate\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01276}01276\ \ \ \ \ \_verify(m\_AccelHarmonic\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01277}01277\ \ \ \ \ \_verify(m\_EqnEquinox\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01278}01278\ \ \ \ \ \_verify(m\_JPL\_Eph\_DE430\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01279}01279\ \ \ \ \ \_verify(m\_LTC\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01280}01280\ \ \ \ \ \_verify(m\_NutMatrix\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01281}01281\ \ \ \ \ \_verify(m\_PoleMatrix\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01282}01282\ \ \ \ \ \_verify(m\_PrecMatrix\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01283}01283\ \ \ \ \ \_verify(m\_gmst\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01284}01284\ \ \ \ \ \_verify(m\_gast\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01285}01285\ \ \ \ \ \_verify(m\_MeasUpdate\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01286}01286\ \ \ \ \ \_verify(m\_G\_AccelHarmonic\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01287}01287\ \ \ \ \ \_verify(m\_GHAMatrix\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01288}01288\ \ \ \ \ \_verify(m\_Accel\_01);\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01289}01289\ \ \ \ \ \_verify(m\_VarEqn\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01290}01290\ \ \ \ \ \_verify(m\_DEInteg\_01);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01291}01291\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01292}01292\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01293}01293\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01294}01294\ \}}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01295}01295\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01296}01296\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01297}01297\ \textcolor{keywordtype}{int}\ main()}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01298}01298\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01299}01299\ \ \ \ \ \mbox{\hyperlink{GLOBAL_8h_a75b612999c468928cbed5a99f875de1f}{AuxParamLoad}}();}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01300}01300\ \ \ \ \ \mbox{\hyperlink{GLOBAL_8h_ad733f697fb9098526f74dbedf42c2e66}{eop19620101}}();}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01301}01301\ \ \ \ \ \mbox{\hyperlink{GLOBAL_8h_a74acebd49f327dc00f58429eb876b0c7}{GGM03S}}();}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01302}01302\ \ \ \ \ \mbox{\hyperlink{GLOBAL_8h_ade2d947387a8d0619724515e334a0387}{DE430Coeff}}();}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01303}01303\ \ \ \ \ \mbox{\hyperlink{GLOBAL_8h_ae432d4afcde590fd86760abb5fbe6005}{GEOS3}}();}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01304}01304\ \ \ \ \ \textcolor{keywordtype}{int}\ result\ =\ all\_tests();}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01305}01305\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01306}01306\ \ \ \ \ \textcolor{keywordflow}{if}\ (result\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01307}01307\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}PASSED\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01308}01308\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01309}01309\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Tests\ run:\ \%d\(\backslash\)n"{}},\ tests\_run);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01310}01310\ }
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01311}01311\ \ \ \ \ \textcolor{keywordflow}{return}\ (result\ !=\ 0);}
+\DoxyCodeLine{\Hypertarget{tests_8cpp_source_l01312}01312\ \}}
+
+\end{DoxyCode}

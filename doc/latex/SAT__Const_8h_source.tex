@@ -1,54 +1,54 @@
 \doxysection{SAT\+\_\+\+Const.\+h}
-\hypertarget{SAT__Const_8h_source}{}\label{SAT__Const_8h_source}\index{/home/fghfgh/Escritorio/ProyectoTTI/include/SAT\_Const.h@{/home/fghfgh/Escritorio/ProyectoTTI/include/SAT\_Const.h}}
+\hypertarget{SAT__Const_8h_source}{}\label{SAT__Const_8h_source}\index{SAT\_Const.h@{SAT\_Const.h}}
 \mbox{\hyperlink{SAT__Const_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_SAT\_Const\_}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_SAT\_Const\_}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ }
-\DoxyCodeLine{00011\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ pi=3.14159265358979323846264338327950288419716939937510582097494;}
-\DoxyCodeLine{00012\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ eps=2.2204e-\/16;}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ Mathematical\ constants}}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ pi2\ \ \ \ \ \ \ =\ 2*pi;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2pi}}
-\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Rad\ \ \ \ \ \ \ =\ pi/180;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Radians\ per\ degree}}
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Deg\ \ \ \ \ \ \ =\ 180/pi;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Degrees\ per\ radian}}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Arcs\ \ \ \ \ \ =\ 3600*180/pi;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arcseconds\ per\ radian}}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ General}}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ MJD\_J2000\ =\ 51544.5;\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Modified\ Julian\ Date\ of\ J2000}}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ T\_B1950\ \ \ =\ -\/0.500002108;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Epoch\ B1950}}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ c\_light\ \ \ =\ 299792458.000000000;\ \textcolor{comment}{//\ Speed\ of\ light\ \ [m/s];\ DE430}}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ AU\ \ \ \ \ \ \ \ =\ 149597870700.000000;\ \textcolor{comment}{//\ Astronomical\ unit\ [m];\ DE430}}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Physical\ parameters\ of\ the\ Earth,\ Sun\ and\ Moon}}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Equatorial\ radius\ and\ flattening}}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ R\_Earth\ \ \ =\ 6378.1363e3;\ \ \ \ \ \ \textcolor{comment}{//\ Earth's\ radius\ [m];\ DE430}}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ f\_Earth\ \ \ =\ 1/298.257223563;\ \ \textcolor{comment}{//\ Flattening;\ WGS-\/84}}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ R\_Sun\ \ \ \ \ =\ 696000e3;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sun's\ radius\ [m];\ DE430}}
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ R\_Moon\ \ \ \ =\ 1738e3;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Moon's\ radius\ [m];\ DE430}}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ Earth\ rotation\ (derivative\ of\ GMST\ at\ J2000;\ differs\ from\ inertial\ period\ by\ precession)}}
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ omega\_Earth\ =\ 15.04106717866910/3600*Rad;\ \ \ \textcolor{comment}{//\ [rad/s];\ WGS-\/84}}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ Gravitational\ coefficients}}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Earth\ \ \ \ =\ 398600.435436e9;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Sun\ \ \ \ \ \ =\ 132712440041.939400e9;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Moon\ \ \ \ \ =\ GM\_Earth/81.30056907419062;\ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Mercury\ \ =\ 22031.780000e9;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Venus\ \ \ \ =\ 324858.592000e9;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Mars\ \ \ \ \ =\ 42828.375214e9;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Jupiter\ \ =\ 126712764.800000e9;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Saturn\ \ \ =\ 37940585.200000e9;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Uranus\ \ \ =\ 5794548.600000e9;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Neptune\ \ =\ 6836527.100580e9;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Pluto\ \ \ \ =\ 977.0000000000009e9;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ Solar\ radiation\ pressure\ at\ 1\ AU\ }}
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ P\_Sol\ \ \ \ \ \ \ =\ 1367/c\_light;\ \textcolor{comment}{//\ [N/m\string^2]\ (\string~1367\ W/m\string^2);\ IERS\ 96}}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ }
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ \_SAT\_Const\_}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ \_SAT\_Const\_}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00011}00011\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ pi=3.14159265358979323846264338327950288419716939937510582097494;}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00012}00012\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ eps=2.22044604925031e-\/16;}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00013}00013\ \ \ \ \ \textcolor{comment}{//\ Mathematical\ constants}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ pi2\ \ \ \ \ \ \ =\ 2*pi;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2pi}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Rad\ \ \ \ \ \ \ =\ pi/180;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Radians\ per\ degree}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Deg\ \ \ \ \ \ \ =\ 180/pi;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Degrees\ per\ radian}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Arcs\ \ \ \ \ \ =\ 3600*180/pi;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arcseconds\ per\ radian}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//\ General}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ MJD\_J2000\ =\ 51544.5;\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Modified\ Julian\ Date\ of\ J2000}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ T\_B1950\ \ \ =\ -\/0.500002108;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Epoch\ B1950}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ c\_light\ \ \ =\ 299792458.000000000;\ \textcolor{comment}{//\ Speed\ of\ light\ \ [m/s];\ DE430}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ AU\ \ \ \ \ \ \ \ =\ 149597870700.000000;\ \textcolor{comment}{//\ Astronomical\ unit\ [m];\ DE430}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//\ Physical\ parameters\ of\ the\ Earth,\ Sun\ and\ Moon}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//\ Equatorial\ radius\ and\ flattening}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ R\_Earth\ \ \ =\ 6378.1363e3;\ \ \ \ \ \ \textcolor{comment}{//\ Earth's\ radius\ [m];\ DE430}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ f\_Earth\ \ \ =\ 1/298.257223563;\ \ \textcolor{comment}{//\ Flattening;\ WGS-\/84}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ R\_Sun\ \ \ \ \ =\ 696000e3;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sun's\ radius\ [m];\ DE430}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ R\_Moon\ \ \ \ =\ 1738e3;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Moon's\ radius\ [m];\ DE430}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//\ Earth\ rotation\ (derivative\ of\ GMST\ at\ J2000;\ differs\ from\ inertial\ period\ by\ precession)}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ omega\_Earth\ =\ 15.04106717866910/3600*Rad;\ \ \ \textcolor{comment}{//\ [rad/s];\ WGS-\/84}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ Gravitational\ coefficients}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Earth\ \ \ \ =\ 398600.435436e9;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Sun\ \ \ \ \ \ =\ 132712440041.939400e9;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Moon\ \ \ \ \ =\ GM\_Earth/81.30056907419062;\ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Mercury\ \ =\ 22031.780000e9;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Venus\ \ \ \ =\ 324858.592000e9;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Mars\ \ \ \ \ =\ 42828.375214e9;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Jupiter\ \ =\ 126712764.800000e9;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Saturn\ \ \ =\ 37940585.200000e9;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Uranus\ \ \ =\ 5794548.600000e9;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Neptune\ \ =\ 6836527.100580e9;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GM\_Pluto\ \ \ \ =\ 977.0000000000009e9;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m\string^3/s\string^2];\ DE430}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00049}00049\ \ \ \ \ \textcolor{comment}{//\ Solar\ radiation\ pressure\ at\ 1\ AU\ }}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ P\_Sol\ \ \ \ \ \ \ =\ 1367/c\_light;\ \textcolor{comment}{//\ [N/m\string^2]\ (\string~1367\ W/m\string^2);\ IERS\ 96}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00052}00052\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{SAT__Const_8h_source_l00054}00054\ }
 
 \end{DoxyCode}

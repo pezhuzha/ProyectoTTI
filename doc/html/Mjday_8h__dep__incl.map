@@ -1,5 +1,11 @@
-<map id="/home/fghfgh/Escritorio/ProyectoTTI/include/Mjday.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/Mjday.h">
-<area shape="rect" id="Node000001" title="El archivo contiene la funcion Mjday." alt="" coords="5,5,213,45"/>
-<area shape="rect" id="Node000002" href="$Mjday_8cpp.html" title="El archivo contiene las implementaciones de Mjday.h." alt="" coords="12,93,207,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,59,112,93,107,93,107,59"/>
+<map id="Mjday.h" name="Mjday.h">
+<area shape="rect" id="Node000001" title="El archivo contiene la funcion Mjday." alt="" coords="228,5,300,31"/>
+<area shape="rect" id="Node000002" href="$EKF__GEOS3_8cpp.html" title="Es el archivo principal del programa." alt="" coords="5,79,131,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,38,101,81,99,76,219,33"/>
+<area shape="rect" id="Node000003" href="$GLOBAL_8cpp.html" title="El archivo contiene las implementaciones de GLOBAL.h." alt="" coords="155,79,256,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="248,43,217,80,213,77,244,40"/>
+<area shape="rect" id="Node000004" href="$Mjday_8cpp.html" title="El archivo contiene las implementaciones de Mjday.h." alt="" coords="281,79,367,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="285,40,316,77,312,80,281,43"/>
+<area shape="rect" id="Node000005" href="$tests_8cpp_source.html" title=" " alt="" coords="391,79,473,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="305,34,406,76,403,81,302,38"/>
 </map>

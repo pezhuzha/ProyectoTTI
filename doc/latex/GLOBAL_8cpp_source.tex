@@ -1,0 +1,134 @@
+\doxysection{GLOBAL.\+cpp}
+\hypertarget{GLOBAL_8cpp_source}{}\label{GLOBAL_8cpp_source}\index{GLOBAL.cpp@{GLOBAL.cpp}}
+\mbox{\hyperlink{GLOBAL_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GLOBAL_8h}{../include/GLOBAL.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Mjday_8h}{../include/Mjday.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SAT__Const_8h}{../include/SAT\_Const.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00011}00011\ \mbox{\hyperlink{structParam}{Param}}\ AuxParam;}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00012}00012\ \mbox{\hyperlink{classMatrix}{Matrix}}\ eopdata;}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00013}00013\ \mbox{\hyperlink{classMatrix}{Matrix}}\ Cnm;}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00014}00014\ \mbox{\hyperlink{classMatrix}{Matrix}}\ Snm;}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00015}00015\ \mbox{\hyperlink{classMatrix}{Matrix}}\ PC;}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00016}00016\ \mbox{\hyperlink{classMatrix}{Matrix}}\ obs;}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00017}\mbox{\hyperlink{GLOBAL_8h_a75b612999c468928cbed5a99f875de1f}{00017}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{GLOBAL_8cpp_a75b612999c468928cbed5a99f875de1f}{AuxParamLoad}}()\{}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00018}00018\ \ \ \ \ AuxParam.Mjd\_UTC=4.974611635416653e+04;}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00019}00019\ \ \ \ \ AuxParam.Mjd\_TT=4.974611706231468e+04;}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00020}00020\ \ \ \ \ AuxParam.n=20;}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00021}00021\ \ \ \ \ AuxParam.m=20;}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00022}00022\ \ \ \ \ AuxParam.sun=1;}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00023}00023\ \ \ \ \ AuxParam.moon=1;}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00024}00024\ \ \ \ \ AuxParam.planets=1;}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00026}\mbox{\hyperlink{GLOBAL_8h_ad733f697fb9098526f74dbedf42c2e66}{00026}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{GLOBAL_8cpp_af1504e3e975e6f502042c7fa8b7abe60}{eop19620101}}(\textcolor{keywordtype}{int}\ c)\{}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00027}00027\ \ \ \ \ eopdata=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(13,c);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00028}00028\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00029}00029\ \ \ \ \ FILE\ *fid\ =\ fopen(\textcolor{stringliteral}{"{}../data/eop19620101.txt"{}},\textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{if}(fid==NULL)\{}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Fail\ open\ eop19620101.txt\ file\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Error"{}});}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ exit(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j=1;j<=c;j++)\{}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ fscanf(fid,\textcolor{stringliteral}{"{}\%lf\ \%lf\ \%lf\ \%lf\ \%lf\ \%lf\ \%lf\ \%lf\ \%lf\ \%lf\ \%lf\ \%lf\ \%lf"{}},}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \&(eopdata(1,j)),\&(eopdata\ (2,j)),\&(eopdata\ (3,j)),}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \&(eopdata\ (4,j)),\&(eopdata\ (5,j)),\&(eopdata\ (6,j)),}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \&(eopdata\ (7,j)),\&(eopdata\ (8,j)),\&(eopdata\ (9,j)),}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \&(eopdata\ (10,j)),\&(eopdata\ (11,j)),\&(eopdata\ (12,j)),}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \&(eopdata\ (13,j))}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00044}00044\ \ \ \ \ fclose(fid);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00045}00045\ \}}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00047}\mbox{\hyperlink{GLOBAL_8h_a74acebd49f327dc00f58429eb876b0c7}{00047}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{GLOBAL_8cpp_a1e2e54b5a8bda6f8402f3e8bbe5f3175}{GGM03S}}(\textcolor{keywordtype}{int}\ n)\{}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00048}00048\ \ \ \ \ Cnm=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(n,n);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00049}00049\ \ \ \ \ Snm=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(n,n);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00050}00050\ \ \ \ \ FILE\ *fid\ =\ fopen(\textcolor{stringliteral}{"{}../data/GGM03S.txt"{}},\textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordflow}{if}(fid==NULL)\{}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Fail\ open\ GGM03S.txt\ file\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Error"{}});}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ exit(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{double}\ aux;}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=1;i<=n;i++)\{}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j=1;j<=i;j++)\{}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ fscanf(fid,\textcolor{stringliteral}{"{}\%lf\ \%lf\ \%lf\ \%lf\ \%lf\ \%lf"{}},}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&aux,\&aux,}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&Cnm(i,j),\&Snm(i,j),}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&aux,\&aux}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00066}00066\ \ \ \ \ fclose(fid);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00067}00067\ \}}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00068}\mbox{\hyperlink{GLOBAL_8h_ade2d947387a8d0619724515e334a0387}{00068}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{GLOBAL_8cpp_a55037cf2b485a56ae2aae3c2a97d4992}{DE430Coeff}}(\textcolor{keywordtype}{int}\ row,\textcolor{keywordtype}{int}\ column)\{}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00069}00069\ \ \ \ \ PC=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(row,column);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00070}00070\ \ \ \ \ FILE\ *fid\ =\ fopen(\textcolor{stringliteral}{"{}../data/DE430Coeff.txt"{}},\textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{if}(fid==NULL)\{}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Fail\ open\ DE430Coeff.txt\ file\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Error"{}});}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ exit(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordtype}{double}\ aux;}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=1;i<=row;i++)\{}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j=1;j<=column;j++)\{}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ fscanf(fid,\textcolor{stringliteral}{"{}\%lf"{}},}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&PC(i,j)}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00084}00084\ \ \ \ \ fclose(fid);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00085}00085\ \}}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00087}\mbox{\hyperlink{GLOBAL_8h_ae432d4afcde590fd86760abb5fbe6005}{00087}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{GLOBAL_8cpp_ae898bc6077eb6bdcd9ad3919b83001f0}{GEOS3}}(\textcolor{keywordtype}{int}\ nobs)\{}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00088}00088\ \ \ \ \ obs=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(nobs,4);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00089}00089\ \ \ \ \ FILE\ *fid\ =\ fopen(\textcolor{stringliteral}{"{}../data/GEOS3.txt"{}},\textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{if}(fid==NULL)\{}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Fail\ open\ GEOS3.txt\ file\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Error"{}});}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ exit(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordtype}{int}\ Y,MO,D,H,M,MI,S;}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordtype}{double}\ AZ,EL,DIST;}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00097}00097\ \ \ \ \ \textcolor{keywordtype}{char}\ tline[57],y[5],mo[3],d[3],h[3],mi[3],s[6],az[10],el[9],dist[10],aux[2];}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00098}00098\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=1;i<=nobs;i++)}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00099}00099\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ fgets(tline,\textcolor{keyword}{sizeof}(tline),fid);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ strncpy(y,\&(tline[0]),4);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ y[4]=\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ Y=atoi(y);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ strncpy(mo,\&(tline[5]),2);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ mo[2]=\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ MO=atoi(mo);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ strncpy(d,\&(tline[8]),2);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ d[2]=\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ D=atoi(d);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ strncpy(h,\&(tline[12]),2);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ h[2]=\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ H=atoi(h);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ strncpy(mi,\&(tline[15]),2);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ mi[2]=\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ MI=atoi(mi);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ strncpy(s,\&(tline[18]),5);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ s[5]=\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ S=atof(s);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ strncpy(az,\&(tline[25]),9);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ az[9]=\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ AZ=atof(az);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ strncpy(el,\&(tline[35]),8);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ el[8]=\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ EL=atof(el);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ strncpy(dist,\&(tline[44]),9);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ dist[9]=\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ DIST=atof(dist);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ obs(i,1)\ =\ \mbox{\hyperlink{Mjday_8h_a3d8c32be4ba9222405b66aabe80409e2}{Mjday}}(Y,MO,D,H,MI,S);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ obs(i,2)\ =\ Rad*AZ;}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ obs(i,3)\ =\ Rad*EL;}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ obs(i,4)\ =\ 1e3*DIST;}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00132}00132\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00133}00133\ \ \ \ \ fclose(fid);}
+\DoxyCodeLine{\Hypertarget{GLOBAL_8cpp_source_l00134}00134\ \}}
+
+\end{DoxyCode}

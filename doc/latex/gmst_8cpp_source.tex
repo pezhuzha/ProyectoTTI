@@ -1,0 +1,26 @@
+\doxysection{gmst.\+cpp}
+\hypertarget{gmst_8cpp_source}{}\label{gmst_8cpp_source}\index{gmst.cpp@{gmst.cpp}}
+\mbox{\hyperlink{gmst_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{gmst_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gmst_8h}{../include/gmst.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{gmst_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Frac_8h}{../include/Frac.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{gmst_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SAT__Const_8h}{../include/SAT\_Const.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{gmst_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{gmst_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{gmst_8cpp_source_l00012}\mbox{\hyperlink{gmst_8h_a22a9ee5ea799a7511f4b5b1939c9de76}{00012}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{gmst_8cpp_a22a9ee5ea799a7511f4b5b1939c9de76}{gmst}}(\textcolor{keywordtype}{double}\ Mjd\_UT1)\{}
+\DoxyCodeLine{\Hypertarget{gmst_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Secs,MJD\_J2000,Mjd\_0,UT1,T\_0,T,\mbox{\hyperlink{gmst_8h_a22a9ee5ea799a7511f4b5b1939c9de76}{gmst}};}
+\DoxyCodeLine{\Hypertarget{gmst_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ Secs\ =\ 86400.0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Seconds\ per\ day}}
+\DoxyCodeLine{\Hypertarget{gmst_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ MJD\_J2000\ =\ 51544.5;}
+\DoxyCodeLine{\Hypertarget{gmst_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{gmst_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ Mjd\_0\ =\ floor(Mjd\_UT1);}
+\DoxyCodeLine{\Hypertarget{gmst_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ UT1\ \ \ =\ Secs*(Mjd\_UT1-\/Mjd\_0);\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [s]}}
+\DoxyCodeLine{\Hypertarget{gmst_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ T\_0\ \ \ =\ (Mjd\_0\ \ -\/MJD\_J2000)/36525.0;}
+\DoxyCodeLine{\Hypertarget{gmst_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ T\ \ \ \ \ =\ (Mjd\_UT1-\/MJD\_J2000)/36525.0;}
+\DoxyCodeLine{\Hypertarget{gmst_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{gmst_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gmst_8h_a22a9ee5ea799a7511f4b5b1939c9de76}{gmst}}\ \ =\ 24110.54841\ +\ 8640184.812866*T\_0\ +\ 1.002737909350795*UT1\ +\ (0.093104-\/6.2e-\/6*T)*T*T;\ \ \ \ \textcolor{comment}{//\ [s]}}
+\DoxyCodeLine{\Hypertarget{gmst_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{gmst_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2*pi*\mbox{\hyperlink{Frac_8h_a92f2f0f91c99cd6bec1a0e9a3b6443fc}{Frac}}(\mbox{\hyperlink{gmst_8h_a22a9ee5ea799a7511f4b5b1939c9de76}{gmst}}/Secs);\ \ \ \ \ \ \ \textcolor{comment}{//\ [rad],\ 0..2pi}}
+\DoxyCodeLine{\Hypertarget{gmst_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{gmst_8cpp_source_l00026}00026\ \ \ \ \ \}}
+
+\end{DoxyCode}

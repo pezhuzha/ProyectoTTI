@@ -1,0 +1,15 @@
+\doxysection{Accel\+Point\+Mass.\+cpp}
+\hypertarget{AccelPointMass_8cpp_source}{}\label{AccelPointMass_8cpp_source}\index{AccelPointMass.cpp@{AccelPointMass.cpp}}
+\mbox{\hyperlink{AccelPointMass_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{AccelPointMass_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{AccelPointMass_8h}{../include/AccelPointMass.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{AccelPointMass_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{AccelPointMass_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{AccelPointMass_8cpp_source_l00010}\mbox{\hyperlink{AccelPointMass_8h_a72b636f377c135454d41655c935c0eb3}{00010}}\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\&\ \ \ \mbox{\hyperlink{AccelPointMass_8cpp_a72b636f377c135454d41655c935c0eb3}{AccelPointMass}}(\mbox{\hyperlink{classMatrix}{Matrix}}\&\ r,\mbox{\hyperlink{classMatrix}{Matrix}}\&\ s,\textcolor{keywordtype}{double}\ GM)\{}
+\DoxyCodeLine{\Hypertarget{AccelPointMass_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ d\ =\ r\ -\/\ s;}
+\DoxyCodeLine{\Hypertarget{AccelPointMass_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ \&a=\ d/pow(\mbox{\hyperlink{matrix_8h_a907c9c6f53fc52d17e86b507b156536f}{norm}}(d),3)\ +\ s/(pow(\mbox{\hyperlink{matrix_8h_a907c9c6f53fc52d17e86b507b156536f}{norm}}(s),3));}
+\DoxyCodeLine{\Hypertarget{AccelPointMass_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ a=a\ *\ -\/GM;}
+\DoxyCodeLine{\Hypertarget{AccelPointMass_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a;}
+\DoxyCodeLine{\Hypertarget{AccelPointMass_8cpp_source_l00015}00015\ \ \ \ \ \}}
+
+\end{DoxyCode}

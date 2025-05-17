@@ -29,7 +29,7 @@
 #include "../include/MeasUpdate.h"
     /**
      * @file EKF_GEOS3.cpp
-     * @brief El archivo contiene las implementaciones de EKF_GEOS3.h
+     * @brief Es el archivo principal del programa
      * @author Pedro Zhuzhan
      * @bug No known bugs
      */

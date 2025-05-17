@@ -1,7 +1,9 @@
-<map id="/home/fghfgh/Escritorio/ProyectoTTI/include/Cheb3D.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/Cheb3D.h">
-<area shape="rect" id="Node000001" title="El archivo contiene la funcion Cheb3D." alt="" coords="108,5,329,45"/>
-<area shape="rect" id="Node000002" href="$Cheb3D_8cpp.html" title="El archivo contiene las implementaciones de Cheb3D.h." alt="" coords="5,101,213,141"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,56,133,103,130,99,184,52"/>
-<area shape="rect" id="Node000003" href="$JPL__Eph__DE430_8cpp.html" title="El archivo contiene las implementaciones de JPL_Eph_DE430.h." alt="" coords="238,93,418,148"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="253,52,299,91,295,95,250,56"/>
+<map id="Cheb3D.h" name="Cheb3D.h">
+<area shape="rect" id="Node000001" title="El archivo contiene la funcion Cheb3D." alt="" coords="161,5,246,31"/>
+<area shape="rect" id="Node000002" href="$Cheb3D_8cpp.html" title="El archivo contiene las implementaciones de Cheb3D.h." alt="" coords="5,79,105,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,39,81,81,78,76,166,34"/>
+<area shape="rect" id="Node000003" href="$JPL__Eph__DE430_8cpp.html" title="El archivo contiene las implementaciones de JPL_Eph_DE430.h." alt="" coords="129,79,277,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="206,44,206,79,201,79,201,44"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp_source.html" title=" " alt="" coords="301,79,383,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="239,34,321,76,318,81,236,39"/>
 </map>

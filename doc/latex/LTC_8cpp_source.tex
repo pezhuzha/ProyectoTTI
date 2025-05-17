@@ -1,0 +1,20 @@
+\doxysection{LTC.\+cpp}
+\hypertarget{LTC_8cpp_source}{}\label{LTC_8cpp_source}\index{LTC.cpp@{LTC.cpp}}
+\mbox{\hyperlink{LTC_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{LTC_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{LTC_8h}{../include/LTC.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{LTC_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{R__y_8h}{../include/R\_y.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{LTC_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{R__z_8h}{../include/R\_z.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{LTC_8cpp_source_l00010}\mbox{\hyperlink{LTC_8h_a27b89059a0c4bc52a9192df16ead3359}{00010}}\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\&\ \mbox{\hyperlink{LTC_8cpp_a27b89059a0c4bc52a9192df16ead3359}{LTC}}(\textcolor{keywordtype}{double}\ lon,\textcolor{keywordtype}{double}\ lat)\{}
+\DoxyCodeLine{\Hypertarget{LTC_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ \&M=\ \mbox{\hyperlink{R__y_8h_a25114557991f92fd6b027118c591a98f}{R\_y}}(-\/1.0*lat)*\mbox{\hyperlink{R__z_8h_a4f688959a9ab144bf27d272e54bf7258}{R\_z}}(lon);}
+\DoxyCodeLine{\Hypertarget{LTC_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Aux;}
+\DoxyCodeLine{\Hypertarget{LTC_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j=1;j<=3;j++)\{}
+\DoxyCodeLine{\Hypertarget{LTC_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ Aux=M(1,j);}
+\DoxyCodeLine{\Hypertarget{LTC_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ M(1,j)=M(2,j);}
+\DoxyCodeLine{\Hypertarget{LTC_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ M(2,j)=M(3,j);}
+\DoxyCodeLine{\Hypertarget{LTC_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ M(3,j)=\ Aux;\}}
+\DoxyCodeLine{\Hypertarget{LTC_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{return}\ M;}
+\DoxyCodeLine{\Hypertarget{LTC_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{LTC_8cpp_source_l00020}00020\ \ \ \ \ \}}
+
+\end{DoxyCode}

@@ -1,5 +1,9 @@
-<map id="/home/fghfgh/Escritorio/ProyectoTTI/include/Accel.h" name="/home/fghfgh/Escritorio/ProyectoTTI/include/Accel.h">
-<area shape="rect" id="Node000001" title="El archivo contiene la funcion Accel." alt="" coords="5,5,211,45"/>
-<area shape="rect" id="Node000002" href="$Accel_8cpp.html" title="El archivo contiene las implementaciones de Accel.h." alt="" coords="12,93,204,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,59,111,93,105,93,105,59"/>
+<map id="Accel.h" name="Accel.h">
+<area shape="rect" id="Node000001" title="El archivo contiene la funcion Accel." alt="" coords="142,5,211,31"/>
+<area shape="rect" id="Node000002" href="$Accel_8cpp.html" title="El archivo contiene las implementaciones de Accel.h." alt="" coords="5,79,89,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,40,70,81,67,76,142,35"/>
+<area shape="rect" id="Node000003" href="$EKF__GEOS3_8cpp.html" title="Es el archivo principal del programa." alt="" coords="114,79,239,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="179,44,179,79,174,79,174,44"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp_source.html" title=" " alt="" coords="264,79,345,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="211,35,285,76,282,81,208,40"/>
 </map>

@@ -5,12 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ProyectoTTI: /home/fghfgh/Escritorio/ProyectoTTI/include/gmst.h File Reference</title>
+<title>My Project: gmst.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -25,9 +27,8 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ProyectoTTI<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">My Project<span id="projectnumber">&#160;2.0</span>
    </div>
-   <div id="projectbrief">ProyectoTTI</div>
   </td>
  </tr>
  </tbody>
@@ -50,17 +51,29 @@ $(function() { codefold.init(0); });
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Search',false);
+  initMenu('',true,false,'search.php','Search',true);
   $(function() { init_search(); });
 });
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){ initResizable(false); });
+$(function(){initNavTree('gmst_8h.html',''); initResizable(true); });
 /* @license-end */
 </script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -82,12 +95,6 @@ $(function(){ initResizable(false); });
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
@@ -100,13 +107,17 @@ $(function(){ initResizable(false); });
 <div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="gmst_8h__dep__incl.png" border="0" usemap="#a_2home_2fghfgh_2Escritorio_2ProyectoTTI_2include_2gmst_8hdep" alt=""/></div>
-<map name="a_2home_2fghfgh_2Escritorio_2ProyectoTTI_2include_2gmst_8hdep" id="a_2home_2fghfgh_2Escritorio_2ProyectoTTI_2include_2gmst_8hdep">
-<area shape="rect" title="El archivo contiene la funcion gmst." alt="" coords="102,5,305,45"/>
-<area shape="rect" href="gast_8cpp.html" title="El archivo contiene las implementaciones de gast.h." alt="" coords="5,93,191,133"/>
-<area shape="poly" title=" " alt="" coords="171,56,123,95,120,91,168,52"/>
-<area shape="rect" href="gmst_8cpp.html" title="El archivo contiene las implementaciones de gmst.h." alt="" coords="215,93,405,133"/>
-<area shape="poly" title=" " alt="" coords="239,52,288,91,285,95,236,56"/>
+<div class="center"><img src="gmst_8h__dep__incl.png" border="0" usemap="#agmst_8hdep" alt=""/></div>
+<map name="agmst_8hdep" id="agmst_8hdep">
+<area shape="rect" title="El archivo contiene la funcion gmst." alt="" coords="212,5,279,31"/>
+<area shape="rect" href="EKF__GEOS3_8cpp.html" title="Es el archivo principal del programa." alt="" coords="5,79,131,104"/>
+<area shape="poly" title=" " alt="" coords="205,38,98,81,96,76,203,33"/>
+<area shape="rect" href="gast_8cpp.html" title="El archivo contiene las implementaciones de gast.h." alt="" coords="155,79,232,104"/>
+<area shape="poly" title=" " alt="" coords="231,43,204,80,200,77,227,40"/>
+<area shape="rect" href="gmst_8cpp.html" title="El archivo contiene las implementaciones de gmst.h." alt="" coords="256,79,339,104"/>
+<area shape="poly" title=" " alt="" coords="264,40,291,77,287,80,260,43"/>
+<area shape="rect" href="tests_8cpp_source.html" title=" " alt="" coords="363,79,445,104"/>
+<area shape="poly" title=" " alt="" coords="284,34,379,76,377,81,282,39"/>
 </map>
 </div>
 </div>
@@ -120,7 +131,9 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>El archivo contiene la funcion gmst. </p>
 <dl class="section author"><dt>Author</dt><dd>Pedro Zhuzhan </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000013">Bug</a></b></dt><dd>No known bugs </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000014">Bug</a></b></dt><dd>No known bugs </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="gmst_8h_source.html">gmst.h</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a22a9ee5ea799a7511f4b5b1939c9de76" name="a22a9ee5ea799a7511f4b5b1939c9de76"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a22a9ee5ea799a7511f4b5b1939c9de76">&#9670;&#160;</a></span>gmst()</h2>
@@ -144,13 +157,46 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>gmstime GMST in [rad] </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="gmst_8cpp_source.html#l00012">12</a> of file <a class="el" href="gmst_8cpp_source.html">gmst.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="gmst_8h_a22a9ee5ea799a7511f4b5b1939c9de76_cgraph.png" border="0" usemap="#agmst_8h_a22a9ee5ea799a7511f4b5b1939c9de76_cgraph" alt=""/></div>
+<map name="agmst_8h_a22a9ee5ea799a7511f4b5b1939c9de76_cgraph" id="agmst_8h_a22a9ee5ea799a7511f4b5b1939c9de76_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,60,55"/>
+<area shape="poly" title=" " alt="" coords="15,30,12,21,13,12,21,5,33,3,47,6,53,15,49,18,44,11,33,8,23,10,18,14,17,20,20,28"/>
+<area shape="rect" href="Frac_8cpp.html#a92f2f0f91c99cd6bec1a0e9a3b6443fc" title=" " alt="" coords="108,29,157,55"/>
+<area shape="poly" title=" " alt="" coords="60,39,94,39,94,45,60,45"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="gmst_8h_a22a9ee5ea799a7511f4b5b1939c9de76_icgraph.png" border="0" usemap="#agmst_8h_a22a9ee5ea799a7511f4b5b1939c9de76_icgraph" alt=""/></div>
+<map name="agmst_8h_a22a9ee5ea799a7511f4b5b1939c9de76_icgraph" id="agmst_8h_a22a9ee5ea799a7511f4b5b1939c9de76_icgraph">
+<area shape="rect" title=" " alt="" coords="360,31,415,56"/>
+<area shape="poly" title=" " alt="" coords="403,19,398,12,387,9,378,11,373,16,372,22,375,30,370,31,366,22,368,13,375,6,387,4,401,8,408,16"/>
+<area shape="rect" href="gast_8cpp.html#a4eb2d09c87615520077aec1005b8e0ad" title=" " alt="" coords="261,31,312,56"/>
+<area shape="poly" title=" " alt="" coords="346,46,312,46,312,41,346,41"/>
+<area shape="rect" href="GHAMatrix_8cpp.html#a49218ae38846c1175342d13a65d41f4d" title=" " alt="" coords="120,31,213,56"/>
+<area shape="poly" title=" " alt="" coords="248,46,214,46,214,41,248,41"/>
+<area shape="rect" href="Accel_8cpp.html#a90a9d07270cea0a2accb38d118fff177" title=" " alt="" coords="10,5,67,31"/>
+<area shape="poly" title=" " alt="" coords="106,34,67,26,68,21,107,29"/>
+<area shape="rect" href="VarEqn_8cpp.html#a502bdb5c8e9c335cd3fc942d1816f2e2" title=" " alt="" coords="5,55,72,80"/>
+<area shape="poly" title=" " alt="" coords="107,57,73,64,72,59,106,52"/>
+</map>
+</div>
+
 </div>
 </div>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
-</small></address>
 </div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="gmst_8h.html">gmst.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
 </body>
 </html>

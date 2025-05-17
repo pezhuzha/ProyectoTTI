@@ -1,21 +1,21 @@
-<map id="/home/fghfgh/Escritorio/ProyectoTTI/src/PoleMatrix.cpp" name="/home/fghfgh/Escritorio/ProyectoTTI/src/PoleMatrix.cpp">
-<area shape="rect" id="Node000001" title="El archivo contiene las implementaciones de PoleMatrix.h." alt="" coords="143,5,370,45"/>
-<area shape="rect" id="Node000002" href="$PoleMatrix_8h.html" title="El archivo contiene la funcion PoleMatrix." alt="" coords="5,93,172,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,48,127,90,125,85,215,43"/>
-<area shape="rect" id="Node000008" href="$R__x_8h.html" title="El archivo contiene la funcion R_x." alt="" coords="196,93,317,119"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="259,46,259,79,254,79,254,46"/>
-<area shape="rect" id="Node000009" href="$R__y_8h.html" title="El archivo contiene la funcion R_y." alt="" coords="341,93,460,119"/>
-<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="292,43,369,84,366,89,290,48"/>
-<area shape="rect" id="Node000003" href="$matrix_8h.html" title="El archivo contiene las funciones para operaciones con matrices y vectores junto con su definicion." alt="" coords="218,167,295,192"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="117,116,218,159,216,164,115,121"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="94,240,155,265"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="237,194,159,236,157,231,234,190"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="180,240,245,265"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="252,194,229,230,225,227,247,191"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="269,240,332,265"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="266,191,289,227,284,230,262,194"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="357,240,437,265"/>
-<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="280,190,363,231,361,236,278,194"/>
-<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="259,119,259,153,254,153,254,119"/>
-<area shape="poly" id="edge10_Node000009_Node000003" title=" " alt="" coords="379,121,294,163,291,158,376,116"/>
+<map id="PoleMatrix.cpp" name="PoleMatrix.cpp">
+<area shape="rect" id="Node000001" title="El archivo contiene las implementaciones de PoleMatrix.h." alt="" coords="197,5,316,31"/>
+<area shape="rect" id="Node000002" href="$PoleMatrix_8h.html" title="El archivo contiene la funcion PoleMatrix." alt="" coords="5,79,172,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="231,33,130,76,128,71,229,28"/>
+<area shape="rect" id="Node000008" href="$R__x_8h.html" title="El archivo contiene la funcion R_x." alt="" coords="196,79,317,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="259,31,259,65,254,65,254,31"/>
+<area shape="rect" id="Node000009" href="$R__y_8h.html" title="El archivo contiene la funcion R_y." alt="" coords="341,79,460,104"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="281,28,366,70,364,75,279,33"/>
+<area shape="rect" id="Node000003" href="$matrix_8h.html" title="El archivo contiene las funciones para operaciones con matrices y vectores junto con su definicion." alt="" coords="218,152,295,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="117,102,218,144,216,149,115,106"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="94,225,155,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="237,180,159,221,157,216,234,175"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="180,225,245,251"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="252,179,229,215,225,212,247,176"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="269,225,332,251"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="266,176,289,212,284,215,262,179"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="357,225,437,251"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="280,175,363,217,361,221,278,180"/>
+<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="259,104,259,138,254,138,254,104"/>
+<area shape="poly" id="edge10_Node000009_Node000003" title=" " alt="" coords="379,106,294,148,291,143,376,102"/>
 </map>
