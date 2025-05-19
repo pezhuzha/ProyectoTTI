@@ -27,7 +27,7 @@
 #include "../include/VarEqn.h"
 #include "../include/LTC.h"
 #include "../include/MeasUpdate.h"
-#include <time.h>
+#include <ctime>
     /**
      * @file EKF_GEOS3.cpp
      * @brief Es el archivo principal del programa
