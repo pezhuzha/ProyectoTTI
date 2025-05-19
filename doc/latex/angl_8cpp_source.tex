@@ -1,0 +1,29 @@
+\doxysection{angl.\+cpp}
+\hypertarget{angl_8cpp_source}{}\label{angl_8cpp_source}\index{angl.cpp@{angl.cpp}}
+\mbox{\hyperlink{angl_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{angl_8h}{../include/angl.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sign___8h}{../include/sign\_.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00010}\mbox{\hyperlink{angl_8h_ac48c4ac03e1bae9d3e53a2639792cd32}{00010}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{angl_8cpp_ac48c4ac03e1bae9d3e53a2639792cd32}{angl}}\ (\ \mbox{\hyperlink{classMatrix}{Matrix}}\ vec1,\mbox{\hyperlink{classMatrix}{Matrix}}\ vec2\ )\{}
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ small\ \ \ \ \ =\ 0.00000001;}
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ undefined\ =\ 999999.1;}
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ theta=0.0;}
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ temp=0.0;}
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ magv1\ =\ \mbox{\hyperlink{matrix_8h_a907c9c6f53fc52d17e86b507b156536f}{norm}}(vec1);}
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ magv2\ =\ \mbox{\hyperlink{matrix_8h_a907c9c6f53fc52d17e86b507b156536f}{norm}}(vec2);}
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (magv1*magv2\ >\ small*small)\{}
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ temp=\ \mbox{\hyperlink{matrix_8h_ace64c1017d252d104fe1c99329ae9ecc}{dot}}(vec1,vec2)\ /\ (magv1*magv2);}
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (abs(\ temp\ )\ >\ 1.0)\{}
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp=\ \mbox{\hyperlink{sign___8h_acaf6f309594b8f14ca0ec7750d41738f}{sign\_}}(temp,temp)\ *\ 1.0;}
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ theta=\ acos(\ temp\ );\}}
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ theta=\ undefined;}
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ theta;}
+\DoxyCodeLine{\Hypertarget{angl_8cpp_source_l00029}00029\ \ \ \ \ \}}
+
+\end{DoxyCode}

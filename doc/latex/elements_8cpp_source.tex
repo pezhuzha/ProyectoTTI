@@ -1,0 +1,53 @@
+\doxysection{elements.\+cpp}
+\hypertarget{elements_8cpp_source}{}\label{elements_8cpp_source}\index{elements.cpp@{elements.cpp}}
+\mbox{\hyperlink{elements_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{elements_8h}{../include/elements.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SAT__Const_8h}{../include/SAT\_Const.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00011}\mbox{\hyperlink{elements_8h_a2628736c6f909f3cd2f71bce278c1cfb}{00011}}\ \ \ \ \ tuple<double,double,double,double,double,double,double>\ \mbox{\hyperlink{elements_8cpp_a2628736c6f909f3cd2f71bce278c1cfb}{elements}}\ (\mbox{\hyperlink{classMatrix}{Matrix}}\ y)\{\ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00012}00012\ \ \ \ \ \ \textcolor{keywordtype}{double}\ pi2\ =\ 2*pi,p=0.0,\ ap=0.0,\ e=0.0,\ i=0.0,\ Omega=0.0,\ omega=0.0,magh,eCosE,nu,E,M,e2,R,eSinE,H,u,a;}
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00013}00013\ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ h;}
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00014}00014\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00015}00015\ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ r\ =\ \mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(y,1,3);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00016}00016\ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ v\ =\ \mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(y,4,6);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00017}00017\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00018}00018\ \ \ \ \ \ h\ =\ \mbox{\hyperlink{matrix_8h_a8f26ea7eab92d1fd60ac732719a486e8}{cross}}(r,v);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00019}00019\ \ \ \ \ \ magh\ =\ \mbox{\hyperlink{matrix_8h_a907c9c6f53fc52d17e86b507b156536f}{norm}}(h);}
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00020}00020\ \ \ \ \ \ p\ =\ magh*magh/GM\_Earth;}
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00021}00021\ \ \ \ \ \ H\ =\ \mbox{\hyperlink{matrix_8h_a907c9c6f53fc52d17e86b507b156536f}{norm}}(h);}
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00022}00022\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00023}00023\ \ \ \ \ \ Omega\ =\ atan2\ (\ h(1),\ -\/h(2)\ );\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00024}00024\ \ \ \ \ \ Omega\ =\ fmod(Omega,pi2);}
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00025}00025\ \ \ \ \ \ \textcolor{keywordflow}{if}(Omega<0)\{}
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ Omega+=pi2;}
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00027}00027\ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00028}00028\ \ \ \ \ \ i\ \ \ \ \ =\ atan2\ (\ sqrt(h(1)*h(1)+h(2)*h(2)),\ h(3)\ );\ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00029}00029\ \ \ \ \ \ u\ \ \ \ \ =\ atan2\ (\ r(3)*H,\ -\/r(1)*h(2)+r(2)*h(1)\ );\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00030}00030\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00031}00031\ \ \ \ \ \ R\ \ =\ \mbox{\hyperlink{matrix_8h_a907c9c6f53fc52d17e86b507b156536f}{norm}}(r);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00032}00032\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00033}00033\ \ \ \ \ \ a\ =\ 1/(2/R-\/\mbox{\hyperlink{matrix_8h_ace64c1017d252d104fe1c99329ae9ecc}{dot}}(v,v)/GM\_Earth);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00034}00034\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00035}00035\ \ \ \ \ \ eCosE\ =\ 1-\/R/a;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00036}00036\ \ \ \ \ \ eSinE\ =\ \mbox{\hyperlink{matrix_8h_ace64c1017d252d104fe1c99329ae9ecc}{dot}}(r,v)/sqrt(GM\_Earth*a);\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00037}00037\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00038}00038\ \ \ \ \ \ e2\ =\ eCosE*eCosE\ +eSinE*eSinE;}
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00039}00039\ \ \ \ \ \ e\ \ =\ sqrt(e2);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00040}00040\ \ \ \ \ \ E\ \ =\ atan2(eSinE,eCosE);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00041}00041\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00042}00042\ \ \ \ \ \ M\ \ =\ fmod(E-\/eSinE,pi2);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00043}00043\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00044}00044\ \ \ \ \ \ nu\ =\ atan2(sqrt(1.0-\/e2)*eSinE,\ eCosE-\/e2);\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00045}00045\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00046}00046\ \ \ \ \ \ omega\ =\ fmod(u-\/nu,pi2);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00047}00047\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00048}00048\ \ \ \ \ \ \textcolor{keywordflow}{if}(omega<0)\{}
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ omega+=pi2;}
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00050}00050\ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00051}00051\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tie(p,\ a,\ e,\ i,\ Omega,\ omega,\ M);}
+\DoxyCodeLine{\Hypertarget{elements_8cpp_source_l00053}00053\ \ \ \ \ \}}
+
+\end{DoxyCode}

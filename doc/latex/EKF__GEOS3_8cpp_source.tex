@@ -31,163 +31,168 @@
 \DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{VarEqn_8h}{../include/VarEqn.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{LTC_8h}{../include/LTC.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MeasUpdate_8h}{../include/MeasUpdate.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ main()\{}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{GLOBAL_8h_a75b612999c468928cbed5a99f875de1f}{AuxParamLoad}}();}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{GLOBAL_8h_ad733f697fb9098526f74dbedf42c2e66}{eop19620101}}();}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{GLOBAL_8h_a74acebd49f327dc00f58429eb876b0c7}{GGM03S}}();}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{GLOBAL_8h_ade2d947387a8d0619724515e334a0387}{DE430Coeff}}();}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{GLOBAL_8h_ae432d4afcde590fd86760abb5fbe6005}{GEOS3}}();}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{int}\ i=0,j,ii,nobs\ =\ 46;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sigma\_range,sigma\_az,sigma\_el,lat,lon,alt,Mjd1,Mjd2,Mjd3,Mjd0,Mjd\_UTC=obs(9,1),}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ n\_eqn,theta,t\_old,Mjd\_TT,Dist,Mjd\_UT1,UT1\_TAI,UTC\_GPS,UT1\_GPS,TT\_UTC,GPS\_UTC,}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ x\_pole,y\_pole,UT1\_UTC,LOD,dpsi,deps,dx\_pole,dy\_pole,TAI\_UTC,Azim,\ Elev,t;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ Rs,Y0\_apr,P,LT,yPhi,Phi,Y\_true=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(6),Y0=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(6),U,Y\_old,dDdY,dDds,r,s,dEdY,}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ K,\ Y,\ dAds,\ dEds,dAdY;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ sigma\_range\ =\ 92.5;\ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00052}00052\ sigma\_az\ =\ 0.0224*Rad;\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00053}00053\ sigma\_el\ =\ 0.0139*Rad;\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00054}00054\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00055}00055\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00056}00056\ lat\ =\ Rad*21.5748;\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00057}00057\ lon\ =\ Rad*(-\/158.2706);\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00058}00058\ alt\ =\ 300.20;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00059}00059\ Rs\ =\ \mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(\mbox{\hyperlink{Position_8h_ad3ff3004edb305ae3aed0230373b848e}{Position}}(lon,\ lat,\ alt));}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00060}00060\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00061}00061\ Mjd1\ =\ obs(1,1);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00062}00062\ Mjd2\ =\ obs(9,1);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00063}00063\ Mjd3\ =\ obs(18,1);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00064}00064\ \mbox{\hyperlink{classMatrix}{Matrix}}\ r2(3),v2(3);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00065}00065\ r2(1)=6221397.62857869;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00066}00066\ r2(2)=2867713.77965738;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00067}00067\ r2(3)=3006155.98509949;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00068}00068\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00069}00069\ v2(1)=\ 4645.04725161806;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00070}00070\ v2(2)=-\/2752.21591588204;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00071}00071\ v2(3)=-\/7507.99940987031;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00072}00072\ \textcolor{comment}{//auto\ [r2,v2]\ =\ anglesg(obs(1,2),obs(9,2),obs(18,2),obs(1,3),obs(9,3),obs(18,3),Mjd1,Mjd2,Mjd3,Rs,Rs,Rs);}}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00073}00073\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00030}00030\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ main()\{}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00039}00039\ clock\_t\ start,end;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00040}00040\ start=clock();}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{GLOBAL_8h_a75b612999c468928cbed5a99f875de1f}{AuxParamLoad}}();}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{GLOBAL_8h_ad733f697fb9098526f74dbedf42c2e66}{eop19620101}}();}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{GLOBAL_8h_a74acebd49f327dc00f58429eb876b0c7}{GGM03S}}();}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{GLOBAL_8h_ade2d947387a8d0619724515e334a0387}{DE430Coeff}}();}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{GLOBAL_8h_ae432d4afcde590fd86760abb5fbe6005}{GEOS3}}();}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{int}\ i=0,j,ii,nobs\ =\ 46;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sigma\_range,sigma\_az,sigma\_el,lat,lon,alt,Mjd1,Mjd2,Mjd3,Mjd0,Mjd\_UTC=obs(9,1),}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ n\_eqn,theta,t\_old,Mjd\_TT,Dist,Mjd\_UT1,UT1\_TAI,UTC\_GPS,UT1\_GPS,TT\_UTC,GPS\_UTC,}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ x\_pole,y\_pole,UT1\_UTC,LOD,dpsi,deps,dx\_pole,dy\_pole,TAI\_UTC,Azim,\ Elev,t;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ Rs,Y0\_apr,P,LT,yPhi,Phi,Y\_true=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(6),Y0=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(6),U,Y\_old,dDdY,dDds,r,s,dEdY,}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ K,\ Y,\ dAds,\ dEds,dAdY;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ sigma\_range\ =\ 92.5;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00054}00054\ sigma\_az\ =\ 0.0224*Rad;\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00055}00055\ sigma\_el\ =\ 0.0139*Rad;\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00058}00058\ lat\ =\ Rad*21.5748;\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00059}00059\ lon\ =\ Rad*(-\/158.2706);\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00060}00060\ alt\ =\ 300.20;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00061}00061\ Rs\ =\ \mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(\mbox{\hyperlink{Position_8h_ad3ff3004edb305ae3aed0230373b848e}{Position}}(lon,\ lat,\ alt));}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00063}00063\ Mjd1\ =\ obs(1,1);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00064}00064\ Mjd2\ =\ obs(9,1);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00065}00065\ Mjd3\ =\ obs(18,1);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00066}00066\ \mbox{\hyperlink{classMatrix}{Matrix}}\ r2(3),v2(3);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00067}00067\ r2(1)=6221397.62857869;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00068}00068\ r2(2)=2867713.77965738;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00069}00069\ r2(3)=3006155.98509949;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00071}00071\ v2(1)=\ 4645.04725161806;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00072}00072\ v2(2)=-\/2752.21591588204;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00073}00073\ v2(3)=-\/7507.99940987031;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00074}00074\ \textcolor{comment}{//auto\ [r2,v2]\ =\ anglesg(obs(1,2),obs(9,2),obs(18,2),obs(1,3),obs(9,3),obs(18,3),Mjd1,Mjd2,Mjd3,Rs,Rs,Rs);}}
 \DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00075}00075\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00076}00076\ Y0\_apr\ =\ \mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(r2,v2);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00078}00078\ Mjd0\ =\ \mbox{\hyperlink{Mjday_8h_a3d8c32be4ba9222405b66aabe80409e2}{Mjday}}(1995,1,29,02,38,0);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00079}00079\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00080}00080\ AuxParam.Mjd\_UTC\ =\ Mjd\_UTC;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00082}00082\ Mjd\_UTC\ =\ obs(9,1);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00083}00083\ n\_eqn\ \ =\ 6;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00084}00084\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00085}00085\ Y\ =\ \mbox{\hyperlink{DEInteg_8h_a4dd69868d913586235caced1243ab3eb}{DEInteg}}(\mbox{\hyperlink{Accel_8h_a90a9d07270cea0a2accb38d118fff177}{Accel}},0,-\/(obs(9,1)-\/Mjd0)*86400.0,1e-\/13,1e-\/6,6,Y0\_apr);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00086}00086\ P\ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(6,6);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00087}00087\ \textcolor{keywordflow}{for}\ (i=1;i<=3;i++)\{}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00088}00088\ \ \ \ \ P(i,i)=1e8;\}}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00089}00089\ \textcolor{keywordflow}{for}\ (i=4;i<=6;i++)\{}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00090}00090\ \ \ \ \ P(i,i)=1e3;\}}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00091}00091\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00092}00092\ LT\ =\ \mbox{\hyperlink{LTC_8h_a27b89059a0c4bc52a9192df16ead3359}{LTC}}(lon,lat);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00078}00078\ Y0\_apr\ =\ \mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(r2,v2);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00080}00080\ Mjd0\ =\ \mbox{\hyperlink{Mjday_8h_a3d8c32be4ba9222405b66aabe80409e2}{Mjday}}(1995,1,29,02,38,0);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00082}00082\ AuxParam.Mjd\_UTC\ =\ Mjd\_UTC;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00084}00084\ Mjd\_UTC\ =\ obs(9,1);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00085}00085\ n\_eqn\ \ =\ 6;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00087}00087\ Y\ =\ \mbox{\hyperlink{DEInteg_8h_a4dd69868d913586235caced1243ab3eb}{DEInteg}}(\mbox{\hyperlink{Accel_8h_a90a9d07270cea0a2accb38d118fff177}{Accel}},0,-\/(obs(9,1)-\/Mjd0)*86400.0,1e-\/13,1e-\/6,6,Y0\_apr);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00088}00088\ P\ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(6,6);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00089}00089\ \textcolor{keywordflow}{for}\ (i=1;i<=3;i++)\{}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00090}00090\ \ \ \ \ P(i,i)=1e8;\}}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00091}00091\ \textcolor{keywordflow}{for}\ (i=4;i<=6;i++)\{}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00092}00092\ \ \ \ \ P(i,i)=1e3;\}}
 \DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00093}00093\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00094}00094\ yPhi\ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(42,1);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00095}00095\ Phi\ \ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(6,6);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00096}00096\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00097}00097\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00098}00098\ t\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00094}00094\ LT\ =\ \mbox{\hyperlink{LTC_8h_a27b89059a0c4bc52a9192df16ead3359}{LTC}}(lon,lat);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00096}00096\ yPhi\ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(42,1);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00097}00097\ Phi\ \ =\ \mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(6,6);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00098}00098\ }
 \DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00099}00099\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00100}00100\ \textcolor{keywordflow}{for}\ (i=1;i<=nobs;i++)\{}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00101}00101\ \ \ \ \ t\_old\ =\ t;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00102}00102\ \ \ \ \ Y\_old\ =\ Y;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00103}00103\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00104}00104\ \ \ \ \ Mjd\_UTC\ =\ obs(i,1);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00105}00105\ \ \ \ \ t\ \ \ \ \ \ \ =\ (Mjd\_UTC-\/Mjd0)*86400.0;\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00106}00106\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00107}00107\ \ \ \ \ tie\ (x\_pole,y\_pole,UT1\_UTC,LOD,dpsi,deps,dx\_pole,dy\_pole,TAI\_UTC)\ =\ \mbox{\hyperlink{IERS_8h_afdc37e22b677cc00a94f8dfcadd2df15}{IERS}}(eopdata,Mjd\_UTC,\textcolor{charliteral}{'l'});}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00108}00108\ \ \ \ \ tie\ (UT1\_TAI,UTC\_GPS,UT1\_GPS,TT\_UTC,GPS\_UTC)\ =\ \mbox{\hyperlink{timediff_8h_a0772112289293a570d2edb0667dbb3a9}{timediff}}(UT1\_UTC,TAI\_UTC);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00109}00109\ \ \ \ \ Mjd\_TT\ =\ Mjd\_UTC\ +\ TT\_UTC/86400;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00110}00110\ \ \ \ \ Mjd\_UT1\ =\ Mjd\_TT\ +\ (UT1\_UTC-\/TT\_UTC)/86400.0;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00111}00111\ \ \ \ \ AuxParam.Mjd\_UTC\ =\ Mjd\_UTC;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00112}00112\ \ \ \ \ AuxParam.Mjd\_TT\ =\ Mjd\_TT;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordflow}{for}\ (\ ii=1;ii<=6;ii++)\{}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ yPhi(ii)\ =\ Y\_old(ii);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (j=1;j<=6;j++)\ \ \{}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ii==j)\ \{}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yPhi(6*j+ii)\ =\ 1;\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yPhi(6*j+ii)\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00124}00124\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00125}00125\ \ \ \ \ yPhi\ =\ \mbox{\hyperlink{DEInteg_8h_a4dd69868d913586235caced1243ab3eb}{DEInteg}}\ (\mbox{\hyperlink{VarEqn_8h_a502bdb5c8e9c335cd3fc942d1816f2e2}{VarEqn}},0,t-\/t\_old,1e-\/13,1e-\/6,42,yPhi);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00126}00126\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{keywordflow}{for}\ (j=1;j<=6;j++)\{}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ Phi\ =\ \mbox{\hyperlink{matrix_8h_a78e903d58755232911e3b5232f38747c}{assign\_column}}(Phi,\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(yPhi,6*j+1,6*j+6),j);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00129}00129\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00130}00130\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00131}00131\ \ \ \ \ Y\ =\ \mbox{\hyperlink{DEInteg_8h_a4dd69868d913586235caced1243ab3eb}{DEInteg}}\ (\mbox{\hyperlink{Accel_8h_a90a9d07270cea0a2accb38d118fff177}{Accel}},0,t-\/t\_old,1e-\/13,1e-\/6,6,Y\_old);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00132}00132\ \ \ \ \ theta\ =\ \mbox{\hyperlink{gmst_8h_a22a9ee5ea799a7511f4b5b1939c9de76}{gmst}}(Mjd\_UT1);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00133}00133\ \ \ \ \ U\ =\ \mbox{\hyperlink{R__z_8h_a4f688959a9ab144bf27d272e54bf7258}{R\_z}}(theta);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00134}00134\ \ \ \ \ r\ =\ \mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Y,1,3);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00135}00135\ \ \ \ \ r=\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(r);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00136}00136\ \ \ \ \ s\ =\ LT*(U*r-\/Rs);\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00137}00137\ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00138}00138\ \ \ \ \ P\ =\ \mbox{\hyperlink{TimeUpdate_8h_a4ba2551be43a982e9ea65bcd3971209d}{TimeUpdate}}(P,\ Phi);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00140}00140\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00141}00141\ \ \ \ \ tie(\ Azim,\ Elev,\ dAds,\ dEds)=\ \mbox{\hyperlink{AzElPa_8h_a64759900540133eb0f6a8337ef0634db}{AzElPa}}(s);\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00142}00142\ \ \ \ \ dAdY\ =\ \mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(dAds*LT*U,\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(1,3));}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00143}00143\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00144}00144\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00145}00145\ \ \ \ \ \ tie(\ K,\ Y,\ P)\ =\ \mbox{\hyperlink{MeasUpdate_8h_a7d681f8dbcf8357623182f9f56ff815b}{MeasUpdate}}\ (\ Y,\ obs(i,2),\ Azim,\ sigma\_az,\ dAdY,\ P,\ 6\ );}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00100}00100\ t\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00102}00102\ \textcolor{keywordflow}{for}\ (i=1;i<=nobs;i++)\{}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00103}00103\ \ \ \ \ t\_old\ =\ t;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00104}00104\ \ \ \ \ Y\_old\ =\ Y;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00105}00105\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00106}00106\ \ \ \ \ Mjd\_UTC\ =\ obs(i,1);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00107}00107\ \ \ \ \ t\ \ \ \ \ \ \ =\ (Mjd\_UTC-\/Mjd0)*86400.0;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00108}00108\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00109}00109\ \ \ \ \ tie\ (x\_pole,y\_pole,UT1\_UTC,LOD,dpsi,deps,dx\_pole,dy\_pole,TAI\_UTC)\ =\ \mbox{\hyperlink{IERS_8h_afdc37e22b677cc00a94f8dfcadd2df15}{IERS}}(eopdata,Mjd\_UTC,\textcolor{charliteral}{'l'});}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00110}00110\ \ \ \ \ tie\ (UT1\_TAI,UTC\_GPS,UT1\_GPS,TT\_UTC,GPS\_UTC)\ =\ \mbox{\hyperlink{timediff_8h_a0772112289293a570d2edb0667dbb3a9}{timediff}}(UT1\_UTC,TAI\_UTC);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00111}00111\ \ \ \ \ Mjd\_TT\ =\ Mjd\_UTC\ +\ TT\_UTC/86400;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00112}00112\ \ \ \ \ Mjd\_UT1\ =\ Mjd\_TT\ +\ (UT1\_UTC-\/TT\_UTC)/86400.0;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00113}00113\ \ \ \ \ AuxParam.Mjd\_UTC\ =\ Mjd\_UTC;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00114}00114\ \ \ \ \ AuxParam.Mjd\_TT\ =\ Mjd\_TT;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00115}00115\ \ \ \ \ \textcolor{keywordflow}{for}\ (\ ii=1;ii<=6;ii++)\{}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ yPhi(ii)\ =\ Y\_old(ii);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (j=1;j<=6;j++)\ \ \{}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ii==j)\ \{}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yPhi(6*j+ii)\ =\ 1;\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yPhi(6*j+ii)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00126}00126\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00127}00127\ \ \ \ \ yPhi\ =\ \mbox{\hyperlink{DEInteg_8h_a4dd69868d913586235caced1243ab3eb}{DEInteg}}\ (\mbox{\hyperlink{VarEqn_8h_a502bdb5c8e9c335cd3fc942d1816f2e2}{VarEqn}},0,t-\/t\_old,1e-\/13,1e-\/6,42,yPhi);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00128}00128\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00129}00129\ \ \ \ \ \textcolor{keywordflow}{for}\ (j=1;j<=6;j++)\{}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ Phi\ =\ \mbox{\hyperlink{matrix_8h_a78e903d58755232911e3b5232f38747c}{assign\_column}}(Phi,\mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(yPhi,6*j+1,6*j+6),j);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00131}00131\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00132}00132\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00133}00133\ \ \ \ \ Y\ =\ \mbox{\hyperlink{DEInteg_8h_a4dd69868d913586235caced1243ab3eb}{DEInteg}}\ (\mbox{\hyperlink{Accel_8h_a90a9d07270cea0a2accb38d118fff177}{Accel}},0,t-\/t\_old,1e-\/13,1e-\/6,6,Y\_old);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00134}00134\ \ \ \ \ theta\ =\ \mbox{\hyperlink{gmst_8h_a22a9ee5ea799a7511f4b5b1939c9de76}{gmst}}(Mjd\_UT1);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00135}00135\ \ \ \ \ U\ =\ \mbox{\hyperlink{R__z_8h_a4f688959a9ab144bf27d272e54bf7258}{R\_z}}(theta);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00136}00136\ \ \ \ \ r\ =\ \mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Y,1,3);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00137}00137\ \ \ \ \ r=\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(r);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00138}00138\ \ \ \ \ s\ =\ LT*(U*r-\/Rs);\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00139}00139\ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00140}00140\ \ \ \ \ P\ =\ \mbox{\hyperlink{TimeUpdate_8h_a4ba2551be43a982e9ea65bcd3971209d}{TimeUpdate}}(P,\ Phi);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00142}00142\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00143}00143\ \ \ \ \ tie(\ Azim,\ Elev,\ dAds,\ dEds)=\ \mbox{\hyperlink{AzElPa_8h_a64759900540133eb0f6a8337ef0634db}{AzElPa}}(s);\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00144}00144\ \ \ \ \ dAdY\ =\ \mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(dAds*LT*U,\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(1,3));}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00145}00145\ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00146}00146\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00147}00147\ \ \ \ \ r\ =\ \mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Y,1,3);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00148}00148\ \ \ \ \ r=\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(r);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00149}00149\ \ \ \ \ s\ =\ LT*(U*r-\/Rs);\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00150}00150\ \ \ \ \ tie(\ Azim,\ Elev,\ dAds,\ dEds)=\ \mbox{\hyperlink{AzElPa_8h_a64759900540133eb0f6a8337ef0634db}{AzElPa}}(s);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00151}00151\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00152}00152\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00153}00153\ \ \ \ \ dEdY\ =\ \mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(dEds*LT*U,\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(1,3));}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00154}00154\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00155}00155\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00156}00156\ \ \ \ \ \ tie(\ K,\ Y,\ P)\ =\ \mbox{\hyperlink{MeasUpdate_8h_a7d681f8dbcf8357623182f9f56ff815b}{MeasUpdate}}\ (\ Y,\ obs(i,3),\ Elev,\ sigma\_el,\ dEdY,\ P,\ 6\ );}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00147}00147\ \ \ \ \ \ tie(\ K,\ Y,\ P)\ =\ \mbox{\hyperlink{MeasUpdate_8h_a7d681f8dbcf8357623182f9f56ff815b}{MeasUpdate}}\ (\ Y,\ obs(i,2),\ Azim,\ sigma\_az,\ dAdY,\ P,\ 6\ );}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00148}00148\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00149}00149\ \ \ \ \ r\ =\ \mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Y,1,3);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00150}00150\ \ \ \ \ r=\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(r);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00151}00151\ \ \ \ \ s\ =\ LT*(U*r-\/Rs);\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00152}00152\ \ \ \ \ tie(\ Azim,\ Elev,\ dAds,\ dEds)=\ \mbox{\hyperlink{AzElPa_8h_a64759900540133eb0f6a8337ef0634db}{AzElPa}}(s);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00155}00155\ \ \ \ \ dEdY\ =\ \mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(dEds*LT*U,\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(1,3));}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00156}00156\ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00157}00157\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00158}00158\ \ \ \ \ r\ =\ \mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Y,1,3);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00159}00159\ \ \ \ \ r=\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(r);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00160}00160\ \ \ \ \ s\ =\ LT*(U*r-\/Rs);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00162}00162\ \ \ \ \ Dist\ =\ \mbox{\hyperlink{matrix_8h_a907c9c6f53fc52d17e86b507b156536f}{norm}}(s);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00163}00163\ \ \ \ \ dDds\ =\ \mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(s/Dist);\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00164}00164\ \ \ \ \ dDdY\ =\ \mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(dDds*LT*U,\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(1,3));}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00165}00165\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00166}00166\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00167}00167\ \ \ \ \ \ tie(K,\ Y,P)\ =\ \mbox{\hyperlink{MeasUpdate_8h_a7d681f8dbcf8357623182f9f56ff815b}{MeasUpdate}}\ (\ Y,\ obs(i,4),\ Dist,\ sigma\_range,\ dDdY,\ P,\ 6\ );}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00168}00168\ \}}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00169}00169\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00170}00170\ tie(x\_pole,y\_pole,UT1\_UTC,LOD,dpsi,deps,dx\_pole,dy\_pole,TAI\_UTC)\ =\ \mbox{\hyperlink{IERS_8h_afdc37e22b677cc00a94f8dfcadd2df15}{IERS}}(eopdata,obs(46,1),\textcolor{charliteral}{'l'});}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00171}00171\ tie(UT1\_TAI,UTC\_GPS,UT1\_GPS,TT\_UTC,GPS\_UTC)\ =\ \mbox{\hyperlink{timediff_8h_a0772112289293a570d2edb0667dbb3a9}{timediff}}(UT1\_UTC,TAI\_UTC);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00172}00172\ Mjd\_TT\ =\ Mjd\_UTC\ +\ TT\_UTC/86400;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00173}00173\ AuxParam.Mjd\_UTC\ =\ Mjd\_UTC;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00174}00174\ AuxParam.Mjd\_TT\ =\ Mjd\_TT;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00175}00175\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00176}00176\ Y0\ =\ \mbox{\hyperlink{DEInteg_8h_a4dd69868d913586235caced1243ab3eb}{DEInteg}}\ (\mbox{\hyperlink{Accel_8h_a90a9d07270cea0a2accb38d118fff177}{Accel}},0,-\/(obs(46,1)-\/obs(1,1))*86400.0,1e-\/13,1e-\/6,6,Y);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00158}00158\ \ \ \ \ \ tie(\ K,\ Y,\ P)\ =\ \mbox{\hyperlink{MeasUpdate_8h_a7d681f8dbcf8357623182f9f56ff815b}{MeasUpdate}}\ (\ Y,\ obs(i,3),\ Elev,\ sigma\_el,\ dEdY,\ P,\ 6\ );}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00159}00159\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00160}00160\ \ \ \ \ r\ =\ \mbox{\hyperlink{matrix_8h_aeaa74f17a39f8a467ed2ce64f680e1ce}{extract\_vector}}(Y,1,3);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00161}00161\ \ \ \ \ r=\mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(r);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00162}00162\ \ \ \ \ s\ =\ LT*(U*r-\/Rs);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00164}00164\ \ \ \ \ Dist\ =\ \mbox{\hyperlink{matrix_8h_a907c9c6f53fc52d17e86b507b156536f}{norm}}(s);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00165}00165\ \ \ \ \ dDds\ =\ \mbox{\hyperlink{matrix_8h_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}}(s/Dist);\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00166}00166\ \ \ \ \ dDdY\ =\ \mbox{\hyperlink{matrix_8h_a7fbccf986ae3faa0faa4bbd481cb074a}{union\_vector}}(dDds*LT*U,\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(1,3));}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00167}00167\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00168}00168\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00169}00169\ \ \ \ \ \ tie(K,\ Y,P)\ =\ \mbox{\hyperlink{MeasUpdate_8h_a7d681f8dbcf8357623182f9f56ff815b}{MeasUpdate}}\ (\ Y,\ obs(i,4),\ Dist,\ sigma\_range,\ dDdY,\ P,\ 6\ );}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00170}00170\ \}}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00172}00172\ tie(x\_pole,y\_pole,UT1\_UTC,LOD,dpsi,deps,dx\_pole,dy\_pole,TAI\_UTC)\ =\ \mbox{\hyperlink{IERS_8h_afdc37e22b677cc00a94f8dfcadd2df15}{IERS}}(eopdata,obs(46,1),\textcolor{charliteral}{'l'});}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00173}00173\ tie(UT1\_TAI,UTC\_GPS,UT1\_GPS,TT\_UTC,GPS\_UTC)\ =\ \mbox{\hyperlink{timediff_8h_a0772112289293a570d2edb0667dbb3a9}{timediff}}(UT1\_UTC,TAI\_UTC);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00174}00174\ Mjd\_TT\ =\ Mjd\_UTC\ +\ TT\_UTC/86400;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00175}00175\ AuxParam.Mjd\_UTC\ =\ Mjd\_UTC;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00176}00176\ AuxParam.Mjd\_TT\ =\ Mjd\_TT;}
 \DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00177}00177\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00178}00178\ \ \textcolor{keywordtype}{double}\ aux[]=\ \{5753.173e3,\ 2673.361e3,\ 3440.304e3,\ 4.324207e3,\ -\/1.924299e3,\ -\/5.728216e3\};}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00179}00179\ \ Y\_true(6);}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00180}00180\ \ \textcolor{keywordflow}{for}(i=0;i<6;i++)\{}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00181}00181\ \ \ \ \ \ Y\_true(i+1)=aux[i];}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00182}00182\ \ \}}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00183}00183\ }
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00184}00184\ cout<<\textcolor{stringliteral}{"{}\(\backslash\)nError\ of\ Position\ Estimation\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00185}00185\ cout<<Y0(1)-\/Y\_true(1)<<\textcolor{stringliteral}{"{}\ [m]\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00186}00186\ cout<<Y0(2)-\/Y\_true(2)<<\textcolor{stringliteral}{"{}\ [m]\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00187}00187\ cout<<Y0(3)-\/Y\_true(3)<<\textcolor{stringliteral}{"{}\ [m]\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00188}00188\ cout<<\textcolor{stringliteral}{"{}\(\backslash\)nError\ of\ Velocity\ Estimation\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00189}00189\ cout<<Y0(4)-\/Y\_true(4)<<\textcolor{stringliteral}{"{}\ [m/s]\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00190}00190\ cout<<Y0(5)-\/Y\_true(5)<<\textcolor{stringliteral}{"{}\ [m/s]\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00191}00191\ cout<<Y0(6)-\/Y\_true(6)<<\textcolor{stringliteral}{"{}\ [m/s]\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00192}00192\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00193}00193\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00178}00178\ Y0\ =\ \mbox{\hyperlink{DEInteg_8h_a4dd69868d913586235caced1243ab3eb}{DEInteg}}\ (\mbox{\hyperlink{Accel_8h_a90a9d07270cea0a2accb38d118fff177}{Accel}},0,-\/(obs(46,1)-\/obs(1,1))*86400.0,1e-\/13,1e-\/6,6,Y);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00180}00180\ \ \textcolor{keywordtype}{double}\ aux[]=\ \{5753.173e3,\ 2673.361e3,\ 3440.304e3,\ 4.324207e3,\ -\/1.924299e3,\ -\/5.728216e3\};}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00181}00181\ \ Y\_true(6);}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00182}00182\ \ \textcolor{keywordflow}{for}(i=0;i<6;i++)\{}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00183}00183\ \ \ \ \ \ Y\_true(i+1)=aux[i];}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00184}00184\ \ \}}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00186}00186\ cout<<\textcolor{stringliteral}{"{}\(\backslash\)nError\ of\ Position\ Estimation\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00187}00187\ cout<<Y0(1)-\/Y\_true(1)<<\textcolor{stringliteral}{"{}\ [m]\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00188}00188\ cout<<Y0(2)-\/Y\_true(2)<<\textcolor{stringliteral}{"{}\ [m]\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00189}00189\ cout<<Y0(3)-\/Y\_true(3)<<\textcolor{stringliteral}{"{}\ [m]\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00190}00190\ cout<<\textcolor{stringliteral}{"{}\(\backslash\)nError\ of\ Velocity\ Estimation\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00191}00191\ cout<<Y0(4)-\/Y\_true(4)<<\textcolor{stringliteral}{"{}\ [m/s]\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00192}00192\ cout<<Y0(5)-\/Y\_true(5)<<\textcolor{stringliteral}{"{}\ [m/s]\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00193}00193\ cout<<Y0(6)-\/Y\_true(6)<<\textcolor{stringliteral}{"{}\ [m/s]\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00194}00194\ end=clock();}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00195}00195\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ diff=(\textcolor{keywordtype}{long}\ double)(end-\/start)/CLOCKS\_PER\_SEC;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00196}00196\ cout\ <<\textcolor{stringliteral}{"{}Tiempo:\ "{}}<<diff<<\textcolor{stringliteral}{"{}\ s"{}};}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00197}00197\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{EKF__GEOS3_8cpp_source_l00198}00198\ \ \ \ \ \}}
 
 \end{DoxyCode}

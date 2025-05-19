@@ -8,7 +8,7 @@
      */
 	tuple<double,double,Matrix&,Matrix&> AzElPa(Matrix s) {
 
-		long double rho = sqrt(s(1)*s(1)+s(2)*s(2));
+		 double rho = sqrt(s(1)*s(1)+s(2)*s(2));
 
 		// Angles
 		double Az = atan2(s(1),s(2));

@@ -1,0 +1,48 @@
+\doxysection{Geodetic.\+cpp}
+\hypertarget{Geodetic_8cpp_source}{}\label{Geodetic_8cpp_source}\index{Geodetic.cpp@{Geodetic.cpp}}
+\mbox{\hyperlink{Geodetic_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Geodetic_8h}{../include/Geodetic.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SAT__Const_8h}{../include/SAT\_Const.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00010}\mbox{\hyperlink{Geodetic_8h_a7e95eb39d6e4e9a1acd33fa1ee2a1a35}{00010}}\ \ \ \ \ tuple<double,double,double>\ \mbox{\hyperlink{Geodetic_8cpp_a7e95eb39d6e4e9a1acd33fa1ee2a1a35}{Geodetic}}(\mbox{\hyperlink{classMatrix}{Matrix}}\ r)\{}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordtype}{double}\ \ R\_equ\ =\ R\_Earth;}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordtype}{double}\ \ f\ \ \ \ \ =\ f\_Earth;}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keywordtype}{double}\ epsRequ\ =\ eps*R\_equ;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordtype}{double}\ e2\ \ \ \ \ \ =\ f*(2.0-\/f);\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{double}\ X\ =\ r(1);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{double}\ Y\ =\ r(2);}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{double}\ Z\ =\ r(3);}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{double}\ rho2\ =\ X*X\ +\ Y*Y;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{double}\ lon=0.0,lat=0.0,h=0.0,dZ=0.0,ZdZ=0.0,Nh=0.0,SinPhi=0.0,N=0.0,dZ\_new=0.0;}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{matrix_8h_a907c9c6f53fc52d17e86b507b156536f}{norm}}(r)==0.0)\{}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}invalid\ input\ in\ Geodetic\ constructor\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ lon\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ lat\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ h\ \ \ =\ -\/R\_Earth;}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00029}00029\ \ \ \ \ dZ\ =\ e2*Z;}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ ZdZ\ \ \ \ =\ \ Z\ +\ dZ;}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ Nh\ \ \ \ \ =\ \ sqrt\ (\ rho2\ +\ ZdZ*ZdZ\ );\ }
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ SinPhi\ =\ \ ZdZ\ /\ Nh;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ N\ \ \ \ \ \ =\ \ R\_equ\ /\ sqrt(1.0-\/e2*SinPhi*SinPhi);}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ dZ\_new\ =\ \ N*e2*SinPhi;}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ abs(dZ-\/dZ\_new)\ <\ epsRequ\ )\{}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ dZ\ =\ dZ\_new;}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00043}00043\ \ \ \ \ lon\ =\ atan2\ (\ Y,\ X\ );}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00044}00044\ \ \ \ \ lat\ =\ atan2\ (\ ZdZ,\ sqrt(rho2)\ );}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00045}00045\ \ \ \ \ h\ \ \ =\ Nh\ -\/\ N;}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tie(lon,\ lat,\ h);}
+\DoxyCodeLine{\Hypertarget{Geodetic_8cpp_source_l00048}00048\ \ \ \ \ \}}
+
+\end{DoxyCode}

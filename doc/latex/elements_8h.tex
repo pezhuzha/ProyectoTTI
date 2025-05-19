@@ -1,0 +1,74 @@
+\doxysection{elements.\+h File Reference}
+\hypertarget{elements_8h}{}\label{elements_8h}\index{elements.h@{elements.h}}
+
+
+El archivo contiene la funcion elements.  
+
+
+{\ttfamily \#include "{}matrix.\+h"{}}\newline
+{\ttfamily \#include $<$tuple$>$}\newline
+Include dependency graph for elements.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{elements_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{elements_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+tuple$<$ double, double, double, double, double, double, double $>$ \mbox{\hyperlink{elements_8h_a2628736c6f909f3cd2f71bce278c1cfb}{elements}} (\mbox{\hyperlink{classMatrix}{Matrix}} y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+El archivo contiene la funcion elements. 
+
+\begin{DoxyAuthor}{Author}
+Pedro Zhuzhan 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000009}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+Definition in file \mbox{\hyperlink{elements_8h_source}{elements.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{elements_8h_a2628736c6f909f3cd2f71bce278c1cfb}\index{elements.h@{elements.h}!elements@{elements}}
+\index{elements@{elements}!elements.h@{elements.h}}
+\doxysubsubsection{\texorpdfstring{elements()}{elements()}}
+{\footnotesize\ttfamily \label{elements_8h_a2628736c6f909f3cd2f71bce278c1cfb} 
+tuple$<$ double, double, double, double, double, double, double $>$ elements (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}}}]{y}{}\end{DoxyParamCaption})}
+
+Computes the osculating Keplerian elements from the satellite state vector for elliptic orbits The function cannot be used with state vectors describing a circular or non-\/inclined orbit. 
+\begin{DoxyParams}{Parameters}
+{\em y} & State vector (x,y,z,vx,vy,vz) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+tuple\texorpdfstring{$<$}{<} p semilatus rectum \mbox{[}m\mbox{]}, a Semimajor axis , e Eccentricity , i Inclination \mbox{[}rad\mbox{]}, Omega Longitude of the ascending node \mbox{[}rad\mbox{]}, omega Argument of pericenter \mbox{[}rad\mbox{]}, M Mean anomaly \mbox{[}rad\mbox{]} \begin{quote}
+\end{quote}
+
+
+\doxylink{classMatrix}{Matrix} resultado  
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{elements_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{elements_8cpp_source}{elements.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{elements_8h_a2628736c6f909f3cd2f71bce278c1cfb_cgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,69 @@
+\doxysection{gibbs.\+cpp File Reference}
+\hypertarget{gibbs_8cpp}{}\label{gibbs_8cpp}\index{gibbs.cpp@{gibbs.cpp}}
+
+
+El archivo contiene las implementaciones de \doxylink{gibbs_8h}{gibbs.\+h}.  
+
+
+{\ttfamily \#include "{}../include/gibbs.\+h"{}}\newline
+{\ttfamily \#include "{}../include/unit.\+h"{}}\newline
+{\ttfamily \#include "{}../include/angl.\+h"{}}\newline
+{\ttfamily \#include "{}../include/\+SAT\+\_\+\+Const.\+h"{}}\newline
+Include dependency graph for gibbs.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gibbs_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+tuple$<$ \mbox{\hyperlink{classMatrix}{Matrix}} \&, double, double, double, string $>$ \mbox{\hyperlink{gibbs_8cpp_a579ddb809b4d4a061b4ac155a3a6f80a}{gibbs}} (\mbox{\hyperlink{classMatrix}{Matrix}} r1, \mbox{\hyperlink{classMatrix}{Matrix}} r2, \mbox{\hyperlink{classMatrix}{Matrix}} r3)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+El archivo contiene las implementaciones de \doxylink{gibbs_8h}{gibbs.\+h}. 
+
+\begin{DoxyAuthor}{Author}
+Pedro Zhuzhan 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000058}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+Definition in file \mbox{\hyperlink{gibbs_8cpp_source}{gibbs.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gibbs_8cpp_a579ddb809b4d4a061b4ac155a3a6f80a}\index{gibbs.cpp@{gibbs.cpp}!gibbs@{gibbs}}
+\index{gibbs@{gibbs}!gibbs.cpp@{gibbs.cpp}}
+\doxysubsubsection{\texorpdfstring{gibbs()}{gibbs()}}
+{\footnotesize\ttfamily \label{gibbs_8cpp_a579ddb809b4d4a061b4ac155a3a6f80a} 
+tuple$<$ \mbox{\hyperlink{classMatrix}{Matrix}} \&, double, double, double, string $>$ gibbs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}}}]{r1}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}}}]{r2}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}}}]{r3}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em r1} & -\/ ijk position vector \#1 m \\
+\hline
+{\em r2} & -\/ ijk position vector \#2 m \\
+\hline
+{\em r3} & -\/ ijk position vector \#3 m \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+tuple\mbox{[} v2 -\/ ijk velocity vector for r2 m/s, theta -\/ angl between vectors rad, theta1 double copa double error -\/ flag indicating success \textquotesingle{}ok\textquotesingle{},... \mbox{]} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{gibbs_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{gibbs_8cpp_source}{gibbs.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{gibbs_8cpp_a579ddb809b4d4a061b4ac155a3a6f80a_cgraph}
+\end{center}
+\end{figure}

@@ -15,7 +15,7 @@ Matrix& DEInteg(Matrix& f(double t,Matrix z),double t, double tout,double relerr
 
   Matrix yout=zeros(n_eqn,1),ypout=zeros(n_eqn,1),two(14),gstr(14);
   bool start=false,phase1=false,nornd=false,crash=false,success=false,PermitTOUT=false,OldPermit=false,stiff=false;
-  long double delsgn=0.0,x=0.0,hi=0.0,ki=0.0,kold=0.0,temp1=0.0,term=0.0,psijm1=0.0,eta=0.0,sum=0.0,absh=0.0,hold=0.0,hnew=0.0,
+  double delsgn=0.0,x=0.0,hi=0.0,ki=0.0,kold=0.0,temp1=0.0,term=0.0,psijm1=0.0,eta=0.0,sum=0.0,absh=0.0,hold=0.0,hnew=0.0,
   k=0.0,round=0.0,gamma=0.0,i=0.0,p5eps=0.0,ifail=0.0,kp1=0.0,kp2=0.0,km1=0.0,km2=0.0,ns=0.0,nsp1=0.0,realns=0.0,im1=0.0,temp2=0.0,
   temp3=0.0,reali=0.0,temp4=0.0,nsm2=0.0,limit1=0.0,temp5=0.0,temp6=0.0,limit2=0.0,nsp2=0.0,ip1=0.0,tau=0.0,xold=0.0,erkm2=0.0,
   erkm1=0.0,erk,err=0.0,knew=0.0,rhi=0.0,h=0.0,erkp1=0.0,rhodouble=0.0,told=0.0,epsilon=0.0,del=0.0,absdel=0.0,tend=0.0,nostep=0.0,kle4=0.0,

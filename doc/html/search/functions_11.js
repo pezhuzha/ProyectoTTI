@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['vareqn_0',['VarEqn',['../VarEqn_8h.html#a502bdb5c8e9c335cd3fc942d1816f2e2',1,'VarEqn(double x, Matrix yPhi):&#160;VarEqn.cpp'],['../VarEqn_8cpp.html#a502bdb5c8e9c335cd3fc942d1816f2e2',1,'VarEqn(double x, Matrix yPhi):&#160;VarEqn.cpp']]]
+  ['union_5fvector_0',['union_vector',['../matrix_8h.html#a7fbccf986ae3faa0faa4bbd481cb074a',1,'union_vector(Matrix &amp;v, Matrix &amp;w):&#160;matrix.cpp'],['../matrix_8cpp.html#a7fbccf986ae3faa0faa4bbd481cb074a',1,'union_vector(Matrix &amp;v, Matrix &amp;w):&#160;matrix.cpp']]],
+  ['unit_1',['unit',['../unit_8h.html#a14c6001388ed63c6cca5c34d16981d6f',1,'unit(Matrix vec):&#160;unit.cpp'],['../unit_8cpp.html#a14c6001388ed63c6cca5c34d16981d6f',1,'unit(Matrix vec):&#160;unit.cpp']]]
 ];

@@ -1,0 +1,81 @@
+\doxysection{hgibbs.\+h File Reference}
+\hypertarget{hgibbs_8h}{}\label{hgibbs_8h}\index{hgibbs.h@{hgibbs.h}}
+
+
+El archivo contiene la funcion hgibbs.  
+
+
+{\ttfamily \#include "{}matrix.\+h"{}}\newline
+{\ttfamily \#include $<$tuple$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+Include dependency graph for hgibbs.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hgibbs_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{hgibbs_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+tuple$<$ \mbox{\hyperlink{classMatrix}{Matrix}} \&, double, double, double, string $>$ \mbox{\hyperlink{hgibbs_8h_a1db91908c4316a75b6fa095eaabaf3e4}{hgibbs}} (\mbox{\hyperlink{classMatrix}{Matrix}} r1, \mbox{\hyperlink{classMatrix}{Matrix}} r2, \mbox{\hyperlink{classMatrix}{Matrix}} r3, double Mjd1, double Mjd2, double Mjd3)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+El archivo contiene la funcion hgibbs. 
+
+\begin{DoxyAuthor}{Author}
+Pedro Zhuzhan 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000019}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+Definition in file \mbox{\hyperlink{hgibbs_8h_source}{hgibbs.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{hgibbs_8h_a1db91908c4316a75b6fa095eaabaf3e4}\index{hgibbs.h@{hgibbs.h}!hgibbs@{hgibbs}}
+\index{hgibbs@{hgibbs}!hgibbs.h@{hgibbs.h}}
+\doxysubsubsection{\texorpdfstring{hgibbs()}{hgibbs()}}
+{\footnotesize\ttfamily \label{hgibbs_8h_a1db91908c4316a75b6fa095eaabaf3e4} 
+tuple$<$ \mbox{\hyperlink{classMatrix}{Matrix}} \&, double, double, double, string $>$ hgibbs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMatrix}{Matrix}}}]{r1}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}}}]{r2}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}}}]{r3}{, }\item[{double}]{Mjd1}{, }\item[{double}]{Mjd2}{, }\item[{double}]{Mjd3}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em r1} & -\/ ijk position vector \#1 m \\
+\hline
+{\em r2} & -\/ ijk position vector \#2 m \\
+\hline
+{\em r3} & -\/ ijk position vector \#3 m \\
+\hline
+{\em Mjd1} & -\/ julian date of 1st sighting days from 4713 bc \\
+\hline
+{\em Mjd2} & -\/ julian date of 2nd sighting days from 4713 bc \\
+\hline
+{\em Mjd3} & -\/ julian date of 3rd sighting days from 4713 bc \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+tuple\mbox{[} v2 -\/ ijk velocity vector for r2 m/s, theta -\/ angl between vectors rad, theta1 double copa double error -\/ flag indicating success \textquotesingle{}ok\textquotesingle{},... \mbox{]} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{hgibbs_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{hgibbs_8cpp_source}{hgibbs.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{hgibbs_8h_a1db91908c4316a75b6fa095eaabaf3e4_cgraph}
+\end{center}
+\end{figure}

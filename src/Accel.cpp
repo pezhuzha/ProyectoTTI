@@ -23,15 +23,15 @@
 			}
 	auto [x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC] = IERS(eopdata,AuxParam.Mjd_UTC + x/86400,'l');
 	auto [UT1_TAI,UTC_GPS,UT1_GPS,TT_UTC,GPS_UTC] = timediff(UT1_UTC,TAI_UTC);
-	long double Mjd_UT1 = AuxParam.Mjd_UTC + x/86400 + UT1_UTC/86400;
-	long double Mjd_TT = AuxParam.Mjd_UTC + x/86400 + TT_UTC/86400;
+	 double Mjd_UT1 = AuxParam.Mjd_UTC + x/86400 + UT1_UTC/86400;
+	 double Mjd_TT = AuxParam.Mjd_UTC + x/86400 + TT_UTC/86400;
 
 	Matrix P = PrecMatrix(MJD_J2000,Mjd_TT);
 	Matrix N = NutMatrix(Mjd_TT);
 	Matrix T = N * P;
 	Matrix E = PoleMatrix(x_pole,y_pole) * GHAMatrix(Mjd_UT1) * T;
 
-	long double MJD_TDB = Mjday_TDB(Mjd_TT);
+	 double MJD_TDB = Mjday_TDB(Mjd_TT);
 	auto [r_Mercury,r_Venus,r_Earth,r_Mars,r_Jupiter,r_Saturn,r_Uranus,r_Neptune,r_Pluto,r_Moon,r_Sun] = JPL_Eph_DE430(MJD_TDB);
 
 	// Acceleration due to harmonic gravity field

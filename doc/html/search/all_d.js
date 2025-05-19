@@ -1,13 +1,9 @@
 var searchData=
 [
-  ['param_0',['Param',['../structParam.html',1,'']]],
-  ['polematrix_1',['PoleMatrix',['../PoleMatrix_8h.html#aa20f72601d5ff91f277b999d15b7d6c9',1,'PoleMatrix(double xp, double yp):&#160;PoleMatrix.cpp'],['../PoleMatrix_8cpp.html#aa20f72601d5ff91f277b999d15b7d6c9',1,'PoleMatrix(double xp, double yp):&#160;PoleMatrix.cpp']]],
-  ['polematrix_2ecpp_2',['PoleMatrix.cpp',['../PoleMatrix_8cpp.html',1,'']]],
-  ['polematrix_2eh_3',['PoleMatrix.h',['../PoleMatrix_8h.html',1,'']]],
-  ['position_4',['Position',['../Position_8h.html#ad3ff3004edb305ae3aed0230373b848e',1,'Position(double lon, double lat, double h):&#160;Position.cpp'],['../Position_8cpp.html#ad3ff3004edb305ae3aed0230373b848e',1,'Position(double lon, double lat, double h):&#160;Position.cpp']]],
-  ['position_2ecpp_5',['Position.cpp',['../Position_8cpp.html',1,'']]],
-  ['position_2eh_6',['Position.h',['../Position_8h.html',1,'']]],
-  ['precmatrix_7',['PrecMatrix',['../PrecMatrix_8h.html#a95bbb47a6bcd9ecaf7b5bc46f88dc7d1',1,'PrecMatrix(double Mjd_1, double Mjd_2):&#160;PrecMatrix.cpp'],['../PrecMatrix_8cpp.html#a95bbb47a6bcd9ecaf7b5bc46f88dc7d1',1,'PrecMatrix(double Mjd_1, double Mjd_2):&#160;PrecMatrix.cpp']]],
-  ['precmatrix_2ecpp_8',['PrecMatrix.cpp',['../PrecMatrix_8cpp.html',1,'']]],
-  ['precmatrix_2eh_9',['PrecMatrix.h',['../PrecMatrix_8h.html',1,'']]]
+  ['operator_28_29_0',['operator()',['../classMatrix.html#a074a3b36a65989b51afbfcb5b0e6f573',1,'Matrix::operator()(const int n)'],['../classMatrix.html#a920e6bd524f318abe55a379190e2a25b',1,'Matrix::operator()(const int row, const int column)']]],
+  ['operator_2a_1',['operator*',['../classMatrix.html#ae1bc7e1fda06dab52353ac01b3196efd',1,'Matrix::operator*(Matrix &amp;m)'],['../classMatrix.html#ac8ff0062737ec513839ee575608f789b',1,'Matrix::operator*(double d)']]],
+  ['operator_2b_2',['operator+',['../classMatrix.html#a7cc7127ce96c997c9d14f1f8874ed742',1,'Matrix::operator+(Matrix &amp;m)'],['../classMatrix.html#adce95924da629314f86bc84b911e3000',1,'Matrix::operator+(double d)']]],
+  ['operator_2d_3',['operator-',['../classMatrix.html#ac13e11282bf8fb3e88eb4e743c6dc019',1,'Matrix::operator-(Matrix &amp;m)'],['../classMatrix.html#a588c13e626bfff07e50f991b8c3a097c',1,'Matrix::operator-(double d)']]],
+  ['operator_2f_4',['operator/',['../classMatrix.html#afa8805316703c98abf5fefd7788b92ef',1,'Matrix::operator/(Matrix &amp;m)'],['../classMatrix.html#abc7f7f6a41b5b9f1ee9f3e65e2c33d19',1,'Matrix::operator/(double d)']]],
+  ['operator_3d_5',['operator=',['../classMatrix.html#ade03836bffb81664225dc544b5d5e6db',1,'Matrix']]]
 ];

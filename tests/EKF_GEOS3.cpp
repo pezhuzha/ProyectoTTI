@@ -27,6 +27,7 @@
 #include "../include/VarEqn.h"
 #include "../include/LTC.h"
 #include "../include/MeasUpdate.h"
+#include <time.h>
     /**
      * @file EKF_GEOS3.cpp
      * @brief Es el archivo principal del programa
@@ -35,12 +36,13 @@
      */
         int main(){
 
+clock_t start,end;
+start=clock();
     AuxParamLoad();
     eop19620101();
     GGM03S();
     DE430Coeff();
     GEOS3();
-
     int i=0,j,ii,nobs = 46;
             double sigma_range,sigma_az,sigma_el,lat,lon,alt,Mjd1,Mjd2,Mjd3,Mjd0,Mjd_UTC=obs(9,1),
             n_eqn,theta,t_old,Mjd_TT,Dist,Mjd_UT1,UT1_TAI,UTC_GPS,UT1_GPS,TT_UTC,GPS_UTC,
@@ -189,5 +191,8 @@ cout<<"\nError of Velocity Estimation\n";
 cout<<Y0(4)-Y_true(4)<<" [m/s]\n";
 cout<<Y0(5)-Y_true(5)<<" [m/s]\n";
 cout<<Y0(6)-Y_true(6)<<" [m/s]\n";
+end=clock();
+long double diff=(long double)(end-start)/CLOCKS_PER_SEC;
+cout <<"Tiempo: "<<diff<<" s";
 return 0;
     }

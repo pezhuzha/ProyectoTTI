@@ -1,9 +1,11 @@
 <map id="sign_.h" name="sign_.h">
-<area shape="rect" id="Node000001" title="El archivo contiene la funcion sign_." alt="" coords="136,5,204,31"/>
+<area shape="rect" id="Node000001" title="El archivo contiene la funcion sign_." alt="" coords="185,5,253,31"/>
 <area shape="rect" id="Node000002" href="$DEInteg_8cpp.html" title="El archivo contiene las implementaciones de DEInteg.h." alt="" coords="5,79,105,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,40,75,81,73,76,139,35"/>
-<area shape="rect" id="Node000003" href="$sign___8cpp.html" title="El archivo contiene las implementaciones de sign_.h." alt="" coords="129,79,211,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="173,44,173,79,167,79,167,44"/>
-<area shape="rect" id="Node000004" href="$tests_8cpp_source.html" title=" " alt="" coords="236,79,317,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="200,36,261,76,258,81,197,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,39,83,81,81,76,179,34"/>
+<area shape="rect" id="Node000003" href="$angl_8cpp.html" title="El archivo contiene las implementaciones de angl.h." alt="" coords="129,79,206,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="205,43,178,80,174,77,201,40"/>
+<area shape="rect" id="Node000004" href="$sign___8cpp.html" title="El archivo contiene las implementaciones de sign_.h." alt="" coords="230,79,313,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="238,40,265,77,261,80,234,43"/>
+<area shape="rect" id="Node000005" href="$tests_8cpp_source.html" title=" " alt="" coords="337,79,419,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="258,34,353,76,351,81,256,39"/>
 </map>

@@ -33,9 +33,16 @@
 #include "../include/Accel.h"
 #include "../include/VarEqn.h"
 #include "../include/DEInteg.h"
+#include "../include/unit.h"
+#include "../include/hgibbs.h"
+#include "../include/angl.h"
+#include "../include/Geodetic.h"
+#include "../include/elements.h"
+#include "../include/gibbs.h"
 #include <cstdio>
 #include <cmath>
 #include <tuple>
+#include <cstring>
 
 using namespace std;
 int tests_run = 0;
@@ -1231,6 +1238,171 @@ int m_DEInteg_01() {
     
     return 0;
 }
+int m_unit_01() {
+
+	Matrix R(3);
+	R(1)=0.267261241912424 ;
+	R(2)=0.534522483824849;
+	R(3)= 0.801783725737273;
+                            
+	Matrix A(3);
+	A(1)=	1;
+	A(2)=	2;
+	A(3)=	3;
+	
+	Matrix B = unit(A);
+
+
+	_assert(m_equals(R,B,R(1)*1e-10));
+    
+    return 0;
+}
+int m_hgibbs_01() {
+
+	Matrix R(3);
+	R(1)=-6.38143587015526e+15 ;
+	R(2)=-2.08304803011239e+16;
+	R(3)= -3.12457204516859e+16;
+    
+	double R1= 0.0167757531177639;
+
+	double R2= 0.010746739750832;
+
+	double R3= -0.0153797626049205;
+
+	string R4="ok";
+
+	Matrix A(3);
+	A(1)=	1;
+	A(2)=	2;
+	A(3)=	3;
+	Matrix A2(3);
+	A2(1)=	1.1;
+	A2(2)=	2.1;
+	A2(3)=	3.1;
+	Matrix A3(3);
+	A3(1)=	1.2;
+	A3(2)=	2.2;
+	A3(3)=	3.3;
+	
+	auto  [v2, theta,theta1,copa, error] = hgibbs(A,A2,A3,24,25,26);
+
+	_assert(m_equals(R,v2,fabs(R(1)*1e-10)));
+	_assert(fabs(R1-theta)<1e-10);
+	_assert(fabs(R2-theta1)<1e-10);
+	_assert(fabs(R3-copa)<1e-10);
+	_assert(R4.compare(error)==0);
+    
+    return 0;
+}
+int m_angl_01() {
+
+	double R= 0.0167757531177639;
+    
+
+	Matrix A(3);
+	A(1)=	1;
+	A(2)=	2;
+	A(3)=	3;
+	Matrix A2(3);
+	A2(1)=	1.1;
+	A2(2)=	2.1;
+	A2(3)=	3.1;
+	
+	double B = angl(A,A2);
+
+
+	_assert(fabs(R-B)<R*1e-10);
+    
+    return 0;
+}
+int m_Geodetic_01() {
+
+	double R= 1.10714871779409;
+	double R2= 1.57074413624392;
+	double R3= -6356748.6165338;
+    
+
+	Matrix A(3);
+	A(1)=	1;
+	A(2)=	2;
+	A(3)=	3;
+	
+	auto [lon, lat, h] = Geodetic(A);
+	_assert(fabs(R-lon)<R*1e-10);
+	_assert(fabs(R2-lat)<R2*1e-10);
+	_assert(fabs(R3-h)<fabs(R3*1e-10));
+    
+    return 0;
+}
+int m_elements_01() {
+
+	double R= 1.35474011564823e-13;
+	double R2=  1.87082869338765;
+	double R3= 0.999999999999964;
+	double R4= 1.99133066207886;
+	double R5=    3.6052402625906;
+	double R6= 5.21086941752228;
+	double R7=    3.14159030993265;
+
+	Matrix A(6);
+	A(1)=	1;
+	A(2)=	2;
+	A(3)=	3;
+	A(4)=	4;
+	A(5)=	5;
+	A(6)=	6;
+	
+	
+	auto [p, a, e, i, Omega, omega, M] = elements(A);
+	_assert(fabs(R-p)<fabs(R*1e-10));
+	_assert(fabs(R2-a)<fabs(R2*1e-10));
+	_assert(fabs(R3-e)<fabs(R3*1e-10));
+	_assert(fabs(R4-i)<fabs(R4*1e-10));
+	_assert(fabs(R5-Omega)<fabs(R5*1e-10));
+	_assert(fabs(R6-omega)<fabs(R6*1e-10));
+	_assert(fabs(R7-M)<fabs(R7*1e-10));
+    
+    return 0;
+}
+int m_gibbs_01() {
+
+	Matrix R(3);
+	R(1)= 128555.337872446 ;
+	R(2)= 128555.337873584;
+	R(3)= 216940.997442504;
+    
+	double R1=  0.0167757531177639;
+
+	double R2=  0.010746739750832;
+
+	double R3= -0.0153797626049205;
+
+	string R4="ok";
+
+	Matrix A(3);
+	A(1)=	1;
+	A(2)=	2;
+	A(3)=	3;
+	Matrix A2(3);
+	A2(1)=	1.1;
+	A2(2)=	2.1;
+	A2(3)=	3.1;
+	Matrix A3(3);
+	A3(1)=	1.2;
+	A3(2)=	2.2;
+	A3(3)=	3.3;
+	
+	auto  [v2, theta,theta1,copa, error] = gibbs(A,A2,A3);
+
+	_assert(m_equals(R,v2,fabs(R(1)*1e-10)));
+	_assert(fabs(R1-theta)<fabs(R1*1e-10));
+	_assert(fabs(R2-theta1)<fabs(R2*1e-10));
+	_assert(fabs(R3-copa)<fabs(R3*1e-10));
+	_assert(R4.compare(error)==0);
+    
+    return 0;
+}
 
 int all_tests()
 {
@@ -1288,6 +1460,12 @@ int all_tests()
     _verify(m_Accel_01); 
     _verify(m_VarEqn_01);
     _verify(m_DEInteg_01);
+    _verify(m_unit_01);
+    _verify(m_hgibbs_01);
+    _verify(m_angl_01);
+    _verify(m_Geodetic_01);
+    _verify(m_elements_01);
+    _verify(m_gibbs_01);
 
 
     return 0;

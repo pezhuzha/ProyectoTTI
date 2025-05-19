@@ -1,0 +1,26 @@
+\doxysection{unit.\+cpp}
+\hypertarget{unit_8cpp_source}{}\label{unit_8cpp_source}\index{unit.cpp@{unit.cpp}}
+\mbox{\hyperlink{unit_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{unit_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{unit_8h}{../include/unit.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{unit_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{unit_8cpp_source_l00009}\mbox{\hyperlink{unit_8h_a14c6001388ed63c6cca5c34d16981d6f}{00009}}\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\&\ \mbox{\hyperlink{unit_8cpp_a14c6001388ed63c6cca5c34d16981d6f}{unit}}(\mbox{\hyperlink{classMatrix}{Matrix}}\ vec)\{}
+\DoxyCodeLine{\Hypertarget{unit_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i=0;}
+\DoxyCodeLine{\Hypertarget{unit_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ small\ =\ 0.000001;}
+\DoxyCodeLine{\Hypertarget{unit_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ magv\ =\ \mbox{\hyperlink{matrix_8h_a907c9c6f53fc52d17e86b507b156536f}{norm}}(vec);}
+\DoxyCodeLine{\Hypertarget{unit_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ \&outvec=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(3);}
+\DoxyCodeLine{\Hypertarget{unit_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ magv\ >\ small\ )\{}
+\DoxyCodeLine{\Hypertarget{unit_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (i=1;i<=3;i++)\{}
+\DoxyCodeLine{\Hypertarget{unit_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outvec(i)=\ vec(i)/magv;}
+\DoxyCodeLine{\Hypertarget{unit_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{unit_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{unit_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{unit_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (i=1;i<=3;i++)\{}
+\DoxyCodeLine{\Hypertarget{unit_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outvec(i)=\ 0.0;}
+\DoxyCodeLine{\Hypertarget{unit_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{unit_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{unit_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{unit_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ outvec;}
+\DoxyCodeLine{\Hypertarget{unit_8cpp_source_l00026}00026\ \ \ \ \ \}}
+
+\end{DoxyCode}

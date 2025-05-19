@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['r_5fx_0',['R_x',['../R__x_8h.html#ab96741dfe3b3590793f2b318ceed5f53',1,'R_x(double angle):&#160;R_x.cpp'],['../R__x_8cpp.html#ab96741dfe3b3590793f2b318ceed5f53',1,'R_x(double angle):&#160;R_x.cpp']]],
-  ['r_5fy_1',['R_y',['../R__y_8h.html#a25114557991f92fd6b027118c591a98f',1,'R_y(double angle):&#160;R_y.cpp'],['../R__y_8cpp.html#a25114557991f92fd6b027118c591a98f',1,'R_y(double angle):&#160;R_y.cpp']]],
-  ['r_5fz_2',['R_z',['../R__z_8h.html#a4f688959a9ab144bf27d272e54bf7258',1,'R_z(double angle):&#160;R_z.cpp'],['../R__z_8cpp.html#a4f688959a9ab144bf27d272e54bf7258',1,'R_z(double angle):&#160;R_z.cpp']]]
+  ['polematrix_0',['PoleMatrix',['../PoleMatrix_8h.html#aa20f72601d5ff91f277b999d15b7d6c9',1,'PoleMatrix(double xp, double yp):&#160;PoleMatrix.cpp'],['../PoleMatrix_8cpp.html#aa20f72601d5ff91f277b999d15b7d6c9',1,'PoleMatrix(double xp, double yp):&#160;PoleMatrix.cpp']]],
+  ['position_1',['Position',['../Position_8h.html#ad3ff3004edb305ae3aed0230373b848e',1,'Position(double lon, double lat, double h):&#160;Position.cpp'],['../Position_8cpp.html#ad3ff3004edb305ae3aed0230373b848e',1,'Position(double lon, double lat, double h):&#160;Position.cpp']]],
+  ['precmatrix_2',['PrecMatrix',['../PrecMatrix_8h.html#a95bbb47a6bcd9ecaf7b5bc46f88dc7d1',1,'PrecMatrix(double Mjd_1, double Mjd_2):&#160;PrecMatrix.cpp'],['../PrecMatrix_8cpp.html#a95bbb47a6bcd9ecaf7b5bc46f88dc7d1',1,'PrecMatrix(double Mjd_1, double Mjd_2):&#160;PrecMatrix.cpp']]]
 ];

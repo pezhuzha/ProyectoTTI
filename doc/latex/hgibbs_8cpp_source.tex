@@ -1,0 +1,51 @@
+\doxysection{hgibbs.\+cpp}
+\hypertarget{hgibbs_8cpp_source}{}\label{hgibbs_8cpp_source}\index{hgibbs.cpp@{hgibbs.cpp}}
+\mbox{\hyperlink{hgibbs_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hgibbs_8h}{../include/hgibbs.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{unit_8h}{../include/unit.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{angl_8h}{../include/angl.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SAT__Const_8h}{../include/SAT\_Const.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00012}\mbox{\hyperlink{hgibbs_8h_a1db91908c4316a75b6fa095eaabaf3e4}{00012}}\ \ \ \ \ tuple\ <Matrix\&,double,double,double,string>\mbox{\hyperlink{hgibbs_8cpp_a1db91908c4316a75b6fa095eaabaf3e4}{hgibbs}}(\mbox{\hyperlink{classMatrix}{Matrix}}\ r1,\mbox{\hyperlink{classMatrix}{Matrix}}\ r2,\mbox{\hyperlink{classMatrix}{Matrix}}\ r3,\textcolor{keywordtype}{double}\ Mjd1,\ \textcolor{keywordtype}{double}\ Mjd2,\textcolor{keywordtype}{double}\ Mjd3)\{}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ error\ =\ \ \textcolor{stringliteral}{"{}ok"{}};}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ theta\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ theta1=\ 0.0;}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ magr1\ =\ \mbox{\hyperlink{matrix_8h_a907c9c6f53fc52d17e86b507b156536f}{norm}}(\ r1\ );}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ magr2\ =\ \mbox{\hyperlink{matrix_8h_a907c9c6f53fc52d17e86b507b156536f}{norm}}(\ r2\ );}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ magr3\ =\ \mbox{\hyperlink{matrix_8h_a907c9c6f53fc52d17e86b507b156536f}{norm}}(\ r3\ );}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ \&v2=\mbox{\hyperlink{matrix_8h_a56d60ea1f08402246a7cfd477d69a618}{zeros}}(3);}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i=0;}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tolangle=\ 0.01745329251994;}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dt21=\ (Mjd2-\/Mjd1)*86400.0;}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dt31=\ (Mjd3-\/Mjd1)*86400.0;}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dt32=\ (Mjd3-\/Mjd2)*86400.0;}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ p\ =\ \mbox{\hyperlink{matrix_8h_a8f26ea7eab92d1fd60ac732719a486e8}{cross}}(\ r2,r3\ );}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ pn\ =\ \mbox{\hyperlink{unit_8h_a14c6001388ed63c6cca5c34d16981d6f}{unit}}(\ p\ );}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix}}\ r1n\ =\ \mbox{\hyperlink{unit_8h_a14c6001388ed63c6cca5c34d16981d6f}{unit}}(\ r1\ );}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ copa=\ \ asin(\ \mbox{\hyperlink{matrix_8h_ace64c1017d252d104fe1c99329ae9ecc}{dot}}(\ pn,r1n\ )\ );}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ abs(\ \mbox{\hyperlink{matrix_8h_ace64c1017d252d104fe1c99329ae9ecc}{dot}}(r1n,pn)\ )\ >\ 0.017452406\ )\{}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ error=\ \textcolor{stringliteral}{"{}not\ coplanar"{}};}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ theta\ \ =\ \mbox{\hyperlink{angl_8h_ac48c4ac03e1bae9d3e53a2639792cd32}{angl}}(\ r1,r2\ );}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ theta1\ =\ \mbox{\hyperlink{angl_8h_ac48c4ac03e1bae9d3e53a2639792cd32}{angl}}(\ r2,r3\ );}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ (theta\ >\ tolangle)\ |\ (theta1\ >\ tolangle)\ )\ \ \{}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ error=\ \textcolor{stringliteral}{"{}angl\ >\ 1ø"{}};}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ term1=\ -\/dt32*(\ 1.0/(dt21*dt31)\ +\ GM\_Earth/(12.0*magr1*magr1*magr1)\ );}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ term2=\ (dt32-\/dt21)*(\ 1.0/(dt21*dt32)\ +\ GM\_Earth/(12.0*magr2*magr2*magr2)\ );}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ term3=\ \ dt21*(\ 1.0/(dt32*dt31)\ +\ GM\_Earth/(12.0*magr3*magr3*magr3)\ );}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ v2\ =\ \ r1*term1\ +\ r2*term2\ +\ r3*term3\ ;}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tie(v2,\ theta,theta1,copa,\ error);}
+\DoxyCodeLine{\Hypertarget{hgibbs_8cpp_source_l00051}00051\ \ \ \ \ \}}
+
+\end{DoxyCode}

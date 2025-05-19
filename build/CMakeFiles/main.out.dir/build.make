@@ -237,10 +237,24 @@ CMakeFiles/main.out.dir/G_AccelHarmonic.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/G_AccelHarmonic.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fghfgh/Escritorio/ProyectoTTI/src/G_AccelHarmonic.cpp -o CMakeFiles/main.out.dir/G_AccelHarmonic.cpp.s
 
+CMakeFiles/main.out.dir/Geodetic.cpp.o: CMakeFiles/main.out.dir/flags.make
+CMakeFiles/main.out.dir/Geodetic.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/Geodetic.cpp
+CMakeFiles/main.out.dir/Geodetic.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/main.out.dir/Geodetic.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/Geodetic.cpp.o -MF CMakeFiles/main.out.dir/Geodetic.cpp.o.d -o CMakeFiles/main.out.dir/Geodetic.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/Geodetic.cpp
+
+CMakeFiles/main.out.dir/Geodetic.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.out.dir/Geodetic.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fghfgh/Escritorio/ProyectoTTI/src/Geodetic.cpp > CMakeFiles/main.out.dir/Geodetic.cpp.i
+
+CMakeFiles/main.out.dir/Geodetic.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/Geodetic.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fghfgh/Escritorio/ProyectoTTI/src/Geodetic.cpp -o CMakeFiles/main.out.dir/Geodetic.cpp.s
+
 CMakeFiles/main.out.dir/IERS.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/IERS.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/IERS.cpp
 CMakeFiles/main.out.dir/IERS.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/main.out.dir/IERS.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/main.out.dir/IERS.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/IERS.cpp.o -MF CMakeFiles/main.out.dir/IERS.cpp.o.d -o CMakeFiles/main.out.dir/IERS.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/IERS.cpp
 
 CMakeFiles/main.out.dir/IERS.cpp.i: cmake_force
@@ -254,7 +268,7 @@ CMakeFiles/main.out.dir/IERS.cpp.s: cmake_force
 CMakeFiles/main.out.dir/JPL_Eph_DE430.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/JPL_Eph_DE430.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/JPL_Eph_DE430.cpp
 CMakeFiles/main.out.dir/JPL_Eph_DE430.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/main.out.dir/JPL_Eph_DE430.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/main.out.dir/JPL_Eph_DE430.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/JPL_Eph_DE430.cpp.o -MF CMakeFiles/main.out.dir/JPL_Eph_DE430.cpp.o.d -o CMakeFiles/main.out.dir/JPL_Eph_DE430.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/JPL_Eph_DE430.cpp
 
 CMakeFiles/main.out.dir/JPL_Eph_DE430.cpp.i: cmake_force
@@ -268,7 +282,7 @@ CMakeFiles/main.out.dir/JPL_Eph_DE430.cpp.s: cmake_force
 CMakeFiles/main.out.dir/LTC.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/LTC.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/LTC.cpp
 CMakeFiles/main.out.dir/LTC.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/main.out.dir/LTC.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/main.out.dir/LTC.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/LTC.cpp.o -MF CMakeFiles/main.out.dir/LTC.cpp.o.d -o CMakeFiles/main.out.dir/LTC.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/LTC.cpp
 
 CMakeFiles/main.out.dir/LTC.cpp.i: cmake_force
@@ -282,7 +296,7 @@ CMakeFiles/main.out.dir/LTC.cpp.s: cmake_force
 CMakeFiles/main.out.dir/Legendre.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/Legendre.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/Legendre.cpp
 CMakeFiles/main.out.dir/Legendre.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/main.out.dir/Legendre.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/main.out.dir/Legendre.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/Legendre.cpp.o -MF CMakeFiles/main.out.dir/Legendre.cpp.o.d -o CMakeFiles/main.out.dir/Legendre.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/Legendre.cpp
 
 CMakeFiles/main.out.dir/Legendre.cpp.i: cmake_force
@@ -296,7 +310,7 @@ CMakeFiles/main.out.dir/Legendre.cpp.s: cmake_force
 CMakeFiles/main.out.dir/MeanObliquity.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/MeanObliquity.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/MeanObliquity.cpp
 CMakeFiles/main.out.dir/MeanObliquity.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/main.out.dir/MeanObliquity.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/main.out.dir/MeanObliquity.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/MeanObliquity.cpp.o -MF CMakeFiles/main.out.dir/MeanObliquity.cpp.o.d -o CMakeFiles/main.out.dir/MeanObliquity.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/MeanObliquity.cpp
 
 CMakeFiles/main.out.dir/MeanObliquity.cpp.i: cmake_force
@@ -310,7 +324,7 @@ CMakeFiles/main.out.dir/MeanObliquity.cpp.s: cmake_force
 CMakeFiles/main.out.dir/MeasUpdate.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/MeasUpdate.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/MeasUpdate.cpp
 CMakeFiles/main.out.dir/MeasUpdate.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/main.out.dir/MeasUpdate.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/main.out.dir/MeasUpdate.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/MeasUpdate.cpp.o -MF CMakeFiles/main.out.dir/MeasUpdate.cpp.o.d -o CMakeFiles/main.out.dir/MeasUpdate.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/MeasUpdate.cpp
 
 CMakeFiles/main.out.dir/MeasUpdate.cpp.i: cmake_force
@@ -324,7 +338,7 @@ CMakeFiles/main.out.dir/MeasUpdate.cpp.s: cmake_force
 CMakeFiles/main.out.dir/Mjday.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/Mjday.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/Mjday.cpp
 CMakeFiles/main.out.dir/Mjday.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/main.out.dir/Mjday.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/main.out.dir/Mjday.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/Mjday.cpp.o -MF CMakeFiles/main.out.dir/Mjday.cpp.o.d -o CMakeFiles/main.out.dir/Mjday.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/Mjday.cpp
 
 CMakeFiles/main.out.dir/Mjday.cpp.i: cmake_force
@@ -338,7 +352,7 @@ CMakeFiles/main.out.dir/Mjday.cpp.s: cmake_force
 CMakeFiles/main.out.dir/Mjday_TDB.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/Mjday_TDB.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/Mjday_TDB.cpp
 CMakeFiles/main.out.dir/Mjday_TDB.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/main.out.dir/Mjday_TDB.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/main.out.dir/Mjday_TDB.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/Mjday_TDB.cpp.o -MF CMakeFiles/main.out.dir/Mjday_TDB.cpp.o.d -o CMakeFiles/main.out.dir/Mjday_TDB.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/Mjday_TDB.cpp
 
 CMakeFiles/main.out.dir/Mjday_TDB.cpp.i: cmake_force
@@ -352,7 +366,7 @@ CMakeFiles/main.out.dir/Mjday_TDB.cpp.s: cmake_force
 CMakeFiles/main.out.dir/NutAngles.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/NutAngles.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/NutAngles.cpp
 CMakeFiles/main.out.dir/NutAngles.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/main.out.dir/NutAngles.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/main.out.dir/NutAngles.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/NutAngles.cpp.o -MF CMakeFiles/main.out.dir/NutAngles.cpp.o.d -o CMakeFiles/main.out.dir/NutAngles.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/NutAngles.cpp
 
 CMakeFiles/main.out.dir/NutAngles.cpp.i: cmake_force
@@ -366,7 +380,7 @@ CMakeFiles/main.out.dir/NutAngles.cpp.s: cmake_force
 CMakeFiles/main.out.dir/NutMatrix.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/NutMatrix.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/NutMatrix.cpp
 CMakeFiles/main.out.dir/NutMatrix.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/main.out.dir/NutMatrix.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/main.out.dir/NutMatrix.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/NutMatrix.cpp.o -MF CMakeFiles/main.out.dir/NutMatrix.cpp.o.d -o CMakeFiles/main.out.dir/NutMatrix.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/NutMatrix.cpp
 
 CMakeFiles/main.out.dir/NutMatrix.cpp.i: cmake_force
@@ -380,7 +394,7 @@ CMakeFiles/main.out.dir/NutMatrix.cpp.s: cmake_force
 CMakeFiles/main.out.dir/PoleMatrix.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/PoleMatrix.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/PoleMatrix.cpp
 CMakeFiles/main.out.dir/PoleMatrix.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/main.out.dir/PoleMatrix.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/main.out.dir/PoleMatrix.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/PoleMatrix.cpp.o -MF CMakeFiles/main.out.dir/PoleMatrix.cpp.o.d -o CMakeFiles/main.out.dir/PoleMatrix.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/PoleMatrix.cpp
 
 CMakeFiles/main.out.dir/PoleMatrix.cpp.i: cmake_force
@@ -394,7 +408,7 @@ CMakeFiles/main.out.dir/PoleMatrix.cpp.s: cmake_force
 CMakeFiles/main.out.dir/Position.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/Position.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/Position.cpp
 CMakeFiles/main.out.dir/Position.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/main.out.dir/Position.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/main.out.dir/Position.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/Position.cpp.o -MF CMakeFiles/main.out.dir/Position.cpp.o.d -o CMakeFiles/main.out.dir/Position.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/Position.cpp
 
 CMakeFiles/main.out.dir/Position.cpp.i: cmake_force
@@ -408,7 +422,7 @@ CMakeFiles/main.out.dir/Position.cpp.s: cmake_force
 CMakeFiles/main.out.dir/PrecMatrix.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/PrecMatrix.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/PrecMatrix.cpp
 CMakeFiles/main.out.dir/PrecMatrix.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/main.out.dir/PrecMatrix.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/main.out.dir/PrecMatrix.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/PrecMatrix.cpp.o -MF CMakeFiles/main.out.dir/PrecMatrix.cpp.o.d -o CMakeFiles/main.out.dir/PrecMatrix.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/PrecMatrix.cpp
 
 CMakeFiles/main.out.dir/PrecMatrix.cpp.i: cmake_force
@@ -422,7 +436,7 @@ CMakeFiles/main.out.dir/PrecMatrix.cpp.s: cmake_force
 CMakeFiles/main.out.dir/R_x.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/R_x.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/R_x.cpp
 CMakeFiles/main.out.dir/R_x.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/main.out.dir/R_x.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/main.out.dir/R_x.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/R_x.cpp.o -MF CMakeFiles/main.out.dir/R_x.cpp.o.d -o CMakeFiles/main.out.dir/R_x.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/R_x.cpp
 
 CMakeFiles/main.out.dir/R_x.cpp.i: cmake_force
@@ -436,7 +450,7 @@ CMakeFiles/main.out.dir/R_x.cpp.s: cmake_force
 CMakeFiles/main.out.dir/R_y.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/R_y.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/R_y.cpp
 CMakeFiles/main.out.dir/R_y.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/main.out.dir/R_y.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/main.out.dir/R_y.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/R_y.cpp.o -MF CMakeFiles/main.out.dir/R_y.cpp.o.d -o CMakeFiles/main.out.dir/R_y.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/R_y.cpp
 
 CMakeFiles/main.out.dir/R_y.cpp.i: cmake_force
@@ -450,7 +464,7 @@ CMakeFiles/main.out.dir/R_y.cpp.s: cmake_force
 CMakeFiles/main.out.dir/R_z.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/R_z.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/R_z.cpp
 CMakeFiles/main.out.dir/R_z.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/main.out.dir/R_z.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/main.out.dir/R_z.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/R_z.cpp.o -MF CMakeFiles/main.out.dir/R_z.cpp.o.d -o CMakeFiles/main.out.dir/R_z.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/R_z.cpp
 
 CMakeFiles/main.out.dir/R_z.cpp.i: cmake_force
@@ -464,7 +478,7 @@ CMakeFiles/main.out.dir/R_z.cpp.s: cmake_force
 CMakeFiles/main.out.dir/TimeUpdate.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/TimeUpdate.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/TimeUpdate.cpp
 CMakeFiles/main.out.dir/TimeUpdate.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/main.out.dir/TimeUpdate.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/main.out.dir/TimeUpdate.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/TimeUpdate.cpp.o -MF CMakeFiles/main.out.dir/TimeUpdate.cpp.o.d -o CMakeFiles/main.out.dir/TimeUpdate.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/TimeUpdate.cpp
 
 CMakeFiles/main.out.dir/TimeUpdate.cpp.i: cmake_force
@@ -478,7 +492,7 @@ CMakeFiles/main.out.dir/TimeUpdate.cpp.s: cmake_force
 CMakeFiles/main.out.dir/VarEqn.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/VarEqn.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/VarEqn.cpp
 CMakeFiles/main.out.dir/VarEqn.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/main.out.dir/VarEqn.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/main.out.dir/VarEqn.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/VarEqn.cpp.o -MF CMakeFiles/main.out.dir/VarEqn.cpp.o.d -o CMakeFiles/main.out.dir/VarEqn.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/VarEqn.cpp
 
 CMakeFiles/main.out.dir/VarEqn.cpp.i: cmake_force
@@ -489,10 +503,38 @@ CMakeFiles/main.out.dir/VarEqn.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/VarEqn.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fghfgh/Escritorio/ProyectoTTI/src/VarEqn.cpp -o CMakeFiles/main.out.dir/VarEqn.cpp.s
 
+CMakeFiles/main.out.dir/angl.cpp.o: CMakeFiles/main.out.dir/flags.make
+CMakeFiles/main.out.dir/angl.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/angl.cpp
+CMakeFiles/main.out.dir/angl.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/main.out.dir/angl.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/angl.cpp.o -MF CMakeFiles/main.out.dir/angl.cpp.o.d -o CMakeFiles/main.out.dir/angl.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/angl.cpp
+
+CMakeFiles/main.out.dir/angl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.out.dir/angl.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fghfgh/Escritorio/ProyectoTTI/src/angl.cpp > CMakeFiles/main.out.dir/angl.cpp.i
+
+CMakeFiles/main.out.dir/angl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/angl.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fghfgh/Escritorio/ProyectoTTI/src/angl.cpp -o CMakeFiles/main.out.dir/angl.cpp.s
+
+CMakeFiles/main.out.dir/elements.cpp.o: CMakeFiles/main.out.dir/flags.make
+CMakeFiles/main.out.dir/elements.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/elements.cpp
+CMakeFiles/main.out.dir/elements.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/main.out.dir/elements.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/elements.cpp.o -MF CMakeFiles/main.out.dir/elements.cpp.o.d -o CMakeFiles/main.out.dir/elements.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/elements.cpp
+
+CMakeFiles/main.out.dir/elements.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.out.dir/elements.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fghfgh/Escritorio/ProyectoTTI/src/elements.cpp > CMakeFiles/main.out.dir/elements.cpp.i
+
+CMakeFiles/main.out.dir/elements.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/elements.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fghfgh/Escritorio/ProyectoTTI/src/elements.cpp -o CMakeFiles/main.out.dir/elements.cpp.s
+
 CMakeFiles/main.out.dir/gast.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/gast.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/gast.cpp
 CMakeFiles/main.out.dir/gast.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/main.out.dir/gast.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/main.out.dir/gast.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/gast.cpp.o -MF CMakeFiles/main.out.dir/gast.cpp.o.d -o CMakeFiles/main.out.dir/gast.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/gast.cpp
 
 CMakeFiles/main.out.dir/gast.cpp.i: cmake_force
@@ -503,10 +545,24 @@ CMakeFiles/main.out.dir/gast.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/gast.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fghfgh/Escritorio/ProyectoTTI/src/gast.cpp -o CMakeFiles/main.out.dir/gast.cpp.s
 
+CMakeFiles/main.out.dir/gibbs.cpp.o: CMakeFiles/main.out.dir/flags.make
+CMakeFiles/main.out.dir/gibbs.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/gibbs.cpp
+CMakeFiles/main.out.dir/gibbs.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/main.out.dir/gibbs.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/gibbs.cpp.o -MF CMakeFiles/main.out.dir/gibbs.cpp.o.d -o CMakeFiles/main.out.dir/gibbs.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/gibbs.cpp
+
+CMakeFiles/main.out.dir/gibbs.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.out.dir/gibbs.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fghfgh/Escritorio/ProyectoTTI/src/gibbs.cpp > CMakeFiles/main.out.dir/gibbs.cpp.i
+
+CMakeFiles/main.out.dir/gibbs.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/gibbs.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fghfgh/Escritorio/ProyectoTTI/src/gibbs.cpp -o CMakeFiles/main.out.dir/gibbs.cpp.s
+
 CMakeFiles/main.out.dir/gmst.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/gmst.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/gmst.cpp
 CMakeFiles/main.out.dir/gmst.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/main.out.dir/gmst.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/main.out.dir/gmst.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/gmst.cpp.o -MF CMakeFiles/main.out.dir/gmst.cpp.o.d -o CMakeFiles/main.out.dir/gmst.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/gmst.cpp
 
 CMakeFiles/main.out.dir/gmst.cpp.i: cmake_force
@@ -517,10 +573,24 @@ CMakeFiles/main.out.dir/gmst.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/gmst.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fghfgh/Escritorio/ProyectoTTI/src/gmst.cpp -o CMakeFiles/main.out.dir/gmst.cpp.s
 
+CMakeFiles/main.out.dir/hgibbs.cpp.o: CMakeFiles/main.out.dir/flags.make
+CMakeFiles/main.out.dir/hgibbs.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/hgibbs.cpp
+CMakeFiles/main.out.dir/hgibbs.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/main.out.dir/hgibbs.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/hgibbs.cpp.o -MF CMakeFiles/main.out.dir/hgibbs.cpp.o.d -o CMakeFiles/main.out.dir/hgibbs.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/hgibbs.cpp
+
+CMakeFiles/main.out.dir/hgibbs.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.out.dir/hgibbs.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fghfgh/Escritorio/ProyectoTTI/src/hgibbs.cpp > CMakeFiles/main.out.dir/hgibbs.cpp.i
+
+CMakeFiles/main.out.dir/hgibbs.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/hgibbs.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fghfgh/Escritorio/ProyectoTTI/src/hgibbs.cpp -o CMakeFiles/main.out.dir/hgibbs.cpp.s
+
 CMakeFiles/main.out.dir/matrix.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/matrix.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/matrix.cpp
 CMakeFiles/main.out.dir/matrix.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/main.out.dir/matrix.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/main.out.dir/matrix.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/matrix.cpp.o -MF CMakeFiles/main.out.dir/matrix.cpp.o.d -o CMakeFiles/main.out.dir/matrix.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/matrix.cpp
 
 CMakeFiles/main.out.dir/matrix.cpp.i: cmake_force
@@ -534,7 +604,7 @@ CMakeFiles/main.out.dir/matrix.cpp.s: cmake_force
 CMakeFiles/main.out.dir/sign_.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/sign_.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/sign_.cpp
 CMakeFiles/main.out.dir/sign_.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/main.out.dir/sign_.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/main.out.dir/sign_.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/sign_.cpp.o -MF CMakeFiles/main.out.dir/sign_.cpp.o.d -o CMakeFiles/main.out.dir/sign_.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/sign_.cpp
 
 CMakeFiles/main.out.dir/sign_.cpp.i: cmake_force
@@ -548,7 +618,7 @@ CMakeFiles/main.out.dir/sign_.cpp.s: cmake_force
 CMakeFiles/main.out.dir/timediff.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/timediff.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/timediff.cpp
 CMakeFiles/main.out.dir/timediff.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/main.out.dir/timediff.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/main.out.dir/timediff.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/timediff.cpp.o -MF CMakeFiles/main.out.dir/timediff.cpp.o.d -o CMakeFiles/main.out.dir/timediff.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/timediff.cpp
 
 CMakeFiles/main.out.dir/timediff.cpp.i: cmake_force
@@ -559,10 +629,24 @@ CMakeFiles/main.out.dir/timediff.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/timediff.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fghfgh/Escritorio/ProyectoTTI/src/timediff.cpp -o CMakeFiles/main.out.dir/timediff.cpp.s
 
+CMakeFiles/main.out.dir/unit.cpp.o: CMakeFiles/main.out.dir/flags.make
+CMakeFiles/main.out.dir/unit.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/src/unit.cpp
+CMakeFiles/main.out.dir/unit.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/main.out.dir/unit.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/unit.cpp.o -MF CMakeFiles/main.out.dir/unit.cpp.o.d -o CMakeFiles/main.out.dir/unit.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/src/unit.cpp
+
+CMakeFiles/main.out.dir/unit.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.out.dir/unit.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fghfgh/Escritorio/ProyectoTTI/src/unit.cpp > CMakeFiles/main.out.dir/unit.cpp.i
+
+CMakeFiles/main.out.dir/unit.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/unit.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fghfgh/Escritorio/ProyectoTTI/src/unit.cpp -o CMakeFiles/main.out.dir/unit.cpp.s
+
 CMakeFiles/main.out.dir/home/fghfgh/Escritorio/ProyectoTTI/tests/EKF_GEOS3.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/home/fghfgh/Escritorio/ProyectoTTI/tests/EKF_GEOS3.cpp.o: /home/fghfgh/Escritorio/ProyectoTTI/tests/EKF_GEOS3.cpp
 CMakeFiles/main.out.dir/home/fghfgh/Escritorio/ProyectoTTI/tests/EKF_GEOS3.cpp.o: CMakeFiles/main.out.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/main.out.dir/home/fghfgh/Escritorio/ProyectoTTI/tests/EKF_GEOS3.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/main.out.dir/home/fghfgh/Escritorio/ProyectoTTI/tests/EKF_GEOS3.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.out.dir/home/fghfgh/Escritorio/ProyectoTTI/tests/EKF_GEOS3.cpp.o -MF CMakeFiles/main.out.dir/home/fghfgh/Escritorio/ProyectoTTI/tests/EKF_GEOS3.cpp.o.d -o CMakeFiles/main.out.dir/home/fghfgh/Escritorio/ProyectoTTI/tests/EKF_GEOS3.cpp.o -c /home/fghfgh/Escritorio/ProyectoTTI/tests/EKF_GEOS3.cpp
 
 CMakeFiles/main.out.dir/home/fghfgh/Escritorio/ProyectoTTI/tests/EKF_GEOS3.cpp.i: cmake_force
@@ -587,6 +671,7 @@ main_out_OBJECTS = \
 "CMakeFiles/main.out.dir/GHAMatrix.cpp.o" \
 "CMakeFiles/main.out.dir/GLOBAL.cpp.o" \
 "CMakeFiles/main.out.dir/G_AccelHarmonic.cpp.o" \
+"CMakeFiles/main.out.dir/Geodetic.cpp.o" \
 "CMakeFiles/main.out.dir/IERS.cpp.o" \
 "CMakeFiles/main.out.dir/JPL_Eph_DE430.cpp.o" \
 "CMakeFiles/main.out.dir/LTC.cpp.o" \
@@ -605,11 +690,16 @@ main_out_OBJECTS = \
 "CMakeFiles/main.out.dir/R_z.cpp.o" \
 "CMakeFiles/main.out.dir/TimeUpdate.cpp.o" \
 "CMakeFiles/main.out.dir/VarEqn.cpp.o" \
+"CMakeFiles/main.out.dir/angl.cpp.o" \
+"CMakeFiles/main.out.dir/elements.cpp.o" \
 "CMakeFiles/main.out.dir/gast.cpp.o" \
+"CMakeFiles/main.out.dir/gibbs.cpp.o" \
 "CMakeFiles/main.out.dir/gmst.cpp.o" \
+"CMakeFiles/main.out.dir/hgibbs.cpp.o" \
 "CMakeFiles/main.out.dir/matrix.cpp.o" \
 "CMakeFiles/main.out.dir/sign_.cpp.o" \
 "CMakeFiles/main.out.dir/timediff.cpp.o" \
+"CMakeFiles/main.out.dir/unit.cpp.o" \
 "CMakeFiles/main.out.dir/home/fghfgh/Escritorio/ProyectoTTI/tests/EKF_GEOS3.cpp.o"
 
 # External object files for target main.out
@@ -627,6 +717,7 @@ main.out: CMakeFiles/main.out.dir/Frac.cpp.o
 main.out: CMakeFiles/main.out.dir/GHAMatrix.cpp.o
 main.out: CMakeFiles/main.out.dir/GLOBAL.cpp.o
 main.out: CMakeFiles/main.out.dir/G_AccelHarmonic.cpp.o
+main.out: CMakeFiles/main.out.dir/Geodetic.cpp.o
 main.out: CMakeFiles/main.out.dir/IERS.cpp.o
 main.out: CMakeFiles/main.out.dir/JPL_Eph_DE430.cpp.o
 main.out: CMakeFiles/main.out.dir/LTC.cpp.o
@@ -645,15 +736,20 @@ main.out: CMakeFiles/main.out.dir/R_y.cpp.o
 main.out: CMakeFiles/main.out.dir/R_z.cpp.o
 main.out: CMakeFiles/main.out.dir/TimeUpdate.cpp.o
 main.out: CMakeFiles/main.out.dir/VarEqn.cpp.o
+main.out: CMakeFiles/main.out.dir/angl.cpp.o
+main.out: CMakeFiles/main.out.dir/elements.cpp.o
 main.out: CMakeFiles/main.out.dir/gast.cpp.o
+main.out: CMakeFiles/main.out.dir/gibbs.cpp.o
 main.out: CMakeFiles/main.out.dir/gmst.cpp.o
+main.out: CMakeFiles/main.out.dir/hgibbs.cpp.o
 main.out: CMakeFiles/main.out.dir/matrix.cpp.o
 main.out: CMakeFiles/main.out.dir/sign_.cpp.o
 main.out: CMakeFiles/main.out.dir/timediff.cpp.o
+main.out: CMakeFiles/main.out.dir/unit.cpp.o
 main.out: CMakeFiles/main.out.dir/home/fghfgh/Escritorio/ProyectoTTI/tests/EKF_GEOS3.cpp.o
 main.out: CMakeFiles/main.out.dir/build.make
 main.out: CMakeFiles/main.out.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Linking CXX executable main.out"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/fghfgh/Escritorio/ProyectoTTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Linking CXX executable main.out"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.out.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
