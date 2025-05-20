@@ -78,7 +78,7 @@ public:
      * @param m Matrix
      * @return una Matrix=m, sin modificar las matrices
      */
-	Matrix& operator = (Matrix &m);
+	Matrix& operator = (const Matrix &m);
     /**
      * Suma todas las componentes de this con d y devuelve una nueva Matrix
      * @param d valor a ser operado por cada componente de la matriz
@@ -171,7 +171,7 @@ ostream& operator << (ostream &o, Matrix &m);
      * @param end fin del vector resultado
      * @return Matrix 1 x (end - start + 1)
      */
-    Matrix& extract_vector(Matrix &v,int start,int end);
+    Matrix& extract_vector(Matrix &v,const int start,const int end);
 
     /**
      * Devuelve la matriz resultado de realizar la union entre v y w
@@ -188,7 +188,7 @@ ostream& operator << (ostream &o, Matrix &m);
      * @param i es la fila tiene que ser >=1 && <=v.n_row
      * @return Matrix con la fila i-1 de v
      */
-    Matrix& extract_row(Matrix &v,int i);
+    Matrix& extract_row(const Matrix &v,const int i);
 
 
     /**
